@@ -41,6 +41,7 @@ NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
 #Make a list of unique CIKs
 #note that all ciks are not unique
 CIKs <- as.numeric(unique(NASDAQ$CIK))
+CIKs <- CIKs[!is.na(CIKs)]
 
 #This function is originally from the edgar package...it has been adjusted to deal with the error:
 #"Error in writeLines(product.descr2, filename2) : object 'product.descr2' not found "
