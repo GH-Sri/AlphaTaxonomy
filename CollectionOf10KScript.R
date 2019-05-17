@@ -146,9 +146,11 @@ newEDGAR <- function (cik.no, filing.year)
     OBJECT_NAME <- paste0(new.dir, "/", cik, "_", f.type, "_", date.filed, "_", accession.number, ".txt")
     BUCKET <- Sys.getenv("BUCKET_NAME")   
     
-    put_object(product.descr2, object = OBJECT_NAME, bucket = BUCKET)
+    #put_object(product.descr2, object = OBJECT_NAME, bucket = BUCKET)
     
-    #if(exists("product.descr2")){writeLines(product.descr2, filename2)}
+    if(exists("product.descr2")){writeLines(product.descr2, filename2)}
+    put_object(filename2, object = OBJECT_NAME, bucket = BUCKET)
+
     setTxtProgressBar(progress.bar, i)
   }
   output$date.filed <- as.Date(as.character(output$date.filed), 
