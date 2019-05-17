@@ -194,3 +194,27 @@ for(i in CIKs[CIK_Index]){
   mapply(newEDGAR, cik = i, filing.year = c(2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018))
 }
 }
+
+
+
+CollectBDData <- function(){
+  library(readtext)
+  finaldata <- data.frame()
+  #You will need to select where the folder with business description data is located
+  AllBDs <- list.files(choose.dir(caption = "Choose where folder with Business Description Data"), full.names = T)
+  for (i in AllBDs){
+    x <- readtext(i)
+    finaldata <- rbind(finaldata, x)
+  }
+  
+  breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
+  finaldata <- cbind(finaldata, breakoutInfo)
+  names(finaldata) <- c("doc_id", "text", "CIK", "Source", "YearDate", "File")
+  finaldata <- merge(finaldata, NASDAQ, all.x = T, by = "CIK")
+  finaldata <- finaldata[c("CIK", "YearDate", "text", "Symbol", "Name.x")]
+  
+  # finaldata$text <- gsub("/(\r\n|\n|\r)/gm", "", finaldata$text)
+  finaldata$text <- gsub("[\r\n]", "", finaldata$text)
+  
+  return(finaldata)
+}
