@@ -2,6 +2,8 @@
 library(dplyr)
 library(readtext)
 library(edgar)
+library(aws.s3)
+
 # memory.limit(10000000000000)
 #Get the latest company list for NASDAQ####
 GetCompanyList <- function(Exchange = "NASDAQ"){
@@ -16,14 +18,14 @@ GetCompanyList <- function(Exchange = "NASDAQ"){
   
   if(Exchange == "NYSE"){
     download.file(url = "https://www.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=nyse&render=download",
-                  destfile = "C:/Users/hwalbert001/Documents/Company Stock Analysis/NYSECompanyList.csv")
+                  destfile = paste0(MyWorkingDirectory, "/NYSECompanyList.csv"))
     NYSECompList <- read.csv(file = paste0(MyWorkingDirectory, "/NYSECompanyList.csv"), colClasses = "character")
     return(NYSECompList)
   }
   
   if(Exchange == "AMEX"){
     download.file(url = "https://www.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=amex&render=download",
-                  destfile = "C:/Users/hwalbert001/Documents/Company Stock Analysis/AMEXCompanyList.csv")
+                   destfile = paste0(MyWorkingDirectory, "/AMEXCompanyList.csv"))
     AMEXCompList <- read.csv(file = paste0(MyWorkingDirectory, "/AMEXCompanyList.csv"), colClasses = "character")
     return(AMEXCompList)
   }
@@ -157,7 +159,7 @@ GetTenKs <- function(CIK_Index = 1:500){
 #Get the refreshed Company data from the NASDAQ website
 NASDAQ <- GetCompanyList(Exchange = "NASDAQ")
 
-load("/home/rstudio/RScripts/ALLCIK.RData")
+load("/rdata/src/r-libraries/ALLCIK.RData")
 #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
 NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
 NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
