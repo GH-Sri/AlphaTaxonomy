@@ -143,7 +143,7 @@ newEDGAR <- function (cik.no, filing.year)
     filename2 <- paste0(new.dir, "/", cik, "_", f.type, "_", 
                         date.filed, "_", accession.number, ".txt")
     
-    OBJECT_NAME <- new.dir, "/", cik, "_", f.type, "_", date.filed, "_", accession.number, ".txt"
+    OBJECT_NAME <- paste0(new.dir, "/", cik, "_", f.type, "_", date.filed, "_", accession.number, ".txt")
     BUCKET <- Sys.getenv("BUCKET_NAME")   
     
     put_object(product.descr2, object = OBJECT_NAME, bucket = BUCKET)
