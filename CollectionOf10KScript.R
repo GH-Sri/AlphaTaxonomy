@@ -151,6 +151,7 @@ newEDGAR <- function (cik.no, filing.year)
     if(exists("product.descr2")){writeLines(product.descr2, filename2)
     put_object(filename2, object = OBJECT_NAME, bucket = BUCKET)
     rm(filename2)
+    gc()
     }
 
     setTxtProgressBar(progress.bar, i)
