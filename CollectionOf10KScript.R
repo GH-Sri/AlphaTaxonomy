@@ -44,7 +44,8 @@ CIKs <- as.numeric(unique(NASDAQ$CIK))
 #"Error in writeLines(product.descr2, filename2) : object 'product.descr2' not found "
 newEDGAR <- function (cik.no, filing.year) 
 {
-  f.type <- c("10-K", "10-K405", "10KSB", "10KSB40")
+  # f.type <- c("10-K", "10-K405", "10KSB", "10KSB40")
+  f.type <- c("10-K")
   if (!is.numeric(filing.year)) {
     cat("Please check the input year.")
     return()
