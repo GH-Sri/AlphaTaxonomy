@@ -5,7 +5,8 @@ library(edgar)
 # memory.limit(10000000000000)
 #Get the latest company list for NASDAQ####
 GetCompanyList <- function(Exchange = "NASDAQ"){
-  if(!exists("MyWorkingDirectory")){MyWorkingDirectory <- setwd(choose.dir(caption = "Select your Working Directory Location"))}
+  if(!exists("MyWorkingDirectory")){MyWorkingDirectory <- setwd("/tmp/10k")}
+
   if(Exchange == "NASDAQ"){
     download.file(url = "https://www.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=nasdaq&render=download",
                   destfile = paste0(MyWorkingDirectory, "/NASDAQCompanyList.csv"))
@@ -32,7 +33,8 @@ GetCompanyList <- function(Exchange = "NASDAQ"){
 #Get the refreshed Company data from the NASDAQ website
 NASDAQ <- GetCompanyList(Exchange = "NASDAQ")
 
-ALLCIK <- read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
+load("/home/rdata/ALLCIK.RData")
+#read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
 NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
 NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
 
