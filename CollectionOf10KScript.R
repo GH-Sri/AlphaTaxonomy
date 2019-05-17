@@ -166,6 +166,7 @@ NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
 #note that all ciks are not unique
 CIKs <- as.numeric(unique(NASDAQ$CIK))
 CIKs <- CIKs[!is.na(CIKs)]
+cat("There are", length(CIKs), "unique CIK values \n")
 
 #Okay, This is where we get all the Business Descriptions
 #The getBusinDescr() function pulls the master indexes from the SEC server for each year specified...
