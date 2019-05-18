@@ -154,6 +154,8 @@ newEDGAR <- function (cik.no, filing.year)
     gc()
     }
 
+    rm(dest)
+    gc()
     setTxtProgressBar(progress.bar, i)
   }
   output$date.filed <- as.Date(as.character(output$date.filed), 
