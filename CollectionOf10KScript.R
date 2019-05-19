@@ -169,46 +169,55 @@ newEDGAR <- function (cik.no, filing.year)
 }
 
 GetTenKs <- function(CIK_Index = 1:500){
-#Get the refreshed Company data from the NASDAQ website
-NASDAQ <- GetCompanyList(Exchange = "NASDAQ")
+  #Get the refreshed Company data from the NASDAQ website
+  NASDAQ <- GetCompanyList(Exchange = "NASDAQ")
 
-load("/rdata/src/r-libraries/ALLCIK.RData")
-#read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
-NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
-NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
+  load("/rdata/src/r-libraries/ALLCIK.RData")
+  #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
+  NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
+  NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
 
-#Make a list of unique CIKs
-#note that all ciks are not unique
-CIKs <- as.numeric(unique(NASDAQ$CIK))
-CIKs <- CIKs[!is.na(CIKs)]
-cat("There are", length(CIKs), "unique CIK values \n")
+  #Make a list of unique CIKs
+  #note that all ciks are not unique
+  CIKs <- as.numeric(unique(NASDAQ$CIK))
+  CIKs <- CIKs[!is.na(CIKs)]
+  cat("There are", length(CIKs), "unique CIK values \n")
 
-#Okay, This is where we get all the Business Descriptions
-#The getBusinDescr() function pulls the master indexes from the SEC server for each year specified...
-#This gets stored in the working directory in a folder called Business description test
-counter = 0
-# for(i in CIKs[1:500]){#THIS IS FOR TESTING
-# for(i in CIKs[1:length(CIKs)]){
-for(i in CIKs[CIK_Index]){
-  counter <- counter + 1
-  cat("Counter:", counter, "\n")
-  cat("working on", i, "\n")
-  mapply(newEDGAR, cik = i, filing.year = c(2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018))
-}
+  #Okay, This is where we get all the Business Descriptions
+  #The getBusinDescr() function pulls the master indexes from the SEC server for each year specified...
+  #This gets stored in the working directory in a folder called Business description test
+  counter = 0
+  # for(i in CIKs[1:500]){#THIS IS FOR TESTING
+  # for(i in CIKs[1:length(CIKs)]){
+  for(i in CIKs[CIK_Index]){
+    counter <- counter + 1
+    cat("Counter:", counter, "\n")
+    cat("working on", i, "\n")
+    mapply(newEDGAR, cik = i, filing.year = c(2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018))
+  }
 }
 
 
 
 CollectBDData <- function(){
-  library(readtext)
   finaldata <- data.frame()
-  #You will need to select where the folder with business description data is located
-  AllBDs <- list.files(choose.dir(caption = "Choose where folder with Business Description Data"), full.names = T)
-  for (i in AllBDs){
-    x <- readtext(i)
+
+  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/')
+
+  path <- dfBucket$Key
+
+  x <- NULL
+  for (lineN in path) {
+    bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
+    
+    url <- paste(bucket,lineN, sep= "/") 
+    s3Vector <- get_object(url)
+    s3Value <- rawToChar(s3Vector)
+
+    cat(s3Value)
     finaldata <- rbind(finaldata, x)
   }
-  
+
   breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
   finaldata <- cbind(finaldata, breakoutInfo)
   names(finaldata) <- c("doc_id", "text", "CIK", "Source", "YearDate", "File")
