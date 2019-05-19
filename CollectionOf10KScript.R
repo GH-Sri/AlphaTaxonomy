@@ -211,10 +211,11 @@ CollectBDData <- function(){
     bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
     
     url <- paste(bucket,lineN, sep= "/") 
+    cat(url)
+    
     s3Vector <- get_object(url)
     s3Value <- rawToChar(s3Vector)
 
-    cat(s3Value)
     finaldata <- rbind(finaldata, x)
   }
 
