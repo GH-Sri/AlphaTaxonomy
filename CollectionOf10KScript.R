@@ -212,7 +212,8 @@ CollectBDData <- function(){
     counter = counter + 1
     bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
     
-    url <- paste(bucket,lineN, sep= "/") 
+    url <- paste(bucket,lineN, sep= "/")
+    cat(counter)
     cat(url)
     cat('\n')
 
@@ -220,7 +221,7 @@ CollectBDData <- function(){
     s3Value <- rawToChar(s3Vector)
 
     finaldata <- rbind(finaldata, x)
-    cat(counter)
+    
   }
 
   breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
