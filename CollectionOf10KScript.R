@@ -207,7 +207,7 @@ CollectBDData <- function(){
   path <- dfBucket$Key
 
   counter <- 0
-  x <- NULL
+  s3Value <- NULL
   for (lineN in path) {
     counter = counter + 1
     bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
@@ -220,7 +220,7 @@ CollectBDData <- function(){
     s3Vector <- get_object(url)
     s3Value <- rawToChar(s3Vector)
 
-    finaldata <- rbind(finaldata, x)
+    finaldata <- rbind(finaldata, s3Value)
     
   }
   cat(finaldata)
