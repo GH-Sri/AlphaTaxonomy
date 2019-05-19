@@ -235,5 +235,5 @@ CollectBDData <- function(){
   
   #return(finaldata)
 
-  write(finaldata, file = "BDData.txt",
+  write(finaldata, file = "BDData.txt")
 }
