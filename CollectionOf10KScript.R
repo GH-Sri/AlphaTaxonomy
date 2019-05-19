@@ -202,7 +202,7 @@ GetTenKs <- function(CIK_Index = 1:500){
 CollectBDData <- function(){
   finaldata <- data.frame()
 
-  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=1000)
+  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
 
   path <- dfBucket$Key
 
@@ -223,7 +223,7 @@ CollectBDData <- function(){
     finaldata <- rbind(finaldata, s3Value)
     
   }
-  cat(finaldata)
+  
   breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
   finaldata <- cbind(finaldata, breakoutInfo)
   names(finaldata) <- c("doc_id", "text", "CIK", "Source", "YearDate", "File")
