@@ -218,10 +218,13 @@ CollectBDData <- function(){
     cat('\n')
 
     s3Vector <- get_object(url)
-    s3Value <- rawToChar(s3Vector)
+    s3File = save_object(url)
 
-    finaldata <- rbind(finaldata, s3Value)
-    
+    x <- readtext(s3File)
+    #s3Value <- rawToChar(s3Vector)
+
+    finaldata <- rbind(finaldata, x)
+    rm(s3File)
   }
   
   breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
