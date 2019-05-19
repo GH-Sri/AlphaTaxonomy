@@ -1,2 +1,2 @@
-# ui
+# web ui
 user interface
