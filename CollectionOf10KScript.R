@@ -202,7 +202,7 @@ GetTenKs <- function(CIK_Index = 1:500){
 CollectBDData <- function(){
   finaldata <- data.frame()
 
-  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=10)
+  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=1000)
 
   path <- dfBucket$Key
 
@@ -233,5 +233,7 @@ CollectBDData <- function(){
   # finaldata$text <- gsub("/(\r\n|\n|\r)/gm", "", finaldata$text)
   finaldata$text <- gsub("[\r\n]", "", finaldata$text)
   
-  return(finaldata)
+  #return(finaldata)
+
+  write(finaldata, file = "BDData.txt",
 }
