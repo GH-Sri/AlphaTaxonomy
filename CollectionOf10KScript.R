@@ -209,8 +209,8 @@ CollectBDData <- function(){
   
   finaldata <- data.frame()
 
-  # dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
-  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=Inf)
+  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
+  #dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=Inf)
 
   path <- dfBucket$Key
 
@@ -221,9 +221,9 @@ CollectBDData <- function(){
     bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
     
     url <- paste(bucket,lineN, sep= "/")
-    cat(counter)
-    cat(url)
-    cat('\n')
+    # cat(counter)
+    # cat(url)
+    # cat('\n')
 
     #s3Vector <- get_object(url)
     s3File = save_object(url)
