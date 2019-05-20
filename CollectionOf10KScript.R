@@ -243,8 +243,8 @@ CollectBDData <- function(){
   
   # finaldata$text <- gsub("/(\r\n|\n|\r)/gm", "", finaldata$text)
   finaldata$text <- gsub("[\r\n]", "", finaldata$text)
-  
+  finaldata$YEAR <- substr(finaldata$YearDate, 1, 4)
   #return(finaldata)
 
-  write.table(finaldata, file = "BDData.txt")
+  write.csv(finaldata, file = "BDData.csv", row.names = F)
 }
