@@ -221,9 +221,9 @@ CollectBDData <- function(){
     bucket <- paste("s3://",Sys.getenv("BUCKET_NAME"), sep="")
     
     url <- paste(bucket,lineN, sep= "/")
-    # cat(counter)
-    # cat(url)
-    # cat('\n')
+    cat(counter)
+    cat(url)
+    cat('\n')
 
     #s3Vector <- get_object(url)
     s3File = save_object(url)
@@ -246,5 +246,5 @@ CollectBDData <- function(){
   
   #return(finaldata)
 
-  write(finaldata, file = "BDData.txt")
+  write.table(finaldata, file = "BDData.txt")
 }
