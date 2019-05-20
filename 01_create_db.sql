@@ -8,26 +8,13 @@ CREATE DATABASE mdas;
 CREATE SCHEMA mdas AUTHORIZATION mdas;
 SET search_path TO mdas;
 
--- Create the initial table for the raw seed data
-CREATE TABLE mdas.companylist (
-	symbol text NULL,
-	"name" text NULL,
-	lastsale text NULL,
-	marketcap text NULL,
-	ipoyear text NULL,
-	sector text NULL,
-	industry text NULL,
-	summary_quote text NULL,
-	cik text NULL
-);
-
 CREATE TABLE Sector (
         SectorID SERIAL PRIMARY KEY,
         Name text,
         NumberOfIndustries integer,
         NumberOfCompanies integer,
         MarketCap money,
-        "10YrPerformance" text,
+        "10YrPerformance" integer,
         SectorWeight integer
 );
 
@@ -37,7 +24,7 @@ CREATE TABLE Industry (
         Name text,
         NumberOfCompanies integer,
         MarketCap money,
-        "10YrPerformance" text,
+        "10YrPerformance" integer,
         IndustryWeight integer
 );
 
@@ -51,11 +38,11 @@ CREATE TABLE mdas.Company (
         Ticker text,
         "10YrMarketCap" money,
         "10YrEPS" money,
-        "10YrPerformance" text,
-        "10YrPerformanceVsSector" text,
-        "10YrPerformanceVsIndustry" text,
-        "10YrNasdaqPerformanceVsSector" text,
-        "10YrNasdaqPerformanceVsIndustry" text
+        "10YrPerformance" integer,
+        "10YrPerformanceVsSector" integer,
+        "10YrPerformanceVsIndustry" integer,
+        "10YrNasdaqPerformanceVsSector" integer,
+        "10YrNasdaqPerformanceVsIndustry" integer
 );
 COMMENT ON COLUMN Company.Ticker IS 'The single ticker symbol most likely recognizable as referring to the company as a whole';
 COMMENT ON COLUMN Company."10YrMarketCap" IS 'Initially the sum of current MarketCaps of all ticker symbols this company has on the NASDAQ.  To be replaced with average MarketCap over the past 10 years if the data is available';
@@ -82,11 +69,11 @@ CREATE TABLE Performance (
         year integer,
         MarketCap money,
         EPS money,
-        Performance text,
-        PerformanceVsSector text,
-        PerformanceVsIndustry text,
-        NasdaqPerformanceVsSector text,
-        NasdaqPerformanceVsIndustry text
+        Performance integer,
+        PerformanceVsSector integer,
+        PerformanceVsIndustry integer,
+        NasdaqPerformanceVsSector integer,
+        NasdaqPerformanceVsIndustry integer
 );
 
 CREATE TABLE Weight (
