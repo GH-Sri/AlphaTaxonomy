@@ -13,6 +13,7 @@ from gensim.models.doc2vec import TaggedDocument
 from collections import namedtuple
 import random
 import time
+import re
 
 
 #Read in docs
@@ -29,6 +30,8 @@ def normalize_text(text):
     normText = text.lower()
     #   Replace breaks with spaces
     normText = normText.replace('<br />', ' ')
+    #   Remove non-alphabet characters
+    normText = re.sub("[^a-zA-Z]+", " ", normText)
     #   Remove punctuation
     punctuations = "?:!.,;#@"
     split = [item for item in re.split("(\W+)", normText) if len(item) > 0]
@@ -104,3 +107,7 @@ for i in right_vec:
 dfComp = pd.DataFrame.from_dict(d)
 
 dfComp.to_csv('cikVectorsExample1.csv')
+
+model.save('Doc2Vec_Model')
+
+

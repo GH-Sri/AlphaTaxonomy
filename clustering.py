@@ -26,7 +26,7 @@ data = []
 labelList=[]
 #file_dir = cwd + "\\Documents\\GitHub\\r-libraries\\"
 file_dir = cwd
-with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
+with open(file_dir+"/cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
