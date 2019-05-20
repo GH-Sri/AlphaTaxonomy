@@ -200,8 +200,8 @@ GetTenKs <- function(CIK_Index = 1:500){
 
 
 CollectBDData <- function(){
-  destfile = paste0("/rdata/10k", "/NASDAQCompanyList.csv")
-  NASDAQ <- read.csv(file = paste0(MyWorkingDirectory, "/NASDAQCompanyList.csv"), colClasses = "character")
+  
+  NASDAQ <- read.csv(file = paste0("/rdata/10k", "/NASDAQCompanyList.csv"), colClasses = "character")
 
   finaldata <- data.frame()
 
