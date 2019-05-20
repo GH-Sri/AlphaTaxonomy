@@ -200,6 +200,9 @@ GetTenKs <- function(CIK_Index = 1:500){
 
 
 CollectBDData <- function(){
+  destfile = paste0(MyWorkingDirectory, "/NASDAQCompanyList.csv"))
+  NASDAQ <- read.csv(file = paste0(MyWorkingDirectory, "/NASDAQCompanyList.csv"), colClasses = "character")
+
   finaldata <- data.frame()
 
   dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
@@ -217,7 +220,7 @@ CollectBDData <- function(){
     cat(url)
     cat('\n')
 
-    s3Vector <- get_object(url)
+    #s3Vector <- get_object(url)
     s3File = save_object(url)
 
     x <- readtext(s3File)
