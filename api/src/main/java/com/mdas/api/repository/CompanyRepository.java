@@ -1,6 +1,6 @@
-package com.mdas.data.repository;
+package com.mdas.api.repository;
 
-import com.mdas.data.model.Company;
+import com.mdas.api.model.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

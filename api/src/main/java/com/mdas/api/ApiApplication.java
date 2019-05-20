@@ -1,4 +1,4 @@
-package com.mdas.data;
+package com.mdas.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class DataApplication {
+public class ApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataApplication.class, args);
+		SpringApplication.run(ApiApplication.class, args);
 	}
 
 }

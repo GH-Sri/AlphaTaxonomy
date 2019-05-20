@@ -1,7 +1,7 @@
-package com.mdas.data.controller;
+package com.mdas.api.controller;
 
-import com.mdas.data.model.Company;
-import com.mdas.data.repository.CompanyRepository;
+import com.mdas.api.model.Company;
+import com.mdas.api.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +15,7 @@ public class CompanyController {
     @Autowired
     private CompanyRepository companyRepository;
 
-    @GetMapping("/companies")
+    @GetMapping("/company")
     public Page<Company> getCompanies(Pageable pageable) {
         return companyRepository.findAll(pageable);
 	}
