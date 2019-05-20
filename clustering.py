@@ -14,16 +14,23 @@ import pandas as pd
 from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, maxdists,ward
 from scipy.spatial.distance import pdist
 import csv
+import os
+#import matplotlib as plt
+# get current file path
+cwd = os.getcwd()
+
 
 print('Creating Data')
 
 data = []
 labelList=[]
-with open("cikVectorsExample1.csv", 'r') as csvfile:
+#file_dir = cwd + "\\Documents\\GitHub\\r-libraries\\"
+file_dir = cwd
+with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
-        labelList.append(row[0:1])
+        labelList.append(row[1]+"-"+row[2][0:4])
         data.append([float(val) for val in row[3:]])
 
 print('Finding distances between nodes')
@@ -84,4 +91,46 @@ df_industry_avg=df_doc2vec.groupby('industry').mean()
 
 df_sector_avg.to_csv('sector_avg.csv')
 df_industry_avg.to_csv('industry_avg.csv')
+
+
+
+# find each company's distance from each sector/industry
+# sector
+arr_doc_dist=[]
+arr_val=[]
+for index, row in df_doc2vec.iterrows():
+    arr_val.append(row.values[1:201])
+for i in range(0,len(arr_val)):
+    a1=[]
+    for j in range(0,df_sector_avg.shape[0]):
+        a1.append(np.linalg.norm(arr_val[i]-df_sector_avg.values[j]))
+    arr_doc_dist.append(a1)
+
+df_doc_dist_sector=pd.DataFrame(arr_doc_dist)
+arr_colnames=[]
+for i in range(0,df_doc_dist_sector.shape[1]):
+    arr_colnames.append('Sector '+str(i+1))
+df_doc_dist_sector.columns = arr_colnames
+
+# industry
+arr_doc_dist=[]
+arr_val=[]
+for index, row in df_doc2vec.iterrows():
+    arr_val.append(row.values[1:201])
+for i in range(0,len(arr_val)):
+    a1=[]
+    for j in range(0,df_industry_avg.shape[0]):
+        a1.append(np.linalg.norm(arr_val[i]-df_industry_avg.values[j]))
+    arr_doc_dist.append(a1)
+df_doc_dist_industry=pd.DataFrame(arr_doc_dist)
+arr_colnames=[]
+for i in range(0,df_doc_dist_industry.shape[1]):
+    arr_colnames.append('Industry '+str(i+1))
+df_doc_dist_industry.columns = arr_colnames
+
+df_doc_dist_sector.to_csv('doc_dist_sector.csv')
+df_doc_dist_industry.to_csv('doc_dist_industry.csv')
+
+
+
 
