@@ -209,8 +209,8 @@ CollectBDData <- function(){
   
   finaldata <- data.frame()
 
-  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
-  #dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=Inf)
+  #dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
+  dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=Inf)
 
   path <- dfBucket$Key
 
