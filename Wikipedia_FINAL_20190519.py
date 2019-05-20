@@ -9,6 +9,8 @@ Created on Sun May 19 20:18:12 2019
 #import requests
 #import wikipediaapi
 #import pandas as pd
+#import time
+#import json
 
 ################
 ################
@@ -116,7 +118,7 @@ for x in wiki_titles:
     if (float(x_count) % 25) == 0:
         print("x.count ", x_count, " time elapsed: ", (time.time() - t))
 
-# Write to .csv file...
-path = os.getcwd()
-wiki_data.to_csv(os.path.join(path, r'Wikipedia_Data.csv'))
-            
+# Write to .json file...       
+wiki_data.to_json(os.path.join(os.getcwd(), r'Wikipedia_Data.json'))           
+           
+    
