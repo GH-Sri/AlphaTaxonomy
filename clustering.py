@@ -24,9 +24,9 @@ print('Creating Data')
 
 data = []
 labelList=[]
-#file_dir = cwd + "\\Documents\\GitHub\\r-libraries\\"
-file_dir = cwd
-with open(file_dir+"/cikVectorsExample1.csv", 'r') as csvfile:
+file_dir = cwd + "\\Documents\\GitHub\\r-libraries\\"
+#file_dir = cwd
+with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -62,7 +62,7 @@ output=[]
 sector=get_n_clusters(linked,10)
 industry=get_n_clusters(linked,100)
 for i in range(0,len(labelList)):
-    output.append([labelList[i][0],sector[i],industry[i]])
+    output.append([labelList[i],sector[i],industry[i]])
 a=np.asarray(output)
 np.savetxt("sector_industry.csv",a,delimiter=",", fmt='%s')
 
@@ -75,7 +75,7 @@ print('Finding Cluster Centroids')
 arr_doc2vec=[]
 for i in range(0,len(labelList)):
     arr =[]
-    arr.append(labelList[i][0])
+    arr.append(labelList[i])
     for j in range(0,len(data[i])):
         arr.append(data[i][j])
     arr_doc2vec.append(arr)
@@ -85,7 +85,13 @@ for i in range(1,len(data[i])+1):
     colname_doc2vec.append("V"+str(i))
 
 df_doc2vec=pd.DataFrame(data=arr_doc2vec,columns=colname_doc2vec)
-df_doc2vec=pd.merge(df_doc2vec,df_output,how='left',on='ind')
+df_doc2vec['sector']=df_output['sector']
+df_doc2vec['industry']=df_output['industry']
+df_doc2vec['sector']=df_doc2vec['sector'].astype('int32')
+df_doc2vec['sector']=df_doc2vec['sector'].astype('category')
+df_doc2vec['industry']=df_doc2vec['industry'].astype('int32')
+df_doc2vec['industry']=df_doc2vec['industry'].astype('category')
+
 df_sector_avg=df_doc2vec.groupby('sector').mean()
 df_industry_avg=df_doc2vec.groupby('industry').mean()
 
@@ -102,14 +108,15 @@ for index, row in df_doc2vec.iterrows():
     arr_val.append(row.values[1:201])
 for i in range(0,len(arr_val)):
     a1=[]
+    a1.append(labelList[i])
     for j in range(0,df_sector_avg.shape[0]):
         a1.append(np.linalg.norm(arr_val[i]-df_sector_avg.values[j]))
     arr_doc_dist.append(a1)
 
 df_doc_dist_sector=pd.DataFrame(arr_doc_dist)
-arr_colnames=[]
-for i in range(0,df_doc_dist_sector.shape[1]):
-    arr_colnames.append('Sector '+str(i+1))
+arr_colnames=['cik-year']
+for i in range(1,df_doc_dist_sector.shape[1]):
+    arr_colnames.append('Sector '+str(i))
 df_doc_dist_sector.columns = arr_colnames
 
 # industry
@@ -119,13 +126,14 @@ for index, row in df_doc2vec.iterrows():
     arr_val.append(row.values[1:201])
 for i in range(0,len(arr_val)):
     a1=[]
+    a1.append(labelList[i])
     for j in range(0,df_industry_avg.shape[0]):
         a1.append(np.linalg.norm(arr_val[i]-df_industry_avg.values[j]))
     arr_doc_dist.append(a1)
 df_doc_dist_industry=pd.DataFrame(arr_doc_dist)
-arr_colnames=[]
-for i in range(0,df_doc_dist_industry.shape[1]):
-    arr_colnames.append('Industry '+str(i+1))
+arr_colnames=['cik-year']
+for i in range(1,df_doc_dist_industry.shape[1]):
+    arr_colnames.append('Industry '+str(i))
 df_doc_dist_industry.columns = arr_colnames
 
 df_doc_dist_sector.to_csv('doc_dist_sector.csv')
