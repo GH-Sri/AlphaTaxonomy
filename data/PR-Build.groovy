@@ -208,8 +208,7 @@ pipeline {
             sh """
             ls
             echo ${env.BUILD_ID}
-            #docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/tics3.condiments-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml .
-            docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/tics3.condiments-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml .
+            docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/data-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml .
             """
             output('Container Build', 'success')
           }
