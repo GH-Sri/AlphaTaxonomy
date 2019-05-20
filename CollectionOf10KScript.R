@@ -207,11 +207,25 @@ GetTenKs <- function(CIK_Index = 1:500){
 
 CollectBDData <- function(){
 
-  NASDAQ <- read.csv(file = paste0("/rdata/10k", "/NASDAQCompanyList.csv"), colClasses = "character")
+  # NASDAQ <- read.csv(file = paste0("/rdata/10k", "/NASDAQCompanyList.csv"), colClasses = "character")
+  # load("/rdata/src/r-libraries/ALLCIK.RData")
+  # #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
+  # NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
+  # NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
+
+
+  NASDAQ <- GetCompanyList(Exchange = "NASDAQ")
+  NYSE <- GetCompanyList(Exchange = "NYSE")
+  AMEX <- GetCompanyList(Exchange = "AMEX")
+
+  AllData <- rbind(NASDAQ, NYSE)
+  AllData <- rbind(AllData, AMEX)
+  AllData <- unique(AllData)
+
   load("/rdata/src/r-libraries/ALLCIK.RData")
   #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
-  NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
-  NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
+  AllData <- merge(AllData, ALLCIK, all.x = T, by = "Symbol")
+  AllData <- subset(AllData, !is.na(AllData$CIK))
 
   finaldata <- data.frame()
 
@@ -244,7 +258,7 @@ CollectBDData <- function(){
   breakoutInfo <- t(data.frame(strsplit(finaldata$doc_id, split = "_")))
   finaldata <- cbind(finaldata, breakoutInfo)
   names(finaldata) <- c("doc_id", "text", "CIK", "Source", "YearDate", "File")
-  finaldata <- merge(finaldata, NASDAQ, all.x = T, by = "CIK")
+  finaldata <- merge(finaldata, AllData, all.x = T, by = "CIK")
   finaldata <- finaldata[c("CIK", "YearDate", "text", "Symbol", "Name.x")]
 
   # finaldata$text <- gsub("/(\r\n|\n|\r)/gm", "", finaldata$text)
