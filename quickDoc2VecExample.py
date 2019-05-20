@@ -17,10 +17,7 @@ import time
 
 #Read in docs
 
-filePath = 'C:\\Users\\dmoore002\\Documents\\TechChallengeUSCIS'
-fileName = '\\ExampleFinalData2.csv'
-filePathName = filePath + fileName
-df = pd.read_csv(filePathName)
+df = pd.read_csv('data.csv')
 
 df.dropna(subset=['text'],inplace=True)
 
