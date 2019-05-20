@@ -202,7 +202,11 @@ GetTenKs <- function(CIK_Index = 1:500){
 CollectBDData <- function(){
   
   NASDAQ <- read.csv(file = paste0("/rdata/10k", "/NASDAQCompanyList.csv"), colClasses = "character")
-
+  load("/rdata/src/r-libraries/ALLCIK.RData")
+  #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
+  NASDAQ <- merge(NASDAQ, ALLCIK, all.x = T, by = "Symbol")
+  NASDAQ <- subset(NASDAQ, !is.na(NASDAQ$CIK))
+  
   finaldata <- data.frame()
 
   dfBucket <- get_bucket_df(Sys.getenv("BUCKET_NAME"), 'Business descriptions text/', max=100)
