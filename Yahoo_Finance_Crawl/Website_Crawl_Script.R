@@ -76,8 +76,8 @@ source("Website_Functions/meta_aggregate.R") # loops pull_metadata()
  scraped_sites <- meta_aggregate(accepted_sites) 
 # may take awhile as well 
 
-write.csv(scraped_sites, file = "metadata_on_accepted_sites_v1.csv")
+write.csv(scraped_sites, file = "metadata_on_accepted_sites.csv")
 
 
-# websites_with_metadata <- read.csv("metadata_on_accepted_sites_v1.csv",stringsAsFactors = FALSE)
+# websites_with_metadata <- read.csv("metadata_on_accepted_sites.csv",stringsAsFactors = FALSE)
 
