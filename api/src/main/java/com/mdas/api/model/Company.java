@@ -11,13 +11,13 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="companyid")
-    private String companyid;   
+    private int companyid;   
 
     @Column(name="sectorid")
-    private String sectorid; 
+    private int sectorid; 
 
     @Column(name="industryid")
-    private String industryid;      
+    private int industryid;      
 
     @Column(name="nasdaqindustry")
     private String nasdaqindustry;
@@ -49,27 +49,27 @@ public class Company {
     @Column(name="nasdaqperfvsindustry10yr")
     private String nperind;
 
-    public String getCompanyId() {
+    public int getCompanyId() {
         return companyid;
     }
 
-    public void setCompanyId(String companyid) {
-        this.companyid= companyid;
+    public void setCompanyId(int companyid) {
+        this.companyid = companyid;
     } 
 
-    public String getSectorId() {
+    public int getSectorId() {
         return sectorid;
     }
 
-    public void setSectorId(String sectorid) {
+    public void setSectorId(int sectorid) {
         this.sectorid = sectorid;
     } 
 
-    public String getIndustryId() {
+    public int getIndustryId() {
         return industryid;
     }
 
-    public void setIndustryId(String industryid) {
+    public void setIndustryId(int industryid) {
         this.industryid = industryid;
     } 
 
