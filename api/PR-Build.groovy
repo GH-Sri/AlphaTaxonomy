@@ -71,30 +71,18 @@ pipeline {
   environment {
     //TODO: fix these
     REGISTRY_URL      = ''
-    DOCKER_IMAGE_NAME = 'alpine'
+    DOCKER_IMAGE_NAME = 'ghmdas'
     NEXUS_IMAGE_NAME  = 'ghmdas/verse'
   }
   stages {
     stage('Pre-Build') {
-      agent { label 'master' }
+      agent none
       steps {
         script {
-          if (binding.hasVariable('ghprbSourceBranch')) {
-            env.ghprbSourceBranch = env.GIT_BRANCH
-          }
-          sshagent(['ghaccount-key']) {
-            sh 'git fetch'
-          }
-          sh "git checkout ${env.ghprbSourceBranch}"
-          println "Keeping tag the same ${tag}"
           tag = "data.${env.ghprbSourceBranch}"
           env.VERSION = "${tag.trim()}.${BUILD_NUMBER}"
-        
-          sshagent(['ghaccount-key']) {
-            sh 'git pull'
-          }
+          echo "${env.VERSION}"
         }
-        echo "${env.VERSION}"
       }
     }
     stage('Build') {
