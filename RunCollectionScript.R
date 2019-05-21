@@ -1,3 +1,3 @@
-source(here::here('CollectionOf10KScript.R'))
+source('CollectionOf10KScript.R')
 
-GetTenKs(CIK_Index = 501:750)
+GetTenKs(CIK_Index = 751:1000)
