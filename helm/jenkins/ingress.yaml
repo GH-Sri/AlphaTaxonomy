@@ -1,0 +1,19 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: jenkins-ingress
+  namespace: management
+  labels:
+    app: jenkins
+    environment: openshift-nonprod
+spec:
+  rules:
+    - host: jenkins.apps.openshift-nonprod.gh-mdas.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: jenkins
+              servicePort: 8080
+status:
+  loadBalancer: {}
