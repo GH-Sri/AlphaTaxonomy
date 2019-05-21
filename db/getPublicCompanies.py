@@ -41,13 +41,13 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
             line.append(exchange)
 
             # Attempt to determine the CIK by ticker
+            CIK = ''
             match = CIK_RE.search(get(CIK_by_ticker_URL.format(line[0])).content.decode())
-            sleep(1)
             if not match:
                 # Failed to find it by ticker, try by company name
                 match = CIK_RE.search(get(CIK_by_name_URL.format(line[1])).content.decode())
-                sleep(1)
-            if match: line.append(match.group('CIK'))
+            if match: CIK = match.group('CIK')
+            line.append(CIK)
 
         out_lines.append(line)
 
