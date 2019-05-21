@@ -54,7 +54,13 @@ spec:
         - name: ENVIRONMENT
           value: dt
         - name: BUCKET_NAME
-          value: gh-mdas-data
+          value: gh-mdas-data-1
+        - name: AWS_ACCESS_KEY_ID
+          value: $AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          value: $AWS_SECRET_ACCESS_KEY
+        - name: PASSWORD
+          value: $R_STUDIO_PASSWORD
         resources:
           limits:
             cpu: 2000m

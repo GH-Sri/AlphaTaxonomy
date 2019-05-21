@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 10kscraper-deploy-2
+  name: 10kscraper-deploy-6
   namespace: dataproc-dt
   labels:
-    app: 10kscraper2
+    app: 10kscraper6
     environment: dt
   annotations:
     flux.weave.works/automated: "true"
@@ -18,18 +18,18 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: 10kscraper2
+      app: 10kscraper6
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: 10kscraper2
+        app: 10kscraper6
     spec:
       volumes:
-        - name: 10kscraper-persistent-storage-1
+        - name: 10kscraper-persistent-storage
           persistentVolumeClaim:
-            claimName: 10kscraper-pv-claim-1
+            claimName: 10kscraper-pv-claim-5
       containers:
       - name: 10kscraper
         image: ghmdas/verse:latest
@@ -51,16 +51,16 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 20
         env:
-        - name: ENVIRONMENT
-          value: dt
-        - name: BUCKET_NAME
-          value: gh-mdas-data-1
-        - name: AWS_ACCESS_KEY_ID
-          value: $AWS_ACCESS_KEY_ID
-        - name: AWS_SECRET_ACCESS_KEY
-          value: $AWS_SECRET_ACCESS_KEY
-        - name: PASSWORD
-          value: $R_STUDIO_PASSWORD
+          - name: ENVIRONMENT
+            value: dt
+          - name: BUCKET_NAME
+            value: gh-mdas-data-1
+          - name: AWS_ACCESS_KEY_ID
+            value: $AWS_ACCESS_KEY_ID
+          - name: AWS_SECRET_ACCESS_KEY
+            value: $AWS_SECRET_ACCESS_KEY
+          - name: PASSWORD
+            value: $R_STUDIO_PASSWORD
         resources:
           limits:
             cpu: 2000m
@@ -69,5 +69,5 @@ spec:
             cpu: 1000m
             memory: 2048Mi
         volumeMounts:
-          - name: 10kscraper-persistent-storage-1
+          - name: 10kscraper-persistent-storage
             mountPath: /rdata

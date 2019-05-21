@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 10kscraper-deploy-3
+  name: 10kscraper-deploy-1
   namespace: dataproc-dt
   labels:
-    app: 10kscraper3
+    app: 10kscraper1
     environment: dt
   annotations:
     flux.weave.works/automated: "true"
@@ -18,18 +18,18 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: 10kscraper3
+      app: 10kscraper1
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: 10kscraper3
+        app: 10kscraper1
     spec:
       volumes:
         - name: 10kscraper-persistent-storage
           persistentVolumeClaim:
-            claimName: 10kscraper-pv-claim
+            claimName: 10kscraper-pv-claim-2
       containers:
       - name: 10kscraper
         image: ghmdas/verse:latest
@@ -54,13 +54,13 @@ spec:
           - name: ENVIRONMENT
             value: dt
           - name: BUCKET_NAME
-            value: gh-mdas-data
+            value: gh-mdas-data-1
           - name: AWS_ACCESS_KEY_ID
-            value: AKIAVO5KNXW5KWOIBHF5
+            value: $AWS_ACCESS_KEY_ID
           - name: AWS_SECRET_ACCESS_KEY
-            value: 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
+            value: $AWS_SECRET_ACCESS_KEY
           - name: PASSWORD
-            value: password
+            value: $R_STUDIO_PASSWORD
         resources:
           limits:
             cpu: 2000m
