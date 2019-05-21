@@ -7,7 +7,7 @@ destFileName='data.csv'
 bucketName='gh-mdas-data-1'
 
 conn=boto.connect_s3(keyId,sKeyID)
-bucket=conn.get_bucket(bucketName
+bucket=conn.get_bucket(bucketName)
 
 k=Key(bucket,srcFileName)
 

@@ -25,9 +25,9 @@ print('Creating Data')
 
 data = []
 labelList=[]
-file_dir = cwd + "/Documents/GitHub/r-libraries/"
-#file_dir = cwd
-with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
+#file_dir = cwd + "/Documents/GitHub/r-libraries//"
+file_dir = cwd
+with open(file_dir+"/cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -66,7 +66,7 @@ industry=get_n_clusters(linked,100)
 for i in range(0,len(labelList)):
     output.append([labelList[i],sector[i],industry[i]])
 a=np.asarray(output)
-np.savetxt("sector_industry.csv",a,delimiter=",", fmt='%s')
+np.savetxt("/sector_industry.csv",a,delimiter=",", fmt='%s')
 
 
 #find centroid for each sector/industry
@@ -97,8 +97,8 @@ df_doc2vec['industry']=df_doc2vec['industry'].astype('category')
 df_sector_avg=df_doc2vec.groupby('sector').mean()
 df_industry_avg=df_doc2vec.groupby('industry').mean()
 
-df_sector_avg.to_csv(file_dir+'sector_avg.csv')
-df_industry_avg.to_csv(file_dir+'industry_avg.csv')
+df_sector_avg.to_csv(file_dir+'/sector_avg.csv')
+df_industry_avg.to_csv(file_dir+'/industry_avg.csv')
 
 
 
@@ -140,8 +140,8 @@ for i in range(1,df_doc_dist_industry.shape[1]):
     arr_colnames.append('Industry '+str(i))
 df_doc_dist_industry.columns = arr_colnames
 
-df_doc_dist_sector.to_csv(file_dir+'doc_cossim_sector.csv')
-df_doc_dist_industry.to_csv(file_dir+'doc_cossim_industry.csv')
+df_doc_dist_sector.to_csv(file_dir+'/doc_cossim_sector.csv',index=False)
+df_doc_dist_industry.to_csv(file_dir+'/doc_cossim_industry.csv',index=False)
 
 
 
