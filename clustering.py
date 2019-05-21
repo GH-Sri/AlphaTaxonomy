@@ -140,8 +140,8 @@ for i in range(1,df_doc_dist_industry.shape[1]):
     arr_colnames.append('Industry '+str(i))
 df_doc_dist_industry.columns = arr_colnames
 
-df_doc_dist_sector.to_csv(file_dir+'/doc_cossim_sector.csv')
-df_doc_dist_industry.to_csv(file_dir+'/doc_cossim_industry.csv')
+df_doc_dist_sector.to_csv(file_dir+'/doc_cossim_sector.csv',index=False)
+df_doc_dist_industry.to_csv(file_dir+'/doc_cossim_industry.csv',index=False)
 
 
 
