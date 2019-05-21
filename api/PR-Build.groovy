@@ -66,21 +66,6 @@ def output(String stage, String status) {
   }
 }
 
-//TODO: Kept this but don't think it's needed for the pipelines
-podTemplate (
-  label: 'master',
-  containers: [
-    //containerTemplate(name: 'gradle', image: 'essoegis/gradle:5.4-sdk8-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
-    containerTemplate(name: 'docker', image: 'docker:18.06.1-ce-dind', command: 'cat', ttyEnabled: true),
-    containerTemplate(name: 'kaniko', image: 'gcr.io/kaniko-project/executor:debug', command: '/busybox/cat', ttyEnabled: true),
-    containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true)
-  ],
-  volumes: [
-    //hostPathVolume(mountPath: '/home/jenkins', hostPath: '/tmp/jenkins/'),
-    hostPathVolume(mountPath: '/home/gradle/.gradle', hostPath: '/tmp/jenkins/.gradle'),
-    hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
-  ]
-)
 pipeline {
   agent none
   environment {
@@ -164,35 +149,6 @@ pipeline {
             }
           }
         }
-        /*TODO: Setup sonar
-        stage('SonarQube') {
-          agent {
-            docker {
-              image 'gradle:4.10.2-jdk8'
-              args '-w /home/gradle/project'
-            }
-          }
-          steps {
-            script {
-              try {
-                withCredentials([string(credentialsId: 'sonarqube-login-token', variable: 'TOKEN')]) {
-                  sh "gradle sonarqube -Dsonar.java.binaries=build/classes -Dsonar.projectVersion=${env.VERSION} -Dsonar.host.url=http://sonarqube.sevatecdemo.com -Dsonar.login=${TOKEN}"
-                }
-                output('Sonarqube', 'success')
-              }
-              catch(err) {
-                output('Sonarqube', 'failure')
-                throw err
-              }
-            }
-          }
-          post {
-            always {
-              echo 'Finished SonarQube'
-            }
-          }
-        }
-        */
       }
     }
     stage('Container Build') {
@@ -222,58 +178,5 @@ pipeline {
         }
       }
     }
-    /*TODO: Setup these integrations
-    stage('Container Analysis') {
-      agent { label 'master' }
-      steps {
-        parallel (
-          "Twistlock" : {
-            script {
-              twistlockScan ca: '',
-                cert: '',
-                compliancePolicy: 'critical',
-                dockerAddress: 'unix:///var/run/docker.sock',
-                gracePeriodDays: 0,
-                ignoreImageBuildTime: true,
-                image: "${env.DOCKER_IMAGE_NAME}:${env.VERSION}",
-                key: '',
-                logLevel: 'true',
-                policy: 'warn',
-                requirePackageUpdate: false,
-                timeout: 10
-
-              twistlockPublish ca: '',
-                cert: '',
-                dockerAddress: 'unix:///var/run/docker.sock',
-                ignoreImageBuildTime: true,
-                image: "${env.DOCKER_IMAGE_NAME}:${env.VERSION}",
-                key: '',
-                logLevel: 'true',
-                timeout: 10
-            }
-          },
-          "Tag + Push" : {
-            script {
-              try {
-                echo 'container tag + push'
-                withCredentials([usernamePassword(credentialsId: 'nexus-login', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-                  sh """
-                  docker login ${env.REGISTRY_URL} -u $USER -p $PASS
-                  docker tag ${env.DOCKER_IMAGE_NAME}:${env.VERSION} ${env.REGISTRY_URL}/${env.NEXUS_IMAGE_NAME}:${env.VERSION}
-                  docker push ${env.REGISTRY_URL}/${env.NEXUS_IMAGE_NAME}:${env.VERSION}
-                  """
-                }
-                output('Container Tag and Push', 'success')
-              }
-              catch(err) {
-                output('Container Tag and Push', 'failure')
-                throw err
-              }
-            }
-          }
-        )
-      }
-    }
-    */
   }
 }
