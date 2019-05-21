@@ -78,7 +78,7 @@ spec:
       //git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
       container(name: 'kaniko', shell: '/busybox/sh') {
           sh """#!/busybox/sh
-            /kaniko/executor -f `pwd`/docker/verse/Dockerfile --context `pwd` --destination docker.io/${containerImage}:${containerTag}
+            /kaniko/executor -f `pwd`/dockerfiles/r-verse/Dockerfile --context `pwd` --destination docker.io/${containerImage}:${containerTag}
           """
       }
     }
