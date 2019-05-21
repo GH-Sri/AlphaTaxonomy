@@ -1,0 +1,73 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 10kscraper-deploy-5
+  namespace: dataproc-dt
+  labels:
+    app: 10kscraper5
+    environment: dt
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.init: semver:~0.0
+    #flux.weave.works/tag.init: regexp:^3.*
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: 10kscraper5
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        app: 10kscraper5
+    spec:
+      volumes:
+        - name: 10kscraper-persistent-storage
+          persistentVolumeClaim:
+            claimName: 10kscraper-pv-claim-4
+      containers:
+      - name: 10kscraper
+        image: ghmdas/verse:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8787
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8787
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8787
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        env:
+          - name: ENVIRONMENT
+            value: dt
+          - name: BUCKET_NAME
+            value: gh-mdas-data-1
+          - name: AWS_ACCESS_KEY_ID
+            value: $AWS_ACCESS_KEY_ID
+          - name: AWS_SECRET_ACCESS_KEY
+            value: $AWS_SECRET_ACCESS_KEY
+          - name: PASSWORD
+            value: $R_STUDIO_PASSWORD
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4096Mi
+          requests:
+            cpu: 1000m
+            memory: 2048Mi
+        volumeMounts:
+          - name: 10kscraper-persistent-storage
+            mountPath: /rdata
