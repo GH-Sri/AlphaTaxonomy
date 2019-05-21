@@ -1,0 +1,43 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: 10kscraper-pv-claim-3
+  labels:
+    app: 10kscraper2
+  namespace: dataproc-dt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: 10kscraper-pv-claim-4
+  labels:
+    app: 10kscraper
+  namespace: dataproc-dt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: 10kscraper-pv-claim-5
+  labels:
+    app: 10kscraper3
+  namespace: dataproc-dt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  
