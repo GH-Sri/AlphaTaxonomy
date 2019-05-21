@@ -28,7 +28,7 @@ data = []
 labelList=[]
 #file_dir = cwd + "/Documents/GitHub/r-libraries/"
 file_dir = cwd
-with open(file_dir+"/cikVectorsExample1.csv", 'r') as csvfile:
+with open("cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -70,7 +70,7 @@ for i in range(0,len(labelList)):
     output.append([labelList[i][0],labelList[i][1],sector[i],industry[i]])
 a=np.asarray(output)
 df_output=pd.DataFrame(a,columns=['CIK','Year','Sector','Industry'])
-df_output.to_csv(file_dir+"/sector_industry.csv")
+df_output.to_csv("sector_industry.csv")
 
 
 #find centroid for each sector/industry
@@ -103,8 +103,8 @@ df_sector_avg=df_sector_avg.drop(columns="Year")
 df_industry_avg=df_industry_avg.drop(columns="Year")
 
 
-df_sector_avg.to_csv(file_dir+'sector_avg.csv')
-df_industry_avg.to_csv(file_dir+'industry_avg.csv')
+df_sector_avg.to_csv('sector_avg.csv')
+df_industry_avg.to_csv('industry_avg.csv')
 
 
 
@@ -165,8 +165,8 @@ df_doc_dist_industry['Industry']=df_doc_dist_industry['Industry'].astype('int32'
 df_doc_dist_industry['Industry']=df_doc_dist_industry['Industry'].astype('category')
 
 
-df_doc_dist_sector.to_csv(file_dir+'doc_cossim_sector.csv',index=False)
-df_doc_dist_industry.to_csv(file_dir+'doc_cossim_industry.csv',index=False)
+df_doc_dist_sector.to_csv('doc_cossim_sector.csv',index=False)
+df_doc_dist_industry.to_csv('doc_cossim_industry.csv',index=False)
 
 
 
