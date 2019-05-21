@@ -178,7 +178,7 @@ GetTenKs <- function(CIK_Index = 1:500){
   AllData <- rbind(AllData, AMEX)
   AllData <- unique(AllData)
 
-  ALLCIK <- read.csv("/rdata/src/data-api/companylist.csv", colClasses = "character")
+  ALLCIK <- read.csv("/rdata/src/data-api/db/companylist.csv", colClasses = "character")
   #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
   AllData <- merge(AllData, ALLCIK, all.x = T, by = "Symbol")
   AllData <- subset(AllData, !is.na(AllData$CIK))
@@ -223,7 +223,7 @@ CollectBDData <- function(){
   AllData <- unique(AllData)
 
   # load("/rdata/src/r-libraries/ALLCIK.RData")
-  ALLCIK <- read.csv("/rdata/src/data-api/companylist.csv", colClasses = "character")
+  ALLCIK <- read.csv("/rdata/src/data-api/db/companylist.csv", colClasses = "character")
   #read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/companylistFROMEUGENE.csv", colClasses = "character")
   AllData <- merge(AllData, ALLCIK, all.x = T, by = "Symbol")
   AllData <- subset(AllData, !is.na(AllData$CIK))
