@@ -85,8 +85,8 @@ pipeline {
   agent none
   environment {
     //TODO: fix these
-    REGISTRY_URL      = 'docker.sevatecdemo.com'
-    DOCKER_IMAGE_NAME = 'tics3-cndsvc'
+    REGISTRY_URL      = ''
+    DOCKER_IMAGE_NAME = 'alpine'
     NEXUS_IMAGE_NAME  = 'ghmdas/verse'
   }
   stages {
@@ -98,21 +98,15 @@ pipeline {
             env.ghprbSourceBranch = env.GIT_BRANCH
           }
           sshagent(['ghaccount-key']) {
-            sh """
-            git fetch
-            """
+            sh 'git fetch'
           }
-          sh """
-          git checkout ${env.ghprbSourceBranch}
-          """
+          sh "git checkout ${env.ghprbSourceBranch}"
           println "Keeping tag the same ${tag}"
-          tag = "tics3.condiments.${env.ghprbSourceBranch}"
+          tag = "data.${env.ghprbSourceBranch}"
           env.VERSION = "${tag.trim()}.${BUILD_NUMBER}"
         
           sshagent(['ghaccount-key']) {
-            sh """
-            git pull
-            """
+            sh 'git pull'
           }
         }
         echo "${env.VERSION}"
@@ -154,7 +148,7 @@ pipeline {
           steps {
             script {
               try {
-                sh "gradle check -PprojVersion=${env.VERSION}"
+                sh "gradle test -PprojVersion=${env.VERSION}"
                 output('Test', 'success')
               }
               catch(err) {
@@ -165,7 +159,8 @@ pipeline {
           }
           post {
             always {
-              junit "**/TEST-*.xml"
+              echo 'Success'
+              //junit "**/TEST-*.xml"
             }
           }
         }
@@ -205,11 +200,19 @@ pipeline {
       steps {
         script {
           try {    
-            sh """
-            ls
-            echo ${env.BUILD_ID}
-            docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/data-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml .
-            """
+            dir("${WORKSPACE}/newrelic") {
+              //TODO: Populate newrelic-token credential with token and check files into nexus
+              withCredentials([string(credentialsId: 'newrelic-token', variable 'TOKEN')]) {
+                ['jar', 'yml'].each { ext ->
+                  echo "Grabbing newrelic.${ext}"
+                  sh "touch newrelic.${ext}" //Adding dummy file as place holder
+                  // sh "http://nexushost/repository/newrelic.${ext}"
+                }
+                //sh "sed -i '/license.*/license: ${newrelic-token}/' ./newrelic.yml"
+              }
+            }
+            echo env.BUILD_ID
+            sh "docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/data-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml ."
             output('Container Build', 'success')
           }
           catch(err) {
