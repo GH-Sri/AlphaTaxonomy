@@ -1,0 +1,41 @@
+apiVersion: v1
+baseDomain: gh-mdas.com
+compute:
+- hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      zones:
+      - us-east-1a
+      - us-east-1b
+      - us-east-1c
+      type: m5.xlarge
+  replicas: 3
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      zones:
+      - us-east-1a
+      - us-east-1b
+      - us-east-1c
+      type: m5.xlarge
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: openshift-nonprod
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineCIDR: 10.0.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: us-east-1
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K2pjZWFuZmFnbGlvbmUxaXB3Y21kOWlubzNkZmxnNWZkd2lxYmF5NXM6SjRYNzdPWlowRDBONzlVVFJRRkFEWDhVSURPU1I4MjM0MlZJODBSM0xFN1dYM1FQUkYwSklMMkNVRlo5OVI1Sw==","email":"jceanfaglione@sevatec.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K2pjZWFuZmFnbGlvbmUxaXB3Y21kOWlubzNkZmxnNWZkd2lxYmF5NXM6SjRYNzdPWlowRDBONzlVVFJRRkFEWDhVSURPU1I4MjM0MlZJODBSM0xFN1dYM1FQUkYwSklMMkNVRlo5OVI1Sw==","email":"jceanfaglione@sevatec.com"},"registry.connect.redhat.com":{"auth":"NTEwMDcyMjB8dWhjLTFJUFdDbWQ5aU5vM0RGbGc1ZmRXaVFiQXk1czpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSm1ZbUU1T0dOaE1tVTRPR0UwWm1ZNU9UZ3lPVGMyTm1Zek1qYzJaVGRtTkNKOS5HWldwQkQ2ME44aXJVNU8tSnRzSXBOWUpRU0Q5akZLRmlzLWd5MjlQTHl6UFpfc2pnWUVWSzdaYTdjbTdlc21HMzlaNmZxYXBLb0xIaWpLMThXS1FDa1dScXplanFkMlhERjZkVHRqUzM5bE5DcElDakpRVTVOemxOVGhPaUYxYkplSEhEMjBES1ZzMmxzY1Nxci1Lc3QtbEFOZUZTUVFSNUZWemdiT0dtbEZzQS1UNUJ0Vkp6YnpmQm12SE16ZDZqOXk1M0NQV1hkZUJsWVJyUjlPOFJuTDR0N3VJSS1FZFVqSXJGMERzeEYzZjlZX3pBMlJVMUw3eFJCcFlhRkJiLXNKNGVleGs1WlN4NGtONUFabWJqSjdCUTc1c0ZJdnBGT3B1ZmZtLTBHQnM4azlxYmU4SGVDU05iMU52UTd5R01fck5kU190WE02c2xxd2ZLVmpkQ0g1aEtheGxVODB2THQtQUhrbTNEdzZkTlJVNGVZdVZGaDlLa2lkbUdocjFiYW92T0VtY0dLZjRMSk00RXliQW9Ma1BEWGxDWmJIQWVHdUQ0UFA5eWRpT2pzd0NQcV9CX0RTaFNpYVYyOFlMY212Q3NTcGk4VjZrMFI3djJ3MGZiYV9NaEktaFhyYWU3eFNiNE04NHh0Wlc1d3dQcEJFU25FTENOX2V6dzNaUEd5VDFnY18xLUJaWllBTlZ5NlFBLUVGZ0N0Y3NEd1FKRXd6UlFkZXRUVWRsdHlTUi1TbDdmWWpoT3lqZFN3Njc1eUljWmZNTFNsZDlZdlFjbEJjYUtJNzVDbm1HR2Jnc25sdXpUZnl5ZUtjXzBXWEt4QkMtRjI5U0RpdHE3cUE3b3ZyVURSaGtPcDVpYnRMakRqZ2FWSkhlQXl1LW0zaWd2S1NmbC1QTVZHVQ==","email":"jceanfaglione@sevatec.com"},"registry.redhat.io":{"auth":"NTEwMDcyMjB8dWhjLTFJUFdDbWQ5aU5vM0RGbGc1ZmRXaVFiQXk1czpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSm1ZbUU1T0dOaE1tVTRPR0UwWm1ZNU9UZ3lPVGMyTm1Zek1qYzJaVGRtTkNKOS5HWldwQkQ2ME44aXJVNU8tSnRzSXBOWUpRU0Q5akZLRmlzLWd5MjlQTHl6UFpfc2pnWUVWSzdaYTdjbTdlc21HMzlaNmZxYXBLb0xIaWpLMThXS1FDa1dScXplanFkMlhERjZkVHRqUzM5bE5DcElDakpRVTVOemxOVGhPaUYxYkplSEhEMjBES1ZzMmxzY1Nxci1Lc3QtbEFOZUZTUVFSNUZWemdiT0dtbEZzQS1UNUJ0Vkp6YnpmQm12SE16ZDZqOXk1M0NQV1hkZUJsWVJyUjlPOFJuTDR0N3VJSS1FZFVqSXJGMERzeEYzZjlZX3pBMlJVMUw3eFJCcFlhRkJiLXNKNGVleGs1WlN4NGtONUFabWJqSjdCUTc1c0ZJdnBGT3B1ZmZtLTBHQnM4azlxYmU4SGVDU05iMU52UTd5R01fck5kU190WE02c2xxd2ZLVmpkQ0g1aEtheGxVODB2THQtQUhrbTNEdzZkTlJVNGVZdVZGaDlLa2lkbUdocjFiYW92T0VtY0dLZjRMSk00RXliQW9Ma1BEWGxDWmJIQWVHdUQ0UFA5eWRpT2pzd0NQcV9CX0RTaFNpYVYyOFlMY212Q3NTcGk4VjZrMFI3djJ3MGZiYV9NaEktaFhyYWU3eFNiNE04NHh0Wlc1d3dQcEJFU25FTENOX2V6dzNaUEd5VDFnY18xLUJaWllBTlZ5NlFBLUVGZ0N0Y3NEd1FKRXd6UlFkZXRUVWRsdHlTUi1TbDdmWWpoT3lqZFN3Njc1eUljWmZNTFNsZDlZdlFjbEJjYUtJNzVDbm1HR2Jnc25sdXpUZnl5ZUtjXzBXWEt4QkMtRjI5U0RpdHE3cUE3b3ZyVURSaGtPcDVpYnRMakRqZ2FWSkhlQXl1LW0zaWd2S1NmbC1QTVZHVQ==","email":"jceanfaglione@sevatec.com"}}}'
+sshKey: |
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjf0O6tn2a21uP5mFMn41fP2k4LEZ1PXZ4ZKZtVzC1altyq5+SZcD5vTY9bLKiVDYjTtrBHOmkILVCQdNUjvf3ZPxi2LLXaVM5mqEFkwsCQxvJDss2XmLeyzFmUHc78n+stJbn9FEEcPfJJcZyhsxAR3K1PikEwYLg0vIK2T24hBp78FyRzDlIrXlX1ovgUz3fHtACxwl/H/m4CpNv1rvi5U4nq1For6W4mlcGH1hz2FNbAjolqw7+4BXpxnlRyyy8eoud4IDu8pCrZsHp/2ychhHO0RCyohqJhLrTiA9AiLBegylmvIml6/ziv4KpJwTQ+8WJKnglTw2dDMiZhFgj jonc@jonc-Precision-5530
