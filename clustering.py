@@ -11,7 +11,7 @@ The following script reads the output of doc2vec and creates clusters
 
 import numpy as np
 import pandas as pd
-from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, maxdists,ward
+from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, maxdists,ward, average
 from scipy.spatial.distance import pdist
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
@@ -26,9 +26,9 @@ print('Creating Data')
 ## input data format: CIK(str), date (str: 'YYYY-MM-DD'), V1,...,V200 (float)
 data = []
 labelList=[]
-file_dir = cwd + "/Documents/GitHub/r-libraries/"
-#file_dir = cwd
-with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
+#file_dir = cwd + "/Documents/GitHub/r-libraries/"
+file_dir = cwd
+with open(file_dir+"/cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -38,6 +38,8 @@ with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
 print('Finding distances between nodes')
 
 dist = pdist(data,metric='cosine')
+for i in range(0,len(dist)):
+    dist[i]=dist[i]**2
 linked = ward(dist)
 
 #plt.figure(figsize=(60, 100)) 
