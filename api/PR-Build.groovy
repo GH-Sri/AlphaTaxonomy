@@ -202,7 +202,7 @@ pipeline {
           try {    
             dir("${WORKSPACE}/newrelic") {
               //TODO: Populate newrelic-token credential with token and check files into nexus
-              withCredentials([string(credentialsId: 'newrelic-token', variable 'TOKEN')]) {
+              withCredentials([string(credentialsId: 'newrelic-token', variable: 'TOKEN')]) {
                 ['jar', 'yml'].each { ext ->
                   echo "Grabbing newrelic.${ext}"
                   sh "touch newrelic.${ext}" //Adding dummy file as place holder
