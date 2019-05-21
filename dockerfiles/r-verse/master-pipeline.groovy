@@ -64,11 +64,13 @@ spec:
         gitUrl = scmInfo.GIT_URL
 
         container('docker') {
+            currentBuild.displayName = containerTag
             sh """
                 echo "BUILD_URL=${buildUrl}"
                 echo "GIT_COMMIT=${gitCommit}"
                 echo "SHORT_GIT_COMMIT=${shortGitCommit}"
                 docker -v
+               
                 
             """
         }
