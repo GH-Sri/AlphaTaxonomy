@@ -163,8 +163,8 @@ df_doc_dist_industry['Industry']=df_doc_dist_industry['Industry'].astype('int32'
 df_doc_dist_industry['Industry']=df_doc_dist_industry['Industry'].astype('category')
 
 
-df_doc_dist_sector.to_csv(file_dir+'doc_cossim_sector.csv')
-df_doc_dist_industry.to_csv(file_dir+'doc_cossim_industry.csv')
+df_doc_dist_sector.to_csv(file_dir+'doc_cossim_sector.csv',index=False)
+df_doc_dist_industry.to_csv(file_dir+'doc_cossim_industry.csv',index=False)
 
 
 
