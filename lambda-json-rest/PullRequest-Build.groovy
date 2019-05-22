@@ -77,7 +77,8 @@ podTemplate(
     label: worker_label,
     containers: [
             containerTemplate(name: 'python', image: 'python/3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
-            containerTemplate(name: 'awscli', image: 'ghmdas/awscli', command: 'cat', ttyEnabled: true)
+            containerTemplate(name: 'awscli', image: 'ghmdas/awscli', command: 'cat', ttyEnabled: true),
+            containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
     volumes: [
             
@@ -147,6 +148,18 @@ podTemplate(
         }
       }
 
+
+      stage('Quality Check'){
+        container('sonar'){
+            withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                sh """
+                sonar-scanner -Dsonar.login=$SONAR_TOKEN
+                """
+            }
+        }
+      }
+
+
       stage('Push'){
         container('awscli'){
             sh "aws s3 cp ${commitID()}.zip s3://${bucket}/lambda-api-endpoint"
@@ -154,7 +167,7 @@ podTemplate(
       }
 
       stage('Deploy'){
-        container('python'){
+        container('awscli'){
             sh "aws lambda update-function-code --function-name ${functionName} \
             --s3-bucket ${bucket} \
             --s3-key ${commitID()}.zip \
