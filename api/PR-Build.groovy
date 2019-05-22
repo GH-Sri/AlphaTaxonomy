@@ -66,39 +66,52 @@ def output(String stage, String status) {
   }
 }
 
-pipeline {
-  agent none
-  environment {
-    //TODO: fix these
-    REGISTRY_URL      = ''
-    DOCKER_IMAGE_NAME = 'ghmdas'
-    NEXUS_IMAGE_NAME  = 'ghmdas/verse'
-  }
-  stages {
-    stage('Pre-Build') {
-      agent none
-      steps {
-        script {
-          tag = "data.${env.ghprbSourceBranch}"
-          env.VERSION = "${tag.trim()}.${BUILD_NUMBER}"
-          echo "${env.VERSION}"
-        }
+
+
+podTemplate(
+    label: worker_label,
+    containers: [
+            containerTemplate(name: 'gradle', image: 'essoegis/gradle:5.4-sdk8-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
+            containerTemplate(name: 'docker', image: 'docker:18.06-dind', command: 'cat', ttyEnabled: true),
+            containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true)
+    ],
+    volumes: [
+            //hostPathVolume(mountPath: '/home/jenkins', hostPath: '/tmp/jenkins/'),
+            hostPathVolume(mountPath: '/home/gradle/.gradle', hostPath: '/tmp/jenkins/.gradle'),
+            hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
+    ])
+{
+    node(worker_label) {
+
+      stage('Prepare') {
+          scmInfo = checkout scm
+          echo "scm : ${scmInfo}"
+          gitCommit = scmInfo.GIT_COMMIT
+          shortGitCommit = gitCommit[0..10]
+          previousGitCommit = scmInfo.GIT_PREVIOUS_COMMIT
+          buildUrl = env.BUILD_URL
+          containerTag = "ci-${shortGitCommit}"
+          gitUrl = scmInfo.GIT_URL
+
+          container('gradle') {
+              sh """
+                  echo "BUILD_URL=${buildUrl}"
+                  echo "GIT_COMMIT=${gitCommit}"
+                  echo "SHORT_GIT_COMMIT=${shortGitCommit}"
+                  java -version
+                  gradle -v
+              """
+          }
+
       }
-    }
-    stage('Build') {
-      agent {
-        docker {
-          image 'gradle:4.10.2-jdk8'
-          args '-w /home/gradle/project'
-        }
-      }
-      steps {
-        script {
+
+      stage('Compile'){
+        container('gradle'){
           try { 
             sh """
             java -version
             gradle -v
-            gradle clean assemble -PprojVersion=${env.VERSION}
+            gradle clean assemble -PprojVersion=${shortGitCommit}
             """
             output('Build', 'success')
           }
@@ -108,20 +121,13 @@ pipeline {
           } 
         }
       }
-    }
-    stage('Quality Gate') {
-      parallel {
-        stage('Unit Tests') {
-          agent {
-            docker {
-              image 'gradle:4.10.2-jdk8'
-              args '-w /home/gradle/project'
-            }
-          }
+
+      stage('Unit Tests') {
+        container('gradle'){
           steps {
             script {
               try {
-                sh "gradle test -PprojVersion=${env.VERSION}"
+                sh "gradle test -PprojVersion=${shortGitCommit}"
                 output('Test', 'success')
               }
               catch(err) {
@@ -138,33 +144,8 @@ pipeline {
           }
         }
       }
+
+       
+
     }
-    stage('Container Build') {
-      agent { label 'master' }
-      steps {
-        script {
-          try {    
-            dir("${WORKSPACE}/newrelic") {
-              //TODO: Populate newrelic-token credential with token and check files into nexus
-              withCredentials([string(credentialsId: 'newrelic-token', variable: 'TOKEN')]) {
-                ['jar', 'yml'].each { ext ->
-                  echo "Grabbing newrelic.${ext}"
-                  sh "touch newrelic.${ext}" //Adding dummy file as place holder
-                  // sh "http://nexushost/repository/newrelic.${ext}"
-                }
-                //sh "sed -i '/license.*/license: ${newrelic-token}/' ./newrelic.yml"
-              }
-            }
-            echo env.BUILD_ID
-            sh "docker build -t ${env.DOCKER_IMAGE_NAME}:${env.VERSION} --build-arg JAR_FILE=build/libs/data-${env.VERSION}.jar --build-arg=NR_JAR=newrelic/newrelic.jar --build-arg=NR_YML=newrelic/newrelic.yml ."
-            output('Container Build', 'success')
-          }
-          catch(err) {
-            output('Container Build', 'failure')
-            throw err
-          }
-        }
-      }
-    }
-  }
 }
