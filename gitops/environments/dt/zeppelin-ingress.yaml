@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: zeppelin
+    environment: dt
+  name: zeppelin-ingress
+  namespace: zeppelin-dt
+spec:
+  rules:
+  - host: zeppelin.apps.openshift-nonprod.gh-mdas.com
+    http:
+     paths:
+     - path: /
+       backend:
+        serviceName: zeppelin-svc
+        servicePort: 8080
