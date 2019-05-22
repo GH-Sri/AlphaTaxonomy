@@ -26,9 +26,9 @@ print('Creating Data')
 ## input data format: CIK(str), date (str: 'YYYY-MM-DD'), V1,...,V200 (float)
 data = []
 labelList=[]
-#file_dir = cwd + "/Documents/GitHub/r-libraries/"
-file_dir = cwd
-with open("cikVectorsExample1.csv", 'r') as csvfile:
+file_dir = cwd + "/Documents/GitHub/r-libraries/"
+#file_dir = ""
+with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -38,6 +38,7 @@ with open("cikVectorsExample1.csv", 'r') as csvfile:
 print('Finding distances between nodes')
 
 dist = pdist(data,metric='cosine')
+sim = 1-dist
 for i in range(0,len(dist)):
     dist[i]=dist[i]**2
 linked = ward(dist)
@@ -71,7 +72,6 @@ for i in range(0,len(labelList)):
 a=np.asarray(output)
 df_output=pd.DataFrame(a,columns=['CIK','Year','Sector','Industry'])
 df_output.to_csv("sector_industry.csv")
-
 
 #find centroid for each sector/industry
 print('Finding Cluster Centroids')
@@ -113,7 +113,7 @@ df_industry_avg.to_csv('industry_avg.csv')
 arr_doc_dist=[]
 arr_val=[]
 for index, row in df_doc2vec.iterrows():
-    arr_val.append(row.values[1:201])
+    arr_val.append(row.values[2:df_sector_avg.shape[1]+2])
 for i in range(0,len(arr_val)):
     a1=[]
     a1.append(labelList[i][0])
@@ -132,7 +132,7 @@ df_doc_dist_sector.columns = arr_colnames
 arr_doc_dist=[]
 arr_val=[]
 for index, row in df_doc2vec.iterrows():
-    arr_val.append(row.values[1:201])
+    arr_val.append(row.values[2:df_industry_avg.shape[1]+2])
 for i in range(0,len(arr_val)):
     a1=[]
     a1.append(labelList[i][0])
