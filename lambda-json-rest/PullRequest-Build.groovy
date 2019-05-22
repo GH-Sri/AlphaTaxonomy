@@ -147,6 +147,7 @@ podTemplate(
         container('sonar'){
             withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
                 sh """
+                cd lambda-json-rest
                 sonar-scanner -Dsonar.login=$SONAR_TOKEN
                 """
             }
