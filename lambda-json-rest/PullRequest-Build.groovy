@@ -148,16 +148,22 @@ podTemplate(
             withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
                 sh """
                 cd lambda-json-rest
-                sonar-scanner -Dsonar.login=$SONAR_TOKEN
+                sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.projectVersion=${shortGitCommit}
                 """
             }
         }
       }
 
 
-      stage('Push'){
+      stage('Package + Push'){
         container('awscli'){
-            sh "aws s3 cp ${commitID()}.zip s3://${bucket}/lambda-api-endpoint"
+            sh """
+            ls
+
+            zip ${shortGitCommit}.zip lambda-json-rest/
+            aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
+            
+            """
         }
       }
 
