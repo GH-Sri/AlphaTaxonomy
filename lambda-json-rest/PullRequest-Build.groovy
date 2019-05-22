@@ -138,13 +138,7 @@ podTemplate(
                 throw err
                 }
             }
-          
-            post {
-                always {
-                echo 'Always'
-                
-                }
-            }
+         
         }
       }
 
