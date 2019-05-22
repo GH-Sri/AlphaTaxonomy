@@ -103,8 +103,8 @@ df_sector_avg=df_sector_avg.drop(columns="Year")
 df_industry_avg=df_industry_avg.drop(columns="Year")
 
 
-df_sector_avg.to_csv('sector_avg.csv', index=False)
-df_industry_avg.to_csv('industry_avg.csv', index=False)
+df_sector_avg.to_csv('sector_avg.csv')
+df_industry_avg.to_csv('industry_avg.csv')
 
 
 
