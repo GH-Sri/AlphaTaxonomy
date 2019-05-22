@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div id="navbar" class="collapse navbar-collapse">
-      <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Angular Taxonomy</a>
+      <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
       <ul class="nav navbar-nav">
         <li>
           <a [routerLink]="['/company', 'Ericsson']">Company/Ericsson</a>
@@ -18,7 +18,7 @@
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">
     <div class="container-fluid">
       <div class="hidden-xs" style="float:right;">
-        <button onclick="goToTop()" id="toTopButton" title="Back to Top">Back to Top</button>
+        <button p-button (click)="goToTop()" id="toTopButton" title="Back to Top">Back to Top</button>
       </div>
     </div>
   </div>
