@@ -101,7 +101,7 @@ podTemplate(
                   echo "BUILD_URL=${buildUrl}"
                   echo "GIT_COMMIT=${gitCommit}"
                   echo "SHORT_GIT_COMMIT=${shortGitCommit}"
-                  python -version
+                  python --version
                  
               """
           }
