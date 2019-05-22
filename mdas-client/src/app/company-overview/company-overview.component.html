@@ -2,12 +2,12 @@
 	<div class="p-grid">
     	<div class="p-col-12 p-md-6 p-lg-3">
     		<p-card header="NASDAQ's Classification">
-    			<div>{{companyData.nasdaqSectorName}}</div>
+    			<div>{{companyData.legacysector == null? "" : companyData.legacysector}}</div>
     		</p-card>
 		</div>
     	<div class="p-col-12 p-md-6 p-lg-3">
     		<p-card header="Most Recent Earnings">
-    			<div>{{companyData.performance}}</div>
+    			<div>{{companyData.perf10yr == null? "" : companyData.perf10yr}}</div>
     		</p-card>
 		</div>
     	<div class="p-col-12 p-md-6 p-lg-3">
@@ -17,12 +17,12 @@
     	</div>
     	<div class="p-col-12 p-md-6 p-lg-3">
     		<p-card header="Our Tool's Classification">
-    			<div>{{companyData.sectorName}}</div>
+    			<div>{{companyData.sector == null? "" : companyData.sector}}</div>
     		</p-card>
     	</div>
     	<div class="p-col-12 p-md-6 p-lg-3">
     		<p-card header="Fiscal Year End">
-    			<div>{{companyData.year}}</div>
+    			<div>{{companyData.year == null? "2019" : companyData.year}}</div>
     		</p-card>
     	</div>
     	<div class="p-col-12 p-md-6 p-lg-3">

@@ -1,4 +1,4 @@
 export interface IndustryWeight {
-    industryName;
+    industry;
     weight;
 }

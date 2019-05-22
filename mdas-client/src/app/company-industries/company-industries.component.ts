@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IndustryWeightService } from './industry-weight.service';
 import { IndustryWeight } from './industry-weight';
 
 @Component({
-  selector: 'app-company-industries',
+  selector: 'company-industries',
   templateUrl: './company-industries.component.html',
   styleUrls: ['./company-industries.component.css']
 })
 export class CompanyIndustriesComponent implements OnInit {
 
-    @Input() companyName: string;
+  @Input() companyName: string;
 
   industryWeights: IndustryWeight[];
   
@@ -18,13 +18,13 @@ export class CompanyIndustriesComponent implements OnInit {
   constructor(private weightService: IndustryWeightService) { }
 
   ngOnInit() {
-      this.industryWeights = weightService.getData(this.companyName);
+      this.industryWeights = this.weightService.getData(this.companyName);
       
       let chartLabels = [];
       let chartWeights = [];
       for(let industryWeight of this.industryWeights) {
-          chartLabels.push(weight.industryName);
-          chartWeights.push(weight.weight);
+          chartLabels.push(industryWeight.industry);
+          chartWeights.push(industryWeight.weight);
       }                
       
       this.chartData = {

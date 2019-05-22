@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CompanyCompetitor } from './company-competitor';
+import { CompetitorService } from './competitor.service';
+import { SelectItem } from 'primeng/api';
 
 @Component({
-    selector: 'app-company-competitors',
+    selector: 'company-competitors',
     templateUrl: './company-competitors.component.html',
     styleUrls: ['./company-competitors.component.css']
 })
 export class CompanyCompetitorsComponent implements OnInit {
+
+    @Input() companyName: string;
 
     competitors: CompanyCompetitor[];
 
@@ -18,7 +23,7 @@ export class CompanyCompetitorsComponent implements OnInit {
     constructor(private competitorService: CompetitorService) { }
 
     ngOnInit() {
-        this.competitors = competitorService.getData(this.companyName);
+        this.competitors = this.competitorService.getData(this.companyName);
         
         this.sortOptions= [
             {label: 'Competitor Rank', value: 'closeness'},
