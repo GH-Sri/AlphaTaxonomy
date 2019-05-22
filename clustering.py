@@ -26,8 +26,8 @@ print('Creating Data')
 ## input data format: CIK(str), date (str: 'YYYY-MM-DD'), V1,...,V200 (float)
 data = []
 labelList=[]
-file_dir = cwd + "/Documents/GitHub/r-libraries/"
-#file_dir = ""
+#file_dir = cwd + "/Documents/GitHub/r-libraries/"
+file_dir = ""
 with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
