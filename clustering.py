@@ -71,7 +71,7 @@ for i in range(0,len(labelList)):
     output.append([labelList[i][0],labelList[i][1],sector[i],industry[i]])
 a=np.asarray(output)
 df_output=pd.DataFrame(a,columns=['CIK','Year','Sector','Industry'])
-df_output.to_csv("sector_industry.csv")
+df_output.to_csv("sector_industry.csv",index=False)
 
 #find centroid for each sector/industry
 print('Finding Cluster Centroids')
@@ -103,8 +103,8 @@ df_sector_avg=df_sector_avg.drop(columns="Year")
 df_industry_avg=df_industry_avg.drop(columns="Year")
 
 
-df_sector_avg.to_csv('sector_avg.csv')
-df_industry_avg.to_csv('industry_avg.csv')
+df_sector_avg.to_csv('sector_avg.csv', index=False)
+df_industry_avg.to_csv('industry_avg.csv', index=False)
 
 
 
