@@ -2,6 +2,7 @@ import sys
 import logging
 import rds_config
 import psycopg2
+from urllib.parse import unquote
 from psycopg2.extras import RealDictCursor
 import json
 
@@ -21,23 +22,26 @@ try:
 except:
     logger.error("ERROR: Unexpected error: Could not connect to PostgreSQL instance.")
     sys.exit()
-
 logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
+
+# SQL to get what this function is responsible for returning
+template = '''
+SELECT *
+FROM Company
+WHERE Name = '{}'
+'''
 
 # executes upon API event
 def handler(event, context):
-#    company = event['Company']
-#    with conn.cursor(cursor_factory=RealDictCursor) as cur:
-#        cur.execute("SELECT * FROM Company ORDER BY RANDOM() LIMIT 10")
-#        conn.commit()
-#        return {
-#            'statusCode': 200,
-#            'headers': { 'Content-Type': 'application/json' },
-#            'body': json.dumps(cur.fetchall(), indent=2)
-#        }
-
-    return {
-    'statusCode': 200,
-    'headers': { 'Content-Type': 'application/json' },
-    'body': json.dumps(event['pathParameters'], indent=2)
-}
+    company = unquote(event['path'].split('/')[2])
+    logger.info("Getting company details for " + company)
+    with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        query=template.format(company)
+        logger.info("About to execute " + query)
+        cur.execute(query)
+        conn.commit()
+        return {
+            'statusCode': 200,
+            'headers': { 'Content-Type': 'application/json' },
+            'body': json.dumps(cur.fetchall(), indent=2)
+        }
