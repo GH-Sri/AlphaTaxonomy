@@ -15,8 +15,16 @@ from collections import namedtuple
 import random
 import time
 import re
+import nltk
+from nltk import pos_tag
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
+set(stopwords.words('english'))
 
+nltk.download('averaged_perceptron_tagger')
+nltk.download('stopwords')
+nltk.download('punkt')
 #   Read in docs
 df = pd.read_csv('data.csv')
 
@@ -25,27 +33,30 @@ df.dropna(subset=['text'],inplace=True)
 
 #   Only use the text for analysis
 allDocs = df['text']
-
 #   Convert text to lowercase and strip punctuation/symbols from words
 def normalize_text(text):
-    normText = text.lower()
+    # subset just to item 1
+    if text.find('Item 1A')!=-1:
+        text=text[:text.find('Item 1A')]        
     #   Replace breaks with spaces
-    normText = normText.replace('<br />', ' ')
+    normText = text.replace('<br />', ' ')
     #   Remove non-alphabet characters (i.e. numbers)
     normText = re.sub("[^a-zA-Z]+", " ", normText)
-    #   Remove punctuation
-    punctuations = "?:!.,;#@"
-    #   Strip blank spaces
-    split = [item for item in re.split("(\W+)", normText) if len(item) > 0]
-    strip = [item.strip(' ') for item in split]
-    punc = [item for item in strip if item not in punctuations]
+    # get rid of stop words
+    stop_words = set(stopwords.words('english'))
+    word_tokens = word_tokenize(normText)
+    word_tokens=[w for w in word_tokens if not w in stop_words]
+    word_tokens_tagged=pos_tag(word_tokens)
+    word_tokens_possed=[word for word,pos in word_tokens_tagged if not pos in ['NNP','RB','RBR','RBS','IN','DT']]
     #   Join split document back to one continuous doc
-    return(' '.join(punc))
+    return(' '.join(word_tokens_possed).lower())
+
+
 
 #   Create a list of all of the documents normalized
 
 print('Creating normalized text corpus')
-
+# end testing
 finDocs = []
 for doc in allDocs:
     finDocs.append(normalize_text(doc))
@@ -116,6 +127,7 @@ counter = 0
 for i in right_vec:
     d['col{}'.format(counter)] = i
     counter += 1
+    
 
 #   Write dictionary to dataframe
 dfComp = pd.DataFrame.from_dict(d)
