@@ -9,43 +9,38 @@ export class TreemapComponent implements OnInit {
 
   constructor() { }
 
-   title = 'Alpha Taxonomy Navigation Map';
+   title = 'Classification Map';
    type='TreeMap';
    data = [
-      ["Global",null,0,0],
-      ["America","Global",0,0],
-      ["Europe","Global",0,0],
-      ["Asia","Global",0,0],
-      ["Australia","Global",0,0],
-      ["Africa","Global",0,0],
+      ["Sectors",null,0,0],
+      ["Sector 1","Sectors",0,0],
+      ["Sector 2","Sectors",0,0],
+      ["Sector 3","Sectors",0,0],
 
-      ["USA","America",52,31],
-      ["Mexico","America",24,12],
-      ["Canada","America",16,-23],
+      ["Industry 1","Sector 1",52,31],
+      ["Industry 2","Sector 1",24,12],
+      ["Industry 3","Sector 1",16,-23],
 
-      ["France","Europe",42,-11],
-      ["Germany","Europe",31,-2],
-      ["Sweden","Europe",22,-13],
+      ["Industry 4","Sector 2",42,-11],
+      ["Industry 5","Sector 2",31,-2],
+      ["Industry 6","Sector 2",22,-13],
 
-      ["China","Asia",36,4],
-      ["Japan","Asia",20,-12],
-      ["India","Asia",40,63],
-
-      ["Egypt","Africa",21,0],
-      ["Congo","Africa",10,12],
-      ["Zaire","Africa",8,10],
+      ["Industry 7","Sector 3",36,4],
+      ["Industry 8","Sector 3",20,-12],
+      ["Industry 9","Sector 3",40,63],
           
    ];
    columnNames = ["Location", "Parent","Market trade volume (size)","Market increase/decrease (color)"];
    options = { 
-      minColor:"#ff7777",
-      midColor:'#ffff77',
-      maxColor:'#77ff77',
-      headerHeight:15,
-      showScale:true
+      minColor: '#f00',
+      midColor: '#ddd',
+      maxColor: '#0d0',
+      headerHeight: 15,
+      fontColor: 'black',
+      showScale: true
    };
-   width = 550;
-   height = 400;
+   width = 950;
+   height = 600;
 
   ngOnInit() {
   }
