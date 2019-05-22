@@ -23,7 +23,8 @@ site_decisions <- function(site_dataframe){
     temp. <- clean_site(temp.)
     temp. <- temp.[!(is.na(temp.))]
     temp. <- gsub(" .*", "", temp.)
-    temp. <- gsub("Â","",temp.,ignore.case = TRUE)
+    
+    temp. <- gsub("Ã‚","",temp.,ignore.case = TRUE)
     temp. <- temp.[nchar(temp.) > 3] 
     if(length(temp.) > 1){  # take the first one, now that NAs and blanks are taken out. 
       temp. <- temp.[1]
