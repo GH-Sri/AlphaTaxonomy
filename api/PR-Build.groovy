@@ -1,4 +1,4 @@
-:@Library('shared-libs')
+@Library('shared-libs')
 import groovy.transform.Field;
 import sevatec.GithubIssue;
 import sevatec.GithubStatus;
