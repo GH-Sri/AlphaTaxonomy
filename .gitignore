@@ -1,2 +1,5 @@
 openshift/openshift-installer
+openshift-2/auth/
+openshift-2/openshift-install
+openshift-2/tls/
 terraform/.terraform/
