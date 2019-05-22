@@ -30,19 +30,25 @@ export class TreemapComponent implements OnInit {
       ["Industry 9","Sector 3",40,63],
           
    ];
-   columnNames = ["Location", "Parent","Market trade volume (size)","Market increase/decrease (color)"];
-   options = { 
-      minColor: '#f00',
-      midColor: '#ddd',
-      maxColor: '#0d0',
+   columnNames = ["Sector", "Industry","Market trade volume (size)","Market increase/decrease (color)"];
+   options = {
+      highlightOnMouseOver: true,
+      maxDepth: 1,
+      maxPostDepth: 2,
+      minHighlightColor: '#8c6bb1',
+      midHighlightColor: '#9ebcda',
+      maxHighlightColor: '#edf8fb',
+      minColor: '#009688',
+      midColor: '#f7f7f7',
+      maxColor: '#ee8100',
       headerHeight: 15,
-      fontColor: 'black',
-      showScale: true
+      showScale: true,
+      height: 500,
+      useWeightedAverageForAggregation: true
    };
    width = 950;
    height = 600;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

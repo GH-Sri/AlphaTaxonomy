@@ -23,6 +23,8 @@ import { HomeComponent } from './home/home.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
 import { TreemapComponent } from './treemap/treemap.component';
+import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { TreemapComponent } from './treemap/treemap.component';
     CompanyComponent,
     CompanyPerformanceComponent,
     TreemapComponent,
+    CompanyDatatableComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { TreemapComponent } from './treemap/treemap.component';
     DataViewModule,
     DropdownModule,
     PanelModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    DialogModule
   ],
   providers: [CompetitorService, CompanyOverviewService, WeightService],
   bootstrap: [AppComponent]
