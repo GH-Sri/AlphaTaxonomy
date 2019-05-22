@@ -22,7 +22,7 @@ from nltk.tokenize import word_tokenize
 
 #   Read in docs
 df = pd.read_csv('data.csv')
-df = df.head(n=200)
+#df = df.head(n=200)
 #   Drop NA's 
 df.dropna(subset=['text'],inplace=True)
 
