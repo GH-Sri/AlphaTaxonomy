@@ -19,25 +19,25 @@ export class CompetitorService {
                    marketCap: '$500',
                    tenYrPerformance: '',
                    tenYrPerformanceVsSector: '',
-                   closenessToCompany: 1};
+                   closeness: 1};
     let competitor2 = {name: 'B',
         ticker: 'B',
         marketCap: '$400',
         tenYrPerformance: '',
         tenYrPerformanceVsSector: '',
-        closenessToCompany: 2};
+        closeness: 2};
     let competitor3 = {name: 'C',
         ticker: 'C',
         marketCap: '$200',
         tenYrPerformance: '',
         tenYrPerformanceVsSector: '',
-        closenessToCompany: 3};
+        closeness: 3};
     let competitor4 = {name: 'D',
         ticker: 'D',
         marketCap: '$100',
         tenYrPerformance: '',
         tenYrPerformanceVsSector: '',
-        closenessToCompany: 4};
+        closeness: 4};
     array.push(competitor1);
     array.push(competitor2);
     array.push(competitor3);

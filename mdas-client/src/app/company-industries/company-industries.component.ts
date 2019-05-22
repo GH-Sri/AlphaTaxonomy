@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IndustryWeightService } from './industry-weight.service';
+import { WeightService } from './weight.service';
 import { IndustryWeight } from './industry-weight';
 
 @Component({
@@ -13,25 +13,53 @@ export class CompanyIndustriesComponent implements OnInit {
 
   industryWeights: IndustryWeight[];
   
-  chartData: any;
+  industryChartData: any;
+  industrySectorData: any;
 
-  constructor(private weightService: IndustryWeightService) { }
+  constructor(private weightService: WeightService) { }
 
   ngOnInit() {
-      this.industryWeights = this.weightService.getData(this.companyName);
+      this.industryWeights = this.weightService.getIndustryData(this.companyName);
       
-      let chartLabels = [];
-      let chartWeights = [];
+      let industryChartLabels = [];
+      let industryChartWeights = [];
       for(let industryWeight of this.industryWeights) {
-          chartLabels.push(industryWeight.industry);
-          chartWeights.push(industryWeight.weight);
+          industryChartLabels.push(industryWeight.name);
+          industryChartWeights.push(industryWeight.weight);
       }                
       
-      this.chartData = {
-              labels: chartLabels,
+      this.industryChartData = {
+              labels: industryChartLabels,
               datasets: [
                   {
-                      data: chartWeights,
+                      data: industryChartWeights,
+                      backgroundColor: [
+                          "#FF6384",
+                          "#36A2EB",
+                          "#FFCE56"
+                      ],
+                      hoverBackgroundColor: [
+                          "#FF6384",
+                          "#36A2EB",
+                          "#FFCE56"
+                      ]
+                  }]    
+              };
+      
+      this.sectorWeights = this.weightService.getSectorData(this.companyName);
+      
+      let sectorChartLabels = [];
+      let sectorChartWeights = [];
+      for(let sectorWeight of this.sectorWeights) {
+          sectorChartLabels.push(sectorWeight.name);
+          sectorChartWeights.push(sectorWeight.weight);
+      }                
+      
+      this.sectorChartData = {
+              labels: sectorChartLabels,
+              datasets: [
+                  {
+                      data: sectorChartWeights,
                       backgroundColor: [
                           "#FF6384",
                           "#36A2EB",

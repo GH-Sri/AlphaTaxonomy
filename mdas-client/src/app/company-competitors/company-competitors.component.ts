@@ -20,7 +20,9 @@ export class CompanyCompetitorsComponent implements OnInit {
     sortField: string;
     sortOrder: number; //ascending (1) or descending (-1)
 
-    constructor(private competitorService: CompetitorService) { }
+    constructor(private competitorService: CompetitorService) { 
+        this.competitors = [];
+    }
 
     ngOnInit() {
         this.competitors = this.competitorService.getData(this.companyName);

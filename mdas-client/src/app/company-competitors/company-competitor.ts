@@ -4,5 +4,5 @@ export interface CompanyCompetitor {
     marketCap;
     tenYrPerformance;
     tenYrPerformanceVsSector;
-    closenessToCompany;
+    closeness;
 }

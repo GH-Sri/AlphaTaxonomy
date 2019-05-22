@@ -1,8 +1,11 @@
-<p-dataView #competitors [value]="competitors" [rows]="10" [sortField]="sortField" [sortOrder]="sortOrder">
+<p-dataView #competitorList [value]="competitors" [rows]="10" [sortField]="sortField" [sortOrder]="sortOrder">
     <p-header>
         <div class="ui-helper-clearfix">
             <div class="p-grid">
-                <div class="p-col-12">
+                <div class="p-col-3">
+                	Top Competitors
+                </div>
+                <div class="p-col-9">
                     <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" 
                     			(onChange)="onSortChange($event)" [style]="{'min-width':'240px'}">
                     </p-dropdown>
