@@ -1,4 +1,4 @@
-export interface IndustryWeight {
+export interface Weight {
     name;
     weight;
 }
