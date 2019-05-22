@@ -63,10 +63,14 @@ if rerun_preprocessing:
     
     #   Create a list of all of the documents normalized
     if run_number!=8:
-        ind=3878*int(run_number)
-        allDocs=allDocs[:ind]
+        before=int(df.shape[0]/8)*(int(run_number)-1)
+        ind=int(df.shape[0]/8)*int(run_number)
+        allDocs=allDocs[before:ind]
+        df_intermediate = df[before:ind].copy()
+    
     if run_number ==8:
-        ind=3878*int(run_number)
+        ind=int(df.shape[0]/8)*int(run_number)
+        df_intermediate = df[ind:].copy()
         allDocs=allDocs[ind:]
     
     print('Creating normalized text corpus')
@@ -75,6 +79,5 @@ if rerun_preprocessing:
         finDocs.append(normalize_text(doc))
     
     # save intermediate result
-    df_intermediate = df.copy()
     df_intermediate['text']=finDocs
     df_intermediate.to_csv('cleaned_data'+str(run_number)+'.csv')
