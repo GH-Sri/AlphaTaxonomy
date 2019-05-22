@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WeightService } from './weight.service';
-import { IndustryWeight } from './industry-weight';
+import { Weight } from './weight';
 
 @Component({
   selector: 'company-industries',
@@ -11,10 +11,11 @@ export class CompanyIndustriesComponent implements OnInit {
 
   @Input() companyName: string;
 
-  industryWeights: IndustryWeight[];
+  industryWeights: Weight[];
+  sectorWeights: Weight[];
   
   industryChartData: any;
-  industrySectorData: any;
+  sectorChartData: any;
 
   constructor(private weightService: WeightService) { }
 
