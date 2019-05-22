@@ -12,8 +12,9 @@ export class CompanyOverviewService {
   }
 
   getData(companyName) {
-    let params = new HttpParams().set('companyName', companyName);
-    return this.http.get('http://localhost:8080/overview', { params: params })
+    let uriSafeCompanyName = encodeURIComponent(companyName)
+    let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/companyinfo/' + uriSafeCompanyName
+    return this.http.get(endpointUrl)
                     .toPromise()
                     .then(res => {console.log(res.json()); return <CompanyOverview> res.json(); });
   }

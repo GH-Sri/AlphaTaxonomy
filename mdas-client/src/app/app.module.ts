@@ -9,10 +9,13 @@ import { CompanyUpdateComponent } from './company-update/company-update.componen
 import { CompanyListComponent } from './company-list/company-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyOverviewComponent } from './company-overview/company-overview.component';
+import { CompanyOverviewService } from './company-overview/company-overview.service';
 import { CompanyIndustriesComponent } from './company-industries/company-industries.component';
+import { IndustryWeightService } from './company-industries/industry-weight.service';
 import { CompanyCompetitorsComponent } from './company-competitors/company-competitors.component';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
+import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
 
 
@@ -33,9 +36,10 @@ import { PanelModule } from 'primeng/panel';
     HttpClientModule,
     CardModule,
     ChartModule,
+    DataViewModule,
     PanelModule
   ],
-  providers: [],
+  providers: [CompanyOverviewService, IndustryWeightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
