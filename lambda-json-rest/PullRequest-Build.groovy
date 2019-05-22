@@ -125,26 +125,26 @@ podTemplate(
 
       stage('Py Tests') {
         container('python'){
-          steps {
+         
             script {
-              try {
+                try {
                 sh """
 
                 """
                 output('Test', 'success')
-              }
-              catch(err) {
+                }
+                catch(err) {
                 output('Test', 'failure')
                 throw err
-              }
+                }
             }
-          }
-          post {
-            always {
-              echo 'Always'
-              
+          
+            post {
+                always {
+                echo 'Always'
+                
+                }
             }
-          }
         }
       }
 
