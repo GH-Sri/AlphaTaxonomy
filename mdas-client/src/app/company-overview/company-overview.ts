@@ -1,13 +1,11 @@
 export interface CompanyOverview {
-    companyName;
+    name;
     ticker;
-    sectorName;
-    nasdaqSectorName;
-    industryName;
-    nasdaqIndustryName;
-    marketCap;
-    performance;
-    year;
-    tenYearPerformance;
-    tenYearPerformanceVsSector;
+    sector;
+    legacysector;
+    industry;
+    legacyindustry;
+    marketcap;
+    perf10yr;
+    perfvssector10yr;
 }

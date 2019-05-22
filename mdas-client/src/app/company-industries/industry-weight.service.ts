@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams, Response, Headers, RequestOptions} from '@angular/common/http';
+import {HttpClient, HttpParams, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {IndustryWeight} from './industry-weight';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class IndustryWeightsService {
-  http: Http;
+export class IndustryWeightService {
+  http: HttpClient;
 
   constructor(http: HttpClient) {
     this.http = http;
@@ -13,9 +12,15 @@ export class IndustryWeightsService {
 
   getData(companyName) {
     let params = new HttpParams().set('companyName', companyName);
-    return this.http.get('http://localhost:8080/industryWeights', { params: params })
-                    .toPromise()
-                    .then(res => {console.log(res.json()); return <IndustryWeight[]> res.json(); });
+    let array = new Array<IndustryWeight>();
+    let weight1 = {industry: 'Industry 4', weight: '87'};
+    let weight2 = {industry: 'Industry 5', weight: '13'}
+    array.push(weight1);
+    array.push(weight2);
+    return array;
+//    return this.http.get('http://localhost:8080/industryWeights', { params: params })
+//                    .toPromise()
+//                    .then(res => {console.log(res); return <IndustryWeight[]> res; });
   }
 
 }
