@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 import { CompanyOverviewComponent } from './company-overview/company-overview.component';
 import { CompanyOverviewService } from './company-overview/company-overview.service';
@@ -21,6 +22,7 @@ import { PanelModule } from 'primeng/panel';
 import { HomeComponent } from './home/home.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
+import { TreemapComponent } from './treemap/treemap.component';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { CompanyPerformanceComponent } from './company-performance/company-perfo
     HomeComponent,
     CompanyComponent,
     CompanyPerformanceComponent,
+    TreemapComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { CompanyPerformanceComponent } from './company-performance/company-perfo
     ChartModule,
     DataViewModule,
     DropdownModule,
-    PanelModule
+    PanelModule,
+    GoogleChartsModule
   ],
   providers: [CompetitorService, CompanyOverviewService, WeightService],
   bootstrap: [AppComponent]
