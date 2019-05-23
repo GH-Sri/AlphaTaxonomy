@@ -130,6 +130,8 @@ podTemplate(
                 try {
                 sh """
                 echo 'run tests'
+                ls
+                db/test_mdas_db.sh 
                 """
                 output('Test', 'success')
                 }
