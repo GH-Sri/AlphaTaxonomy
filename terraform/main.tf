@@ -20,6 +20,8 @@ provider "aws" {
 
 module "s3" {
   source = "./s3_buckets"
+}
 
-  
+module "glue" {
+  sourfce = "./aws_glue"
 }
