@@ -1,0 +1,27 @@
+#atGroup {
+    background-image: url("/assets/img/header_alphataxonomy.png");
+    background-color: #cccccc;
+    height: 500px;
+    width: 100%;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* #atLine {
+    width: 24px;
+    height: 36px;
+    border: solid 4px #32f5de
+} */
+
+#atText {
+    width: 351px;
+    height: 31px;
+    color: #ffffff;
+    font-family: "Gothic A1";
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 38px;
+    letter-spacing: -0.5px;
+}
