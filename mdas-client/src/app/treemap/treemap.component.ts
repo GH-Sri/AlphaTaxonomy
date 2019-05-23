@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { TreemapService } from './treemap.service';
 import { SectorIndustryWeight } from './sector-industry-weight';
+import { GoogleChartComponent } from 'angular-google-charts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-treemap',
@@ -11,25 +13,6 @@ export class TreemapComponent implements OnInit {
 
     title='Classification Map';
     type='TreeMap';
-//   data = [
-//      ["Sectors",null,0],
-//      ["Sector 1","Sectors",0],
-//      ["Sector 2","Sectors",0],
-//      ["Sector 3","Sectors",0],
-//
-//      ["Industry 1","Sector 1",52],
-//      ["Industry 2","Sector 1",24],
-//      ["Industry 3","Sector 1",16],
-//
-//      ["Industry 4","Sector 2",42],
-//      ["Industry 5","Sector 2",31],
-//      ["Industry 6","Sector 2",22],
-//
-//      ["Industry 7","Sector 3",36],
-//      ["Industry 8","Sector 3",20],
-//      ["Industry 9","Sector 3",40],
-//          
-//   ];
    data = [
        ["Sectors", null, 0, 0]
    ];
@@ -50,23 +33,34 @@ export class TreemapComponent implements OnInit {
       useWeightedAverageForAggregation: true
    };
    
+   @ViewChild('chart')
+   chart: GoogleChartComponent
+   
    sectorIndustryWeights: SectorIndustryWeight[];
+   
+   sectorKeys: any[] = [];
+   industryKeys: any[] = [];
 
-   constructor(private treemapService: TreemapService) {}
+   constructor(private treemapService: TreemapService,
+               private router: Router) {
+   }
    
   ngOnInit() {
       this.treemapService.getData().then(sectorIndustryWeights => {
+          this.data = [
+              ["Sectors", null, 0, 0]
+          ];
           this.sectorIndustryWeights = sectorIndustryWeights;
-          let sectorKeys = [];
-          let industryKeys = [];
+          this.sectorKeys = [];
+          this.industryKeys = [];
           let companyArray = [];
           for(let sectorIndustryWeight of this.sectorIndustryWeights){
-              if(!sectorKeys.includes(sectorIndustryWeight.sector)){
-                  sectorKeys.push(sectorIndustryWeight.sector);
+              if(!this.sectorKeys.includes(sectorIndustryWeight.sector)){
+                  this.sectorKeys.push(sectorIndustryWeight.sector);
                   this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
               }
-              if(!industryKeys.includes(sectorIndustryWeight.industry)){
-                  industryKeys.push(sectorIndustryWeight.industry);
+              if(!this.industryKeys.includes(sectorIndustryWeight.industry)){
+                  this.industryKeys.push(sectorIndustryWeight.industry);
                   this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
               }
               let marketcap = sectorIndustryWeight.marketcap;
@@ -78,7 +72,15 @@ export class TreemapComponent implements OnInit {
       });
   }
 
-  onSelect(){
-      
+  //event[0].row = the node number. Get the company name from here
+  onSelect(event){
+      let rowIndex = event[0].row;
+      let nameIndex = 0;
+      let parentIndex = 1;
+      console.log(this.data[rowIndex][nameIndex] + " = " + this.data[rowIndex][parentIndex]);
+      if(this.industryKeys.includes(this.data[rowIndex][parentIndex])){
+          let companyName = this.data[rowIndex][nameIndex];
+          this.router.navigate(['company', companyName]);
+      }
   }
 }

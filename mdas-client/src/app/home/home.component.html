@@ -1,9 +1,6 @@
 <div class="p-grid">
 	<div class="p-col-6"> 
 		<button type="button" (click)="showTreeMap()" pButton icon="pi pi-info-circle">Analyze a Sector or Industry</button>
-		<div [hidden]="!displayTreeMap" >
-			<app-treemap></app-treemap>
-		</div>
 	</div>
 
 	<div class="p-col-6">
@@ -12,4 +9,8 @@
 			<app-company-datatable></app-company-datatable>
 		</p-dialog>
 	</div>
+	<div class="p-col-12" [hidden]="!displayTreeMap" >
+		<app-treemap></app-treemap>
+	</div>
 </div>
+
