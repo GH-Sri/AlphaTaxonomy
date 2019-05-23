@@ -29,12 +29,12 @@ template = '''
 SELECT Competitor, Ticker, MarketCap, Perf10Yr, PerfVsSector10Yr
 FROM Competitor
 JOIN Company ON Company.Name = Competitor.Competitor 
-WHERE Competitor.Company = '()'
+WHERE LOWER(Competitor.Company) = LOWER('{}')
 ORDER BY closeness DESC
 '''
 
 # executes upon API event
-def handler(event, context):
+def lambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
     logger.info("Getting competitor details for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:

@@ -28,11 +28,11 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 template = '''
 SELECT *
 FROM Company
-WHERE Name = '{}'
+WHERE LOWER(Name) = LOWER('{}')
 '''
 
 # executes upon API event
-def hambda_handler(event, context):
+def lambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
     logger.info("Getting company details for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:

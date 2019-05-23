@@ -26,15 +26,15 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT *
-FROM Company
-WHERE Name = '{}'
+SELECT Industry, Weight
+FROM Weight
+WHERE LOWER(Company) = LOWER('{}')
 '''
 
 # executes upon API event
-def handler(event, context):
+def lambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
-    logger.info("Getting company details for " + company)
+    logger.info("Getting industry weights for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         query=template.format(company)
         logger.info("About to execute " + query)
