@@ -25,6 +25,8 @@ import { CompanyPerformanceComponent } from './company-performance/company-perfo
 import { TreemapComponent } from './treemap/treemap.component';
 import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
 import { DialogModule } from 'primeng/dialog';
+import { TableModule } from 'primeng/table';
+import { CompanyListService } from './company-datatable/company-list.service';
 
 
 @NgModule({
@@ -51,9 +53,10 @@ import { DialogModule } from 'primeng/dialog';
     DropdownModule,
     PanelModule,
     GoogleChartsModule,
-    DialogModule
+    DialogModule,
+    TableModule
   ],
-  providers: [CompetitorService, CompanyOverviewService, WeightService],
+  providers: [CompetitorService, CompanyOverviewService, WeightService, CompanyListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

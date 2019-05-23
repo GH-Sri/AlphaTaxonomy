@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+    displayCompanyList: boolean = false;
+    displayTreeMap: boolean = false;
+
+    showDialog() {
+        this.displayCompanyList = true;
+    }
+    
+    showTreeMap(){
+        this.displayTreeMap = true;
+    }
+    
   constructor() { }
 
   ngOnInit() {

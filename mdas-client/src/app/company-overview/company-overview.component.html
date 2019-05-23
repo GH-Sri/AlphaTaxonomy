@@ -1,35 +1,24 @@
-<p-panel header="{{companyName}}">
+<p-panel header="{{companyName}} - {{companyData.ticker}}">
 	<div class="p-grid">
     	<div class="p-col-12 p-md-6 p-lg-3">
     		<p-card header="NASDAQ's Classification">
-    			<div>{{companyData.legacysector == null? "" : companyData.legacysector}}</div>
+    			<div>{{companyData.legacysector == null? "" : companyData.legacysector}}, {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</div>
+    		</p-card>
+		</div>
+		    	<div class="p-col-12 p-md-6 p-lg-3">
+    		<p-card header="AT Classification">
+    			<div>{{companyData.sector == null? "" : companyData.sector}}, {{companyData.industry == null? "" : companyData.industry}}</div>
+    		</p-card>
+    	</div>
+    	<div class="p-col-12 p-md-6 p-lg-3">
+    		<p-card header="Market Cap">
+    			<div>{{companyData.marketcap == null? "" : companyData.marketcap}}</div>
     		</p-card>
 		</div>
     	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Most Recent Earnings">
-    			<div>{{companyData.perf10yr == null? "" : companyData.perf10yr}}</div>
-    		</p-card>
-		</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Website">
-    			<div>https://example.com</div>
+    		<p-card header="Last Close">
+    			<div>{{companyData.performance == null? "" : companyData.performance}}</div>
     		</p-card>
     	</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Our Tool's Classification">
-    			<div>{{companyData.sector == null? "" : companyData.sector}}</div>
-    		</p-card>
-    	</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Fiscal Year End">
-    			<div>{{companyData.year == null? "2019" : companyData.year}}</div>
-    		</p-card>
-    	</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Phone Number">
-    			<div>+1-000-000-0000</div>
-    		</p-card>
-    	</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">Get Report</div>
 	</div>
 </p-panel>

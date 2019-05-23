@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyListService } from './company-list.service';
+import { CompanyOverview } from '../company-overview/company-overview';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-datatable',
@@ -7,14 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyDatatableComponent implements OnInit {
 
-  display: boolean = false;
+    companies: CompanyOverview[];
+    cols: any[];
 
-  constructor() { }
+    selectedCompany: CompanyOverview;
 
-  showDialog() {
-     this.display = true;
+  constructor(private companyService: CompanyListService,
+              private router: Router) { 
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+      this.companies = this.companyService.getCompanyList();
+      
+      this.cols = [
+          { field: 'name', header: 'Name' },
+          { field: 'sector', header: 'Sector' },
+          { field: 'industry', header: 'Industry' },
+          { field: 'marketcap', header: 'Market Cap' }
+      ];
+  }
+  
+  onRowSelect(event) {
+      this.router.navigate(['company', this.selectedCompany.name]);
+  }
 
 }
