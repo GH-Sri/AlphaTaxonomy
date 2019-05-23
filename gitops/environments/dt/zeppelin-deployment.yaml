@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: zeppelin
-        image: apache/zeppelin:0.8.1
+        image: jupyter/r-notebook:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
