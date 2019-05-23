@@ -156,15 +156,18 @@ p                }
 
       stage('Package + Push'){
         container('awscli'){
-            sh """
-            ls
-            zip ${shortGitCommit}.zip lambda-json-rest/
-            aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
-            
-            """
+            withCredentials([usernamePassword(credentialsId: 's3-key-secret', usernameVariable: 'KEY', passwordVariable: 'SECRET')]) {
+                sh """
+                ls
+                zip ${shortGitCommit}.zip lambda-json-rest/
+                AWS_ACCESS_KEY_ID=$KEY AWS_SECRET_ACCESS_KEY=$SECRET s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
+                
+                """
+            }
         }
       }
 
+/*
       stage('Deploy'){
         container('awscli'){
             sh "aws lambda update-function-code --function-name ${functionName} \
@@ -173,7 +176,7 @@ p                }
             --region ${region}"
         }
       }
-       
+*/     
 
     }
 }
