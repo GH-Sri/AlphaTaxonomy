@@ -129,13 +129,16 @@ podTemplate(
             script {
                 try {
                 sh """
-                echo 'run tests'
+                cd db
+                chmod a+x test_mdas_db.sh
+                ls -al
+                test_mdas_db.sh
                 """
                 output('Test', 'success')
                 }
                 catch(err) {
                 output('Test', 'failure')
-p                }
+                }
             }
          
         }
@@ -160,7 +163,7 @@ p                }
                 sh """
                 ls
                 zip ${shortGitCommit}.zip lambda-json-rest/
-                AWS_ACCESS_KEY_ID=$KEY AWS_SECRET_ACCESS_KEY=$SECRET aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
+                AWS_ACCESS_KEY_ID=$KEY AWS_SECRET_ACCESS_KEY=$SECRET aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint/
                 
                 """
             }
