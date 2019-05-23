@@ -76,7 +76,7 @@ def output(String stage, String status) {
 podTemplate(
     label: worker_label,
     containers: [
-            containerTemplate(name: 'python', image: 'python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
+            containerTemplate(name: 'python', image: 'ghmdas/python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'awscli', image: 'ghmdas/awscli', command: 'cat', ttyEnabled: true),
             containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
@@ -135,8 +135,7 @@ podTemplate(
                 }
                 catch(err) {
                 output('Test', 'failure')
-                throw err
-                }
+p                }
             }
          
         }
@@ -159,7 +158,7 @@ podTemplate(
         container('awscli'){
             sh """
             ls
-
+            pip install zip
             zip ${shortGitCommit}.zip lambda-json-rest/
             aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
             
