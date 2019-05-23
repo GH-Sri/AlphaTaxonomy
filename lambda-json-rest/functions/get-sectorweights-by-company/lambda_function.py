@@ -26,7 +26,7 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Industry, Weight
+SELECT Sector, Weight
 FROM Weight
 WHERE LOWER(Company) = LOWER('{}')
 '''
@@ -34,7 +34,7 @@ WHERE LOWER(Company) = LOWER('{}')
 # executes upon API event
 def lambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
-    logger.info("Getting industry weights for " + company)
+    logger.info("Getting sector weights for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         query=template.format(company)
         logger.info("About to execute " + query)

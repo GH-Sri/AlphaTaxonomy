@@ -42,6 +42,7 @@ def lambda_handler(event, context):
         conn.commit()
         return {
             'statusCode': 200,
-            'headers': { 'Content-Type': 'application/json' },
+            'headers': { 'Content-Type': 'application/json',
+                         'Access-Control-Allow-Origin': '*' },
             'body': json.dumps(cur.fetchall(), indent=2)
         }
