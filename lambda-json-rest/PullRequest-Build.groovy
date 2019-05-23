@@ -76,8 +76,8 @@ def output(String stage, String status) {
 podTemplate(
     label: worker_label,
     containers: [
-            containerTemplate(name: 'python', image: 'python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
-            containerTemplate(name: 'awscli', image: 'ghmdas/awscli', command: 'cat', ttyEnabled: true),
+            containerTemplate(name: 'python', image: 'ghmdas/python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
+            containerTemplate(name: 'awscli', image: 'ghmdas/awscli:1.12.153', command: 'cat', ttyEnabled: true,  alwaysPullImage: true),
             containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
     volumes: [
@@ -129,14 +129,13 @@ podTemplate(
             script {
                 try {
                 sh """
-
+                echo 'run tests'
                 """
                 output('Test', 'success')
                 }
                 catch(err) {
                 output('Test', 'failure')
-                throw err
-                }
+p                }
             }
          
         }
@@ -157,16 +156,18 @@ podTemplate(
 
       stage('Package + Push'){
         container('awscli'){
-            sh """
-            ls
-
-            zip ${shortGitCommit}.zip lambda-json-rest/
-            aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
-            
-            """
+            withCredentials([usernamePassword(credentialsId: 's3-key-secret', usernameVariable: 'KEY', passwordVariable: 'SECRET')]) {
+                sh """
+                ls
+                zip ${shortGitCommit}.zip lambda-json-rest/
+                AWS_ACCESS_KEY_ID=$KEY AWS_SECRET_ACCESS_KEY=$SECRET aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
+                
+                """
+            }
         }
       }
 
+/*
       stage('Deploy'){
         container('awscli'){
             sh "aws lambda update-function-code --function-name ${functionName} \
@@ -175,7 +176,7 @@ podTemplate(
             --region ${region}"
         }
       }
-       
+*/     
 
     }
 }
