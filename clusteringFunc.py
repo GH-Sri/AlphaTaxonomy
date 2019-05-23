@@ -11,6 +11,7 @@ The following script reads the output of doc2vec and creates clusters
 
 #Input file should be vectors from Doc2Vec model
 
+
 def clust(inputFile):
 
     import numpy as np
@@ -61,15 +62,15 @@ def clust(inputFile):
         dist[i]=dist[i]**2
     linked = ward(dist)
     
-    #plt.figure(figsize=(60, 100)) 
-    #dendrogram(linked,  
-    #            orientation='right',
-    #            leaf_font_size=12.,
-    #            labels=labelList,
-    #            show_leaf_counts=True,
-    #            color_threshold=maxdists(linked)[::-1][9]
-    #            )
-    #plt.show()
+    plt.figure(figsize=(60, 100)) 
+    dendrogram(linked,  
+                orientation='right',
+                leaf_font_size=12.,
+                labels=labelList,
+                show_leaf_counts=True,
+                color_threshold=maxdists(linked)[::-1][9]
+                )
+    plt.show()
     
     # we want to output 
     # function labels each instance as cluster #
