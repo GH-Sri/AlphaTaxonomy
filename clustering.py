@@ -14,6 +14,7 @@ import pandas as pd
 from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, maxdists,ward, average
 from scipy.spatial.distance import pdist
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics import pairwise_distances
 import csv
 import os
 #import matplotlib as plt
@@ -28,7 +29,7 @@ data = []
 labelList=[]
 #file_dir = cwd + "/Documents/GitHub/r-libraries/"
 file_dir = ""
-with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
+with open("cikVectorsExample1.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
@@ -38,7 +39,25 @@ with open(file_dir+"cikVectorsExample1.csv", 'r') as csvfile:
 print('Finding distances between nodes')
 
 dist = pdist(data,metric='cosine')
+# get long form of distance matrix
+#dt=pairwise_distances(X=pd.DataFrame(data),metric='cosine',n_jobs=16)
+def correct_squareform(X):
+    arr=[]
+    for i in range(0,X.shape[0]-1):
+        arr=np.hstack((arr,X[i][i+1:]))
+    return(arr)
+#dist=correct_squareform(dt)
 sim = 1-dist
+arr_competitor=[]
+for i in range(0,len(labelList)):
+    for j in range(0,len(labelList)):
+        if (i<j):
+            d = [labelList[i][0],labelList[i][1],labelList[j][0],labelList[j][1]]
+            arr_competitor.append(d)
+df_competitor=pd.DataFrame(arr_competitor,columns=['CIK','Year','Competitor CIK','Competitor Year'])
+df_competitor['Similarity']=sim
+df_competitor.to_csv('competitor_similarity.csv',index=False)
+
 for i in range(0,len(dist)):
     dist[i]=dist[i]**2
 linked = ward(dist)
