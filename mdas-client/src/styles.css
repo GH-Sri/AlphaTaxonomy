@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~font-awesome/css/font-awesome.min.css';
 @import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
 @import '~primeng/resources/themes/omega/theme.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
