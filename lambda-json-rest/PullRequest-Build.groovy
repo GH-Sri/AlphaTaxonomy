@@ -77,7 +77,7 @@ podTemplate(
     label: worker_label,
     containers: [
             containerTemplate(name: 'python', image: 'ghmdas/python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
-            containerTemplate(name: 'awscli', image: 'ghmdas/awscli:latest', command: 'cat', ttyEnabled: true),
+            containerTemplate(name: 'awscli', image: 'ghmdas/awscli:1.12.153', command: 'cat', ttyEnabled: true,  alwaysPullImage: true),
             containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
     volumes: [
