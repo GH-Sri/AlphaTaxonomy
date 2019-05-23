@@ -40,6 +40,16 @@ resource "aws_s3_bucket" "data_bucket_4" {
   }
 }
 
+resource "aws_s3_bucket" "glue_script" {
+  bucket = "aws-glue-scripts"
+  acl    = "private"
+  
+  tags = {
+    Name        = "MDAS AWS Glue Scripts"
+    Environment = "dt"
+  }
+}
+
 resource "aws_s3_bucket_public_access_block" "data_bucket" {
   bucket = "${aws_s3_bucket.data_bucket.id}"
 
@@ -68,6 +78,14 @@ resource "aws_s3_bucket_public_access_block" "data_bucket_3" {
 
 resource "aws_s3_bucket_public_access_block" "data_bucket_4" {
   bucket = "${aws_s3_bucket.data_bucket_4.id}"
+
+  block_public_acls   = true
+  block_public_policy = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_public_access_block" "glue_script" {
+  bucket = "${aws_s3_bucket.glue_script.id}"
 
   block_public_acls   = true
   block_public_policy = true
@@ -181,4 +199,32 @@ resource "aws_s3_bucket_policy" "data_bucket_4" {
 }
 POLICY
 }
+
+resource "aws_s3_bucket_policy" "glue_script" {
+  bucket = "${aws_s3_bucket.glue_script.id}"
+
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Id": "data-bucket-4-policy",
+  "Statement": [
+    {
+        "Principal": "*",
+        "Sid": "ListObjectsInBucket",
+        "Effect": "Allow",
+        "Action": ["s3:ListBucket"],
+        "Resource": ["arn:aws:s3:::${aws_s3_bucket.data_bucket_4.id}"]
+    },
+    {
+        "Principal": "*",
+        "Sid": "AllObjectActions",
+        "Effect": "Allow",
+        "Action": "s3:*Object",
+        "Resource": ["arn:aws:s3:::${aws_s3_bucket.data_bucket_4.id}/*"]
+    }
+  ]
+}
+POLICY
+}
+
 
