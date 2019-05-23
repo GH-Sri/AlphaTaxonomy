@@ -76,7 +76,7 @@ def output(String stage, String status) {
 podTemplate(
     label: worker_label,
     containers: [
-            containerTemplate(name: 'python', image: 'ghmdas/python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
+            containerTemplate(name: 'python', image: 'ghmdas/python:3.6-alpine',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true,  alwaysPullImage: true),
             containerTemplate(name: 'awscli', image: 'ghmdas/awscli:1.12.153', command: 'cat', ttyEnabled: true,  alwaysPullImage: true),
             containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
@@ -129,15 +129,16 @@ podTemplate(
             script {
                 try {
                 sh """
-                cd db
-                chmod +x test_mdas_db.sh
-                ls -al
-                ./test_mdas_db.sh
+                    cd db
+                    chmod +x test_mdas_db.sh
+                    ls -al
+                    ./test_mdas_db.sh
                 """
                 output('Test', 'success')
                 }
                 catch(err) {
                 output('Test', 'failure')
+                throw err
                 }
             }
          
