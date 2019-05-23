@@ -129,7 +129,7 @@ podTemplate(
             script {
                 try {
                 sh """
-                pip install python-lambda-local
+                echo 'run tests'
                 """
                 output('Test', 'success')
                 }
