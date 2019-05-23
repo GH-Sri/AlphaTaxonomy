@@ -136,7 +136,7 @@ podTemplate(
                 }
                 catch(err) {
                 output('Test', 'failure')
-p                }
+                }
             }
          
         }
