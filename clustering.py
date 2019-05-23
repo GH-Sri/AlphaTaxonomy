@@ -33,7 +33,7 @@ with open("cikVectors.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
-        labelList.append([row[1],row[2])
+        labelList.append([row[1],row[2]])
         data.append([float(val) for val in row[3:]])
 
 print('Finding distances between nodes')
@@ -118,8 +118,8 @@ df_doc2vec['Industry']=df_doc2vec['Industry'].astype('category')
 
 df_sector_avg=df_doc2vec.groupby('Sector').mean()
 df_industry_avg=df_doc2vec.groupby('Industry').mean()
-df_sector_avg=df_sector_avg.drop(columns="Source")
-df_industry_avg=df_industry_avg.drop(columns="Source")
+
+
 
 
 df_sector_avg.to_csv('sector_avg.csv')

@@ -66,7 +66,7 @@ if rerun_preprocessing:
     # save intermediate result
     df_intermediate = df.copy()
     df_intermediate['Text']=finDocs
-    df_intermediate.to_csv('cleaned_data.csv')
+    df_intermediate.to_csv('cleaned_data.csv',index=False)
 else:
     df=pd.read_csv('cleaned_data_agg.csv')
     df.dropna(subset=['Text'],inplace=True)
