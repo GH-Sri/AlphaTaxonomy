@@ -1,16 +1,41 @@
 <div class="p-grid">
-	<div class="p-col-6"> 
-		<button type="button" (click)="showTreeMap()" pButton icon="pi pi-info-circle">Analyze a Sector or Industry</button>
+	<div class="p-col-6">
+		<button type="button" (click)="showTreeMap()" pButton
+			icon="pi pi-info-circle">Analyze a Sector or Industry</button>
 	</div>
 
 	<div class="p-col-6">
-		<button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle">Analyze a Company</button>
-		<p-dialog header="Company List" [(visible)]="displayCompanyList" appendTo="body" modal="true" dismissableMask="true">
-			<app-company-datatable></app-company-datatable>
-		</p-dialog>
+		<button type="button" (click)="showDialog()" pButton
+			icon="pi pi-info-circle">Analyze a Company</button>
+		<p-dialog header="Company List" [(visible)]="displayCompanyList"
+			appendTo="body" modal="true" dismissableMask="true"> 
+			<p-table #companyTable
+			[value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
+			selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
+			(onRowSelect)="onRowSelect($event)"> <ng-template
+			pTemplate="header" let-columns>
+		<tr>
+			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
+				{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+			</th>
+		</tr>
+		<tr>
+			<th *ngFor="let col of columns" [ngSwitch]="col.field"><input
+				pInputText type="text"
+				(input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+			</th>
+		</tr>
+		</ng-template> <ng-template pTemplate="body" let-rowData let-columns="columns">
+		<tr [pSelectableRow]="rowData">
+			<td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+		</tr>
+		</ng-template> </p-table> </p-dialog>
 	</div>
-	<div class="p-col-12" [hidden]="!displayTreeMap" >
-		<app-treemap></app-treemap>
+
+	<div class="p-col-12" [hidden]="!displayTreeMap">
+		<google-chart #chart [title]="title" [type]="type" [data]="data"
+			[columnNames]="columnNames" [options]="options" style="width: 100%;"
+			(select)="onSelect($event)"> </google-chart>
 	</div>
 </div>
 
