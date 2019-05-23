@@ -27,10 +27,10 @@ if rerun_preprocessing:
     df = pd.read_csv('data.csv')
     #df = df.head(n=200)
     #   Drop NA's 
-    df.dropna(subset=['text'],inplace=True)
+    df.dropna(subset=['Text'],inplace=True)
     
     #   Only use the text for analysis
-    allDocs = df['text']
+    allDocs = df['Text']
     #   Clean texts
     nltk.download('averaged_perceptron_tagger')
     nltk.download('stopwords')
@@ -65,11 +65,13 @@ if rerun_preprocessing:
     
     # save intermediate result
     df_intermediate = df.copy()
-    df_intermediate['text']=finDocs
+    df_intermediate['Text']=finDocs
     df_intermediate.to_csv('cleaned_data.csv')
 else:
-    df=pd.read_csv('cleaned_data.csv')
-    
+    df=pd.read_csv('cleaned_data_agg.csv')
+    df.dropna(subset=['Text'],inplace=True)
+    finDocs=df['Text']
+
 #   Aggregate the documents to remove duplicates
 finDocsAgg = finDocs
 
@@ -100,8 +102,8 @@ import pandas as pd
 
 #   Initialize model parameters
 print('Initializing Doc2Vec model')
-model = Doc2Vec(dm=0, vector_size=200, negative=5, hs=0, min_count=5, sample=0,\
-                epochs=15, workers=4)
+model = Doc2Vec(dm=1, vector_size=200, negative=5, hs=0, min_count=5, sample=0,\
+                epochs=15, workers=16)
 
 #   Build model vocabulary from corpus
 print('Building model vocabulary from corpus')
@@ -114,13 +116,12 @@ model.train(docList, total_examples=len(docList), epochs=model.epochs)
 
 ##  Dataframe construction
 print('Creating output dataframe')
-ciks = []
-for index, value in df['CIK'].iteritems():
-    ciks.append(value)
-    
-dates = []
-for index, value in df['YearDate'].iteritems():
-    dates.append(value)
+names = []
+for index, value in df['Name'].iteritems():
+    names.append(value)
+sources = []
+for index, value in df['Source'].iteritems():
+    sources.append(value)
 
 vectors = []
 for i in range(len(model.docvecs)):
@@ -133,7 +134,7 @@ for i in range(len(vectors[0])):
         right_vec[i].append(vectors[j][i])
         
         
-d = {'ciks':ciks,'dates':dates}
+d = {'Name':names,'Source':sources}
 #   Create column names for every vector column
 counter = 0
 for i in right_vec:

@@ -29,11 +29,11 @@ data = []
 labelList=[]
 #file_dir = cwd + "/Documents/GitHub/r-libraries/"
 file_dir = ""
-with open("cikVectorsExample1.csv", 'r') as csvfile:
+with open("cikVectors.csv", 'r') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)  # skip the headers
     for row in reader:
-        labelList.append([row[1],int(row[2][0:4])-1])
+        labelList.append([row[1],row[2])
         data.append([float(val) for val in row[3:]])
 
 print('Finding distances between nodes')
@@ -54,7 +54,7 @@ for i in range(0,len(labelList)):
         if (i<j):
             d = [labelList[i][0],labelList[i][1],labelList[j][0],labelList[j][1]]
             arr_competitor.append(d)
-df_competitor=pd.DataFrame(arr_competitor,columns=['CIK','Year','Competitor CIK','Competitor Year'])
+df_competitor=pd.DataFrame(arr_competitor,columns=['Name','Source','Competitor Name','Competitor Source'])
 df_competitor['Similarity']=sim
 df_competitor.to_csv('competitor_similarity.csv',index=False)
 
@@ -89,7 +89,7 @@ industry=get_n_clusters(linked,100)
 for i in range(0,len(labelList)):
     output.append([labelList[i][0],labelList[i][1],sector[i],industry[i]])
 a=np.asarray(output)
-df_output=pd.DataFrame(a,columns=['CIK','Year','Sector','Industry'])
+df_output=pd.DataFrame(a,columns=['Name','Source','Sector','Industry'])
 df_output.to_csv("sector_industry.csv",index=False)
 
 #find centroid for each sector/industry
@@ -104,7 +104,7 @@ for i in range(0,len(labelList)):
         arr.append(data[i][j])
     arr_doc2vec.append(arr)
 
-colname_doc2vec=['CIK','Year']
+colname_doc2vec=['Name','Source']
 for i in range(1,len(data[i])+1):
     colname_doc2vec.append("V"+str(i))
 
@@ -118,8 +118,8 @@ df_doc2vec['Industry']=df_doc2vec['Industry'].astype('category')
 
 df_sector_avg=df_doc2vec.groupby('Sector').mean()
 df_industry_avg=df_doc2vec.groupby('Industry').mean()
-df_sector_avg=df_sector_avg.drop(columns="Year")
-df_industry_avg=df_industry_avg.drop(columns="Year")
+df_sector_avg=df_sector_avg.drop(columns="Source")
+df_industry_avg=df_industry_avg.drop(columns="Source")
 
 
 df_sector_avg.to_csv('sector_avg.csv')
@@ -142,7 +142,7 @@ for i in range(0,len(arr_val)):
                                     df_sector_avg.values[j].reshape(1,-1))[0][0])
     arr_doc_dist.append(a1)
 df_doc_dist_sector=pd.DataFrame(arr_doc_dist)
-arr_colnames=['CIK','Year']
+arr_colnames=['Name','Source']
 for i in range(1,df_doc_dist_sector.shape[1]-1):
     arr_colnames.append((i))
 df_doc_dist_sector.columns = arr_colnames
@@ -161,7 +161,7 @@ for i in range(0,len(arr_val)):
                                     df_industry_avg.values[j].reshape(1,-1))[0][0])
     arr_doc_dist.append(a1)
 df_doc_dist_industry=pd.DataFrame(arr_doc_dist)
-arr_colnames=['CIK','Year']
+arr_colnames=['Name','Source']
 for i in range(1,df_doc_dist_industry.shape[1]-1):
     arr_colnames.append((i))
 df_doc_dist_industry.columns = arr_colnames

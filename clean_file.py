@@ -33,10 +33,10 @@ if rerun_preprocessing:
     #   Read in docs
     df = pd.read_csv('data.csv')
     #   Drop NA's 
-    df.dropna(subset=['text'],inplace=True)
+    df.dropna(subset=['Text'],inplace=True)
     
     #   Only use the text for analysis
-    allDocs = df['text']
+    allDocs = df['Text']
     #   Clean texts
     nltk.download('averaged_perceptron_tagger')
     nltk.download('stopwords')
@@ -62,14 +62,14 @@ if rerun_preprocessing:
     
     
     #   Create a list of all of the documents normalized
-    if run_number!=8:
-        before=int(df.shape[0]/8)*(int(run_number)-1)
-        ind=int(df.shape[0]/8)*int(run_number)
+    if run_number!=16:
+        before=int(df.shape[0]/16)*(int(run_number)-1)
+        ind=int(df.shape[0]/16)*int(run_number)
         allDocs=allDocs[before:ind]
         df_intermediate = df[before:ind].copy()
     
-    if run_number ==8:
-        ind=int(df.shape[0]/8)*int(run_number)
+    if run_number ==16:
+        ind=int(df.shape[0]/16)*int(run_number)
         df_intermediate = df[ind:].copy()
         allDocs=allDocs[ind:]
     
@@ -79,5 +79,5 @@ if rerun_preprocessing:
         finDocs.append(normalize_text(doc))
     
     # save intermediate result
-    df_intermediate['text']=finDocs
+    df_intermediate['Text']=finDocs
     df_intermediate.to_csv('cleaned_data'+str(run_number)+'.csv')
