@@ -158,7 +158,6 @@ p                }
         container('awscli'){
             sh """
             ls
-            pip install zip
             zip ${shortGitCommit}.zip lambda-json-rest/
             aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint
             
