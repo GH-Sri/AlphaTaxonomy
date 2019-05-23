@@ -24,30 +24,6 @@ resource "aws_glue_connection" "mdas" {
   name = "MDASPostgres"
 }
 
-data "template_file" "glue_script" {
-  #TODO: Figure out how to reference a different repo
-  template = "${file("${path.module}/glue-scripts/script.scala.tmpl")}"
-  vars = {
-    bucket = "${aws_s3_bucket.data_bucket_4.bucket}"
-    source_table_name = "${aws_glue_catalog_table.aws_glue_item_raw.name}"
-    database_name = "${aws_glue_catalog_database.glue_db.name}"
-  }
-}
-
-resource "local_file" "glue_script" {
-  content = "${data.template_file.glue_script.rendered}"
-  filename = "${path.module}/glue-scripts/script.scala"
-}
-
-#TODO: figure out how to populate files from another repo
-resource "aws_s3_bucket_object" "glue_script" {
-  depends_on = ["local_file.glue_script"]
-  bucket = "${aws_s3_bucket.data_bucket.bucket}"
-  key = "glue-script.scala"
-  source = "${local_file.glue_script.filename}"
-  etag = "${md5(local_file.glue_script.content)}"
-}
-
 #Sets up role used by AWS Glue
 resource "aws_iam_role" "glue" {
   name = "AWSGlueServiceRoleDefault"
