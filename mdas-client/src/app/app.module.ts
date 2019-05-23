@@ -27,7 +27,7 @@ import { CompanyDatatableComponent } from './company-datatable/company-datatable
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { CompanyListService } from './company-datatable/company-list.service';
-
+import { TreemapService } from './treemap/treemap.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { CompanyListService } from './company-datatable/company-list.service';
     DialogModule,
     TableModule
   ],
-  providers: [CompetitorService, CompanyOverviewService, WeightService, CompanyListService],
+  providers: [CompetitorService, CompanyOverviewService, WeightService, CompanyListService, TreemapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
