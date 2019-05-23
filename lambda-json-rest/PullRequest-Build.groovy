@@ -130,9 +130,9 @@ podTemplate(
                 try {
                 sh """
                 cd db
-                chmod a+x test_mdas_db.sh
+                chmod +x test_mdas_db.sh
                 ls -al
-                test_mdas_db.sh
+                ./test_mdas_db.sh
                 """
                 output('Test', 'success')
                 }
