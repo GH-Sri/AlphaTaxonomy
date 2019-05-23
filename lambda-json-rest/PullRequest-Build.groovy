@@ -129,7 +129,8 @@ podTemplate(
             script {
                 try {
                 sh """
-                ./db/test_mdas_db.sh 
+                ls db
+                db/test_mdas_db.sh 
                 """
                 output('Test', 'success')
                 }
