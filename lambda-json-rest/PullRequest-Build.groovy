@@ -129,15 +129,16 @@ podTemplate(
             script {
                 try {
                 sh """
-                cd db
-                chmod +x test_mdas_db.sh
-                ls -al
-                ./test_mdas_db.sh
+                    cd db
+                    chmod +x test_mdas_db.sh
+                    ls -al
+                    ./test_mdas_db.sh
                 """
                 output('Test', 'success')
                 }
                 catch(err) {
                 output('Test', 'failure')
+                throw err
                 }
             }
          
