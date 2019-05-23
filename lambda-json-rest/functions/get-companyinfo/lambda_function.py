@@ -32,7 +32,7 @@ WHERE Name = '{}'
 '''
 
 # executes upon API event
-def handler(event, context):
+def hambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
     logger.info("Getting company details for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:

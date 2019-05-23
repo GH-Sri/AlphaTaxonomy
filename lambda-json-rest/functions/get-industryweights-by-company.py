@@ -2,6 +2,7 @@ import sys
 import logging
 import rds_config
 import psycopg2
+from urllib.parse import unquote
 from psycopg2.extras import RealDictCursor
 import json
 
@@ -24,10 +25,10 @@ except:
 logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
-sql = '''
+template = '''
 SELECT Industry, Weight
 FROM Weight
-WHERE Company = %s
+WHERE Company = '{}'
 '''
 
 # executes upon API event
@@ -35,7 +36,9 @@ def handler(event, context):
     company = unquote(event['path'].split('/')[2])
     logger.info("Getting industry weights for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute(sql,company)
+        query=template.format(company)
+        logger.info("About to execute " + query)
+        cur.execute(query)
         conn.commit()
         return {
             'statusCode': 200,

@@ -26,15 +26,17 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT *
-FROM Company
-WHERE Name = '{}'
+SELECT Competitor, Ticker, MarketCap, Perf10Yr, PerfVsSector10Yr
+FROM Competitor
+JOIN Company ON Company.Name = Competitor.Competitor 
+WHERE Competitor.Company = '()'
+ORDER BY closeness DESC
 '''
 
 # executes upon API event
 def handler(event, context):
     company = unquote(event['path'].split('/')[2])
-    logger.info("Getting company details for " + company)
+    logger.info("Getting competitor details for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         query=template.format(company)
         logger.info("About to execute " + query)
