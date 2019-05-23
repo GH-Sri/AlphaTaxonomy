@@ -23,5 +23,9 @@ module "s3" {
 }
 
 module "glue" {
-  sourfce = "./aws_glue"
+  source = "./aws_glue"
+}
+
+module "rds" {
+  source = "./aws_rds"
 }
