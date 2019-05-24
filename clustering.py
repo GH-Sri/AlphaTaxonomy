@@ -54,7 +54,7 @@ for i in range(0,len(labelList)):
         if (i<j):
             d = [labelList[i][0],labelList[i][1],labelList[j][0],labelList[j][1]]
             arr_competitor.append(d)
-df_competitor=pd.DataFrame(arr_competitor,columns=['Name','Source','Competitor Name','Competitor Source'])
+df_competitor=pd.DataFrame(arr_competitor,columns=['Name','Source','Competitor_Name','Competitor_Source'])
 df_competitor['Similarity']=sim
 df_competitor.to_csv('competitor_similarity.csv',index=False)
 

@@ -15,5 +15,5 @@ inFiles=['sector_industry.csv','competitor_similarity.csv','doc_cossim_industry.
 outFiles=['company_sector_industry.csv','competitors.csv','industry_weights.csv','sector_weights.csv','sector_words.csv','industry_words.csv','cleaned_data_agg.csv']
 
 for i in range(0,len(inFiles)):
-    s3.Bucket(BUCKET).upload_file(inFiles[i], 'Output-For-ETL/'+outFiles[i])
+    s3.Bucket(BUCKET).upload_file(inFiles[i], 'Output-For-ETL/WikiOnly/'+outFiles[i])
 
