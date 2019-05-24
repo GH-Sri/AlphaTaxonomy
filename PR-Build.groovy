@@ -106,10 +106,9 @@ podTemplate(
       stage('Compile'){
         container('angular-test'){
           try {
-            sh """
-              cd mdas-client
-              ng build
-            """
+            dir("${WORKSPACE}/mdas-client") {
+              sh "ng build --prod"
+            }
             output('Build', 'success')
           }
           catch(err) {
@@ -124,10 +123,9 @@ podTemplate(
           steps {
             script {
               try {
-                sh """
-                  cd mdas-client
-                  ng test
-                """
+                dir("${WORKSPACE}/mdas-client") {
+                  sh "ng test --prod"
+                }
                 output('Test', 'success')
               }
               catch(err) {
@@ -148,10 +146,9 @@ podTemplate(
           steps {
             script {
               try {
-                sh """
-                  cd mdas-client
-                  ng e2e
-                """
+                dir("${WORKSPACE}/mdas-client") {
+                  sh "ng e2e --prod"
+                }
                 output('Integration Tests', 'success')
               }
               catch(err) {
