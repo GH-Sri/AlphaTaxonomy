@@ -152,13 +152,13 @@ def d2v(data,docs):
     
     #   Write dataframe to local csv file
     vecFile = 'cikVectors.csv'
-    dfComp.to_csv(vecFile)
+    dfComp.to_csv(vecFile,index=False)
     
     print('{} sent to: {}'.format(vecFile,os.getcwd()))
     
     #   Save trained model
     modelFile = 'Doc2Vec_Model'
-    model.save(modelFile)
+    model.save(modelFile,index=False)
 
     print('{} sent to: {}'.format(modelFile,os.getcwd()))
 
