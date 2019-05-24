@@ -24,6 +24,7 @@ import { CompanyComponent } from './company/company.component';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
 import { CompanyPerformanceService } from './company-performance/performance.service';
 
+
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { CompanyListService } from './home/company-list.service';

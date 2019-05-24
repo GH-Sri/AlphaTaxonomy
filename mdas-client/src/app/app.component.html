@@ -1,19 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div id="navbar" class="collapse navbar-collapse">
-      <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
-    </div>
-    <!--/.nav-collapse -->
-  </nav>
+  <div id="navbar" class="collapse navbar-collapse">
+    <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a [routerLink]="['/company', 'Ericsson']">Company/Ericsson</a>
+      </li>
+    </ul>
+  </div>
+  <!--/.nav-collapse -->
+</nav>
   
 
-<router-outlet></router-outlet>
 
-
-<div id="navbarFooter" class="navbar navbar-fixed-bottom">
-    <div class="container-fluid">
-      <div class="hidden-xs" style="float:right;">
-        <button p-button (click)="goToTop()" id="toTopButton" title="Back to Top">Back to Top</button>
+<div id="containerHead" class="p-grid">
+  <div id="head" class="p-col-12">
+    <div id="logo">
+      <p id="text">A T</p>
+    </div>
+    <div id="content">
+      <div>
+        <!-- <span id="atLine"></span> -->
+        <h1>AlphaTaxonomy</h1>
+        <p>Gain actionable, objective insight into our newly classified sectors and industries. Dig deep into
+          company data from the last decade, and generate reports from comprehensive visualizations. To start
+          researching, select one of these paths.
+        </p>
+        <!-- <div class="buttonSecInd">
+          <span class="buttonSecIndText"></span>
+          <span class="buttonSecIndArrow"></span>
+        </div>
+        <div class="buttonSecInd">
+          <span class="buttonSecIndText"></span>
+          <span class="buttonSecIndArrow"></span>
+        </div> -->
+        <button class="button buttonSecInd">
+          <span class="buttonSecText">ANALYZE A SECTOR OR INDUSTRY</span>
+          <div class="triangle-right"></div>
+        </button>
+        <button class="button buttonCompany">
+          <span class="buttonSecText">ANALYZE A COMPANY</span>
+          <div class="triangle-right"></div>
+        </button>
       </div>
     </div>
   </div>
+
+  <router-outlet></router-outlet>
+</div>
+
+<div id="navbarFooter" class="navbar navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="hidden-xs" style="float:right;">
+      <button p-button (click)="goToTop()" id="toTopButton" title="Back to Top">Back to Top</button>
+    </div>
+  </div>
+</div>
