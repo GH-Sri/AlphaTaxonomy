@@ -107,7 +107,7 @@ podTemplate(
         container('angular'){
           try {
             dir("${WORKSPACE}/mdas-client") {
-              sh "sudo ng build --prod"
+              sh "ng build --prod"
             }
             output('Build', 'success')
           }
@@ -124,7 +124,7 @@ podTemplate(
             script {
               try {
                 dir("${WORKSPACE}/mdas-client") {
-                  sh "sudo ng test --prod"
+                  sh "ng test --prod"
                 }
                 output('Test', 'success')
               }
@@ -147,7 +147,7 @@ podTemplate(
             script {
               try {
                 dir("${WORKSPACE}/mdas-client") {
-                  sh "sudo ng e2e --prod"
+                  sh "ng e2e --prod"
                 }
                 output('Integration Tests', 'success')
               }
