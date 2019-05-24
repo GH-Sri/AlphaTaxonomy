@@ -93,13 +93,11 @@ podTemplate(
           containerTag = "ci-${shortGitCommit}"
           gitUrl = scmInfo.GIT_URL
 
-          container('gradle') {
+          container('angular') {
               sh """
                   echo "BUILD_URL=${buildUrl}"
                   echo "GIT_COMMIT=${gitCommit}"
                   echo "SHORT_GIT_COMMIT=${shortGitCommit}"
-                  java -version
-                  gradle -v
               """
           }
 
