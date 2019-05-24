@@ -22,10 +22,12 @@ import { PanelModule } from 'primeng/panel';
 import { HomeComponent } from './home/home.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
-import { TreemapComponent } from './treemap/treemap.component';
-import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
-import { DialogModule } from 'primeng/dialog';
+import { CompanyPerformanceService } from './company-performance/performance.service';
 
+import { DialogModule } from 'primeng/dialog';
+import { TableModule } from 'primeng/table';
+import { CompanyListService } from './home/company-list.service';
+import { TreemapService } from './home/treemap.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,7 @@ import { DialogModule } from 'primeng/dialog';
     CompanyCompetitorsComponent,
     HomeComponent,
     CompanyComponent,
-    CompanyPerformanceComponent,
-    TreemapComponent,
-    CompanyDatatableComponent,
+    CompanyPerformanceComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +51,10 @@ import { DialogModule } from 'primeng/dialog';
     DropdownModule,
     PanelModule,
     GoogleChartsModule,
-    DialogModule
+    DialogModule,
+    TableModule
   ],
-  providers: [CompetitorService, CompanyOverviewService, WeightService],
+  providers: [CompetitorService, CompanyOverviewService, WeightService, CompanyListService, TreemapService, CompanyPerformanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

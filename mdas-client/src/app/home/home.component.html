@@ -1,38 +1,41 @@
-<div id="containerHome" class="p-grid">
-	<div id="head" class="p-col-12">
-		<div id="logo">
-			<p id="text">A T</p>
-		</div>
-		<div id="content">
-			<div>
-				<!-- <span id="atLine"></span> -->
-				<h1>AlphaTaxonomy</h1>
-				<p>Gain actionable, objective insight into our newly classified sectors and industries. Dig deep into
-					company data from the last decade, and generate reports from comprehensive visualizations. To start
-					researching, select one of these paths.
-				</p>
-				<!-- <div class="buttonSecInd">
-					<span class="buttonSecIndText"></span>
-					<span class="buttonSecIndArrow"></span>
-				</div>
-				<div class="buttonSecInd">
-					<span class="buttonSecIndText"></span>
-					<span class="buttonSecIndArrow"></span>
-				</div> -->
-				<button class="button buttonSecInd">
-					<span class="buttonSecText">ANALYZE A SECTOR OR INDUSTRY</span>
-					<div class="triangle-right"></div>
-				</button>
-				<button class="button buttonCompany">
-					<span class="buttonSecText">ANALYZE A COMPANY</span>
-					<div class="triangle-right"></div>
-				</button>
-			</div>
-		</div>
+<div class="p-grid">
+	<div class="p-col-6">
+		<button type="button" (click)="showTreeMap()" pButton
+			icon="pi pi-info-circle">Analyze a Sector or Industry</button>
 	</div>
 
-	<div id="body" class="p-col-12 p-md-6">
-		<app-treemap></app-treemap>
-		<app-company-datatable></app-company-datatable>
+	<div class="p-col-6">
+		<button type="button" (click)="showDialog()" pButton
+			icon="pi pi-info-circle">Analyze a Company</button>
+		<p-dialog header="Company List" [(visible)]="displayCompanyList"
+			appendTo="body" modal="true" dismissableMask="true"> 
+			<p-table #companyTable
+			[value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
+			selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
+			(onRowSelect)="onRowSelect($event)"> <ng-template
+			pTemplate="header" let-columns>
+		<tr>
+			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
+				{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+			</th>
+		</tr>
+		<tr>
+			<th *ngFor="let col of columns" [ngSwitch]="col.field"><input
+				pInputText type="text"
+				(input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+			</th>
+		</tr>
+		</ng-template> <ng-template pTemplate="body" let-rowData let-columns="columns">
+		<tr [pSelectableRow]="rowData">
+			<td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+		</tr>
+		</ng-template> </p-table> </p-dialog>
+	</div>
+
+	<div class="p-col-12" [hidden]="!displayTreeMap">
+		<google-chart #chart [title]="title" [type]="type" [data]="data"
+			[columnNames]="columnNames" [options]="options" style="width: 100%;"
+			(select)="onSelect($event)"> </google-chart>
 	</div>
 </div>
+

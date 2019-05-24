@@ -16,22 +16,16 @@
     <ng-template let-competitor pTemplate="listItem">
         <div class="p-grid" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
             <div class="p-col-12 p-md-4" style="text-align:center">
-                <div class="p-col-12">{{competitor.name}}</div>
+                <div class="p-col-12">{{competitor.competitor}}</div>
                 <div class="p-col-12">{{competitor.ticker}}</div>
             </div>
             <div class="p-col-12 p-md-8 competitor-detail">
                 <div class="p-grid">
-                	<div class="p-col-2 p-sm-6">CompetitorRank: </div>
+                	<div class="p-col-2 p-sm-6">Competitor Closeness (Higher = Closer): </div>
                     <div class="p-col-10 p-sm-6"><b>{{competitor.closeness}}</b></div>
                     
                     <div class="p-col-2 p-sm-6">Market Cap: </div>
-                    <div class="p-col-10 p-sm-6"><b>{{competitor.marketCap}}</b></div>
-
-                    <div class="p-col-2 p-sm-6">10-Year Performance: </div>
-                    <div class="p-col-10 p-sm-6"><b>{{competitor.tenYearPerformance}}</b></div>
-
-                    <div class="p-col-2 p-sm-6">10-Year Performance vs Sector: </div>
-                    <div class="p-col-10 p-sm-6"><b>{{competitor.tenYearPerformanceVsSector}}</b></div>
+                    <div class="p-col-10 p-sm-6"><b>{{competitor.marketcap}}</b></div>
                 </div>
             </div>
         </div>

@@ -25,13 +25,14 @@ export class CompanyCompetitorsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.competitors = this.competitorService.getData(this.companyName);
+        this.competitorService.getData(this.companyName).then(competitors => {
+            console.log(competitors);
+            this.competitors = competitors;
+        });
         
         this.sortOptions= [
-            {label: 'Competitor Rank', value: 'closeness'},
-            {label: 'Market Cap', value: 'marketCap'},
-            {label: '10-Year Performance', value: 'tenYearPerformance'},
-            {label: '10-Year Performance vs Sector', value: 'tenYearPerformanceVsSector'}
+            {label: 'Competitor Rank', value: '!closeness'},
+            {label: 'Market Cap', value: 'marketcap'}
         ]
     }
     

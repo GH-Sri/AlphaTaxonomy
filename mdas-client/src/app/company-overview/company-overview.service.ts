@@ -12,31 +12,14 @@ export class CompanyOverviewService {
   }
 
   getData(companyName) {
-      let httpOptions = {
-              headers: new HttpHeaders({
-//                  'Access-Control-Allow-Origin': '*'
-              })
-      };
-
     let uriSafeCompanyName = encodeURIComponent(companyName)
     let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/companyinfo/' + uriSafeCompanyName
 
-     this.http.get(endpointUrl, httpOptions)
-                    .toPromise()
-                    .then(res => {console.log(res); });
+    return this.http.get(endpointUrl)
+                .toPromise()
+                .then(res => <CompanyOverview[]> res)
+                .then(data => {return data;});
     
-  this.testData =  {
-  'name': 'Ericsson',
-  'ticker': 'ERIC',
-  'sector': 'Hardware',
-  'legacysector': 'IT',
-  'industry': 'Nails',
-  'legacyindustry': 'Software',
-  'marketcap': '$2,987,580',
-  'perf10yr': null,
-  'perfvssector10yr': null     
-}
-return this.testData;
   }
 
 }

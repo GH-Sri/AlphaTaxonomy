@@ -20,16 +20,16 @@ export class CompanyIndustriesComponent implements OnInit {
   constructor(private weightService: WeightService) { }
 
   ngOnInit() {
-      this.industryWeights = this.weightService.getIndustryData(this.companyName);
+      this.weightService.getIndustryData(this.companyName).then(industryWeights => {
+          this.industryWeights = industryWeights;
+          let industryChartLabels = [];
+          let industryChartWeights = [];
+          for(let industryWeight of this.industryWeights) {
+              industryChartLabels.push(industryWeight.industry);
+              industryChartWeights.push(industryWeight.weight);
+          }                
       
-      let industryChartLabels = [];
-      let industryChartWeights = [];
-      for(let industryWeight of this.industryWeights) {
-          industryChartLabels.push(industryWeight.name);
-          industryChartWeights.push(industryWeight.weight);
-      }                
-      
-      this.industryChartData = {
+          this.industryChartData = {
               labels: industryChartLabels,
               datasets: [
                   {
@@ -46,17 +46,19 @@ export class CompanyIndustriesComponent implements OnInit {
                       ]
                   }]    
               };
+      });
+
       
-      this.sectorWeights = this.weightService.getSectorData(this.companyName);
+      this.weightService.getSectorData(this.companyName).then(sectorWeights => {
+          this.sectorWeights = sectorWeights
+          let sectorChartLabels = [];
+          let sectorChartWeights = [];
+          for(let sectorWeight of this.sectorWeights) {
+              sectorChartLabels.push(sectorWeight.sector);
+              sectorChartWeights.push(sectorWeight.weight);
+          }                
       
-      let sectorChartLabels = [];
-      let sectorChartWeights = [];
-      for(let sectorWeight of this.sectorWeights) {
-          sectorChartLabels.push(sectorWeight.name);
-          sectorChartWeights.push(sectorWeight.weight);
-      }                
-      
-      this.sectorChartData = {
+          this.sectorChartData = {
               labels: sectorChartLabels,
               datasets: [
                   {
@@ -73,6 +75,9 @@ export class CompanyIndustriesComponent implements OnInit {
                       ]
                   }]    
               };
+      });
+      
+      
   }
 
 }
