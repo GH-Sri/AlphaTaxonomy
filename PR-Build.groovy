@@ -106,9 +106,8 @@ podTemplate(
       stage('Compile'){
         container('angular'){
           try {
-            sh "npm install" 
-            sh "find / -type f -name ng"
-            sh "/usr/share/X11/xkb/symbols/ng build"
+            sh "nvm install" 
+            sh "ng build"
             output('Build', 'success')
           }
           catch(err) {
@@ -123,8 +122,7 @@ podTemplate(
           steps {
             script {
               try {
-                sh "npm install"
-                sh "find / -type f -name ng"
+                sh "nvm install"
                 sh "ng test"
                 output('Test', 'success')
               }
@@ -146,7 +144,7 @@ podTemplate(
           steps {
             script {
               try {
-                sh "npm install"
+                sh "nvm install"
                 sh "ng e2e"
                 output('Integration Tests', 'success')
               }
