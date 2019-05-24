@@ -7,10 +7,6 @@ Created on Wed Feb 20 08:31:29 2019
 
 #   Import packages for analysis
 
-
-
-
-
 def preprocess(inputFile='data.csv'):
     import nltk
     from nltk import pos_tag
@@ -21,6 +17,7 @@ def preprocess(inputFile='data.csv'):
     import pandas as pd
     import gensim
     from collections import namedtuple
+    
 
 
     #bool statements
@@ -105,6 +102,7 @@ def d2v(data,docs):
     import gensim.models.doc2vec
     from collections import OrderedDict
     import pandas as pd
+    import os
     
     #   Initialize model parameters
     print('Initializing Doc2Vec model')
@@ -153,9 +151,14 @@ def d2v(data,docs):
     dfComp = pd.DataFrame.from_dict(d)
     
     #   Write dataframe to local csv file
-    dfComp.to_csv('cikVectors.csv')
+    vecFile = 'cikVectors.csv'
+    dfComp.to_csv(vecFile)
+    
+    print('{} sent to: {}'.format(vecFile,os.getcwd()))
     
     #   Save trained model
-    model.save('Doc2Vec_Model')
+    modelFile = 'Doc2Vec_Model'
+    model.save(modelFile)
 
+    print('{} sent to: {}'.format(modelFile,os.getcwd()))
 
