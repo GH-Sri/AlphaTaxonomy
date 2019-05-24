@@ -9,7 +9,7 @@ export class TreemapComponent implements OnInit {
 
   constructor() { }
 
-  title = 'Classification Map';
+  title = 'SECTOR / INDUSTRY';
   type = 'TreeMap';
   data = [
     ["Sectors", null, 0, 0],
@@ -92,7 +92,22 @@ export class TreemapComponent implements OnInit {
     // maxHighlightColor: '#edf8fb',
     // midHighlightColor: '#9ebcda',
     // minHighlightColor: '#8c6bb1',
-    showScale: true,
+    showScale: false,
+    showTooltips: true,
+    textStyle: {
+      color: '#000',
+      fontName: 'Verdana',
+      fontSize: '20px',
+      bold: true,
+      italic: false
+    },
+    titleTextStyle: {
+      color: '#32f5de',
+      fontName: 'Times New Roman',
+      fontSize: '50px',
+      bold: true,
+      italic: false
+    },
     useWeightedAverageForAggregation: true
   };
   width = 950;
