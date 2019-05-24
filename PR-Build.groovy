@@ -118,7 +118,7 @@ podTemplate(
           } 
         }
       }
-
+      /*
       stage('Unit Tests') {
         container('angular'){
           try {
@@ -154,6 +154,7 @@ podTemplate(
           }
         }
       }
+      */
       stage('Quality Check'){
         container('sonar'){
           withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
