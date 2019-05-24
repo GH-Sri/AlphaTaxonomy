@@ -108,7 +108,7 @@ podTemplate(
           try {
             dir("${WORKSPACE}/mdas-client") {
               sh "npm install"
-              sh "ng build --prod"
+              sh "ng build"
             }
             output('Build', 'success')
           }
@@ -126,7 +126,7 @@ podTemplate(
               try {
                 dir("${WORKSPACE}/mdas-client") {
                   sh "npm install"
-                  sh "ng test --prod"
+                  sh "ng test"
                 }
                 output('Test', 'success')
               }
@@ -150,7 +150,7 @@ podTemplate(
               try {
                 dir("${WORKSPACE}/mdas-client") {
                   sh "npm install"
-                  sh "ng e2e --prod"
+                  sh "ng e2e"
                 }
                 output('Integration Tests', 'success')
               }
