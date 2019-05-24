@@ -41,4 +41,14 @@ INSERT INTO Competitor (Company, Competitor, Closeness)
 SELECT Name, "competitor name", Similarity
 FROM CSV_Competitors_10k;
 
+-- This looks a bit strange but we'll insert these again with the companies reversed.
+-- Only one direction was calculated because it would be the same calculation going
+-- the other way.  However, we want to be able to quckly get the complete set without
+-- running two queries and tranforming the output so we'll just load them both ways.
+
+INSERT INTO Competitor (Company, Competitor, Closeness)
+SELECT "competitor name", Name, Similarity
+FROM CSV_Competitors_10k;
+
+
 
