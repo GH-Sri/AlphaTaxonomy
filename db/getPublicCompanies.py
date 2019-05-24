@@ -4,10 +4,16 @@
 # There isn't one link to download all companies A-Z; use links for NASDAQ, NYSE and AMEX
 # SEC 10-Ks are our most important ML dataset so we need CIKs as well; scrape from SEC/Edgar
 
+import os
 import re
 import csv
+from io import StringIO
 from requests import get
-from time import sleep
+import boto3
+
+# Amazon Keys for writing to S3 bucket
+keyId = os.getenv('AWS_ACCESS_KEY_ID')
+secretId = os.getenv('AWS_SECRET_ACCESS_KEY')
 
 # Paramaterized URLs for getting the company data and the CIK pages
 Company_URL = 'https://www.nasdaq.com/screening/companies-by-industry.aspx?exchange={}&render=download'
@@ -51,6 +57,12 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
 
         out_lines.append(line)
 
-with open('companylist.csv', 'w', newline = '') as f:
+# Prepare the data in CSV format as a string
+with StringIO() as f:
     w = csv.writer(f)
     w.writerows(out_lines)
+
+    # Write it all out to amazon S3 bucket so it can be ETLed into the Postgres DB
+    s3 = boto3.resource('s3', aws_access_key_id=keyId, aws_secret_access_key=secretId)
+    bucket = s3.Bucket(name='at-mdas-data')
+    bucket.put_object(Key='Output-For-ETL/companylist.csv', Body=f.getvalue())
