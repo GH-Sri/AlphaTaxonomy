@@ -31,6 +31,7 @@ FROM Competitor
 JOIN Company ON Company.Name = Competitor.Competitor 
 WHERE LOWER(Competitor.Company) = LOWER('{}')
 ORDER BY closeness DESC
+LIMIT 10
 '''
 
 # executes upon API event
