@@ -80,4 +80,4 @@ if rerun_preprocessing:
     
     # save intermediate result
     df_intermediate['Text']=finDocs
-    df_intermediate.to_csv('cleaned_data'+str(run_number)+'.csv')
+    df_intermediate.to_csv('cleaned_data'+str(run_number)+'.csv',index=False)

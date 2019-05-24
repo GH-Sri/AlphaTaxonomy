@@ -69,6 +69,7 @@ if rerun_preprocessing:
     df_intermediate.to_csv('cleaned_data.csv',index=False)
 else:
     df=pd.read_csv('cleaned_data_agg.csv')
+    # subset to 
     df.dropna(subset=['Text'],inplace=True)
     finDocs=df['Text']
 
@@ -102,7 +103,7 @@ import pandas as pd
 
 #   Initialize model parameters
 print('Initializing Doc2Vec model')
-model = Doc2Vec(dm=1, vector_size=200, negative=5, hs=0, min_count=5, sample=0,\
+model = Doc2Vec(dm=1, vector_size=100, negative=5, hs=0, min_count=20, sample=0,\
                 epochs=15, workers=16)
 
 #   Build model vocabulary from corpus
