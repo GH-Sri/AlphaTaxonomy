@@ -26,9 +26,10 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Sector, Weight
-FROM Weight
-WHERE LOWER(Company) = LOWER('{}')
+SELECT Sector, Similarity AS Weight
+FROM csv_sector_weights_10k
+WHERE LOWER(name) = LOWER('{}')
+ORDER BY Similarity DESC
 '''
 
 # executes upon API event
