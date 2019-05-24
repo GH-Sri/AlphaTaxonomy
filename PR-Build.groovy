@@ -108,7 +108,7 @@ podTemplate(
           try {
             sh "npm install" 
             sh "find / -type f -name ng"
-            sh "ng build"
+            sh "/usr/share/X11/xkb/symbols/ng build"
             output('Build', 'success')
           }
           catch(err) {
