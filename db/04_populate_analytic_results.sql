@@ -1,33 +1,27 @@
-INSERT INTO sector (Number, industrycount)
-SELECT sector, count(DISTINCT(industry)) 
-FROM csv_company_sector_industry
-GROUP BY Sector;
+-- Fill in all details we can with the Company_Sector_Industry analytic output
 
-INSERT INTO Industry (Number, sector)
-SELECT csi.industry, sector.name
-FROM (SELECT industry, sector FROM csv_company_sector_industry GROUP BY industry, sector) csi
-JOIN Sector ON csi.sector = sector.number;
+INSERT INTO sector (Number) SELECT DISTINCT Sector FROM csv_company_sector_industry_10k;
+
+UPDATE Sector SET industrycount = ic
+FROM (SELECT count(DISTINCT(industry)) ic, sector 
+      FROM csv_company_sector_industry_10k 
+      GROUP BY sector) x
+WHERE Sector.number = x.sector;
+
+INSERT INTO Industry (Number) SELECT DISTINCT Industry FROM csv_company_sector_industry_10k;
+
+UPDATE Industry SET Sector = secname
+FROM (SELECT industry, sector.name secname 
+      FROM csv_company_sector_industry_10k csi 
+      JOIN Sector ON csi.sector = sector.number
+      GROUP BY industry, sector.name) x
+WHERE Industry.Number = x.industry;
 
 UPDATE company SET sector = s.name, industry = i.name
-FROM csv_company_sector_industry csi, sector s, industry i
+FROM csv_company_sector_industry_10k csi, sector s, industry i
 WHERE csi.sector = s.number
   AND csi.industry = i.number
-  AND csi.name = company.name
-  AND csi.SOURCE = 'WIKI';
- 
-UPDATE company SET sector = s.name, industry = i.name
-FROM csv_company_sector_industry csi, sector s, industry i
-WHERE csi.sector = s.number
-  AND csi.industry = i.number
-  AND csi.name = company.name
-  AND csi.SOURCE = 'WEB';
- 
-UPDATE company SET sector = s.name, industry = i.name
-FROM csv_company_sector_industry csi, sector s, industry i
-WHERE csi.sector = s.number
-  AND csi.industry = i.number
-  AND csi.name = company.name
-  AND csi.SOURCE = '10K';
+  AND csi.name = company.name;
 
 UPDATE Industry SET companycount = cc, marketcap = tmc
 FROM (SELECT Count(*) cc, Sum(MarketCap) tmc, industry
@@ -40,5 +34,11 @@ FROM (SELECT Count(*) cc, Sum(MarketCap) tmc, sector
       FROM company
       GROUP BY sector) x
 WHERE sector.name = x.sector;
+
+-- Load the competitors
+
+INSERT INTO Competitor (Company, Competitor, Closeness)
+SELECT Name, "competitor name", Similarity
+FROM CSV_Competitors_10k;
 
 
