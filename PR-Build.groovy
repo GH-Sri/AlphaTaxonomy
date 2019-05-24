@@ -123,6 +123,7 @@ podTemplate(
             script {
               try {
                 sh "npm install"
+                sh "find / -type f -name ng"
                 sh "ng test"
                 output('Test', 'success')
               }
