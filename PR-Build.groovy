@@ -73,7 +73,8 @@ podTemplate(
     containers: [
             containerTemplate(name: 'angular', image: 'teracy/angular-cli',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'docker', image: 'docker:18.06-dind', command: 'cat', ttyEnabled: true),
-            containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true)
+            containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true),
+            containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
     ],
     volumes: [
             hostPathVolume(mountPath: '/home/gradle/.gradle', hostPath: '/tmp/jenkins/.gradle'),
@@ -154,6 +155,15 @@ podTemplate(
                 output('Integration Tests', 'failure')
                 throw err
               }
+            }
+          }
+        }
+      }
+      stage('Quality Check'){
+        container('sonar'){
+          withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+            dir("${WORKSPACE}/mdas-client") {
+              sh "sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.projectVersion=${shortGitCommit}"
             }
           }
         }
