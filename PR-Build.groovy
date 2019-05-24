@@ -71,7 +71,6 @@ def output(String stage, String status) {
 podTemplate(
     label: worker_label,
     containers: [
-            containerTemplate(name: 'angular-test', image: 'alexmazzariol/docker-selenium-chrome-angular',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'angular', image: 'angular/ngcontainer',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'docker', image: 'docker:18.06-dind', command: 'cat', ttyEnabled: true),
             containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true)
@@ -104,10 +103,10 @@ podTemplate(
       }
 
       stage('Compile'){
-        container('angular-test'){
+        container('angular'){
           try {
             dir("${WORKSPACE}/mdas-client") {
-              sh "ng build --prod"
+              sh "sudo ng build --prod"
             }
             output('Build', 'success')
           }
@@ -119,12 +118,12 @@ podTemplate(
       }
 
       stage('Unit Tests') {
-        container('angular-test'){
+        container('angular'){
           steps {
             script {
               try {
                 dir("${WORKSPACE}/mdas-client") {
-                  sh "ng test --prod"
+                  sh "sudo ng test --prod"
                 }
                 output('Test', 'success')
               }
@@ -142,12 +141,12 @@ podTemplate(
         }
       }
       stage('Integration Tests') {
-        container('angular-test') {
+        container('angular') {
           steps {
             script {
               try {
                 dir("${WORKSPACE}/mdas-client") {
-                  sh "ng e2e --prod"
+                  sh "sudo ng e2e --prod"
                 }
                 output('Integration Tests', 'success')
               }
