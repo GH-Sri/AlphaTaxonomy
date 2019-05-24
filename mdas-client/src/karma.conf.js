@@ -26,7 +26,6 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    browsers: ['Chrome_no_sandbox'],
     customLaunchers: {
       Chrome_no_sandbox: {
         base: 'Chrome',
