@@ -10,18 +10,18 @@ UPDATE CompanyList SET Name = trim(Name);
 -- Name the core of what we are calling a company so we are making it unique and adjusting everything else to match
 -- There is no informed choice to make when a company has multiple Sector/Industry designations so we'll just pick one now
 INSERT INTO Company (Name, LegacySector, LegacyIndustry)
-SELECT DISTINCT ON (Name) Name, Sector, Industry
+SELECT DISTINCT ON (TRIM(Name)) TRIM(Name), Sector, Industry
 FROM CompanyList
-ORDER BY name, sector NULLS LAST, industry NULLS LAST;
+ORDER BY TRIM(name), sector NULLS LAST, industry NULLS LAST;
 
 -- Create a crosswalk of companies to all associated CIK numbers; to be used when filling in data collected per CIK
 INSERT INTO CIK (Company, CIK)
-SELECT Name, CAST(CIK AS integer)
+SELECT TRIM(Name), CAST(CIK AS integer)
 FROM CompanyList WHERE CompanyList.CIK <> '';
 
 -- Create a crosswalk of companies to all ticker symbols; used when filling in data collected per ticker symbol
 INSERT INTO Ticker (Company, Ticker, Exchange)
-SELECT Name, Symbol, Exchange
+SELECT TRIM(Name), TRIM(Symbol), Exchange
 FROM CompanyList;
 
 -- Also give the GUI a friendly single ticker by choosing the symbol most likely assocaiated with the company itself rather than a special stock class
@@ -39,7 +39,7 @@ CREATE TEMPORARY TABLE t_MarketCap (
 ) ON COMMIT DROP;
 
 INSERT INTO t_MarketCap (Company, MarketCap)
-SELECT Name
+SELECT TRIM(Name)
       ,CASE
            WHEN right(marketcap,1) = 'M' THEN cast(rtrim(marketcap,'M') AS money) * 1000000
            WHEN right(marketcap,1) = 'B' THEN cast(rtrim(marketcap,'B') AS money) * 1000000000
