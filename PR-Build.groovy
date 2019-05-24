@@ -107,6 +107,7 @@ podTemplate(
         container('angular'){
           try {
             sh "npm install" 
+            sh "find / -type f -name ng"
             sh "ng build"
             output('Build', 'success')
           }
