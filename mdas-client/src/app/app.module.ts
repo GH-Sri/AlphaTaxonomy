@@ -26,6 +26,8 @@ import { TreemapComponent } from './treemap/treemap.component';
 import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
 import { DialogModule } from 'primeng/dialog';
 
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -51,7 +53,12 @@ import { DialogModule } from 'primeng/dialog';
     DropdownModule,
     PanelModule,
     GoogleChartsModule,
-    DialogModule
+    DialogModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [CompetitorService, CompanyOverviewService, WeightService],
   bootstrap: [AppComponent]
