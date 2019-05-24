@@ -13,10 +13,24 @@ export class CompanyOverviewComponent implements OnInit {
 
   companyData: CompanyOverview;
     
-  constructor(private companyService: CompanyOverviewService) { }
+  constructor(private companyService: CompanyOverviewService) { 
+      this.companyData = {
+              name: '',
+              ticker: '',
+              sector: '',
+              legacysector: '',
+              industry: '',
+              legacyindustry: '',
+              marketcap: '',
+              perf10yr: '',
+              perfvssector10yr: ''
+      };
+  }
 
   ngOnInit() {
-      this.companyData = this.companyService.getData(this.companyName);
+      this.companyService.getData(this.companyName).then(companies => {
+          this.companyData = companies[0];
+      });
   }
 
 }

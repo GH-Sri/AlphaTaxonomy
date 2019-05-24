@@ -11,29 +11,23 @@ export class WeightService {
   }
 
   getIndustryData(companyName) {
-    let params = new HttpParams().set('companyName', companyName);
-    let array = new Array<Weight>();
-    let weight1 = {name: 'Industry 4', weight: '87'};
-    let weight2 = {name: 'Industry 5', weight: '13'}
-    array.push(weight1);
-    array.push(weight2);
-    return array;
-//    return this.http.get('http://localhost:8080/industryWeights', { params: params })
-//                    .toPromise()
-//                    .then(res => {console.log(res); return <IndustryWeight[]> res; });
+      let uriSafeCompanyName = encodeURIComponent(companyName);
+
+    let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/industryweights-by-company/' + uriSafeCompanyName
+    return this.http.get(endpointUrl)
+                    .toPromise()
+                    .then(res => <Weight[]> res)
+                      .then(data => {return data;});
   }
   
   getSectorData(companyName) {
-      let params = new HttpParams().set('companyName', companyName);
-      let array = new Array<Weight>();
-      let weight1 = {name: 'Sector 1', weight: '45'};
-      let weight2 = {name: 'Sector 2', weight: '56'}
-      array.push(weight1);
-      array.push(weight2);
-      return array;
-//      return this.http.get('http://localhost:8080/industryWeights', { params: params })
-//                      .toPromise()
-//                      .then(res => {console.log(res); return <IndustryWeight[]> res; });
+      let uriSafeCompanyName = encodeURIComponent(companyName);
+
+      let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/sectorweights-by-company/' + uriSafeCompanyName
+      return this.http.get(endpointUrl)
+                      .toPromise()
+                      .then(res => <Weight[]> res)
+                      .then(data => {return data;});
     }
 
 }
