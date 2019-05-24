@@ -71,7 +71,7 @@ def output(String stage, String status) {
 podTemplate(
     label: worker_label,
     containers: [
-            containerTemplate(name: 'angular', image: 'angular/ngcontainer',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
+            containerTemplate(name: 'angular', image: 'teracy/angular-cli',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'docker', image: 'docker:18.06-dind', command: 'cat', ttyEnabled: true),
             containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true)
     ],
