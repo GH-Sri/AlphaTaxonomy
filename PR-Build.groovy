@@ -104,10 +104,12 @@ podTemplate(
       }
 
       stage('Compile'){
-        container('angular'){
+        container('angular-test'){
           try {
-            sh "nvm install" 
-            sh "ng build"
+            sh """
+              cd mdas-client
+              ng build
+            """
             output('Build', 'success')
           }
           catch(err) {
@@ -122,8 +124,10 @@ podTemplate(
           steps {
             script {
               try {
-                sh "nvm install"
-                sh "ng test"
+                sh """
+                  cd mdas-client
+                  ng test
+                """
                 output('Test', 'success')
               }
               catch(err) {
@@ -144,8 +148,10 @@ podTemplate(
           steps {
             script {
               try {
-                sh "nvm install"
-                sh "ng e2e"
+                sh """
+                  cd mdas-client
+                  ng e2e
+                """
                 output('Integration Tests', 'success')
               }
               catch(err) {
