@@ -121,44 +121,36 @@ podTemplate(
 
       stage('Unit Tests') {
         container('angular'){
-          steps {
-            script {
-              try {
-                dir("${WORKSPACE}/mdas-client") {
-                  sh "npm install"
-                  sh "ng test"
-                }
-                output('Test', 'success')
-              }
-              catch(err) {
-                output('Test', 'failure')
-                throw err
-              }
+          try {
+            dir("${WORKSPACE}/mdas-client") {
+              sh "npm install"
+              sh "ng test"
             }
+            output('Test', 'success')
           }
-          post {
-            always {
-              echo 'Success'
-            }
+          catch(err) {
+            output('Test', 'failure')
+            throw err
+          }
+        }
+        post {
+          always {
+            echo 'Success'
           }
         }
       }
       stage('Integration Tests') {
         container('angular') {
-          steps {
-            script {
-              try {
-                dir("${WORKSPACE}/mdas-client") {
-                  sh "npm install"
-                  sh "ng e2e"
-                }
-                output('Integration Tests', 'success')
-              }
-              catch(err) {
-                output('Integration Tests', 'failure')
-                throw err
-              }
+          try {
+            dir("${WORKSPACE}/mdas-client") {
+              sh "npm install"
+              sh "ng e2e"
             }
+            output('Integration Tests', 'success')
+          }
+          catch(err) {
+            output('Integration Tests', 'failure')
+            throw err
           }
         }
       }
