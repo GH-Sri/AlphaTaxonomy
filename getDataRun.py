@@ -13,4 +13,4 @@ def getData(keyId='AKIAVO5KNXW5MLTJ2JOS',\
     
     k.get_contents_to_filename(destFileName)
 
-getData(srcFileName='AI-ML/company_10k_web_wiki_out.csv',bucketName='at-mdas-data')
+getData(srcFileName='10K-Raw-Data/company_10k_per_year_out.csv',bucketName='at-mdas-data',destFileName='2018data.csv')
