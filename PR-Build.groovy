@@ -105,7 +105,8 @@ podTemplate(
 
       stage('Compile'){
         container('angular'){
-          try { 
+          try {
+            sh "npm install" 
             sh "ng build"
             output('Build', 'success')
           }
