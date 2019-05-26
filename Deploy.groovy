@@ -130,8 +130,8 @@ podTemplate(
       stage('Deploy to S3') {
         container('awscli') {
           withCredentials([usernamePassword(credentialsId: 's3-key-secret', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-            dir("${WORKSPACE}/mdas-client/dist/mdas-client/") {
-              sh "aws s3 sync . s3://${deployBucket}/ --acl public-read"
+            dir("${WORKSPACE}/mdas-client/dist/") {
+              sh "aws s3 sync ./* s3://${deployBucket}/ --acl public-read"
             }
           }
         }
