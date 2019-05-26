@@ -108,7 +108,7 @@ podTemplate(
           try {
             dir("${WORKSPACE}/mdas-client") {
               sh "npm install"
-              sh "ng build"
+              sh "ng build --prod"
             }
             output('Build', 'success')
           }
