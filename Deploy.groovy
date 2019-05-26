@@ -74,7 +74,7 @@ podTemplate(
             containerTemplate(name: 'angular', image: 'teracy/angular-cli',  resourceRequestMemory: '1024Mi', resourceLimitMemory: '2048Mi', command: 'cat', ttyEnabled: true, privileged: true),
             containerTemplate(name: 'docker', image: 'docker:18.06-dind', command: 'cat', ttyEnabled: true),
             containerTemplate(name: 'jq', image: 'endeveit/docker-jq', command: 'cat', ttyEnabled: true),
-            containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true)
+            containerTemplate(name: 'sonar', image: 'emeraldsquad/sonar-scanner', command: 'cat', ttyEnabled: true),
             containerTemplate(name: 'awscli', image: 'ghmdas/awscli:1.12.153', command: 'cat', ttyEnabled: true,  alwaysPullImage: true),
     ],
     volumes: [
