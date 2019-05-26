@@ -131,6 +131,10 @@ podTemplate(
         container('awscli') {
           withCredentials([usernamePassword(credentialsId: 's3-key-secret', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
             dir("${WORKSPACE}/mdas-client/dist/") {
+              //TODO: Setup deploy to version key and swap hosted url to new folder then cleanup old
+              echo "Cleaning up bucket"
+              sh "aws s3 rm s3://${deployBucket} --recursive"
+              echo "Deploying changes to bucket"
               sh "aws s3 sync ./* s3://${deployBucket}/ --acl public-read"
             }
           }
