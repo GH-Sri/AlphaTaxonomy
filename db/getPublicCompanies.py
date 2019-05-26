@@ -14,6 +14,7 @@ import boto3
 # Amazon Keys for writing to S3 bucket
 keyId = os.getenv('AWS_ACCESS_KEY_ID')
 secretId = os.getenv('AWS_SECRET_ACCESS_KEY')
+bucketName = os.getenv('BUCKET_NAME')
 
 # Paramaterized URLs for getting the company data and the CIK pages
 Company_URL = 'https://www.nasdaq.com/screening/companies-by-industry.aspx?exchange={}&render=download'
@@ -64,5 +65,5 @@ with StringIO() as f:
 
     # Write it all out to amazon S3 bucket so it can be ETLed into the Postgres DB
     s3 = boto3.resource('s3', aws_access_key_id=keyId, aws_secret_access_key=secretId)
-    bucket = s3.Bucket(name='at-mdas-data')
+    bucket = s3.Bucket(name=bucketName)
     bucket.put_object(Key='Output-For-ETL/companylist.csv', Body=f.getvalue())
