@@ -1,4 +1,4 @@
-import { Component, OnInit,  OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit,  OnDestroy, ViewChild, ViewChildren, QueryList, AfterViewChecked} from '@angular/core';
 import { CompanyOverview } from '../company-overview/company-overview';
 import { CompanyListService } from './company-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,11 +16,12 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
   cols: any[];
   selectedCompany: CompanyOverview;
 
-  @ViewChild('sector-filter')
-  sectorFilter: ElementRef;
+  @ViewChildren('filter')
+  filters: QueryList<any>;
   
-  @ViewChild('industry-filter')
-  industryFilter: ElementRef;
+  sectorFilter: string = '';
+  previousIndustryFilter: string = '';
+  industryFilter: string = '';
 
     sub: any;
 
@@ -36,12 +37,11 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
           console.log(companies);
           this.companies = companies;
           this.cols = [
-              { field: 'name', header: 'Name', inputId: 'name-filter'},
-              { field: 'sector', header: 'Sector', inputId: 'sector-filter' },
-              { field: 'industry', header: 'Industry', inputId: 'industry-filter' },
-              { field: 'marketcap', header: 'Market Cap', inputId: 'marketcap-filter' }
+              { field: 'name', header: 'Name'},
+              { field: 'sector', header: 'Sector' },
+              { field: 'industry', header: 'Industry' },
+              { field: 'marketcap', header: 'Market Cap'}
           ];
-          this.filter();
           console.log(this.companies);
       });
   }
@@ -53,9 +53,9 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
                           // Defaults to 0 if no query param provided.
                           console.log('params');
                           console.log(params);
-//                          this.sectorFilter = params['sector'];
-//                          this.industryFilter = params['industry'];
-                          this.filter();
+                          this.previousIndustryFilter = this.industryFilter;
+                          this.sectorFilter = params['sector'];
+                          this.industryFilter = params['industry'];
                       });
   }
   
@@ -68,18 +68,24 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
   }
   
   filter(){
-      console.log('filter-ref')
-      console.log(this.industryFilter);
-    //Industry filtering always yields a subset of a particular sector,
-      //so we only need to filter on industry if we have one
-//      if(this.industryFilter != ''){
-//          console.log('filtering industry');
-////          this.industryFilter.
-////          this.table.filter(this.industryFilter, 'industry', 'contains');
-//      }
-//      else{
-//          console.log('filtering sector');
-////          this.table.filter(this.sectorFilter, 'sector', 'contains');
-//      }
+      if(this.filters != null && this.filters.toArray().length > 0){
+          this.filters.toArray()[1].nativeElement.value = this.sectorFilter;
+          this.filters.toArray()[2].nativeElement.value = this.industryFilter;
+
+//        Industry filtering always yields a subset of a particular sector,
+//        so we only need to filter on industry if we have one
+          if(this.industryFilter || (this.previousIndustryFilter && !this.industryFilter)){
+              console.log('filtering industry');
+              this.table.filter(this.industryFilter, 'industry', 'contains');
+          }
+          else{
+              console.log('filtering sector');
+              this.table.filter(this.sectorFilter, 'sector', 'contains');
+          }
+      }
+  }
+  
+  ngAfterViewChecked(){
+      this.filter();
   }
 }

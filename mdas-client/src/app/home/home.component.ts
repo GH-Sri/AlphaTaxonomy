@@ -143,7 +143,7 @@ export class HomeComponent implements OnInit {
 
         //need to add an element to selections if we left-clicked, remove one if right-clicked
         //We right-clicked if this.selections already includes the event row
-        if (this.selections.includes(rowIndex)) {
+        if (this.selections.includes(this.data[rowIndex][0]) || this.data[rowIndex][0] == 'Sectors') {
             let x = this.selections.pop();
             console.log('pop ' + x)
         }

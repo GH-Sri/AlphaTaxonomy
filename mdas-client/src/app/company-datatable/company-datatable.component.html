@@ -9,7 +9,7 @@
 					</tr>
 					<tr>
 						<th *ngFor="let col of columns" [ngSwitch]="col.field">
-						<input [id]="col.inputId" pInputText type="text" [(ngModel)]="col.filter"
+						<input #filter pInputText type="text" [(ngModel)]="col.filter"
 								(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode)">
 						</th>
 					</tr>
