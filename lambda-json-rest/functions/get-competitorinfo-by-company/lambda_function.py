@@ -37,7 +37,7 @@ JOIN (SELECT Name, sum(marketcap::NUMERIC::money) AS MarketCap
       FROM CompanyList_csv
       GROUP BY name) mc_total
   ON mc_total.name = Competitor.Competitor
-WHERE LOWER(Competitor.Company) = LOWER('Alphabet Inc.')
+WHERE LOWER(Competitor.Company) = LOWER('{}')
 ORDER BY similarity DESC
 LIMIT 10
 '''

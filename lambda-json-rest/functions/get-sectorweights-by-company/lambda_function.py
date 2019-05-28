@@ -30,7 +30,7 @@ SELECT COALESCE(sname.name, 'Sector ' || sw.sector) AS Sector
       ,Similarity
 FROM sector_weights_csv sw
 LEFT OUTER JOIN Sector_Name_CSV sname ON sname.number = sw.sector
-WHERE LOWER(sw.name) = LOWER('Alphabet Inc.')
+WHERE LOWER(sw.name) = LOWER('{}')
 ORDER BY Similarity DESC
 '''
 
