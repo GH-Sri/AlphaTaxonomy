@@ -32,4 +32,38 @@
 		<google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
 			style="width: 100%;" (select)="onSelect($event)"> </google-chart>
 	</div>
+	<div class="p-col-12">
+		<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+			<!-- Position Sector -->
+			<ng-container matColumnDef="sector">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> Sector </th>
+				<td mat-cell *matCellDef="let element"> {{element.sector}} </td>
+			</ng-container>
+
+			<!-- Name Name -->
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+				<td mat-cell *matCellDef="let element"> {{element.name}} </td>
+			</ng-container>
+
+			<!-- Market Cap -->
+			<ng-container matColumnDef="marketcap">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
+				<td mat-cell *matCellDef="let element"> {{element.marketcap}} </td>
+			</ng-container>
+
+			<!-- Company Count -->
+			<ng-container matColumnDef="companycount">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> Company Count </th>
+				<td mat-cell *matCellDef="let element"> {{element.companycount}} </td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+	</div>
+
 </div>
+
+<!-- columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"]; -->

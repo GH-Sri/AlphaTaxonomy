@@ -1,9 +1,36 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
+import { Router } from '@angular/router';
 import { CompanyListService } from './company-list.service';
 import { CompanyOverview } from '../company-overview/company-overview';
-import { Router } from '@angular/router';
-import { TreemapService } from './treemap.service';
 import { SectorIndustryWeight } from './sector-industry-weight';
+import { TreemapService } from './treemap.service';
+
+export interface MaterialDatatable {
+    sector: string;
+    name: string;
+    marketcap: string;
+    companycount: number;
+}
+
+const ELEMENT_DATA: MaterialDatatable[] = [
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
+];
+
 
 @Component({
     selector: 'app-home',
@@ -21,6 +48,12 @@ export class HomeComponent implements OnInit {
     cols: any[];
     selectedCompany: CompanyOverview;
 
+    //Material datatable
+    displayedColumns: string[] = ['sector', 'name', 'marketcap', 'companycount'];
+    // dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+    @ViewChild(MatSort) sort: MatSort;
+
     //treemap fields
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
@@ -29,9 +62,11 @@ export class HomeComponent implements OnInit {
     // height = 600;
 
     data = [
-        ["Sectors", null, 0, 0],
+        ["Sectors", "null", 0, 0]
     ];
-    columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
+    //dataSource = new MatTableDataSource(this.data);
+
+    //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
         highlightOnMouseOver: true,
@@ -81,8 +116,12 @@ export class HomeComponent implements OnInit {
         private treemapService: TreemapService,
         private router: Router) {
     }
+    dataSource = new MatTableDataSource(ELEMENT_DATA);
 
     ngOnInit() {
+        //initialize Material Sort
+        this.dataSource.sort = this.sort;
+
         //initialize treemap
         this.treemapService.getData().then(sectorIndustryWeights => {
             this.data = [
@@ -149,19 +188,20 @@ export class HomeComponent implements OnInit {
                 { field: 'marketcap', header: 'Market Cap' }
             ];
             console.log(this.companies);
+
+            // Material Table Columns
+            //tableColumns = ['name', 'sector', 'industry'];
         });
-
-
-
     }
 
-    // Responsive Treemap - Not yet functional
-    @HostListener('window:resize', ['$event'])
-    onResize(event, options) {
-        if (event) {
-            options.width = window.innerWidth * this.windowOffset;
-        }
-    }
+    // Responsive Treemap
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event, options) {
+    //     if (event) {
+    //         // options.width = window.innerWidth * this.windowOffset;
+    //         // options["width"] = ["" + window.innerWidth * this.windowOffset + ""];
+    //     }
+    // }
 
     onRowSelect(event) {
         this.router.navigate(['company', this.selectedCompany.name]);
