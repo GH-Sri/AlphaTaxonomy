@@ -27,8 +27,9 @@ import { CompanyPerformanceService } from './company-performance/performance.ser
 
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
-import { CompanyListService } from './home/company-list.service';
+import { CompanyListService } from './company-datatable/company-list.service';
 import { TreemapService } from './home/treemap.service';
+import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TreemapService } from './home/treemap.service';
     CompanyCompetitorsComponent,
     HomeComponent,
     CompanyComponent,
-    CompanyPerformanceComponent
+    CompanyPerformanceComponent,
+    CompanyDatatableComponent
   ],
   imports: [
     BrowserModule,

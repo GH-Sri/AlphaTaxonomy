@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { CompanyListService } from './company-list.service';
 import { CompanyOverview } from '../company-overview/company-overview';
 import { Router } from '@angular/router';
 import { TreemapService } from './treemap.service';
@@ -11,15 +10,6 @@ import { SectorIndustryWeight } from './sector-industry-weight';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-    //glue fields
-    displayCompanyList: boolean = false;
-    displayTreeMap: boolean = false;
-
-    //datatable fields
-    companies: CompanyOverview[];
-    cols: any[];
-    selectedCompany: CompanyOverview;
 
     //treemap fields
     title = 'SECTOR / INDUSTRY';
@@ -65,21 +55,12 @@ export class HomeComponent implements OnInit {
         height: 600,
     };
 
-    @ViewChild('companyTable')
-    table: any;
-
     sectorIndustryWeights: SectorIndustryWeight[];
 
-    sectorKeys: any[] = [];
-    industryKeys: any[] = [];
+    selections: any[] = [];
 
-    selections: any[] = [0];
-    lastSelection: any;
-
-    constructor(
-        private companyService: CompanyListService,
-        private treemapService: TreemapService,
-        private router: Router) {
+    constructor(private treemapService: TreemapService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -113,7 +94,7 @@ export class HomeComponent implements OnInit {
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
                 dataNew[count] = [
-                    this.sectorIndustryWeights[count].name,
+                    this.sectorIndustryWeights[count].industry,
                     this.sectorIndustryWeights[count].sector,
                     marketcap,
                     marketcap
@@ -137,87 +118,54 @@ export class HomeComponent implements OnInit {
             console.log(this.data);
         });
 
-        //initialize table
-        this.companies = [];
-        this.companyService.getCompanyList().then(companies => {
-            console.log(companies);
-            this.companies = companies;
-            this.cols = [
-                { field: 'name', header: 'Name' },
-                { field: 'sector', header: 'Sector' },
-                { field: 'industry', header: 'Industry' },
-                { field: 'marketcap', header: 'Market Cap' }
-            ];
-            console.log(this.companies);
-        });
-
+        
 
 
     }
 
-    // Responsive Treemap - Not yet functional
-    @HostListener('window:resize', ['$event'])
-    onResize(event, options) {
-        if (event) {
-            options.width = window.innerWidth * this.windowOffset;
-        }
-    }
+//    // Responsive Treemap - Not yet functional
+//    @HostListener('window:resize', ['$event'])
+//    onResize(event, options) {
+//        if (event) {
+//            options.width = window.innerWidth * this.windowOffset;
+//        }
+//    }
 
-    onRowSelect(event) {
-        this.router.navigate(['company', this.selectedCompany.name]);
-    }
+
 
     //Treemap methods
 
     //event[0].row = the node number. Get the company name from here
     onSelect(event) {
         let rowIndex = event[0].row;
-        if (this.lastSelection == rowIndex) {
-            // go to table
-            let filterField = '';
-            if (this.selections.length == 1) {
-                filterField = 'sector';
-            }
-            else if (this.selections.length == 2) {
-                filterField = 'industry';
-            }
-            if (filterField != '') {
-                let value = this.data[rowIndex][0]
-                console.log(this.table);
-                this.displayCompanyList = true;
-            }
+        console.log('selectedRow');
+        console.log(rowIndex);
+
+        //need to add an element to selections if we left-clicked, remove one if right-clicked
+        //We right-clicked if this.selections already includes the event row
+        if (this.selections.includes(rowIndex)) {
+            let x = this.selections.pop();
+            console.log('pop ' + x)
         }
         else {
-            //need to add an element to selections if we left-clicked, remove one if right-clicked
-            if (this.selections.includes(rowIndex)) {
-                let x = this.selections.pop();
-                console.log('pop ' + x)
-            }
-            else {
-                this.selections.push(rowIndex);
-                this.lastSelection = rowIndex;
-                console.log('push ' + rowIndex);
-            }
-            let nameIndex = 0;
-            let parentIndex = 1;
-            console.log(this.data[rowIndex][nameIndex] + " = " + this.data[rowIndex][parentIndex]);
-            if (this.industryKeys.includes(this.data[rowIndex][parentIndex])) {
-                let companyName = this.data[rowIndex][nameIndex];
-                this.router.navigate(['company', companyName]);
-            }
+            this.selections.push(this.data[rowIndex][0]);
+            console.log('push ' + rowIndex);
         }
+        console.log('selections');
+        console.log(this.selections);
+        // filter and display table
+        let sectorFilter = this.selections[0] == null? '' : this.selections[0];
+        let industryFilter = this.selections[1] == null? '' : this.selections[1];
+
+        console.log('sectorFilter = ' + sectorFilter);
+        console.log('industryFilter = ' + industryFilter);
+
+        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
+                                                                                                 industry: industryFilter} });
+
+           
+
     }
-
-
-    showDialog() {
-        this.displayCompanyList = true;
-    }
-
-    showTreeMap() {
-        this.displayTreeMap = true;
-    }
-
-
 
 
 }

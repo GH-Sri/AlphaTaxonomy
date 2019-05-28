@@ -4,7 +4,8 @@
     <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
     <ul class="nav navbar-nav">
       <li>
-        <a [routerLink]="['/company', 'Ericsson']">Company/Ericsson</a>
+        <a [routerLink]="['', { outlets: { companylist: ['companies'] } }]">Company List</a>
+        <a [routerLink]="['', { outlets: { details: ['company', 'Ericsson'] } }]">Company/Ericsson</a>
       </li>
     </ul>
   </div>
@@ -47,6 +48,8 @@
   </div>
 
   <router-outlet></router-outlet>
+  <router-outlet name="companylist"></router-outlet>
+  <router-outlet  name="details"></router-outlet>
 </div>
 
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">
