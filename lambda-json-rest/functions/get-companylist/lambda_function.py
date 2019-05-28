@@ -24,12 +24,6 @@ except:
     sys.exit()
 logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
-# SQL to get what this function is responsible for returning
-template = '''
-SELECT *
-FROM Company
-'''
-
 # executes upon API event
 def lambda_handler(event, context):
     logger.info("Getting full company list")
@@ -38,6 +32,7 @@ def lambda_handler(event, context):
         conn.commit()
         return {
             'statusCode': 200,
-            'headers': { 'Content-Type': 'application/json' },
+            'headers': { 'Content-Type': 'application/json',
+                         'Access-Control-Allow-Origin': '*' },
             'body': json.dumps(cur.fetchall(), indent=2)
         }

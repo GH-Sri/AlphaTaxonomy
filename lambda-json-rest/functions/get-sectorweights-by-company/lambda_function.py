@@ -26,8 +26,8 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Industry, Similarity AS Weight
-FROM csv_industry_weights_10k
+SELECT Sector, Similarity AS Weight
+FROM csv_sector_weights_10k
 WHERE LOWER(name) = LOWER('{}')
 ORDER BY Similarity DESC
 '''
@@ -35,7 +35,7 @@ ORDER BY Similarity DESC
 # executes upon API event
 def lambda_handler(event, context):
     company = unquote(event['path'].split('/')[2])
-    logger.info("Getting industry weights for " + company)
+    logger.info("Getting sector weights for " + company)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         query=template.format(company)
         logger.info("About to execute " + query)
