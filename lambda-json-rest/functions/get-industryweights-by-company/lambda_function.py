@@ -26,9 +26,11 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Industry, Similarity AS Weight
-FROM csv_industry_weights_10k
-WHERE LOWER(name) = LOWER('{}')
+SELECT COALESCE(iname.name, 'Industry ' || iw.industry) AS Industry
+      ,Similarity
+FROM industry_weights_csv iw
+LEFT OUTER JOIN Industry_Name_CSV iname ON iname.number = iw.industry
+WHERE LOWER(iw.name) = LOWER('Alphabet Inc.')
 ORDER BY Similarity DESC
 '''
 

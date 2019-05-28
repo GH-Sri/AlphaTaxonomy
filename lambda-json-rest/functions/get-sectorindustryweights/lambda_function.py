@@ -31,7 +31,7 @@ def lambda_handler(event, context):
         cur.execute('''
 SELECT COALESCE(sname.name, 'Sector ' || csi.sector) AS Sector
       ,COALESCE(iname.name, 'Industry ' || csi.industry) AS Industry
-      ,sum(cl.marketcap)::NUMERIC::money AS MarketCap
+      ,sum(cl.marketcap::NUMERIC::money) AS MarketCap
       ,count(*) AS CompanyCount
 FROM (SELECT DISTINCT ON (name) name, sector, industry FROM company_sector_industry_csv) csi
 JOIN CompanyList_csv cl ON cl.Name = csi.name
