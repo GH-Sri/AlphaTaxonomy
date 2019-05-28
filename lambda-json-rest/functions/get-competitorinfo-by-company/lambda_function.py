@@ -26,11 +26,12 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Competitor, Ticker, MarketCap, Perf10Yr, PerfVsSector10Yr, Closeness
-FROM Competitor
+SELECT Competitor, Ticker as Symbol, MarketCap, Similarity
+FROM (SELECT Name AS Company, "competitor name" AS Competitor, Similarity FROM competitors_csv UNION ALL
+      SELECT "competitor name" AS Company, Name AS competitor, Similarity FROM competitors_csv) competitor
 JOIN Company ON Company.Name = Competitor.Competitor 
 WHERE LOWER(Competitor.Company) = LOWER('{}')
-ORDER BY closeness DESC
+ORDER BY similarity DESC
 LIMIT 10
 '''
 
