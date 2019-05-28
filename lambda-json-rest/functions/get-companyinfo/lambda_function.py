@@ -26,9 +26,26 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT *
-FROM Company
-WHERE LOWER(Name) = LOWER('{}')
+SELECT cl.Name
+      ,shrt_sym.Symbol
+      ,cl.MarketCap::NUMERIC::MONEY AS MarketCap
+      ,COALESCE(sname.name, 'Sector ' || csi.sector) AS ATSector
+      ,COALESCE(iname.name, 'Industry ' || csi.industry) AS ATIndustry
+      ,cl.Sector AS LegacySector
+      ,cl.Industry AS LegacyIndustry
+FROM (SELECT DISTINCT ON (Name) Name, Sector, Industry, sum(marketcap) AS marketcap 
+      FROM companylist_csv 
+      GROUP BY Name, Sector, Industry) cl
+JOIN (SELECT DISTINCT ON (name) name, sector, industry 
+      FROM company_sector_industry_csv) csi
+  ON csi.name = cl.name
+JOIN (SELECT DISTINCT ON (Name) Name, Symbol 
+      FROM CompanyList_csv
+      ORDER BY Name, Length(Symbol), Symbol) shrt_sym
+  ON shrt_sym.name = cl.name
+LEFT OUTER JOIN Sector_Name_CSV sname ON sname.number = csi.sector
+LEFT OUTER JOIN Industry_Name_CSV iname ON iname.number = csi.industry
+WHERE LOWER(cl.Name) = LOWER('alphabet inc.');
 '''
 
 # executes upon API event
