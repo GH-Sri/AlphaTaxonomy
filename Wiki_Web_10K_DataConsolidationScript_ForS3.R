@@ -104,9 +104,12 @@ WebData <- summarise(group_by(WebData, Name), Text = paste(ConcatText, collapse 
 # WebData <- subset(WebData, TEXT != "NA NA NA NA" )
 
 #BDData2 <- read.csv(text = rawToChar(get_object(object = "10K-Raw-Data/company_10k_per_year_out.csv", bucket = "at-mdas-data"), multiple = T))
+cat("getting the 10k data \n")
+# save_object(object = "10K-Raw-Data/company_10k_per_year_out.csv", bucket = "at-mdas-data")
+# BDData <- read.csv(file = paste0(getwd(), "/company_10k_per_year_out.csv"), colClasses = "character")
+BDData <- read.csv(text = rawToChar(get_object(object = "10K-Raw-Data/company_10k_per_year_out.csv", bucket = "at-mdas-data")))
+cat("successful getting 10k data \n")
 
-save_object(object = "10K-Raw-Data/company_10k_per_year_out.csv", bucket = "at-mdas-data")
-BDData <- read.csv(file = paste0(getwd(), "/company_10k_per_year_out.csv"), colClasses = "character")
 
 #BDData <- fread(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/BDData.csv", colClasses = "character")
 #The lookup causes more rows to be added
@@ -140,6 +143,7 @@ FINALData <- bind_rows(WebData, WikiData, BDData)
 # write.csv(FINALData, "C:/Users/hwalbert001/Documents/Company Stock Analysis/FinalData/company_10k_web_wiki_out.csv", row.names = F)
 # #"company_10k_web_wiki_out.csv"
 
+cat("makeing archive of older objects \n")
 #Make Archive of objects
 copy_object(from_object = "AI-ML/company_web_out.csv", to_object = paste0("AI-ML/Archive/company_web_out",make.names(Sys.time()),".csv"), from_bucket = "at-mdas-data", to_bucket = "at-mdas-data")
 copy_object(from_object = "AI-ML/company_10k_combined_out.csv", to_object = paste0("AI-ML/Archive/company_10k_combined_out",make.names(Sys.time()),".csv"), from_bucket = "at-mdas-data", to_bucket = "at-mdas-data")
@@ -147,6 +151,7 @@ copy_object(from_object = "AI-ML/company_10k_web_wiki_out.csv", to_object = past
 copy_object(from_object = "AI-ML/company_wiki_out.csv", to_object = paste0("AI-ML/Archive/company_wiki_out",make.names(Sys.time()),".csv"), from_bucket = "at-mdas-data", to_bucket = "at-mdas-data")
 copy_object(from_object = "AI-ML/company_wiki_web_out.csv", to_object = paste0("AI-ML/Archive/company_wiki_web_out",make.names(Sys.time()),".csv"), from_bucket = "at-mdas-data", to_bucket = "at-mdas-data")
 
+cat("saving new object into the s3 bucket\n")
 #s3save(MCData, object = "10K-Raw-Data/company_names_input.csv", bucket = "at-mdas-data")
 s3save(WebData, object = "AI-ML/company_web_out.csv", bucket = "at-mdas-data")
 s3save(WikiData, object = "AI-ML/company_wiki_out.csv", bucket = "at-mdas-data")
