@@ -1,12 +1,8 @@
 <div class="p-grid">
-	<div class="p-col-6">
-		<button type="button" (click)="showTreeMap()" pButton icon="pi pi-info-circle">Analyze a Sector or
-			Industry</button>
-	</div>
 
-	<div class="p-col-6">
+	<div class="p-col-12">
 		<button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle">Analyze a Company</button>
-		<p-dialog header="Company List" [(visible)]="displayCompanyList" appendTo="body" modal="true"
+		<p-dialog header="Company List" [(visible)]="displayCompanyList" appendTo="body" modal="false"
 			dismissableMask="true">
 			<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
 				selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
@@ -32,12 +28,8 @@
 		</p-dialog>
 	</div>
 
-	<div class="p-col-12" [hidden]="!displayTreeMap">
-		<google-chart #chart [title]="title" [type]="type" [data]="data"
-			[columnNames]="columnNames" [options]="options" style="width: 100%;"
-			(select)="onSelect($event)"> </google-chart>
+	<div class="p-col-12">
+		<google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
+			style="width: 100%;" (select)="onSelect($event)"> </google-chart>
 	</div>
-	<!-- <div>
-		<app-treemap></app-treemap>
-	</div> -->
 </div>
