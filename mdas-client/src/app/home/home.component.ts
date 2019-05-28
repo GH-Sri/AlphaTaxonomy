@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     //treemap fields
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
-    windowOffset = .9;
+    windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
 
@@ -123,39 +123,42 @@ export class HomeComponent implements OnInit {
         this.dataSource.sort = this.sort;
 
         //initialize treemap
-        this.treemapService.getData().then(sectorIndustryWeights => {
+        this.treemapService.getData().then(sectorIndustryWeight => {
             this.data = [
-                ["Sectors", null, 0, 0]
+                ["Sectors", "Industry", 0, 0]
             ];
-            this.sectorIndustryWeights = sectorIndustryWeights;
-            // this.sectorKeys = [];
-            // this.industryKeys = [];
-            // let companyArray = [];
-            // for (let sectorIndustryWeight of this.sectorIndustryWeights) {
-            //     if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
-            //         this.sectorKeys.push(sectorIndustryWeight.sector);
-            //         this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
-            //     }
-            //     if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
-            //         this.industryKeys.push(sectorIndustryWeight.industry);
-            //         this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
-            //     }
-            //     let marketcap = sectorIndustryWeight.marketcap;
-            //     marketcap = marketcap.replace(/[$,]+/g, "");
-            //     marketcap = parseInt(marketcap);
-            //     this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
-            // }
+            this.sectorIndustryWeights = sectorIndustryWeight;
+
+
+            this.sectorKeys = [];
+            this.industryKeys = [];
+            let companyArray = [];
+            for (let sectorIndustryWeight of this.sectorIndustryWeights) {
+                if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
+                    this.sectorKeys.push(sectorIndustryWeight.sector);
+                    this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
+                }
+                if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
+                    this.industryKeys.push(sectorIndustryWeight.industry);
+                    this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
+                }
+                let marketcap = sectorIndustryWeight.marketcap;
+                marketcap = marketcap.replace(/[$,]+/g, "");
+                marketcap = parseInt(marketcap);
+                this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
+            }
 
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
             var dataNew = [];
+
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
                 dataNew[count] = [
-                    this.sectorIndustryWeights[count].name,
+                    this.sectorIndustryWeights[count].industry,
                     this.sectorIndustryWeights[count].sector,
                     marketcap,
-                    marketcap
+                    this.sectorIndustryWeights[count].companycount
                 ];
             }
             dataNew.unshift(
@@ -183,8 +186,8 @@ export class HomeComponent implements OnInit {
             this.companies = companies;
             this.cols = [
                 { field: 'name', header: 'Name' },
-                { field: 'sector', header: 'Sector' },
-                { field: 'industry', header: 'Industry' },
+                { field: 'atsector', header: 'Sector' },
+                { field: 'atindustry', header: 'Industry' },
                 { field: 'marketcap', header: 'Market Cap' }
             ];
             console.log(this.companies);
@@ -202,6 +205,7 @@ export class HomeComponent implements OnInit {
     //         // options["width"] = ["" + window.innerWidth * this.windowOffset + ""];
     //     }
     // }
+
 
     onRowSelect(event) {
         this.router.navigate(['company', this.selectedCompany.name]);

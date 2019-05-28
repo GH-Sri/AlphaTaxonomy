@@ -1,59 +1,50 @@
 <div class="p-grid">
 
 	<div class="p-col-12">
-		<button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle">Analyze a Company</button>
-		<p-dialog header="Company List" [(visible)]="displayCompanyList" appendTo="body" modal="false"
-			dismissableMask="true">
-			<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
-				selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
-				(onRowSelect)="onRowSelect($event)">
-				<ng-template pTemplate="header" let-columns>
-					<tr>
-						<th *ngFor="let col of columns" [pSortableColumn]="col.field">
-							{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
-						</th>
-					</tr>
-					<tr>
-						<th *ngFor="let col of columns" [ngSwitch]="col.field"><input pInputText type="text"
-								(input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
-						</th>
-					</tr>
-				</ng-template>
-				<ng-template pTemplate="body" let-rowData let-columns="columns">
-					<tr [pSelectableRow]="rowData">
-						<td *ngFor="let col of columns">{{rowData[col.field]}}</td>
-					</tr>
-				</ng-template>
-			</p-table>
-		</p-dialog>
-	</div>
-
-	<div class="p-col-12">
 		<google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
 			style="width: 100%;" (select)="onSelect($event)"> </google-chart>
 	</div>
+
 	<div class="p-col-12">
+		<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
+			selectionMode="single" [(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)">
+			<ng-template pTemplate="header" let-columns>
+				<tr>
+					<th *ngFor="let col of columns" [pSortableColumn]="col.field">
+						{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+					</th>
+				</tr>
+				<tr>
+					<th *ngFor="let col of columns" [ngSwitch]="col.field"><input pInputText type="text"
+							(input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+					</th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-rowData let-columns="columns">
+				<tr [pSelectableRow]="rowData">
+					<td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</div>
+	<!-- <div class="p-col-12">
 		<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-			<!-- Position Sector -->
 			<ng-container matColumnDef="sector">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header> Sector </th>
 				<td mat-cell *matCellDef="let element"> {{element.sector}} </td>
 			</ng-container>
 
-			<!-- Name Name -->
 			<ng-container matColumnDef="name">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
 				<td mat-cell *matCellDef="let element"> {{element.name}} </td>
 			</ng-container>
 
-			<!-- Market Cap -->
 			<ng-container matColumnDef="marketcap">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header> Market Cap </th>
 				<td mat-cell *matCellDef="let element"> {{element.marketcap}} </td>
 			</ng-container>
 
-			<!-- Company Count -->
 			<ng-container matColumnDef="companycount">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header> Company Count </th>
 				<td mat-cell *matCellDef="let element"> {{element.companycount}} </td>
@@ -62,7 +53,7 @@
 			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 		</table>
-	</div>
+	</div> -->
 
 </div>
 
