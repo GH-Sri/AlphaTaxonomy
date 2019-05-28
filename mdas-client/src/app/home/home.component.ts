@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     windowOffset = .9;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
+    sectorKeys: string[];
 
     data = [
         ["Sectors", null, 0, 0],
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
                 ["Sectors", null, 0, 0]
             ];
             this.sectorIndustryWeights = sectorIndustryWeights;
-            // this.sectorKeys = [];
+             this.sectorKeys = [];
             // this.industryKeys = [];
             // let companyArray = [];
             // for (let sectorIndustryWeight of this.sectorIndustryWeights) {
@@ -93,25 +94,22 @@ export class HomeComponent implements OnInit {
             var dataNew = [];
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
+                let sector = this.sectorIndustryWeights[count].sector;
+                let industry = this.sectorIndustryWeights[count].industry;
                 dataNew[count] = [
-                    this.sectorIndustryWeights[count].industry,
-                    this.sectorIndustryWeights[count].sector,
+                    industry,
+                    sector,
                     marketcap,
                     marketcap
                 ];
+                if(!this.sectorKeys.includes(sector)){
+                    this.sectorKeys.push(sector);
+                }
             }
-            dataNew.unshift(
-                ["Sectors", null, 0, 0],
-                ["Sector 1", "Sectors", 0, 0],
-                ["Sector 2", "Sectors", 0, 0],
-                ["Sector 3", "Sectors", 0, 0],
-                ["Sector 4", "Sectors", 0, 0],
-                ["Sector 5", "Sectors", 0, 0],
-                ["Sector 6", "Sectors", 0, 0],
-                ["Sector 7", "Sectors", 0, 0],
-                ["Sector 8", "Sectors", 0, 0],
-                ["Sector 9", "Sectors", 0, 0],
-                ["Sector 10", "Sectors", 0, 0]);
+            for(let index in this.sectorKeys){
+                dataNew.unshift([this.sectorKeys[index], "Sectors", 0, 0]);
+            }
+            dataNew.unshift(["Sectors", null, 0, 0]);
 
             this.data = dataNew;
             console.log("Formatted Data");
