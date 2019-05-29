@@ -12,14 +12,14 @@ export class CompanyPerformanceComponent implements OnInit {
     @Input()
     companyName: string;
     
-    performanceData: PerformanceData[] = [];
+    performanceData: PerformanceData;
     
   constructor(private performanceService: CompanyPerformanceService) { }
 
   ngOnInit() {
       this.performanceService.getData(this.companyName).then(performanceData => {
           console.log(performanceData);
-          this.performanceData = performanceData;
+          this.performanceData = performanceData[0];
       });
   }
 
