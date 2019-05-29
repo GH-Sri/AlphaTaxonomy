@@ -1,8 +1,6 @@
-export interface SectorIndustryWeight{
-    company;
-    marketcap;
-    sector;
-    sectorweight;
+export interface SectorIndustryWeight {
     industry;
-    industryweight;
+    sector;
+    marketcap;
+    companycount;
 }

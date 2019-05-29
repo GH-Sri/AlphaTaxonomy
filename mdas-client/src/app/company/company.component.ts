@@ -17,6 +17,7 @@ export class CompanyComponent implements OnInit, OnDestroy {
         this.sub = this.route.params.subscribe(params => {
             this.companyName = params['name']; 
          });
+        document.getElementById("companydetails").scrollIntoView();
     }
     
     ngOnDestroy(){

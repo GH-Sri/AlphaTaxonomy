@@ -52,3 +52,6 @@ code {
   color: #555;
   background-color: #e7e7e7;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
