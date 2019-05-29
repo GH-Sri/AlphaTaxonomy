@@ -32,20 +32,22 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
     header = True
 
     for line in csv.reader(partial_list):
+        # Use blank strings instead of 'n/a' so they will become NULL in DB; strip leading or trailing spaces
+        out_line = ['' if x=='n/a' else x.strip() for x in line]
         # We want to add to each line so remove the empty element caused by the trailing commas
-        del line[-1]
+        del out_line[-1]
         if header:
             header = False
             if not out_lines:
                 # If we're just starting capture headers adding headers for our additional data
-                line.extend(('Exchange','CIK'))
+                out_line.extend(('Exchange','CIK'))
             else:
                 # Oherwise we already have headers; continue to the data lines
                 continue
         else: # Not a header line
 
             # capture which exchange this ticker is traded on
-            line.append(exchange)
+            out_line.append(exchange)
 
             # Attempt to determine the CIK by ticker
             CIK = ''
@@ -54,9 +56,9 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
                 # Failed to find it by ticker, try by company name
                 match = CIK_RE.search(get(CIK_by_name_URL.format(line[1])).content.decode())
             if match: CIK = match.group('CIK')
-            line.append(CIK)
+            out_line.append(CIK)
 
-        out_lines.append(line)
+        out_lines.append(out_line)
 
 # Prepare the data in CSV format as a string
 with StringIO() as f:

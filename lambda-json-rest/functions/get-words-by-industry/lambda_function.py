@@ -26,28 +26,19 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Competitor, sym_shortest.Symbol, mc_total.MarketCap, Similarity
-FROM (SELECT Name AS Company, "competitor name" AS Competitor, Similarity FROM competitors_csv UNION ALL
-      SELECT "competitor name" AS Company, Name AS competitor, Similarity FROM competitors_csv) competitor
-JOIN (SELECT DISTINCT ON (Name) Name, Symbol 
-      FROM CompanyList_csv
-      ORDER BY Name, Length(Symbol), Symbol) sym_shortest
-  ON sym_shortest.name = Competitor.Competitor
-JOIN (SELECT Name, sum(marketcap::NUMERIC::money) AS MarketCap
-      FROM CompanyList_csv
-      GROUP BY name) mc_total
-  ON mc_total.name = Competitor.Competitor
-WHERE LOWER(Competitor.Company) = LOWER('{}')
-ORDER BY similarity DESC
-LIMIT 10
+SELECT iw.word, iw.similarity
+FROM industry_words_csv iw
+LEFT OUTER JOIN Industry_Name_CSV iname ON iname.number = iw.industry
+WHERE LOWER(COALESCE(iname.name, 'industry ' || iw.industry)) = LOWER('{}')
+ORDER BY iw.similarity DESC;
 '''
 
 # executes upon API event
 def lambda_handler(event, context):
-    company = unquote(event['path'].split('/')[2])
-    logger.info("Getting competitor details for " + company)
+    industry = unquote(event['path'].split('/')[2])
+    logger.info("Getting words for " + industry)
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        query=template.format(company)
+        query=template.format(industry)
         logger.info("About to execute " + query)
         cur.execute(query)
         conn.commit()

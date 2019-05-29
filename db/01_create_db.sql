@@ -8,115 +8,101 @@
 CREATE SCHEMA mdas AUTHORIZATION mdas;
 SET search_path TO mdas;
 
--- Table for raw seed data, no constraints
-CREATE TABLE Companylist (
-    symbol text,
-    "name" text,
-    lastsale text,
-    marketcap text,
-    adrtso text,
-    ipoyear text,
-    sector text,
-    industry text,
-    summary_quote text,
-    exchange text,
-    cik text
+-- Create the table that holds the text of documents analyzed by ML
+CREATE TABLE cleaned_data_agg_csv (
+	"name" text NULL,
+	"text" text NULL,
+	"source" integer NULL
+);
+CREATE INDEX cleaned_data_agg_csv_name_idx ON mdas.cleaned_data_agg_csv USING btree (name);
+
+-- Create the table that shows our analytical results relating companies to industries and sectors
+CREATE TABLE company_sector_industry_csv (
+	"name" text NULL,
+	"source" int8 NULL,
+	sector int8 NULL,
+	industry int8 NULL
+);
+CREATE INDEX company_sector_industry_csv_name_idx ON mdas.company_sector_industry_csv USING btree (name);
+
+-- Create the table that holds details about all publicly traded companies downloaded from the NASDAQ site
+CREATE TABLE companylist_csv (
+	symbol text NULL,
+	"name" text NULL,
+	lastsale text NULL,
+	marketcap float8 NULL,
+	"adr tso" text NULL,
+	ipoyear text NULL,
+	sector text NULL,
+	industry text NULL,
+	"summary quote" text NULL,
+	exchange text NULL,
+	cik int8 NULL
+);
+CREATE INDEX companylist_csv_name_idx ON mdas.companylist_csv USING btree (name);
+
+-- Create the table that shows our analytical results of which companies are likely closest competitors
+CREATE TABLE competitors_csv (
+	"name" text NULL,
+	"source" int8 NULL,
+	"competitor name" text NULL,
+	"competitor source" int8 NULL,
+	similarity float8 NULL
+);
+CREATE INDEX competitors_csv_competitor_name_idx ON mdas.competitors_csv USING btree ("competitor name");
+CREATE INDEX competitors_csv_name_idx ON mdas.competitors_csv USING btree (name);
+
+-- Create the table which holds the stock price data for ticker symbols related to our companies
+CREATE TABLE historicalstockpricedataallexchanges_csv (
+	"date" text NULL,
+	"open" float8 NULL,
+	high float8 NULL,
+	low float8 NULL,
+	"close" float8 NULL,
+	volume int8 NULL,
+	adjusted float8 NULL,
+	symbol text NULL
+);
+CREATE INDEX historicalstockpricedataallexchanges_csv_symbol_idx ON mdas.historicalstockpricedataallexchanges_csv USING btree (symbol);
+
+-- Create the table which holds names for the industry clusters produced by our analysis
+CREATE TABLE industry_name_csv (
+	"number" int8 NULL,
+	"name" text NULL
 );
 
-
-CREATE TABLE Sector (
-        Number integer not null,
-        Name text PRIMARY KEY,
-        IndustryCount integer,
-        CompanyCount integer,
-        MarketCap money,
-        Perf10Yr integer,
-        SectorWeight integer
+-- Create the table which shows how closely each company matches each of the industry clusters produced by our analysis
+CREATE TABLE industry_weights_csv (
+	"name" text NULL,
+	"source" int8 NULL,
+	industry int8 NULL,
+	similarity float8 NULL
 );
 
-CREATE FUNCTION default_sector_name() RETURNS TRIGGER AS $$
-BEGIN
-	IF NEW.Name IS NULL THEN New.Name := 'Sector ' || New.Number;
-        END IF;
-	RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER default_sector_name_trg BEFORE INSERT ON Sector FOR EACH ROW EXECUTE PROCEDURE default_sector_name();
-
-CREATE TABLE Industry (
-        Number integer not null,
-        Name text PRIMARY KEY,
-        Sector text REFERENCES Sector(Name),
-	CompanyCount integer,
-        MarketCap money,
-        Perf10Yr integer,
-        IndustryWeight integer
+-- Create the table which shows what words are most closely related to each industry cluster produced by our analysis
+CREATE TABLE industry_words_csv (
+	industry int8 NULL,
+	word text NULL,
+	similarity float8 NULL
 );
 
-CREATE FUNCTION default_industry_name() RETURNS TRIGGER AS $$
-BEGIN
-        IF NEW.Name IS NULL THEN New.Name := 'Industry ' || New.Number;
-        END IF;
-        RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER default_industry_name_trg BEFORE INSERT ON Industry FOR EACH ROW EXECUTE PROCEDURE default_industry_name();
-
-CREATE TABLE Company (
-        Sector text REFERENCES Sector(Name),
-        Industry text REFERENCES Industry(Name),
-        LegacySector text,
-        LegacyIndustry text,
-        Name text PRIMARY KEY,
-        Ticker text,
-        Logo bytea,
-	MarketCap money,
-        EPS10Yr money,
-        Perf10Yr integer,
-        PerfVsSector10Yr integer,
-        PerfVsIndustry10Yr integer,
-        PerfVsLegacySector10Yr integer,
-        PerfVsLegacyIndustry10Yr integer
-);
-COMMENT ON COLUMN Company.Ticker IS 'The single ticker symbol most likely recognizable as referring to the company as a whole';
-COMMENT ON COLUMN Company.MarketCap IS 'The sum of MarketCaps of all ticker symbols this company has.';
-
-CREATE TABLE Ticker (
-        Company text REFERENCES Company(Name),
-        Ticker text NOT NULL,
-	Exchange text
+-- Create the table which holds names for the sector clusters produced by our analysis
+CREATE TABLE sector_name_csv (
+	"number" int8 NULL,
+	"name" text NULL
 );
 
-CREATE TABLE CIK (
-        Company text REFERENCES Company(Name),
-        CIK integer NOT NULL
+-- Create the table which shows how closely each company matches each of the sector clusters produced by our analysis
+CREATE TABLE sector_weights_csv (
+	"name" text NULL,
+	"source" int8 NULL,
+	sector int8 NULL,
+	similarity float8 NULL
 );
 
-CREATE TABLE Competitor (
-        Company text REFERENCES Company(Name),
-        Competitor text REFERENCES Company(Name),
-        Closeness integer NOT NULL
-);
-
-CREATE TABLE Performance (
-        Company text REFERENCES Company(Name),
-        year integer,
-        MarketCap money,
-        EPS money,
-        Perf integer,
-        PerfVsSector integer,
-        PerfVsIndustry integer,
-        PerfVsLegacySector integer,
-        PerfVsLegacyIndustry integer
-);
-
-CREATE TABLE Weight (
-        Company text REFERENCES Company(Name),
-        Source text,
-        Sector text REFERENCES Sector(Name),
-        Industry text REFERENCES Industry(Name),
-        Weight integer,
-        Data text
+-- Create the table which shows what words are most closely related to each sector cluster produced by our analysis
+CREATE TABLE sector_words_csv (
+	sector int8 NULL,
+	word text NULL,
+	similarity float8 NULL
 );

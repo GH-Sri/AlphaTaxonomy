@@ -29,15 +29,15 @@ def lambda_handler(event, context):
     logger.info("Getting sector and industry weights for all companies")
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         cur.execute('''
-SELECT Company.Name AS Company
-      ,Company.MarketCap
-      ,Sector.Name AS Sector
-      ,SectorWeight
-      ,Industry.Name AS Industry
-      ,IndustryWeight
-FROM company
-JOIN Sector ON Sector = Sector.Name
-JOIN Industry ON Industry = Industry.Name
+SELECT COALESCE(sname.name, 'Sector ' || csi.sector) AS Sector
+      ,COALESCE(iname.name, 'Industry ' || csi.industry) AS Industry
+      ,sum(cl.marketcap::NUMERIC::money) AS MarketCap
+      ,count(*) AS CompanyCount
+FROM (SELECT DISTINCT ON (name) name, sector, industry FROM company_sector_industry_csv) csi
+JOIN CompanyList_csv cl ON cl.Name = csi.name
+LEFT OUTER JOIN Sector_Name_CSV sname ON sname.number = csi.sector
+LEFT OUTER JOIN Industry_Name_CSV iname ON iname.number = csi.industry
+GROUP BY 1, 2
         ''')
         conn.commit()
         return {
