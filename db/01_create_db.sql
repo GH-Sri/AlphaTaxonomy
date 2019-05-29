@@ -1,5 +1,5 @@
 -- Create the database
---CREATE DATABASE mdas;
+CREATE DATABASE mdas;
 
 -- Connect to the new DB (rather than Public)
 \c mdas
