@@ -156,21 +156,6 @@ podTemplate(
             }
         }
       }
-
-
-      stage('Package + Push'){
-        container('awscli'){
-            withCredentials([usernamePassword(credentialsId: 's3-key-secret', usernameVariable: 'KEY', passwordVariable: 'SECRET')]) {
-                sh """
-                ls
-                zip ${shortGitCommit}.zip lambda-json-rest/
-                AWS_ACCESS_KEY_ID=$KEY AWS_SECRET_ACCESS_KEY=$SECRET aws s3 cp ${shortGitCommit}.zip s3://${bucket}/lambda-api-endpoint/
-                
-                """
-            }
-        }
-      }
-
 /*
       stage('Deploy'){
         container('awscli'){
