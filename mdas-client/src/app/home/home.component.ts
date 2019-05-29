@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     selections: any[] = [];
 
     constructor(private treemapService: TreemapService,
-                private router: Router) {
+        private router: Router) {
     }
 
     ngOnInit() {
@@ -91,47 +91,61 @@ export class HomeComponent implements OnInit {
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
             var dataNew = [];
+            var uniqueArray = []
+
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
                 dataNew[count] = [
                     this.sectorIndustryWeights[count].industry,
                     this.sectorIndustryWeights[count].sector,
                     marketcap,
-                    marketcap
+                    this.sectorIndustryWeights[count].companycount
                 ];
+
+                if (uniqueArray.indexOf(this.sectorIndustryWeights[count].sector) === -1) {
+                    uniqueArray.push(this.sectorIndustryWeights[count].sector);
+                }
             }
+
+
+            console.log("Unique Sectors");
+            console.log(uniqueArray);
+
+            for (let count in uniqueArray) {
+                dataNew.unshift([uniqueArray[count], "Sectors", 0, 0]);
+            }
+
             dataNew.unshift(
                 ["Sectors", null, 0, 0],
-                ["Sector 1", "Sectors", 0, 0],
-                ["Sector 2", "Sectors", 0, 0],
-                ["Sector 3", "Sectors", 0, 0],
-                ["Sector 4", "Sectors", 0, 0],
-                ["Sector 5", "Sectors", 0, 0],
-                ["Sector 6", "Sectors", 0, 0],
-                ["Sector 7", "Sectors", 0, 0],
-                ["Sector 8", "Sectors", 0, 0],
-                ["Sector 9", "Sectors", 0, 0],
-                ["Sector 10", "Sectors", 0, 0]);
+            );
 
             this.data = dataNew;
             console.log("Formatted Data");
             console.log(this.data);
         });
 
-        
-
-
+        //initialize table
+        this.companies = [];
+        this.companyService.getCompanyList().then(companies => {
+            console.log(companies);
+            this.companies = companies;
+            this.cols = [
+                { field: 'name', header: 'Name' },
+                { field: 'atsector', header: 'Sector' },
+                { field: 'atindustry', header: 'Industry' },
+                { field: 'marketcap', header: 'Market Cap' }
+            ];
+            console.log(this.companies);
+        });
     }
 
-//    // Responsive Treemap - Not yet functional
-//    @HostListener('window:resize', ['$event'])
-//    onResize(event, options) {
-//        if (event) {
-//            options.width = window.innerWidth * this.windowOffset;
-//        }
-//    }
-
-
+    // Responsive Treemap
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event, options) {
+    //     if (event) {
+    //         options.width = window.innerWidth * this.windowOffset;
+    //     }
+    // }
 
     //Treemap methods
 
@@ -154,16 +168,20 @@ export class HomeComponent implements OnInit {
         console.log('selections');
         console.log(this.selections);
         // filter and display table
-        let sectorFilter = this.selections[0] == null? '' : this.selections[0];
-        let industryFilter = this.selections[1] == null? '' : this.selections[1];
+        let sectorFilter = this.selections[0] == null ? '' : this.selections[0];
+        let industryFilter = this.selections[1] == null ? '' : this.selections[1];
 
         console.log('sectorFilter = ' + sectorFilter);
         console.log('industryFilter = ' + industryFilter);
 
-        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
-                                                                                                 industry: industryFilter} });
+        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], {
+            queryParams: {
+                sector: sectorFilter,
+                industry: industryFilter
+            }
+        });
 
-           
+
 
     }
 
