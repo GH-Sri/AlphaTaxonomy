@@ -53,14 +53,13 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
       this.companies = [];
       this.companyService.getCompanyList().then(companies => {
           console.log(companies);
-          this.allCompanies = companies;
+          this.companies = companies;
           this.totalRecords = 10000;
-          this.companies = this.allCompanies.slice(0, 100);
       });
       this.cols = [
           { field: 'name', header: 'Name'},
-          { field: 'sector', header: 'Sector' },
-          { field: 'industry', header: 'Industry' },
+          { field: 'atsector', header: 'Sector' },
+          { field: 'atindustry', header: 'Industry' },
           { field: 'marketcap', header: 'Market Cap'}
       ];
   }
@@ -74,19 +73,19 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
   }
   
   filter(){
-//      if(this.filters != null && this.filters.toArray().length > 0){
-//          this.filters.toArray()[1].nativeElement.value = this.sectorFilter;
-//          this.filters.toArray()[2].nativeElement.value = this.industryFilter;
-//
-////        Industry filtering always yields a subset of a particular sector,
-////        so we only need to filter on industry if we have one
-//          if(this.industryFilter || (this.previousIndustryFilter && !this.industryFilter)){
-//              this.table.filter(this.industryFilter, 'industry', 'contains');
-//          }
-//          else{
-//              this.table.filter(this.sectorFilter, 'sector', 'contains');
-//          }
-//      }
+      if(this.filters != null && this.filters.toArray().length > 0){
+          this.filters.toArray()[1].nativeElement.value = this.sectorFilter;
+          this.filters.toArray()[2].nativeElement.value = this.industryFilter;
+
+//        Industry filtering always yields a subset of a particular sector,
+//        so we only need to filter on industry if we have one
+          if(this.industryFilter || (this.previousIndustryFilter && !this.industryFilter)){
+              this.table.filter(this.industryFilter, 'atindustry', 'contains');
+          }
+          else{
+              this.table.filter(this.sectorFilter, 'atsector', 'contains');
+          }
+      }
   }
   
   ngAfterViewChecked(){

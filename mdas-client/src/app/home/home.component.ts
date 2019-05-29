@@ -12,8 +12,6 @@ import { TreemapService } from './treemap.service';
 })
 export class HomeComponent implements OnInit {
 
-    data = [];
-
     //glue fields
     displayCompanyList: boolean = false;
     displayTreeMap: boolean = false;
@@ -31,7 +29,7 @@ export class HomeComponent implements OnInit {
     windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
-    //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
+    columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
         highlightOnMouseOver: true,
