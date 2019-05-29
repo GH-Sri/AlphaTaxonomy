@@ -10,8 +10,10 @@
 		</tr>
 		<tr>
 			<th *ngFor="let col of columns" [ngSwitch]="col.field">
-			<input #filter pInputText type="text" [(ngModel)]="col.filter"
+			<input #hiddenfilter pInputText type="text" [(ngModel)]="col.filter" style="display: none;'"
 					(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode)">
+			<input #filter pInputText type="text" [(ngModel)]="col.filter"
+					(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode);">
 			</th>
 		</tr>
 	</ng-template>
