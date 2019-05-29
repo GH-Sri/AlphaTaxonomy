@@ -5,28 +5,55 @@ Created on Mon May 27 11:59:06 2019
 @author: dmoore002
 """
 
-
-def agg():
+#Reads in n number of dataframes
+def agg(dataNames=['firstData.csv','secondData.csv'],docsNames=['firstDoc.csv','secondDoc.csv']):
     import pandas as pd
+    from collections import namedtuple
+    from gensim.models.doc2vec import TaggedDocument
+    import gensim
+
+
     
-    names = []
+    names = dataNames
     df = pd.read_csv(names[0])
+    df.dropna(subset=['text'],inplace=True)    
     
     for name in names[1:]:
         dfTemp = pd.read_csv(name)
-        df.append(dfTemp,inplace=True)
+        df.append(dfTemp)
     
-    docNames = []
-    #read in docs
+    docNames = docsNames
+    dList = pd.read_csv(docNames[0])
+    dList.dropna(subset=['text'],inplace=True)
     docs = []
+    for index, value in dList['text'].iteritems():
+        docs.append(value)
     
-    for name in docNames:
-        docs.append(name)
+    for name in docNames[1:]:
+        dListTemp = pd.read_csv(name)
+        for index, value in dListTemp['text'].iteritems():
+            docs.append(value)
     
-    return(data)
+    #   Create a namedtuple for tagging
+    Document = namedtuple('Document', 'words tags')
+    
+    #   Tag the documents  
+    allTheDocs = []
+    for index, text in enumerate(docs):
+        tokens = gensim.utils.to_unicode(text).split()
+        words = tokens[:]
+        tags = [index]
+        allTheDocs.append(Document(words, tags))
+    
+    #   Randomly shuffle the documents around in the corpus 
+    from random import shuffle
+    docList = allTheDocs[:]
+    shuffle(docList)
+    
+    return(df,docList)
     
     
-data = agg()
+data,docs = agg()
 
 
 def d2v(data,docs):

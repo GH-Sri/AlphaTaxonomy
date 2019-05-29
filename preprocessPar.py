@@ -5,7 +5,7 @@ Created on Mon May 27 11:56:51 2019
 @author: dmoore002
 """
 
-def preprocess(inputFile='data.csv'):
+def preprocess(inputFile='data1_proc_input.csv'):
     import nltk
     from nltk import pos_tag
     from nltk.corpus import stopwords
@@ -65,41 +65,43 @@ def preprocess(inputFile='data.csv'):
         # save intermediate result
         df_intermediate = df.copy()
         df_intermediate['text']=finDocs
-        df_intermediate.to_csv('cleaned_data.csv')
     else:
         df=pd.read_csv('cleaned_data.csv')
-        
-    #   Aggregate the documents to remove duplicates
-    finDocsAgg = finDocs
-    
-    print('Tagging documents')
-    #   Create a namedtuple for tagging
-    Document = namedtuple('Document', 'words tags')
-    
-    #   Tag the documents  
-    allTheDocs = []
-    for index, text in enumerate(finDocsAgg):
-        tokens = gensim.utils.to_unicode(text).split()
-        words = tokens[:]
-        tags = [index]
-        allTheDocs.append(Document(words, tags))
-    
-    #   Randomly shuffle the documents around in the corpus 
-    from random import shuffle
-    docList = allTheDocs[:]
-    shuffle(docList)
-    
-    return(df,docList)
+
+    return(df,df_intermediate)
     
     
 
-df, docList = preprocess()
+df, df_intermediate = preprocess(inputFile='C:/Users/dmoore002/Documents/TechChallengeUSCIS/data1_proc_input.csv')
+
+import os
+
+os.chdir('C:/Users/dmoore002/Documents/TechChallengeUSCIS/')
 
 fileName = 'firstData'
 docName = 'firstDoc'
 
-df.to_csv('{}.csv'.format(fileName))
-docList.to_csv('{}.csv'.format(docName))
+df[df['Symbol'] == ''] = 'MISSING'
+df.to_csv('{}.csv'.format(fileName),index=False)
+
+df[df['Symbol'] == ''] = 'MISSING'
+df_intermediate.to_csv('{}.csv'.format(docName),index=False)
+
+
+#import pandas as pd
+
+#dList = pd.DataFrame(columns=['Docs'])
+#
+#counter = 0
+#for item in docList:
+#    dList.at[counter,'Docs'] = item 
+#    counter += 1
+
+            
+            
+            
+
+
 
 
 

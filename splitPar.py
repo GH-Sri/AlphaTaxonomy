@@ -1,6 +1,4 @@
-import pandas as pd
-
-def splitDF(n=16,inputFile='data.csv'):
+def splitDF(n=16,inputFile='C:/Users/dmoore002/Documents/TechChallengeUSCIS/data.csv'):
     import pandas as pd
     import numpy as np
 
@@ -9,7 +7,7 @@ def splitDF(n=16,inputFile='data.csv'):
     counter = 1
     for item in ar:
         dfTemp = pd.DataFrame(item)
-        dfTemp.to_csv('data{}_proc_input.csv'.format(counter))
+        dfTemp.to_csv('C:/Users/dmoore002/Documents/TechChallengeUSCIS/data{}_proc_input.csv'.format(counter),index=False)
         counter += 1
         
 
