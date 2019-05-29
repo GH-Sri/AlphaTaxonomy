@@ -37,7 +37,8 @@ CREATE TABLE companylist_csv (
 	industry text NULL,
 	"summary quote" text NULL,
 	exchange text NULL,
-	cik int8 NULL
+	cik int8 NULL,
+	sic int8 NULL
 );
 CREATE INDEX companylist_csv_name_idx ON mdas.companylist_csv USING btree (name);
 
