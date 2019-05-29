@@ -130,23 +130,23 @@ export class HomeComponent implements OnInit {
             this.sectorIndustryWeights = sectorIndustryWeight;
 
 
-            this.sectorKeys = [];
-            this.industryKeys = [];
-            let companyArray = [];
-            for (let sectorIndustryWeight of this.sectorIndustryWeights) {
-                if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
-                    this.sectorKeys.push(sectorIndustryWeight.sector);
-                    this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
-                }
-                if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
-                    this.industryKeys.push(sectorIndustryWeight.industry);
-                    this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
-                }
-                let marketcap = sectorIndustryWeight.marketcap;
-                marketcap = marketcap.replace(/[$,]+/g, "");
-                marketcap = parseInt(marketcap);
-                this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
-            }
+            // this.sectorKeys = [];
+            // this.industryKeys = [];
+            // let companyArray = [];
+            // for (let sectorIndustryWeight of this.sectorIndustryWeights) {
+            //     if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
+            //         this.sectorKeys.push(sectorIndustryWeight.sector);
+            //         this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
+            //     }
+            //     if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
+            //         this.industryKeys.push(sectorIndustryWeight.industry);
+            //         this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
+            //     }
+            //     let marketcap = sectorIndustryWeight.marketcap;
+            //     marketcap = marketcap.replace(/[$,]+/g, "");
+            //     marketcap = parseInt(marketcap);
+            //     this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
+            // }
 
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
@@ -172,7 +172,9 @@ export class HomeComponent implements OnInit {
                 ["Sector 7", "Sectors", 0, 0],
                 ["Sector 8", "Sectors", 0, 0],
                 ["Sector 9", "Sectors", 0, 0],
-                ["Sector 10", "Sectors", 0, 0]);
+                ["Sector 10", "Sectors", 0, 0],
+                ["Test Sector Name", "Sectors", 0, 0],
+            );
 
             this.data = dataNew;
             console.log("Formatted Data");
@@ -253,13 +255,13 @@ export class HomeComponent implements OnInit {
     }
 
 
-    showDialog() {
-        this.displayCompanyList = true;
-    }
+    // showDialog() {
+    //     this.displayCompanyList = true;
+    // }
 
-    showTreeMap() {
-        this.displayTreeMap = true;
-    }
+    // showTreeMap() {
+    //     this.displayTreeMap = true;
+    // }
 
 
 
