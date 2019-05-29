@@ -12,6 +12,16 @@ import { TreemapService } from './treemap.service';
 })
 export class HomeComponent implements OnInit {
 
+    //glue fields
+    displayCompanyList: boolean = false;
+    displayTreeMap: boolean = false;
+
+    //datatable fields
+    companies: CompanyOverview[];
+    cols: any[];
+    selectedCompany: CompanyOverview;
+
+
     //treemap fields
     data = [];
     title = 'SECTOR / INDUSTRY';
@@ -19,8 +29,7 @@ export class HomeComponent implements OnInit {
     windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
-
-    //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
+    columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
         highlightOnMouseOver: true,
@@ -59,7 +68,7 @@ export class HomeComponent implements OnInit {
     selections: any[] = [];
 
     constructor(private treemapService: TreemapService,
-                private router: Router) {
+        private router: Router) {
     }
 
     ngOnInit() {
@@ -101,20 +110,15 @@ export class HomeComponent implements OnInit {
             console.log(this.data);
         });
 
-      
-
-
     }
 
-//    // Responsive Treemap - Not yet functional
-//    @HostListener('window:resize', ['$event'])
-//    onResize(event, options) {
-//        if (event) {
-//            options.width = window.innerWidth * this.windowOffset;
-//        }
-//    }
-
-
+    // Responsive Treemap
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event, options) {
+    //     if (event) {
+    //         options.width = window.innerWidth * this.windowOffset;
+    //     }
+    // }
 
     //Treemap methods
 
@@ -137,8 +141,8 @@ export class HomeComponent implements OnInit {
         console.log('selections');
         console.log(this.selections);
         // filter and display table
-        let sectorFilter = this.selections[0] == null? '' : this.selections[0];
-        let industryFilter = this.selections[1] == null? '' : this.selections[1];
+        let sectorFilter = this.selections[0] == null ? '' : this.selections[0];
+        let industryFilter = this.selections[1] == null ? '' : this.selections[1];
 
         console.log('sectorFilter = ' + sectorFilter);
         console.log('industryFilter = ' + industryFilter);
@@ -146,7 +150,6 @@ export class HomeComponent implements OnInit {
        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
                                                                                                  industry: industryFilter} });
 
-           
 
     }
 
