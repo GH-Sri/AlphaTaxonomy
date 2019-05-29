@@ -1,35 +1,9 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { CompanyListService } from './company-list.service';
 import { CompanyOverview } from '../company-overview/company-overview';
 import { SectorIndustryWeight } from './sector-industry-weight';
 import { TreemapService } from './treemap.service';
-
-export interface MaterialDatatable {
-    sector: string;
-    name: string;
-    marketcap: string;
-    companycount: number;
-}
-
-const ELEMENT_DATA: MaterialDatatable[] = [
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-    { sector: "Sector 9", name: "Industry 86", marketcap: "$1,315,961,533,575.11", companycount: 55 },
-];
 
 
 @Component({
@@ -38,6 +12,8 @@ const ELEMENT_DATA: MaterialDatatable[] = [
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+    data = [];
 
     //glue fields
     displayCompanyList: boolean = false;
@@ -48,23 +24,13 @@ export class HomeComponent implements OnInit {
     cols: any[];
     selectedCompany: CompanyOverview;
 
-    //Material datatable
-    displayedColumns: string[] = ['sector', 'name', 'marketcap', 'companycount'];
-    // dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-    @ViewChild(MatSort) sort: MatSort;
 
     //treemap fields
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
     windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
-    // height = 600;
-
-    data = [
-        ["Sectors", "null", 0, 0]
-    ];
-    //dataSource = new MatTableDataSource(this.data);
+    // height = 600
 
     //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
@@ -116,11 +82,8 @@ export class HomeComponent implements OnInit {
         private treemapService: TreemapService,
         private router: Router) {
     }
-    dataSource = new MatTableDataSource(ELEMENT_DATA);
 
     ngOnInit() {
-        //initialize Material Sort
-        this.dataSource.sort = this.sort;
 
         //initialize treemap
         this.treemapService.getData().then(sectorIndustryWeight => {
@@ -151,6 +114,7 @@ export class HomeComponent implements OnInit {
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
             var dataNew = [];
+            var uniqueArray = []
 
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
@@ -160,20 +124,22 @@ export class HomeComponent implements OnInit {
                     marketcap,
                     this.sectorIndustryWeights[count].companycount
                 ];
+
+                if (uniqueArray.indexOf(this.sectorIndustryWeights[count].sector) === -1) {
+                    uniqueArray.push(this.sectorIndustryWeights[count].sector);
+                }
             }
+
+
+            console.log("Unique Sectors");
+            console.log(uniqueArray);
+
+            for (let count in uniqueArray) {
+                dataNew.unshift([uniqueArray[count], "Sectors", 0, 0]);
+            }
+
             dataNew.unshift(
                 ["Sectors", null, 0, 0],
-                ["Sector 1", "Sectors", 0, 0],
-                ["Sector 2", "Sectors", 0, 0],
-                ["Sector 3", "Sectors", 0, 0],
-                ["Sector 4", "Sectors", 0, 0],
-                ["Sector 5", "Sectors", 0, 0],
-                ["Sector 6", "Sectors", 0, 0],
-                ["Sector 7", "Sectors", 0, 0],
-                ["Sector 8", "Sectors", 0, 0],
-                ["Sector 9", "Sectors", 0, 0],
-                ["Sector 10", "Sectors", 0, 0],
-                ["Test Sector Name", "Sectors", 0, 0],
             );
 
             this.data = dataNew;
@@ -193,9 +159,6 @@ export class HomeComponent implements OnInit {
                 { field: 'marketcap', header: 'Market Cap' }
             ];
             console.log(this.companies);
-
-            // Material Table Columns
-            //tableColumns = ['name', 'sector', 'industry'];
         });
     }
 
@@ -203,8 +166,7 @@ export class HomeComponent implements OnInit {
     // @HostListener('window:resize', ['$event'])
     // onResize(event, options) {
     //     if (event) {
-    //         // options.width = window.innerWidth * this.windowOffset;
-    //         // options["width"] = ["" + window.innerWidth * this.windowOffset + ""];
+    //         options.width = window.innerWidth * this.windowOffset;
     //     }
     // }
 

@@ -1,8 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material';
-// import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -30,7 +28,6 @@ import { CompanyPerformanceComponent } from './company-performance/company-perfo
 import { CompanyPerformanceService } from './company-performance/performance.service';
 import { HomeComponent } from './home/home.component';
 import { TreemapService } from './home/treemap.service';
-// import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -54,12 +51,6 @@ import { TreemapService } from './home/treemap.service';
     FormsModule,
     GoogleChartsModule,
     HttpClientModule,
-    // MaterialModule,
-    // MatButtonModule,
-    // MatIconModule,
-    // MatInputModule,
-    // MatSelectModule,
-    MatTableModule,
     PanelModule,
     TableModule,
   ],
