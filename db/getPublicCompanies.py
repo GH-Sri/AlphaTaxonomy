@@ -3,6 +3,7 @@
 # Use the NASDAQ site links for csv download of publicly traded company data
 # There isn't one link to download all companies A-Z; use links for NASDAQ, NYSE and AMEX
 # SEC 10-Ks are our most important ML dataset so we need CIKs as well; scrape from SEC/Edgar
+# SIC code is needed to evaluate the model
 
 import os
 import re
@@ -21,8 +22,9 @@ Company_URL = 'https://www.nasdaq.com/screening/companies-by-industry.aspx?excha
 CIK_by_ticker_URL = 'https://www.sec.gov/cgi-bin/browse-edgar?ticker={}&Find=Search&owner=exclude&action=getcompany'
 CIK_by_name_URL = 'https://www.sec.gov/cgi-bin/browse-edgar?company={}&owner=exclude&action=getcompany'
 
-# And a regex to pull out the CIK number from the whole page contents
+# And a regex to pull out the CIK number and SIC code from the whole page contents
 CIK_RE = re.compile(r'.*CIK=(?P<CIK>\d{10}).*')
+SIC_RE = re.compile(r'.*SIC=(?P<SIC>\d{4}).*')
 
 out_lines = []
 
@@ -40,7 +42,7 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
             header = False
             if not out_lines:
                 # If we're just starting capture headers adding headers for our additional data
-                out_line.extend(('Exchange','CIK'))
+                out_line.extend(('Exchange','CIK','SIC'))
             else:
                 # Oherwise we already have headers; continue to the data lines
                 continue
@@ -57,6 +59,15 @@ for exchange in ('NASDAQ', 'NYSE', 'AMEX'):
                 match = CIK_RE.search(get(CIK_by_name_URL.format(line[1])).content.decode())
             if match: CIK = match.group('CIK')
             out_line.append(CIK)
+            # Attempt to determine the SIC code by ticker
+            SIC = ''
+            match = SIC_RE.search(get(CIK_by_ticker_URL.format(line[0])).content.decode())
+            if not match:
+                # Failed to find it by ticker, try by company name
+                match = SIC_RE.search(get(CIK_by_name_URL.format(line[1])).content.decode())
+            if match: SIC = match.group('SIC')
+            out_line.append(SIC)
+            
 
         out_lines.append(out_line)
 
