@@ -31,6 +31,7 @@ def agg(dataNames=['firstData.csv','secondData.csv'],docsNames=['firstDoc.csv','
     
     for name in docNames[1:]:
         dListTemp = pd.read_csv(name)
+        dListTemp.dropna(subset=['text'],inplace=True)    
         for index, value in dListTemp['text'].iteritems():
             docs.append(value)
     
