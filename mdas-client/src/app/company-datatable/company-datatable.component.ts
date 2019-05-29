@@ -57,8 +57,11 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
         });
         this.cols = [
             { field: 'name', header: 'Name' },
+            { field: 'symbol', header: 'Symbol' },
             { field: 'atsector', header: 'Sector' },
+            { field: 'legacysector', header: 'Legacy Sector' },
             { field: 'atindustry', header: 'Industry' },
+            { field: 'legacyindustry', header: 'Legacy Industry' },
             { field: 'marketcap', header: 'Market Cap' }
         ];
     }

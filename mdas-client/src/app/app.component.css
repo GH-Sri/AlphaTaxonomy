@@ -116,3 +116,8 @@
   border-bottom: 5px solid transparent;
   float: left;
 }
+
+
+.p-grid {
+  display: block;
+}
