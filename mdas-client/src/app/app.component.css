@@ -19,6 +19,8 @@
 }
 
 #containerHead {
+  position:absolute;
+  top:0px;
   background-color: #272b40;
   color: #ffffff;
 }
@@ -30,7 +32,7 @@
   font-family: "Gothic A1";
   font-size: 30px;
   font-weight: 900;
-  line-height: 38px;
+  line-height: 20px;
   letter-spacing: -0.5px;
 }
 
