@@ -11,16 +11,23 @@ import { SectorIndustryWeight } from './sector-industry-weight';
 })
 export class HomeComponent implements OnInit {
 
+    data = [];
+
+    //glue fields
+    displayCompanyList: boolean = false;
+    displayTreeMap: boolean = false;
+
+    //datatable fields
+    companies: CompanyOverview[];
+    cols: any[];
+    selectedCompany: CompanyOverview;
+
+
     //treemap fields
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
     windowOffset = .9;
-    // width = window.innerWidth * this.windowOffset;
-    // height = 600;
-
-    data = [
-        ["Sectors", null, 0, 0],
-    ];
+    
     columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
