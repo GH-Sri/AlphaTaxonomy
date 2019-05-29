@@ -11,5 +11,5 @@ def splitDF(n=16,inputFile='C:/Users/dmoore002/Documents/TechChallengeUSCIS/data
         counter += 1
         
 
-splitDF()    
+splitDF(n=16,inputFile='PATH/10kData.csv')    
     
