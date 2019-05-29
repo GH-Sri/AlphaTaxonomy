@@ -13,12 +13,12 @@ import { TreemapService } from './treemap.service';
 export class HomeComponent implements OnInit {
 
     //treemap fields
+    data = [];
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
     windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
-    sectorKeys: string[];
 
     //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
@@ -65,28 +65,12 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
 
         //initialize treemap
-        this.treemapService.getData().then(sectorIndustryWeight => {
+        this.treemapService.getData().then(sectorIndustryWeights => {
             this.data = [
                 ["Sectors", "Industry", 0, 0]
             ];
            this.sectorIndustryWeights = sectorIndustryWeights;
-             this.sectorKeys = [];
-            // this.industryKeys = [];
-            // let companyArray = [];
-            // for (let sectorIndustryWeight of this.sectorIndustryWeights) {
-            //     if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
-            //         this.sectorKeys.push(sectorIndustryWeight.sector);
-            //         this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
-            //     }
-            //     if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
-            //         this.industryKeys.push(sectorIndustryWeight.industry);
-            //         this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
-            //     }
-            //     let marketcap = sectorIndustryWeight.marketcap;
-            //     marketcap = marketcap.replace(/[$,]+/g, "");
-            //     marketcap = parseInt(marketcap);
-            //     this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
-            // }
+           let uniqueSectors = [];
 
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
@@ -103,12 +87,12 @@ export class HomeComponent implements OnInit {
                     marketcap,
                     this.sectorIndustryWeights[count].companycount
                 ];
-               if(!this.sectorKeys.includes(sector)){
-                    this.sectorKeys.push(sector);
+               if(!uniqueSectors.includes(sector)){
+                   uniqueSectors.push(sector);
                 }
             }
-            for(let index in this.sectorKeys){
-                dataNew.unshift([this.sectorKeys[index], "Sectors", 0, 0]);
+            for(let index in uniqueSectors){
+                dataNew.unshift([uniqueSectors[index], "Sectors", 0, 0]);
             }
             dataNew.unshift(["Sectors", null, 0, 0]);
 

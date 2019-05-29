@@ -21,7 +21,7 @@ import { CompanyCompetitorsComponent } from './company-competitors/company-compe
 import { CompetitorService } from './company-competitors/competitor.service';
 import { CompanyIndustriesComponent } from './company-industries/company-industries.component';
 import { WeightService } from './company-industries/weight.service';
-import { CompanyListService } from './home/company-list.service';
+import { CompanyListService } from './company-datatable/company-list.service';
 import { CompanyOverviewComponent } from './company-overview/company-overview.component';
 import { CompanyOverviewService } from './company-overview/company-overview.service';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
@@ -29,9 +29,6 @@ import { CompanyPerformanceService } from './company-performance/performance.ser
 import { HomeComponent } from './home/home.component';
 
 
-import { DialogModule } from 'primeng/dialog';
-import { TableModule } from 'primeng/table';
-import { CompanyListService } from './company-datatable/company-list.service';
 import { TreemapService } from './home/treemap.service';
 import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
 
