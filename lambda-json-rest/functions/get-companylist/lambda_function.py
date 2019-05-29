@@ -57,7 +57,7 @@ LIMIT {}
 
 # executes upon API event
 def lambda_handler(event, context):
-    qsp = event['queryStringParameters']
+    qsp = event.get('queryStringParameters',{})
 
     # Apply filters for Sector or Industry if passed on query string
     if 'sector' in qsp: 
