@@ -1,8 +1,9 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { CompanyOverview } from '../company-overview/company-overview';
 import { Router } from '@angular/router';
-import { TreemapService } from './treemap.service';
+import { CompanyOverview } from '../company-overview/company-overview';
 import { SectorIndustryWeight } from './sector-industry-weight';
+import { TreemapService } from './treemap.service';
+
 
 @Component({
     selector: 'app-home',
@@ -24,12 +25,13 @@ export class HomeComponent implements OnInit {
 
 
     //treemap fields
+    data = [];
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
-    windowOffset = .9;
+    windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
-    columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
+    //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
         highlightOnMouseOver: true,
@@ -72,29 +74,14 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+
         //initialize treemap
         this.treemapService.getData().then(sectorIndustryWeights => {
             this.data = [
-                ["Sectors", null, 0, 0]
+                ["Sectors", "Industry", 0, 0]
             ];
-            this.sectorIndustryWeights = sectorIndustryWeights;
-            // this.sectorKeys = [];
-            // this.industryKeys = [];
-            // let companyArray = [];
-            // for (let sectorIndustryWeight of this.sectorIndustryWeights) {
-            //     if (!this.sectorKeys.includes(sectorIndustryWeight.sector)) {
-            //         this.sectorKeys.push(sectorIndustryWeight.sector);
-            //         this.data.push([sectorIndustryWeight.sector, "Sectors", sectorIndustryWeight.sectorweight, 0]);
-            //     }
-            //     if (!this.industryKeys.includes(sectorIndustryWeight.industry)) {
-            //         this.industryKeys.push(sectorIndustryWeight.industry);
-            //         this.data.push([sectorIndustryWeight.industry, sectorIndustryWeight.sector, sectorIndustryWeight.industryweight, 0]);
-            //     }
-            //     let marketcap = sectorIndustryWeight.marketcap;
-            //     marketcap = marketcap.replace(/[$,]+/g, "");
-            //     marketcap = parseInt(marketcap);
-            //     this.data.push([sectorIndustryWeight.company, sectorIndustryWeight.industry, marketcap, 0]);
-            // }
+           this.sectorIndustryWeights = sectorIndustryWeights;
+           let uniqueSectors = [];
 
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
@@ -103,48 +90,28 @@ export class HomeComponent implements OnInit {
 
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
+                let sector = this.sectorIndustryWeights[count].sector;
+                let industry = this.sectorIndustryWeights[count].industry;
                 dataNew[count] = [
-                    this.sectorIndustryWeights[count].industry,
-                    this.sectorIndustryWeights[count].sector,
+                   industry,
+                    sector,
                     marketcap,
                     this.sectorIndustryWeights[count].companycount
                 ];
-
-                if (uniqueArray.indexOf(this.sectorIndustryWeights[count].sector) === -1) {
-                    uniqueArray.push(this.sectorIndustryWeights[count].sector);
+               if(!uniqueSectors.includes(sector)){
+                   uniqueSectors.push(sector);
                 }
             }
-
-
-            console.log("Unique Sectors");
-            console.log(uniqueArray);
-
-            for (let count in uniqueArray) {
-                dataNew.unshift([uniqueArray[count], "Sectors", 0, 0]);
+            for(let index in uniqueSectors){
+                dataNew.unshift([uniqueSectors[index], "Sectors", 0, 0]);
             }
-
-            dataNew.unshift(
-                ["Sectors", null, 0, 0],
-            );
+            dataNew.unshift(["Sectors", null, 0, 0]);
 
             this.data = dataNew;
             console.log("Formatted Data");
             console.log(this.data);
         });
 
-        //initialize table
-        this.companies = [];
-        // this.companyService.getCompanyList().then(companies => {
-        //     console.log(companies);
-        //     this.companies = companies;
-        //     this.cols = [
-        //         { field: 'name', header: 'Name' },
-        //         { field: 'atsector', header: 'Sector' },
-        //         { field: 'atindustry', header: 'Industry' },
-        //         { field: 'marketcap', header: 'Market Cap' }
-        //     ];
-        //     console.log(this.companies);
-        // });
     }
 
     // Responsive Treemap
@@ -182,13 +149,8 @@ export class HomeComponent implements OnInit {
         console.log('sectorFilter = ' + sectorFilter);
         console.log('industryFilter = ' + industryFilter);
 
-        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], {
-            queryParams: {
-                sector: sectorFilter,
-                industry: industryFilter
-            }
-        });
-
+       this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
+                                                                                                 industry: industryFilter} });
 
 
     }
