@@ -87,17 +87,6 @@ df.to_csv('{}.csv'.format(fileName),index=False)
 
 df_intermediate.to_csv('{}.csv'.format(docName),index=False)
 
-
-#import pandas as pd
-
-#dList = pd.DataFrame(columns=['Docs'])
-#
-#counter = 0
-#for item in docList:
-#    dList.at[counter,'Docs'] = item 
-#    counter += 1
-
-            
             
             
 
