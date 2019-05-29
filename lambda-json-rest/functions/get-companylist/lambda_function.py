@@ -57,7 +57,9 @@ LIMIT {}
 
 # executes upon API event
 def lambda_handler(event, context):
-    qsp = event.get('queryStringParameters',{})
+    # First blank dict is default if event does not contain 'queryStringParameters'
+    # Second blank dict is default if event has 'queryStringParameters' but value is null
+    qsp = event.get('queryStringParameters',{}) or {}
 
     # Apply filters for Sector or Industry if passed on query string
     if 'sector' in qsp: 
