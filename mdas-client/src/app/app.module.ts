@@ -1,28 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { GoogleChartsModule } from 'angular-google-charts';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CompanyOverviewComponent } from './company-overview/company-overview.component';
-import { CompanyOverviewService } from './company-overview/company-overview.service';
-import { CompanyIndustriesComponent } from './company-industries/company-industries.component';
-import { WeightService } from './company-industries/weight.service';
-import { CompanyCompetitorsComponent } from './company-competitors/company-competitors.component';
-import { CompetitorService } from './company-competitors/competitor.service';
+
+import { GoogleChartsModule } from 'angular-google-charts';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { DataViewModule } from 'primeng/dataview';
+import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
-import { HomeComponent } from './home/home.component';
+import { TableModule } from 'primeng/table';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { CompanyComponent } from './company/company.component';
+import { CompanyCompetitorsComponent } from './company-competitors/company-competitors.component';
+import { CompetitorService } from './company-competitors/competitor.service';
+import { CompanyIndustriesComponent } from './company-industries/company-industries.component';
+import { WeightService } from './company-industries/weight.service';
+import { CompanyListService } from './home/company-list.service';
+import { CompanyOverviewComponent } from './company-overview/company-overview.component';
+import { CompanyOverviewService } from './company-overview/company-overview.service';
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
 import { CompanyPerformanceService } from './company-performance/performance.service';
+import { HomeComponent } from './home/home.component';
 
 
 import { DialogModule } from 'primeng/dialog';
@@ -34,30 +38,39 @@ import { CompanyDatatableComponent } from './company-datatable/company-datatable
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyOverviewComponent,
-    CompanyIndustriesComponent,
+    CompanyComponent,
     CompanyCompetitorsComponent,
+    CompanyIndustriesComponent,
+    CompanyOverviewComponent,
+    CompanyPerformanceComponent,
     HomeComponent,
     CompanyComponent,
     CompanyPerformanceComponent,
     CompanyDatatableComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
+    BrowserAnimationsModule,
+    BrowserModule,
     CardModule,
     ChartModule,
     DataViewModule,
-    DropdownModule,
-    PanelModule,
-    GoogleChartsModule,
     DialogModule,
-    TableModule
+    DropdownModule,
+    FormsModule,
+    GoogleChartsModule,
+    HttpClientModule,
+    PanelModule,
+    TableModule,
   ],
-  providers: [CompetitorService, CompanyOverviewService, WeightService, CompanyListService, TreemapService, CompanyPerformanceService],
+  providers: [
+    CompanyListService,
+    CompanyOverviewService,
+    CompanyPerformanceService,
+    CompetitorService,
+    TreemapService,
+    WeightService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

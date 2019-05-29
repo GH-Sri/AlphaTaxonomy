@@ -1,8 +1,9 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { CompanyOverview } from '../company-overview/company-overview';
 import { Router } from '@angular/router';
-import { TreemapService } from './treemap.service';
+import { CompanyOverview } from '../company-overview/company-overview';
 import { SectorIndustryWeight } from './sector-industry-weight';
+import { TreemapService } from './treemap.service';
+
 
 @Component({
     selector: 'app-home',
@@ -14,15 +15,12 @@ export class HomeComponent implements OnInit {
     //treemap fields
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
-    windowOffset = .9;
+    windowOffset = 1;
     // width = window.innerWidth * this.windowOffset;
     // height = 600;
     sectorKeys: string[];
 
-    data = [
-        ["Sectors", null, 0, 0],
-    ];
-    columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
+    //columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
         highlightOnMouseOver: true,
@@ -65,12 +63,13 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+
         //initialize treemap
-        this.treemapService.getData().then(sectorIndustryWeights => {
+        this.treemapService.getData().then(sectorIndustryWeight => {
             this.data = [
-                ["Sectors", null, 0, 0]
+                ["Sectors", "Industry", 0, 0]
             ];
-            this.sectorIndustryWeights = sectorIndustryWeights;
+           this.sectorIndustryWeights = sectorIndustryWeights;
              this.sectorKeys = [];
             // this.industryKeys = [];
             // let companyArray = [];
@@ -92,17 +91,19 @@ export class HomeComponent implements OnInit {
             console.log("API Call");
             console.log(this.sectorIndustryWeights);
             var dataNew = [];
+            var uniqueArray = []
+
             for (let count in this.sectorIndustryWeights) {
                 var marketcap = Number(this.sectorIndustryWeights[count].marketcap.replace(/[^0-9.-]+/g, ""));
                 let sector = this.sectorIndustryWeights[count].sector;
                 let industry = this.sectorIndustryWeights[count].industry;
                 dataNew[count] = [
-                    industry,
+                   industry,
                     sector,
                     marketcap,
-                    marketcap
+                    this.sectorIndustryWeights[count].companycount
                 ];
-                if(!this.sectorKeys.includes(sector)){
+               if(!this.sectorKeys.includes(sector)){
                     this.sectorKeys.push(sector);
                 }
             }
@@ -116,7 +117,7 @@ export class HomeComponent implements OnInit {
             console.log(this.data);
         });
 
-        
+      
 
 
     }
@@ -158,7 +159,7 @@ export class HomeComponent implements OnInit {
         console.log('sectorFilter = ' + sectorFilter);
         console.log('industryFilter = ' + industryFilter);
 
-        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
+       this.router.navigate(['', { outlets: { companylist: ['companies'] } }], { queryParams: { sector: sectorFilter,
                                                                                                  industry: industryFilter} });
 
            
