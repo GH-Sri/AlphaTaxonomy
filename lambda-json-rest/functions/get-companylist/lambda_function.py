@@ -18,7 +18,7 @@ logger.setLevel(logging.INFO)
 
 # connect using creds from rds_config.py
 try:
-    conn = psycopg2.connect( host=rds_host,user=name,password=password,dbname=db_name)
+    conn = psycopg2.connect(host=rds_host,user=name,password=password,dbname=db_name)
 except:
     logger.error("ERROR: Unexpected error: Could not connect to PostgreSQL instance.")
     sys.exit()
@@ -57,10 +57,10 @@ LIMIT {}
 
 # executes upon API event
 def lambda_handler(event, context):
-    # First blank dict is default if event does not contain 'queryStringParameters'
-    # Second blank dict is default if event has 'queryStringParameters' but value is null
-    qsp = event.get('queryStringParameters',{}) or {}
+    logger.info('event is' + json.dumps(event))
 
+    qsp = event.get('queryStringParameters',{}) or {}
+    logger.info('qsp is' + json.dumps(qsp))
     # Apply filters for Sector or Industry if passed on query string
     if 'sector' in qsp: 
         swc = " AND COALESCE(sname.name, 'Sector ' || csi.sector) = '{}'".format(qsp.get('sector')) 
@@ -81,6 +81,7 @@ def lambda_handler(event, context):
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         query=template.format(swc,iwc,order,direction,offset,limit)
         logger.info("About to execute " + query)
+        conn.rollback()
         cur.execute(query)
         conn.commit()
         return {
@@ -89,4 +90,3 @@ def lambda_handler(event, context):
                          'Access-Control-Allow-Origin': '*' },
             'body': json.dumps(cur.fetchall(), indent=2)
         }
-
