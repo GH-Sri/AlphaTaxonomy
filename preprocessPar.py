@@ -76,15 +76,15 @@ df, df_intermediate = preprocess(inputFile='C:/Users/dmoore002/Documents/TechCha
 
 import os
 
+#PATH
 os.chdir('C:/Users/dmoore002/Documents/TechChallengeUSCIS/')
 
+#Names of output files
 fileName = 'firstData'
 docName = 'firstDoc'
 
-df[df['Symbol'] == ''] = 'MISSING'
 df.to_csv('{}.csv'.format(fileName),index=False)
 
-df[df['Symbol'] == ''] = 'MISSING'
 df_intermediate.to_csv('{}.csv'.format(docName),index=False)
 
 
