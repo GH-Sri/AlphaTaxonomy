@@ -27,7 +27,13 @@ import { CompanyOverviewService } from './company-overview/company-overview.serv
 import { CompanyPerformanceComponent } from './company-performance/company-performance.component';
 import { CompanyPerformanceService } from './company-performance/performance.service';
 import { HomeComponent } from './home/home.component';
+
+
+import { DialogModule } from 'primeng/dialog';
+import { TableModule } from 'primeng/table';
+import { CompanyListService } from './company-datatable/company-list.service';
 import { TreemapService } from './home/treemap.service';
+import { CompanyDatatableComponent } from './company-datatable/company-datatable.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +44,9 @@ import { TreemapService } from './home/treemap.service';
     CompanyOverviewComponent,
     CompanyPerformanceComponent,
     HomeComponent,
+    CompanyComponent,
+    CompanyPerformanceComponent,
+    CompanyDatatableComponent
   ],
   imports: [
     AppRoutingModule,

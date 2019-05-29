@@ -2,11 +2,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div id="navbar" class="collapse navbar-collapse">
     <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
-    <ul class="nav navbar-nav">
-      <li>
-        <a [routerLink]="['/company', 'Ericsson']">Company/Ericsson</a>
-      </li>
-    </ul>
   </div>
   <!--/.nav-collapse -->
 </nav>
@@ -47,6 +42,8 @@
   </div>
 
   <router-outlet></router-outlet>
+  <router-outlet name="companylist"></router-outlet>
+  <router-outlet  name="details"></router-outlet>
 </div>
 
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">
