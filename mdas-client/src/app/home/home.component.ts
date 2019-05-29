@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
     title = 'SECTOR / INDUSTRY';
     type = 'TreeMap';
     windowOffset = .9;
-    
+    // width = window.innerWidth * this.windowOffset;
+    // height = 600;
     columnNames = ["Industry", "Sector", "Market trade volume (size)", "Market increase/decrease (color)"];
     options = {
         headerHeight: 30,
@@ -133,17 +134,17 @@ export class HomeComponent implements OnInit {
 
         //initialize table
         this.companies = [];
-        this.companyService.getCompanyList().then(companies => {
-            console.log(companies);
-            this.companies = companies;
-            this.cols = [
-                { field: 'name', header: 'Name' },
-                { field: 'atsector', header: 'Sector' },
-                { field: 'atindustry', header: 'Industry' },
-                { field: 'marketcap', header: 'Market Cap' }
-            ];
-            console.log(this.companies);
-        });
+        // this.companyService.getCompanyList().then(companies => {
+        //     console.log(companies);
+        //     this.companies = companies;
+        //     this.cols = [
+        //         { field: 'name', header: 'Name' },
+        //         { field: 'atsector', header: 'Sector' },
+        //         { field: 'atindustry', header: 'Industry' },
+        //         { field: 'marketcap', header: 'Market Cap' }
+        //     ];
+        //     console.log(this.companies);
+        // });
     }
 
     // Responsive Treemap
