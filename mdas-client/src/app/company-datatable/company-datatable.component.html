@@ -1,7 +1,6 @@
-<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
-				selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
-				(onRowSelect)="onRowSelect($event)" scrollable="true"
-				scrollHeight="800px">
+<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1" selectionMode="single"
+	[(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)" scrollable="true"
+	scrollHeight="800px">
 	<ng-template pTemplate="header" let-columns>
 		<tr>
 			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
@@ -10,8 +9,16 @@
 		</tr>
 		<tr>
 			<th *ngFor="let col of columns" [ngSwitch]="col.field">
-			<input #filter pInputText type="text" [(ngModel)]="col.filter"
+				<input #filter pInputText type="text" [(ngModel)]="col.filter"
 					(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode)">
+
+				<!-- <div *ngIf="isAddTooltip()">
+					<ng-template let-rowData="rowData" pTemplate="body">
+						<div [pTooltip]="getToolTipContent(rowData)" tooltipZIndex="100000000">
+							{{rowData[col.field]}}
+						</div>
+					</ng-template>
+				</div> -->
 			</th>
 		</tr>
 	</ng-template>
@@ -21,10 +28,10 @@
 		</tr>
 	</ng-template>
 	<ng-template pTemplate="loadingbody" let-columns="columns">
-    	<tr style="height:34px">
-      			<td *ngFor="let col of columns">
-          			<div class="loading-text"></div>
-      			</td>
-    	</tr>
-    </ng-template>
+		<tr style="height:34px">
+			<td *ngFor="let col of columns">
+				<div class="loading-text"></div>
+			</td>
+		</tr>
+	</ng-template>
 </p-table>
