@@ -87,8 +87,8 @@ if __name__ == '__main__':
             else:
                 for tokenindex, token in enumerate(tokenlist):
                     if dictionary[token[1]] == partofspeech and not used[tokenindex]:
-                        output.append(token[1])
+                        output.append(token[1].title())
                         used[tokenindex] = True
                         break
-        print ('{index}, "{tokens}"'.format(index=index,
+        print ('{index},"{tokens}"'.format(index=index,
                                             tokens=' '.join(output)))

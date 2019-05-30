@@ -19,8 +19,8 @@ if __name__ == '__main__':
             distances.sort()
             names = "{industry1} and {industry2}".format(
                     id=line[0], industry1=distances[0][1],
-                    industry2=distances[0][2])
-
+                    industry2=distances[0][2]).title()
+            
             count = counts.get(names, 0)
             if count:
                 print('{id},"{names}({count})"'.format(id=line[0],
