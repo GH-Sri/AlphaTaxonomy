@@ -17,7 +17,9 @@ export class AppComponent {
   onWindowScroll(){
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           document.getElementById("toTopButton").style.display = "block";
+          document.getElementById("ResetButton").style.display = "block";
       } else {
+          document.getElementById("ResetButton").style.display = "none";
           document.getElementById("toTopButton").style.display = "none";
       }
   }
