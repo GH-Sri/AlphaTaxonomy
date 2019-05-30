@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { CompanyOverview } from '../company-overview/company-overview';
 import { SectorIndustryWeight } from './sector-industry-weight';
 import { TreemapService } from './treemap.service';
-
+import { GoogleChartComponent } from 'angular-google-charts';
 
 @Component({
     selector: 'app-home',
@@ -16,20 +16,30 @@ export class HomeComponent implements OnInit {
     selections: any[] = [];
 
     // Responsive Treemap
-    //@HostListener('window:resize', ['$event'])
-    // onResize(event, options) {
-    //     if (event) {
-    //           console.log("Width: " + window.innerWidth);
-    //           console.log("Height: " + window.innerHeight);
-    //         options.width = window.innerWidth * this.windowOffset;
-    //     }
-    // }
+    @HostListener('window:resize', ['$event'])
+     onResize(event, options) {
+         if (event) {
+//             let width = window.innerWidth * this.windowOffset;
+//             let height = window.innerHeight / 2;
+//             console.log(this.chart.wrapper);
+//             console.log(this.chart.wrapper.getChart());
+//             this.chart.wrapper.setOption('width', width);
+//             this.chart.wrapper.setOption('height', height);
+//             this.chart.wrapper.draw();
+             document.getElementById('spinner').style.display = 'inline-block';
+             window.location.href = "http://" + window.location.host;
+         }
+     }
+    
+    @ViewChild('chart')
+    chart: GoogleChartComponent;
+    
 
     // Treemap fields
     data = [];
     title = '';
     type = 'TreeMap';
-    // windowOffset = .9;
+     windowOffset = .99;
     columnNames = ["Industry", "Sector", "Market trade volume", "Market increase/decrease"];
     options = {
         headerHeight: 30,
@@ -56,9 +66,9 @@ export class HomeComponent implements OnInit {
             italic: false
         },
         useWeightedAverageForAggregation: true,
-        //width: window.innerWidth * this.windowOffset,
-        width: 1100,
-        height: 600,
+        width: window.innerWidth * this.windowOffset,
+//        width: 1100,
+        height: window.innerHeight / 2,
     };
 
     // Datatable fields
