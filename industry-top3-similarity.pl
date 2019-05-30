@@ -22,25 +22,25 @@ while (<FI>) {
 		$score3 = similarity $industry[1], $industry[2];
 		if ($score1 >= $score2) {
 			if ($score2 >= $score3) {
-				print "$id, $industry[0] and $industry[1]\n";
+				print "$id, \"$industry[0]\" and \"$industry[1]\"\n";
 			}
 			else {
-				print "$id, $industry[0] and $industry[2]\n";
+				print "$id, \"$industry[0]\" and \"$industry[2]\"\n";
 			}
 		} else {
 			if ($score1 >= $score3) {
-				print "$id, $industry[1] and $industry[0]\n";
+				print "$id, \"$industry[1]\" and \"$industry[0]\"\n";
 			}
 			else {
-				print "$id, $industry[1] and $industry[2]\n";
+				print "$id, \"$industry[1]\" and \"$industry[2]\"\n";
 			}
 		} 
 	}
 	elsif ($i == 2) {
-		print "$id, $industry[0] and $industry[1]\n";
+		print "$id, \"$industry[0]\" and \"$industry[1]\"\n";
 	}
 	elsif ($i == 1) {
-		print "$id, $industry[0]\n";
+		print "$id, \"$industry[0]\"\n";
 	}
 }
 close FI;
