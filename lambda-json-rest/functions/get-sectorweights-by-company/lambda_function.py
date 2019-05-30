@@ -29,7 +29,7 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 # SQL to get what this function is responsible for returning
 template = '''
 SELECT COALESCE(sname.name, 'Sector ' || sw.sector) AS Sector
-      ,Similarity
+      ,TO_CHAR(GREATEST(0,Similarity)*100,'FM999999999.00%') AS Similarity
 FROM sector_weights_csv sw
 LEFT OUTER JOIN Sector_Name_CSV sname ON sname.number = sw.sector
 WHERE LOWER(sw.name) = LOWER('{}')
