@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {SectorIndustryWeight} from './sector-industry-weight';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class TreemapService {
@@ -11,7 +12,8 @@ export class TreemapService {
   }
 
   getData() {
-    let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/sectorindustryweights/'
+    let host = environment.endpointHost;
+    let endpointUrl = 'https://' + host + '/DEV/sectorindustryweights/';
 
     return this.http.get(endpointUrl)
                 .toPromise()
