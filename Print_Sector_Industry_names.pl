@@ -1,4 +1,3 @@
-#!C:\Strawberry_Perl\bin\Perl -w
 
 ($sic_name, $pre, $number) = @ARGV;
 

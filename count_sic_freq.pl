@@ -1,4 +1,3 @@
-#!C:\Strawberry_Perl\bin\Perl -w
 
 ($pre) = @ARGV;
 
