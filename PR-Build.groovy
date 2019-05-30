@@ -107,8 +107,10 @@ podTemplate(
         container('angular'){
           try {
             dir("${WORKSPACE}/mdas-client") {
-              sh "npm install"
-              sh "ng build --prod --aot"
+              withEnv(['ENDPOINT_HOST=2wdm1205e1.execute-api.us-east-1.amazonaws.com']) {
+                sh "npm install"
+                sh "ng build --prod --aot"
+              }
             }
             output('Build', 'success')
           }
