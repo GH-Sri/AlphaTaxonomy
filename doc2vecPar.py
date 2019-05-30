@@ -67,7 +67,7 @@ def d2v(data,docs):
     
     #   Initialize model parameters
     print('Initializing Doc2Vec model')
-    model = Doc2Vec(dm=0, vector_size=200, negative=5, hs=0, min_count=5, sample=0,\
+    model = Doc2Vec(dm=0, vector_size=50, negative=5, hs=0, min_count=5, sample=0,\
                     epochs=15, workers=4)
     
     #   Build model vocabulary from corpus
