@@ -158,7 +158,7 @@ def d2v(data,docs):
     
     #   Save trained model
     modelFile = 'Doc2Vec_Model'
-    model.save(modelFile,index=False)
+    model.save(modelFile)
 
     print('{} sent to: {}'.format(modelFile,os.getcwd()))
 
