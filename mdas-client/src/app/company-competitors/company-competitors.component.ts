@@ -36,7 +36,7 @@ export class CompanyCompetitorsComponent implements OnInit {
         });
         
         this.sortOptions= [
-            {label: 'Competitor Rank', value: '!closeness'},
+            {label: 'Competitor Similarity Weight %', value: '!similarity'},
             {label: 'Market Cap', value: 'marketcap'}
         ]
     }
