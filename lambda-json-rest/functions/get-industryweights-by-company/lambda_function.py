@@ -33,7 +33,7 @@ SELECT COALESCE(iname.name, 'Industry ' || iw.industry) AS Industry
 FROM industry_weights_csv iw
 LEFT OUTER JOIN Industry_Name_CSV iname ON iname.number = iw.industry
 WHERE LOWER(iw.name) = LOWER('{}')
-ORDER BY Similarity DESC
+ORDER BY Similarity::NUMERIC DESC
 '''
 
 # executes upon API event

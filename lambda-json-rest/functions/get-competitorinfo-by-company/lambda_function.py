@@ -40,7 +40,7 @@ JOIN (SELECT Name, sum(marketcap::NUMERIC::money) AS MarketCap
       GROUP BY name) mc_total
   ON mc_total.name = Competitor.Competitor
 WHERE LOWER(Competitor.Company) = LOWER('{}')
-ORDER BY similarity DESC
+ORDER BY similarity::NUMERIC DESC
 LIMIT 10
 '''
 
