@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
 
     // Treemap fields
     data = [];
-    title = 'SECTOR / INDUSTRY';
+    title = '';
     type = 'TreeMap';
-    windowOffset = 1;
+    // windowOffset = .9;
     columnNames = ["Industry", "Sector", "Market trade volume", "Market increase/decrease"];
     options = {
         headerHeight: 30,
@@ -46,7 +46,8 @@ export class HomeComponent implements OnInit {
             italic: false
         },
         useWeightedAverageForAggregation: true,
-        width: window.innerWidth * this.windowOffset,
+        //width: window.innerWidth * this.windowOffset,
+        width: 1100,
         height: 600,
     };
 

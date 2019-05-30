@@ -1,34 +1,44 @@
-<p-panel header="{{companyName}} - {{companyData.symbol}} - {{companyData.marketcap}}">
+<p-panel header="Company Overiew: {{companyName}} ({{companyData.symbol}})">
 	<div class="p-grid">
-		<div class="p-col-12 p-md-12 p-lg-12">
+		<div class="p-col-8">
 			<p-card header="Company Name">
 				<div>
 					<h2>
-						{{companyData.name == null? "" : companyData.name}} -
-						{{companyData.symbol == null? "" : companyData.symbol}}
+						{{companyData.name == null? "" : companyData.name}}
 					</h2>
 				</div>
 			</p-card>
 		</div>
-		<div class="p-col-12 p-md-6 p-lg-3">
+		<div class="p-col-4">
+			<p-card header="Symbol">
+				<div>
+					<h3>
+						{{companyData.symbol == null? "" : companyData.symbol}}
+					</h3>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-4">
 			<p-card header="AlphaTaxonomy's Classification">
 				<div>
-					<p>New Sector: {{companyData.atsector == null? "" : companyData.atsector}}</p>
-					<p>New Industry: {{companyData.atindustry == null? "" : companyData.atindustry}}</p>
+					<h4>Sector: {{companyData.atsector == null? "" : companyData.atsector}}</h4>
+					<h4>Industry: {{companyData.atindustry == null? "" : companyData.atindustry}}</h4>
 				</div>
 			</p-card>
 		</div>
-		<div class="p-col-12 p-md-6 p-lg-3">
+		<div class="p-col-4">
 			<p-card header="NASDAQ's Classification">
 				<div>
-					<p>New Sector: {{companyData.legacysector == null? "" : companyData.legacysector}}</p>
-					<p>New Industry: {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</p>
+					<h4>Sector: {{companyData.legacysector == null? "" : companyData.legacysector}}</h4>
+					<h4>Industry: {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</h4>
 				</div>
 			</p-card>
 		</div>
-		<div class="p-col-12 p-md-6 p-lg-3">
+		<div class="p-col-4">
 			<p-card header="Market Cap">
-				<div>{{companyData.marketcap == null? "" : companyData.marketcap}}</div>
+				<div>
+					<h4>{{companyData.marketcap == null? "" : companyData.marketcap}}</h4>
+				</div>
 			</p-card>
 		</div>
 	</div>

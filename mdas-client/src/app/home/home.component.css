@@ -8,6 +8,7 @@
   left: 0;
   width:100%;
   height:100%;
+  margin-bottom: 40px;
 }
 .google-visualization-tooltip{
   display:table;
@@ -40,9 +41,4 @@ mat-toolbar-row {
   bottom: 20px;
   right: 20px;
   color: white;
-}
-
-.p-grid {
-  margin-left: 50px;
-  margin-right: 50px;
 }

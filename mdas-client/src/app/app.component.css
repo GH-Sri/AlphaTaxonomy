@@ -46,14 +46,16 @@
 }
 
 #containerHead {
-  position:absolute;
-  top:0px;
   background-color: #272b40;
   color: #ffffff;
+  position:absolute;
+  top:0px;
+  width: 1100px;
 }
 
 #head #logo {
-  margin: 30px 30px 0 50px;
+  margin-top: 30px;
+  margin-bottom: 0;
   width: 351px;
   height: 31px;
   font-family: "Gothic A1";
@@ -64,8 +66,11 @@
 }
 
 #head #content {
-  background-image: url("/assets/img/header_alphataxonomy.png");
-  height: 400px;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),url("/assets/img/alphataxonomy.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,7 +79,7 @@
 }
 
 #head #content div {
-  width: 656px;
+  width: 100%;
   height: auto;
   margin: auto;
   text-align: center;
@@ -142,7 +147,10 @@
   float: left;
 }
 
-
 .p-grid {
   display: block;
+}
+
+#containerHead {
+  padding: 0 0 50px 0;
 }

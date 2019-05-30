@@ -8,23 +8,30 @@
 </div>
 
 <div id="containerHead" class="p-grid">
-  <div id="head" class="p-col-12">
-    <div id="logo">
-      <p id="text">A T</p>
-    </div>
-    <div id="content">
-      <div>
-        <h1>AlphaTaxonomy</h1>
-        <p>Gain actionable, objective insight into our newly classified sectors and industries. Dig deep into
-          company data from the last decade, and generate reports from comprehensive visualizations. To start
-          researching, select one of these paths.
-        </p>
+  <div id="containHead" class="p-col-12">
+    <div id="head" class="p-col-12">
+      <!-- <div id="logo">
+          <p id="text">A T</p>
+        </div> -->
+      <div id="content">
+        <div>
+          <h1>AlphaTaxonomy</h1>
+          <p>Gain actionable, objective insight into our newly classified sectors and industries. Dig deep into company
+            data from the last decade, and generate reports from comprehensive visualizations. To start researching,
+            select one of these paths.</p>
+          <p>The analysis covers 4,695 publicly traded companies on the NYSE, NASDAQ, and AMEX exchanges. These
+            companies have been recategorized into new sectors and industries using AI and Machine Learning (ML). The
+            AI/ML results shown are optimized to use open source data from a combination of 10 years of SEC 10K filings,
+            historical stock prices, company websites, and wikipedia.</p>
+        </div>
       </div>
     </div>
+    <main>
+      <router-outlet></router-outlet>
+      <router-outlet name="companylist"></router-outlet>
+      <router-outlet name="details"></router-outlet>
+    </main>
   </div>
-  <router-outlet></router-outlet>
-  <router-outlet name="companylist"></router-outlet>
-  <router-outlet name="details"></router-outlet>
 </div>
 
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">
