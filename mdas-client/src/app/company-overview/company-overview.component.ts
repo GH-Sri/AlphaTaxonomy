@@ -16,10 +16,10 @@ export class CompanyOverviewComponent implements OnInit {
   constructor(private companyService: CompanyOverviewService) {
     this.companyData = {
       name: '',
-      ticker: '',
-      sector: '',
+      symbol: '',
+      atsector: '',
       legacysector: '',
-      industry: '',
+      atindustry: '',
       legacyindustry: '',
       marketcap: '',
       perf10yr: '',

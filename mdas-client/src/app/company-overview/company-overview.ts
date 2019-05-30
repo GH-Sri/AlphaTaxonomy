@@ -1,9 +1,9 @@
 export interface CompanyOverview {
     name;
-    ticker;
-    sector;
+    symbol;
+    atsector;
     legacysector;
-    industry;
+    atindustry;
     legacyindustry;
     marketcap;
     perf10yr;
