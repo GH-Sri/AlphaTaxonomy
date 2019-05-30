@@ -35,6 +35,8 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
 
     @ViewChild('companyTable')
     table: any;
+    
+    loading: boolean = true;
 
     constructor(private companyService: CompanyListService,
         private route: ActivatedRoute,
@@ -59,6 +61,7 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
             console.log("Datatable data", companies);
             this.companies = companies;
             this.totalRecords = 10000;
+            this.loading = false;
         });
         this.cols = [
             { field: 'name', header: 'Name' },
@@ -82,6 +85,7 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
 
     filter() {
         if (this.hiddenfilters != null && this.hiddenfilters.toArray().length > 0) {
+ 
             this.hiddenfilters.toArray()[1].nativeElement.value = this.hiddenSectorFilter;
             this.hiddenfilters.toArray()[2].nativeElement.value = this.hiddenIndustryFilter;
 
@@ -96,6 +100,7 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
             //          }
             this.table.filter(this.hiddenSectorFilter, 'atsector', 'contains');
             this.table.filter(this.hiddenIndustryFilter, 'atindustry', 'contains');
+ 
         }
     }
 
