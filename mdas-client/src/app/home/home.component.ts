@@ -19,9 +19,15 @@ export class HomeComponent implements OnInit {
     @HostListener('window:resize', ['$event'])
      onResize(event, options) {
          if (event) {
-             let width = window.innerWidth * this.windowOffset;
-             this.chart.wrapper.setOption('width', width);
-             this.chart.wrapper.draw();
+//             let width = window.innerWidth * this.windowOffset;
+//             let height = window.innerHeight / 2;
+//             console.log(this.chart.wrapper);
+//             console.log(this.chart.wrapper.getChart());
+//             this.chart.wrapper.setOption('width', width);
+//             this.chart.wrapper.setOption('height', height);
+//             this.chart.wrapper.draw();
+             document.getElementById('spinner').style.display = 'inline-block';
+             window.location.href = "http://" + window.location.host;
          }
      }
     
@@ -62,7 +68,7 @@ export class HomeComponent implements OnInit {
         useWeightedAverageForAggregation: true,
         width: window.innerWidth * this.windowOffset,
 //        width: 1100,
-        height: 600,
+        height: window.innerHeight / 2,
     };
 
     // Datatable fields
