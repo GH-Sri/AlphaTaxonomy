@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpointHost: process.env.ENDPOINT_HOST
+  endpointHost: process.env.ENDPOINT_HOST,
+  hostname: 'http://localhost:4200'
 };
 
 /*
