@@ -1,7 +1,7 @@
 <p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1" selectionMode="single"
 	[(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)" scrollable="true"
-	scrollHeight="800px">
-	<ng-template pTemplate="header" let-columns>
+	scrollHeight="300px" [rows]="20" virtualScroll="virtualScroll" [loading]="loading">
+	<ng-template pTemplate="header" let-columns role="grid">
 		<tr>
 			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
 				{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
@@ -9,9 +9,9 @@
 		</tr>
 		<tr>
 			<th *ngFor="let col of columns" [ngSwitch]="col.field">
-			<input #hiddenfilter pInputText type="text" [(ngModel)]="col.filter" style="display: none;'"
+				<input #hiddenfilter pInputText type="text" [(ngModel)]="col.filter" style="display: none;'"
 					(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode)">
-			<input #filter pInputText type="text" [(ngModel)]="col.filter"
+				<input #filter pInputText type="text" [(ngModel)]="col.filter"
 					(input)="companyTable.filter($event.target.value, col.field, col.filterMatchMode);">
 			</th>
 		</tr>

@@ -11,8 +11,9 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  padding-top: 50px;
   margin-bottom: 60px;
+  background-color: #272b40;
+  padding-left: 10px;
 }
 .footer {
   position: absolute;
