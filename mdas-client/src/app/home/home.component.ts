@@ -100,28 +100,35 @@ export class HomeComponent implements OnInit {
         console.log('selectedRow', rowIndex);
 
         //need to add an element to selections if we left-clicked, remove one if right-clicked
-        //We right-clicked if this.selections already includes the event row
-        if (this.selections.includes(this.data[rowIndex][0]) || this.data[rowIndex][0] == 'Sectors') {
-            let x = this.selections.pop();
-            console.log('pop ' + x)
-        }
-        else {
-            this.selections.push(this.data[rowIndex][0]);
-            console.log('push ' + rowIndex);
-        }
-        console.log('Selections', this.selections);
-        // filter and display table
-        let sectorFilter = this.selections[0] == null ? '' : this.selections[0];
-        let industryFilter = this.selections[1] == null ? '' : this.selections[1];
+        //We right-clicked if this.selections already includes the event row, but not as the
+        //last element of the array. If it is the last element, we have reached the end of the map
+        //and don't need to do anything else
+        let lastIndex = this.selections.length - 1;
+        console.log(this.selections[lastIndex]);
+        if(this.selections[lastIndex] != this.data[rowIndex][0]){
 
-        console.log('sectorFilter = ' + sectorFilter);
-        console.log('industryFilter = ' + industryFilter);
-
-        this.router.navigate(['', { outlets: { companylist: ['companies'] } }], {
-            queryParams: {
-                sector: sectorFilter,
-                industry: industryFilter
+            if (this.selections.includes(this.data[rowIndex][0]) || this.data[rowIndex][0] == 'Sectors') {
+                let x = this.selections.pop();
+                console.log('pop ' + x)
             }
-        });
+            else {
+                this.selections.push(this.data[rowIndex][0]);
+                console.log('push ' + rowIndex);
+            }
+            console.log('Selections', this.selections);
+            // filter and display table
+            let sectorFilter = this.selections[0] == null ? '' : this.selections[0];
+            let industryFilter = this.selections[1] == null ? '' : this.selections[1];
+
+            console.log('sectorFilter = ' + sectorFilter);
+            console.log('industryFilter = ' + industryFilter);
+
+            this.router.navigate(['', { outlets: { companylist: ['companies'] } }], {
+                queryParams: {
+                    sector: sectorFilter,
+                    industry: industryFilter
+                }
+            });
+        }
     }
 }
