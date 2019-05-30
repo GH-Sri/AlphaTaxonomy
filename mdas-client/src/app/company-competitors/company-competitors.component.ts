@@ -23,6 +23,11 @@ export class CompanyCompetitorsComponent implements OnInit {
     constructor(private competitorService: CompetitorService) { 
         this.competitors = [];
     }
+    
+    public reinit(companyName: string){
+        this.companyName = companyName;
+        this.ngOnInit();
+    }
 
     ngOnInit() {
         this.competitorService.getData(this.companyName).then(competitors => {

@@ -27,6 +27,11 @@ export class CompanyOverviewComponent implements OnInit {
       };
   }
 
+  public reinit(companyName: string){
+      this.companyName = companyName;
+      this.ngOnInit();
+  }
+  
   ngOnInit() {
       this.companyService.getData(this.companyName).then(companies => {
           this.companyData = companies[0];
