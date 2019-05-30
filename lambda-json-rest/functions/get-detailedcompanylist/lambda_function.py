@@ -34,8 +34,8 @@ SELECT cl.Name
       ,COALESCE(iname.name, 'Industry ' || csi.industry) AS ATIndustry
       ,cl.Sector AS LegacySector
       ,cl.Industry AS LegacyIndustry
-      ,(array_agg(ARRAY[COALESCE(sname2.name, 'Sector ' || sw.sector), TO_CHAR(GREATEST(0,sw.Similarity)*100,'FM999999999.00%')] ORDER BY sw.Similarity DESC))[1:5] AS closestSectors
-      ,(array_agg(ARRAY[COALESCE(iname2.name, 'Industry ' || iw.industry),TO_CHAR(GREATEST(0,iw.Similarity)*100,'FM999999999.00%')] ORDER BY iw.Similarity DESC))[1:5] AS closestIndustries
+      ,(array_agg(ARRAY[COALESCE(sname2.name, 'Sector ' || sw.sector), TO_CHAR(GREATEST(0,sw.Similarity)*100,'FM999999999.00')] ORDER BY sw.Similarity DESC))[1:5] AS closestSectors
+      ,(array_agg(ARRAY[COALESCE(iname2.name, 'Industry ' || iw.industry),TO_CHAR(GREATEST(0,iw.Similarity)*100,'FM999999999.00')] ORDER BY iw.Similarity DESC))[1:5] AS closestIndustries
 --      ,(array_agg(ARRAY[competitor.competitor,competitor.Similarity::text] ORDER BY competitor.Similarity DESC))[1:5] AS closestCompetitors
 FROM (SELECT DISTINCT ON (Name) Name, Sector, Industry
       FROM companylist_csv

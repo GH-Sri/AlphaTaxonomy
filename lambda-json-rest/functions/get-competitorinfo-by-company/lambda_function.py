@@ -28,7 +28,7 @@ logger.info("SUCCESS: Connection to RDS PostgreSQL instance succeeded")
 
 # SQL to get what this function is responsible for returning
 template = '''
-SELECT Competitor, sym_shortest.Symbol, mc_total.MarketCap, TO_CHAR(GREATEST(0,Similarity)*100,'FM999999999.00%') AS Similarity
+SELECT Competitor, sym_shortest.Symbol, mc_total.MarketCap, TO_CHAR(GREATEST(0,Similarity)*100,'FM999999999.00') AS Similarity
 FROM (SELECT Name AS Company, "competitor name" AS Competitor, Similarity FROM competitors_csv UNION ALL
       SELECT "competitor name" AS Company, Name AS competitor, Similarity FROM competitors_csv) competitor
 JOIN (SELECT DISTINCT ON (Name) Name, Symbol 
@@ -40,7 +40,7 @@ JOIN (SELECT Name, sum(marketcap::NUMERIC::money) AS MarketCap
       GROUP BY name) mc_total
   ON mc_total.name = Competitor.Competitor
 WHERE LOWER(Competitor.Company) = LOWER('{}')
-ORDER BY similarity DESC
+ORDER BY similarity::NUMERIC DESC
 LIMIT 10
 '''
 

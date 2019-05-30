@@ -14,6 +14,10 @@ https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/words-by-industry/%20
 https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/detailedcompanylist?industry=%20PIPE%20LINES%20and%20NATURAL%20GAS%20TRANSMISSION
 '''
 
+# This particulare endpoint needs to be warmed up
+get('https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/companylist')
+
+# Loop through all endpoints expecting successful HTTP returns from each
 for url in urls.splitlines():
     print('Testing MDAS data API endpoint:', url)
     assert get(url).ok
