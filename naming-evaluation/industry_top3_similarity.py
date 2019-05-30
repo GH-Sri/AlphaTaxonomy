@@ -23,11 +23,11 @@ if __name__ == '__main__':
             
             count = counts.get(names, 0)
             if count:
-                print('{id}, "{names}({count})"'.format(id=line[0],
+                print('{id},"{names}({count})"'.format(id=line[0],
                                                       names=names,
                                                       count=count))
             else:
-                print('{id}, "{names}"'.format(id=line[0], names=names,
+                print('{id},"{names}"'.format(id=line[0], names=names,
                                              count=count))
             
             counts[names] = count + 1
