@@ -1,19 +1,35 @@
-<p-panel header="{{companyName}} - {{companyData.ticker}}">
+<p-panel header="{{companyName}} - {{companyData.symbol}} - {{companyData.marketcap}}">
 	<div class="p-grid">
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="NASDAQ's Classification">
-    			<div>{{companyData.legacysector == null? "" : companyData.legacysector}}, {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</div>
-    		</p-card>
+		<div class="p-col-12 p-md-12 p-lg-12">
+			<p-card header="Company Name">
+				<div>
+					<h2>
+						{{companyData.name == null? "" : companyData.name}} -
+						{{companyData.symbol == null? "" : companyData.symbol}}
+					</h2>
+				</div>
+			</p-card>
 		</div>
-		    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="AT Classification">
-    			<div>{{companyData.sector == null? "" : companyData.sector}}, {{companyData.industry == null? "" : companyData.industry}}</div>
-    		</p-card>
-    	</div>
-    	<div class="p-col-12 p-md-6 p-lg-3">
-    		<p-card header="Market Cap">
-    			<div>{{companyData.marketcap == null? "" : companyData.marketcap}}</div>
-    		</p-card>
+		<div class="p-col-12 p-md-6 p-lg-3">
+			<p-card header="AlphaTaxonomy's Classification">
+				<div>
+					<p>New Sector: {{companyData.atsector == null? "" : companyData.atsector}}</p>
+					<p>New Industry: {{companyData.atindustry == null? "" : companyData.atindustry}}</p>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-12 p-md-6 p-lg-3">
+			<p-card header="NASDAQ's Classification">
+				<div>
+					<p>New Sector: {{companyData.legacysector == null? "" : companyData.legacysector}}</p>
+					<p>New Industry: {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</p>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-12 p-md-6 p-lg-3">
+			<p-card header="Market Cap">
+				<div>{{companyData.marketcap == null? "" : companyData.marketcap}}</div>
+			</p-card>
 		</div>
 	</div>
 </p-panel>
