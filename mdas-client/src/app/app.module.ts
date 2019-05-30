@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Google Charts
 import { GoogleChartsModule } from 'angular-google-charts';
-// PrimeNG Charts
+// PrimeNG Components
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { DataViewModule } from 'primeng/dataview';
@@ -14,6 +14,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 // Angular Components
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './company/company.component';
@@ -58,6 +59,7 @@ import { WeightService } from './company-industries/weight.service';
     HttpClientModule,
     PanelModule,
     TableModule,
+    ProgressSpinnerModule,
   ],
   providers: [
     CompanyListService,

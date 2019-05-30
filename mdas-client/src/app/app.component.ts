@@ -29,5 +29,6 @@ export class AppComponent {
 
   reset() {
     window.location.href = environment.hostname;
+    document.getElementById("ResetSpinner").style.display = "block";
   } 
 }
