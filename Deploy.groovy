@@ -14,7 +14,7 @@ def previousGitCommit = null
 @Field String gitUrl =''
 def branch = 'master'
 def sonarStatus = null
-def deployBucket = 'at-mdas-web-test'
+def deployBucket = "${DEPLOY_BUCKET}"
 
 tag = ''
 branchName = ''
