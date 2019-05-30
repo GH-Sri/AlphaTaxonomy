@@ -18,6 +18,11 @@ export class CompanyIndustriesComponent implements OnInit {
   sectorChartData: any;
 
   constructor(private weightService: WeightService) { }
+  
+  public reinit(companyName: string){
+      this.companyName = companyName;
+      this.ngOnInit();
+  }
 
   ngOnInit() {
       this.weightService.getIndustryData(this.companyName).then(industryWeights => {
