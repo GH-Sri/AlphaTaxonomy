@@ -1,7 +1,6 @@
-<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1"
-				selectionMode="single" [(selection)]="selectedCompany" dataKey="name"
-				(onRowSelect)="onRowSelect($event)" scrollable="true"
-				scrollHeight="800px">
+<p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1" selectionMode="single"
+	[(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)" scrollable="true"
+	scrollHeight="800px">
 	<ng-template pTemplate="header" let-columns>
 		<tr>
 			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
@@ -23,10 +22,10 @@
 		</tr>
 	</ng-template>
 	<ng-template pTemplate="loadingbody" let-columns="columns">
-    	<tr style="height:34px">
-      			<td *ngFor="let col of columns">
-          			<div class="loading-text"></div>
-      			</td>
-    	</tr>
-    </ng-template>
+		<tr style="height:34px">
+			<td *ngFor="let col of columns">
+				<div class="loading-text"></div>
+			</td>
+		</tr>
+	</ng-template>
 </p-table>

@@ -1,13 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div id="navbar" class="collapse navbar-collapse">
-    <a id='rootLink' [routerLink]="['/']" class="navbar-brand">Alpha Taxonomy</a>
-  </div>
-  <!--/.nav-collapse -->
-</nav>
-  
-
-
 <div id="containerHead" class="p-grid">
   <div id="head" class="p-col-12">
     <div id="logo">
@@ -20,21 +10,12 @@
           company data from the last decade, and generate reports from comprehensive visualizations. To start
           researching, select one of these paths.
         </p>
-        <button class="button buttonSecInd">
-          <span class="buttonSecText">ANALYZE A SECTOR OR INDUSTRY</span>
-          <div class="triangle-right"></div>
-        </button>
-        <button class="button buttonCompany">
-          <span class="buttonSecText">ANALYZE A COMPANY</span>
-          <div class="triangle-right"></div>
-        </button>
       </div>
     </div>
   </div>
-
   <router-outlet></router-outlet>
   <router-outlet name="companylist"></router-outlet>
-  <router-outlet  name="details"></router-outlet>
+  <router-outlet name="details"></router-outlet>
 </div>
 
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">

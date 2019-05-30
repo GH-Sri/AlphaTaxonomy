@@ -19,25 +19,26 @@
 }
 
 #containerHead {
+  position:absolute;
+  top:0px;
   background-color: #272b40;
   color: #ffffff;
 }
 
 #head #logo {
-  padding: 50px;
+  margin: 30px 30px 0 50px;
   width: 351px;
   height: 31px;
   font-family: "Gothic A1";
   font-size: 30px;
   font-weight: 900;
-  line-height: 38px;
+  line-height: 20px;
   letter-spacing: -0.5px;
 }
 
 #head #content {
   background-image: url("/assets/img/header_alphataxonomy.png");
   height: 400px;
-  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,7 +51,6 @@
   height: auto;
   margin: auto;
   text-align: center;
-  padding-top: 50px;
 }
 
 #head #content div h1 {
@@ -113,4 +113,9 @@
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   float: left;
+}
+
+
+.p-grid {
+  display: block;
 }

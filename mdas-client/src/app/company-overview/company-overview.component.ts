@@ -8,23 +8,23 @@ import { CompanyOverview } from './company-overview';
   styleUrls: ['./company-overview.component.css']
 })
 export class CompanyOverviewComponent implements OnInit {
-    
+
   @Input() companyName: string;
 
   companyData: CompanyOverview;
-    
-  constructor(private companyService: CompanyOverviewService) { 
-      this.companyData = {
-              name: '',
-              ticker: '',
-              sector: '',
-              legacysector: '',
-              industry: '',
-              legacyindustry: '',
-              marketcap: '',
-              perf10yr: '',
-              perfvssector10yr: ''
-      };
+
+  constructor(private companyService: CompanyOverviewService) {
+    this.companyData = {
+      name: '',
+      ticker: '',
+      sector: '',
+      legacysector: '',
+      industry: '',
+      legacyindustry: '',
+      marketcap: '',
+      perf10yr: '',
+      perfvssector10yr: ''
+    };
   }
 
   public reinit(companyName: string){
@@ -33,9 +33,9 @@ export class CompanyOverviewComponent implements OnInit {
   }
   
   ngOnInit() {
-      this.companyService.getData(this.companyName).then(companies => {
-          this.companyData = companies[0];
-      });
+    this.companyService.getData(this.companyName).then(companies => {
+      this.companyData = companies[0];
+    });
   }
 
 }
