@@ -1,3 +1,4 @@
+<a href="https://s3.amazonaws.com/alphataxonomy.com/company_10k_web_wiki_out.csv" target="_self">View Raw Data</a>
 <p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1" selectionMode="single"
 	[(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)" scrollable="true"
 	scrollHeight="300px" [rows]="20" virtualScroll="virtualScroll" [loading]="loading">
