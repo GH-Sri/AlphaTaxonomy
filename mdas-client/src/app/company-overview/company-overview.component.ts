@@ -16,10 +16,10 @@ export class CompanyOverviewComponent implements OnInit {
   constructor(private companyService: CompanyOverviewService) {
     this.companyData = {
       name: '',
-      ticker: '',
-      sector: '',
+      symbol: '',
+      atsector: '',
       legacysector: '',
-      industry: '',
+      atindustry: '',
       legacyindustry: '',
       marketcap: '',
       perf10yr: '',
@@ -27,6 +27,11 @@ export class CompanyOverviewComponent implements OnInit {
     };
   }
 
+  public reinit(companyName: string){
+      this.companyName = companyName;
+      this.ngOnInit();
+  }
+  
   ngOnInit() {
     this.companyService.getData(this.companyName).then(companies => {
       this.companyData = companies[0];

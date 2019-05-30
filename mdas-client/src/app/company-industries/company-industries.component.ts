@@ -16,8 +16,15 @@ export class CompanyIndustriesComponent implements OnInit {
   
   industryChartData: any;
   sectorChartData: any;
+  
+  options: any;
 
   constructor(private weightService: WeightService) { }
+  
+  public reinit(companyName: string){
+      this.companyName = companyName;
+      this.ngOnInit();
+  }
 
   ngOnInit() {
       this.weightService.getIndustryData(this.companyName).then(industryWeights => {
@@ -26,25 +33,21 @@ export class CompanyIndustriesComponent implements OnInit {
           let industryChartWeights = [];
           for(let industryWeight of this.industryWeights) {
               industryChartLabels.push(industryWeight.industry);
-              industryChartWeights.push(industryWeight.weight);
+              industryChartWeights.push(industryWeight.similarity);
           }                
       
           this.industryChartData = {
               labels: industryChartLabels,
+              legend:{
+                  display: false
+              },
               datasets: [
                   {
+                      label: 'Industry Similarity',
                       data: industryChartWeights,
-                      backgroundColor: [
-                          "#FF6384",
-                          "#36A2EB",
-                          "#FFCE56"
-                      ],
-                      hoverBackgroundColor: [
-                          "#FF6384",
-                          "#36A2EB",
-                          "#FFCE56"
-                      ]
-                  }]    
+                      backgroundColor: "#36A2EB",
+                      hoverBackgroundColor: "#36A2EB"
+                  }],
               };
       });
 
@@ -55,29 +58,32 @@ export class CompanyIndustriesComponent implements OnInit {
           let sectorChartWeights = [];
           for(let sectorWeight of this.sectorWeights) {
               sectorChartLabels.push(sectorWeight.sector);
-              sectorChartWeights.push(sectorWeight.weight);
+              sectorChartWeights.push(sectorWeight.similarity);
           }                
       
           this.sectorChartData = {
               labels: sectorChartLabels,
+              legend:{
+                  display: false
+              },
               datasets: [
                   {
+                      label: 'Sector Similarity',
                       data: sectorChartWeights,
-                      backgroundColor: [
-                          "#FF6384",
-                          "#36A2EB",
-                          "#FFCE56"
-                      ],
-                      hoverBackgroundColor: [
-                          "#FF6384",
-                          "#36A2EB",
-                          "#FFCE56"
-                      ]
-                  }]    
-              };
+                      backgroundColor: "#36A2EB",
+                      hoverBackgroundColor: "#36A2EB"
+                  }]
+          };
       });
       
-      
-  }
-
+      this.options = {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      display: false
+                  }
+              }]
+          }
+      };
+  }  
 }

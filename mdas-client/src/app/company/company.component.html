@@ -1,20 +1,11 @@
 <div id="companydetails" class="p-grid">
-	<div class="p-col-12">
-		<company-overview companyName="{{companyName}}"></company-overview>
+	<div class="p-col-12"> 
+		<company-overview #overview companyName="{{companyName}}"></company-overview>
 	</div>
-
-	<!-- <div class="p-col-12 p-md-6">
-		<performance companyName="{{companyName}}"></performance>
+	<div class="p-col-12"> 
+		<company-industries #industries companyName="{{companyName}}"></company-industries>
 	</div>
-
-	<div class="p-col-12 p-md-6">
-		<company-industries companyName="{{companyName}}"></company-industries>
-	</div> -->
-	<div class="p-col-12">
-		<company-competitors companyName="{{companyName}}"></company-competitors>
+	<div class="p-col-12"> 
+		<company-competitors #competitors companyName="{{companyName}}"></company-competitors>
 	</div>
-
-	<!-- <div class="p-col-12 p-md-6">
-		Placeholder for Price History Chart
-	</div> -->
 </div>

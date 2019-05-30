@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {PerformanceData} from './performance';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class CompanyPerformanceService {
@@ -13,7 +14,8 @@ export class CompanyPerformanceService {
   getData(companyName) {
       let uriSafeCompanyName = encodeURIComponent(companyName);
 
-    let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/performanceinfo-by-company/' + uriSafeCompanyName
+      let host = environment.endpointHost;
+      let endpointUrl = 'https://' + host + '/DEV/performanceinfo-by-company/' + uriSafeCompanyName
     return this.http.get(endpointUrl)
                     .toPromise()
                     .then(res => <PerformanceData[]> res)

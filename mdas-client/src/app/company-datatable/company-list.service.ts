@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {CompanyOverview} from '../company-overview/company-overview';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class CompanyListService {
@@ -12,7 +13,8 @@ export class CompanyListService {
 
   getCompanyList() {
 
-    let endpointUrl = 'https://2wdm1205e1.execute-api.us-east-1.amazonaws.com/DEV/companylist'
+    let host = environment.endpointHost;
+    let endpointUrl = 'https://' + host + '/DEV/companylist'
     return this.http.get(endpointUrl)
                     .toPromise()
                     .then(res => <CompanyOverview[]> res)
