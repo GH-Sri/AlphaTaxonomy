@@ -6,6 +6,7 @@
 }
 
 #LogoButton {
+    display: block; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     top: 10px;
 }

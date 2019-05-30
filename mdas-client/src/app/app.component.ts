@@ -1,7 +1,6 @@
 import { Component, HostListener, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,9 @@ export class AppComponent {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           document.getElementById("toTopButton").style.display = "block";
           document.getElementById("ResetButton").style.display = "block";
+          document.getElementById("LogoButton").style.display = "none";
       } else {
+          document.getElementById("LogoButton").style.display = "block";
           document.getElementById("ResetButton").style.display = "none";
           document.getElementById("toTopButton").style.display = "none";
       }
@@ -30,7 +31,7 @@ export class AppComponent {
     } 
 
   reset() {
-    window.location.href = environment.hostname;
+    window.location.href = "http://" + window.location.host;
     document.getElementById("ResetSpinner").style.display = "block";
   } 
 }
