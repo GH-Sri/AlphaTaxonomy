@@ -100,32 +100,19 @@ export class CompanyDatatableComponent implements OnInit, OnDestroy {
     }
 
     ngAfterViewChecked() {
-        console.log('sector from url: ' + this.sectorParam);
-        console.log('industry from url: ' + this.industryParam);
-
         if (this.filters == null || this.filters.toArray().length == 0) {
-            console.log('page still loading');
             this.filter();
         } else if (this.filters.toArray()[1].nativeElement.value ||
             this.filters.toArray()[2].nativeElement.value) {
-            console.log('user filters, use those')
-
 
             this.hiddenSectorFilter = this.filters.toArray()[1].nativeElement.value;
             this.hiddenIndustryFilter = this.filters.toArray()[2].nativeElement.value;
 
-            console.log('hiddenSector: ' + this.hiddenSectorFilter);
-            console.log('hiddenIndustry: ' + this.hiddenIndustryFilter);
-
             this.filter();
         } else {
-            console.log('no user filter, use params')
 
             this.hiddenIndustryFilter = this.industryParam;
             this.hiddenSectorFilter = this.sectorParam;
-
-            console.log('hiddenSector: ' + this.hiddenSectorFilter);
-            console.log('hiddenIndustry: ' + this.hiddenIndustryFilter);
 
             this.filter();
         }
