@@ -43,7 +43,7 @@ export class CompanyIndustriesComponent implements OnInit {
               },
               datasets: [
                   {
-                      label: 'Industry Similarity Weights',
+                      label: 'Industry Similarity Weights (%)',
                       data: industryChartWeights,
                       backgroundColor: "#36A2EB",
                       hoverBackgroundColor: "#36A2EB"
@@ -68,7 +68,7 @@ export class CompanyIndustriesComponent implements OnInit {
               },
               datasets: [
                   {
-                      label: 'Sector Similarity Weights',
+                      label: 'Sector Similarity Weights (%)',
                       data: sectorChartWeights,
                       backgroundColor: "#36A2EB",
                       hoverBackgroundColor: "#36A2EB"
@@ -81,6 +81,12 @@ export class CompanyIndustriesComponent implements OnInit {
               yAxes: [{
                   ticks: {
                       display: false
+                  }
+              }],
+              xAxes: [{
+                  ticks: {
+                      min: 0,
+                      max: 100
                   }
               }]
           }
