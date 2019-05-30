@@ -1,0 +1,11 @@
+----------------------------------------------------------------------------
+-- This script used to populate the seed data, clean it and propagate to the
+-- appropriate tables in our relational DB schema.  We have since switched
+-- to using AWS Glue to load all tables from files deposited in the S3
+-- bucket.  
+-- Under the new paradigm there is nothing to load here.  The few transforms
+-- such as trimming off trailing spaces have been pushed to the collectors
+-- and the relationships have all been baked in to the queries in the Lambda
+-- functions which serve up data in the data layer API.
+----------------------------------------------------------------------------
+
