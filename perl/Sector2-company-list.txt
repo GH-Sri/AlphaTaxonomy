@@ -1,0 +1,231 @@
+Henry Schein, 5047
+Waters Corporation, 3826
+Astrotech Corporation, 3826
+Nuance Communications, 7372
+IRIDEX Corporation, 3845
+Streamline Health Solutions, 7373
+Endologix, 3841
+BioScrip, 8082
+Quest Diagnostics Incorporated, 8071
+Simulations Plus, 7373
+Tactile Systems Technology, 3841
+Maximus, 7389
+Luminex Corporation, 3841
+Intuitive Surgical, 3842
+Mettler-Toledo International, 3826
+AMTEK, 3827
+OSI Systems, 3674
+Henry Schein, 5047
+Waters Corporation, 3826
+Astrotech Corporation, 3826
+Nuance Communications, 7372
+IRIDEX Corporation, 3845
+Streamline Health Solutions, 7373
+Endologix, 3841
+BioScrip, 8082
+Quest Diagnostics Incorporated, 8071
+Simulations Plus, 7373
+Tactile Systems Technology, 3841
+Maximus, 7389
+Luminex Corporation, 3841
+Intuitive Surgical, 3842
+Mettler-Toledo International, 3826
+AMTEK, 3827
+OSI Systems, 3674
+Biocept, 8071
+Strata Skin Sciences, 3841
+Interpace Diagnostics Group, 3841
+West Pharmaceutical Services, 3060
+Centene Corporation, 6324
+PolarityTE, 2836
+NeoGenomics, 8734
+Becton, 3841
+Apollo Medical Holdings, 8742
+Agilent Technologies, 3826
+DexCom, 3841
+HealthStream, 7370
+Align Technology, 3842
+Edwards Lifesciences Corporation, 3842
+Charles River Laboratories International, 8731
+Bruker Corporation, 3826
+Illumina, 3826
+Integer Holdings Corporation, 3690
+OraSure Technologies, 3841
+Harvard Bioscience, 3826
+CryoPort, 4731
+Allscripts Healthcare Solutions, 7373
+The Ensign Group, 8051
+Genomic Health, 8071
+Accuray Incorporated, 3841
+AmerisourceBergen Corporation (Holding Co), 0
+NuVasive, 3841
+Insulet Corporation, 3841
+Anthem, 6324
+LeMaitre Vascular, 3841
+Computer Programs and Systems, 7371
+Triple-S Management Corporation, 6321
+Glaukos Corporation, 3841
+HMS Holdings Corp, 7389
+CareDx, 8071
+Globus Medical, 3841
+Second Sight Medical Products, 3845
+SiNtx Technologies, 3841
+Intersect ENT, 3841
+AngioDynamics, 3841
+WellCare Health Plans, 6324
+NeuroMetrix, 3841
+Spok Holdings, 4812
+InVivo Therapeutics Holdings Corp., 3841
+OpGen, 8071
+Inogen, 3842
+LHC Group, 8082
+ConforMIS, 3842
+Select Medical Holdings Corporation, 8060
+Penumbra, 3841
+iRadimed Corporation, 3841
+NanoVibronix, 3842
+eHealth, 6411
+Cancer Genetics, 8071
+Alphatec Holdings, 3841
+Sonoma Pharmaceuticals, 2834
+Myomo Inc., 3842
+Trupanion, 6324
+iRhythm Technologies, 3841
+NovaBay Pharmaceuticals, 2834
+NanoString Technologies, 2836
+Sino-Global Shipping America, 4731
+OrthoPediatrics Corp., 3841
+Obalon Therapeutics, 3841
+InspireMD Inc., 3841
+Tandem Diabetes Care, 3841
+Precision Therapeutics Inc., 3842
+Xtant Medical Holdings, 2836
+Medidata Solutions, 7372
+Addus HomeCare Corporation, 8082
+R1 RCM Inc., 8741
+Teladoc Health, 8011
+IQVIA Holdings, 8731
+GenMark Diagnostics, 3841
+Electromed, 3845
+Wright Medical Group N.V., 3842
+Sensus Healthcare, 3841
+American Renal Associates Holdings, 8090
+Invitae Corporation, 8071
+Quanterix Corporation, 3826
+CHF Solutions, 3845
+Avinger, 3841
+Acadia Healthcare Company, 8093
+Lantheus Holdings, 2835
+DarioHealth Corp., 3841
+Millendo Therapeutics, 2834
+Ekso Bionics Holdings, 3569
+Sientra, 3842
+MyoKardia, 2834
+Health Insurance Innovations, 6411
+NantHealth, 7374
+Mallinckrodt plc, 2834
+BioTelemetry, 8093
+Allergan plc., 2834
+MTBC, 7372
+Perrigo Company, 2834
+Oxford Immunotec Global PLC, 2835
+Quotient Limited, 2835
+ViewRay, 3845
+Nemaura Medical Inc., 3841
+Celcuity Inc., 8071
+Natera, 8071
+AAC Holdings, 8093
+Avanos Medical, 3842
+ReWalk Robotics Ltd., 3842
+Diplomat Pharmacy, 5912
+Helius Medical Technologies, 3845
+Syneos Health, 8731
+The Joint Corp., 6794
+Medtronic plc, 3845
+PRA Health Sciences, 8731
+Senseonics Holdings, 3823
+Walgreens Boots Alliance, 5912
+Valeritas Holdings, 3841
+Inovalon Holdings, 7374
+STERIS plc, 3842
+Evolent Health, 8741
+SeaSpine Holdings Corporation, 3841
+Surgery Partners, 8062
+LivaNova PLC, 3845
+Guardion Health Sciences, 2834
+OncoCyte Corporation, 2835
+NovoCure Limited, 3841
+Medpace Holdings, 8731
+Fulgent Genetics, 8071
+Varex Imaging Corporation, 3679
+ENDRA Life Sciences Inc., 3845
+Motus GI Holdings, 3841
+Co-Diagnostics, 3841
+Abbott Laboratories, 2834
+Magellan Health, 8060
+Cantel Medical Corp., 3841
+Chemed Corp., 8082
+Corning Incorporated, 3357
+Dynasil Corporation of America, 3220
+Stryker Corporation, 3841
+Haemonetics Corporation, 3841
+Danaher Corporation, 3823
+Enzo Biochem, 8071
+PerkinElmer, 3826
+Quidel Corporation, 2835
+Fonar Corporation, 3845
+Hill-Rom Holdings Inc, 3841
+Humana Inc., 6324
+CVS Health Corporation, 5912
+Atrion Corporation, 3841
+Tenet Healthcare Corporation, 8062
+Digirad Corporation, 3845
+NextGen Healthcare, 7373
+Anixa Biosciences, 8071
+STAAR Surgical Company, 3851
+Apyx Medical Corporation, 3841
+Bioanalytical Systems, 8731
+Hanger, 8093
+Hanger, 8093
+Accelerate Diagnostics, 3826
+IsoRay, 3841
+Biomerica, 3843
+American Shared Hospital Services, 8071
+Owens & Minor, 5047
+Champions Oncology, 2836
+CryoLife, 3841
+DLH Holdings Corp., 7363
+Pro-Dex, 3841
+RadNet, 8071
+Cerner Corporation, 7373
+Psychemedics Corporation, 8071
+Biolase, 3843
+ABIOMED, 3841
+DENTSPLY SIRONA Inc., 3843
+MYnd Analytics, 8090
+IDEX Corporation, 3845
+Rite Aid Corporation, 5912
+Bio-Techne Corp, 2836
+Exponent, 8742
+Milestone Scientific, 3842
+Merit Medical Systems, 3841
+Hologic, 3844
+HCA Healthcare, 8062
+Stericycle, 4955
+Regeneron Pharmaceuticals, 2834
+Allied Healthcare Products, 3842
+CorVel Corp., 6411
+BioTime, 2836
+TransEnterix, 3841
+MISONIX, 3821
+Aethlon Medical, 3826
+Microbot Medical Inc., 2836
+ICU Medical, 3841
+Bausch Health Companies Inc., 2834
+Boston Scientific Corporation, 3841
+IntriCon Corporation, 3670
+Mednax, 8060
+Amedisys Inc, 8082
+Anika Therapeutics Inc., 3841
+Sharps Compliance Corp., 4955
+Myriad Genetics, 2835

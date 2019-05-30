@@ -1,0 +1,25 @@
+VSE Corporation, 8711
+L3 Technologies, 3663
+VSE Corporation, 8711
+L3 Technologies, 3663
+Raytheon Company, 3812
+Mercury Systems Inc, 3670
+Kratos Defense & Security Solutions, 3760
+Teledyne Technologies Incorporated, 3812
+Northrop Grumman Corporation, 3812
+Boeing Company (The), 0
+Leidos Holdings, 7373
+Ocean Power Technologies, 4911
+The KEYW Holding Corporation, 7373
+Huntington Ingalls Industries, 3730
+SCIENCE APPLICATIONS INTERNATIONAL CORPORATION, 7373
+CACI International, 7373
+Perspecta Inc., 7374
+Comtech Telecommunications Corp., 3663
+Cubic Corporation, 3829
+Frequency Electronics, 3825
+General Dynamics Corporation, 3730
+MICT, 3670
+Wireless Telecom Group, 3825
+CPI Aerostructures, 3728
+ManTech International Corporation, 8741

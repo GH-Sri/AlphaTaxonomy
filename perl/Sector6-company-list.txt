@@ -1,0 +1,589 @@
+Schweitzer-Mauduit International, 2621
+Southern Copper Corporation, 1000
+Star Group, 7389
+Pacific Gas & Electric Co., 4931
+SPAR Group, 7389
+Columbus McKinnon Corporation, 3531
+Landec Corporation, 2033
+KVH Industries, 3663
+Carbo Ceramics, 3290
+Air Industries Group, 3728
+Sealed Air Corporation, 2820
+BJ&#39;s Restaurants, 5812
+Amazon.com, 5961
+Abercrombie & Fitch Company, 5651
+Allegheny Technologies Incorporated, 3317
+DXP Enterprises, 5084
+Triumph Group, 3720
+Nu Skin Enterprises, 5122
+Rockwell Automation, 3829
+Tenneco Inc., 3714
+Sun Hydraulics Corporation, 3490
+Core Molding Technologies Inc, 3089
+Valmont Industries, 3440
+Dynavax Technologies Corporation, 2834
+Sempra Energy, 4932
+Autoliv, 3714
+Arch Coal, 1221
+Walmart Inc., 5331
+Piedmont Office Realty Trust, 6512
+American Electric Technologies, 3620
+Annaly Capital Management Inc, 6798
+Schweitzer-Mauduit International, 2621
+Southern Copper Corporation, 1000
+Star Group, 7389
+Pacific Gas & Electric Co., 4931
+SPAR Group, 7389
+Columbus McKinnon Corporation, 3531
+Landec Corporation, 2033
+KVH Industries, 3663
+Carbo Ceramics, 3290
+Air Industries Group, 3728
+Sealed Air Corporation, 2820
+BJ&#39;s Restaurants, 5812
+Amazon.com, 5961
+Abercrombie & Fitch Company, 5651
+Allegheny Technologies Incorporated, 3317
+DXP Enterprises, 5084
+Triumph Group, 3720
+Nu Skin Enterprises, 5122
+Rockwell Automation, 3829
+Tenneco Inc., 3714
+Sun Hydraulics Corporation, 3490
+Core Molding Technologies Inc, 3089
+Valmont Industries, 3440
+Dynavax Technologies Corporation, 2834
+Sempra Energy, 4932
+Autoliv, 3714
+Arch Coal, 1221
+Walmart Inc., 5331
+Piedmont Office Realty Trust, 6512
+American Electric Technologies, 3620
+Annaly Capital Management Inc, 6798
+Stoneridge, 3714
+W.R. Grace & Co., 2800
+Career Education Corporation, 8200
+MKS Instruments, 3823
+CompX International Inc., 3420
+Watsco, 5070
+Steelcase Inc., 2522
+Quanta Services, 1731
+BSQUARE Corporation, 7389
+Innospec Inc., 2800
+Federated Investors, 6282
+PC-Tel, 3663
+Enterprise Products Partners L.P., 4922
+American Axle & Manufacturing Holdings, 3714
+Peabody Energy Corporation, 1221
+Centrus Energy Corp., 1400
+LKQ Corporation, 5010
+Whirlpool Corporation, 5090
+Future FinTech Group Inc., 2030
+East West Bancorp, 6022
+Lennox International, 3585
+Flexible Solutions International Inc., 2890
+Trex Company, 2400
+Host Hotels & Resorts, 6798
+Golden Entertainment, 7990
+Novanta Inc., 3690
+Extreme Networks, 3576
+Lightbridge Corporation, 8742
+Worthington Industries, 3310
+Alliance Resource Partners, 1221
+OMNOVA Solutions Inc., 3060
+CIRCOR International, 3490
+Chembio Diagnostics, 2834
+Huttig Building Products, 5030
+Plug Power, 3620
+Applied Industrial Technologies, 5080
+Energizer Holdings, 3690
+MercadoLibre, 7389
+RPM International Inc., 2851
+Axcelis Technologies, 3559
+Meritor, 3714
+Build-A-Bear Workshop, 5945
+Planet Green Holdings Corp, 2030
+CBAK Energy Technology, 3690
+PDF Solutions, 7371
+Comstock Mining, 1040
+PolyOne Corporation, 2821
+Beacon Roofing Supply, 5030
+Magellan Midstream Partners L.P., 4610
+Cyclacel Pharmaceuticals, 2834
+International Tower Hill Mines Ltd, 1000
+Atlas Air Worldwide Holdings, 4522
+Reeds, 2086
+Acuity Brands, 3640
+Aspen Aerogels, 5030
+Madrigal Pharmaceuticals, 2834
+China HGS Real Estate, 6500
+Gold Resource Corporation, 1040
+United States Steel Corporation, 3312
+EnPro Industries, 3050
+Westwood Holdings Group Inc, 6282
+Natural Resource Partners LP, 1221
+Novagold Resources Inc., 1040
+Hyster-Yale Materials Handling, 3537
+Wynn Resorts, 7011
+Alnylam Pharmaceuticals, 2834
+Cardiovascular Systems, 3841
+Arlington Asset Investment Corp, 6798
+NF Energy Saving Corporation, 3490
+The Providence Service Corporation, 4700
+Marchex, 7389
+Compass Minerals International, 1400
+Kronos Worldwide Inc, 2810
+Transdigm Group Incorporated, 3728
+Westlake Chemical Corporation, 2860
+H&R Block, 7200
+Cool Holdings Inc., 5065
+Hercules Capital, 0
+NewMarket Corporation, 2860
+Douglas Dynamics, 3531
+W&T Offshore, 1311
+Profire Energy, 3533
+Commercial Vehicle Group, 3714
+Prestige Consumer Healthcare Inc., 2834
+Ormat Technologies, 4911
+Pacific Biosciences of California, 3826
+Manitex International, 3559
+Celanese Corporation, 2820
+LiqTech International, 3590
+Huntsman Corporation, 2800
+Lazard Ltd., 6282
+Builders FirstSource, 5211
+Omega Flex, 3430
+Everi Holdings Inc., 7990
+Cooper-Standard Holdings Inc., 3714
+Kraton Corporation, 2821
+Akers Biosciences Inc., 2835
+RBC Bearings Incorporated, 3562
+Roan Resources, 1311
+Boise Cascade, 5030
+Magyar Bancorp, 6035
+H&E Equipment Services, 7350
+General Finance Corporation, 7359
+Vanda Pharmaceuticals Inc., 2834
+Taronis Technologies, 3559
+China XD Plastics Company Limited, 3086
+PGT Innovations, 3442
+Qurate Retail, 5961
+Houston Wire & Cable Company, 5063
+IT Tech Packaging, 2670
+Proteon Therapeutics, 2836
+ORBCOMM Inc., 4899
+Innophos Holdings, 5160
+Herc Holdings Inc., 7350
+Spirit Aerosystems Holdings, 3728
+Highpower International Inc, 3690
+Sally Beauty Holdings, 5990
+AeroVironment, 3721
+Owens Corning Inc, 3290
+Monaker Group, 4700
+Synthesis Energy Systems, 2990
+Wesco Aircraft Holdings, 5072
+Berry Global Group, 3089
+TE Connectivity Ltd., 5065
+Alpha and Omega Semiconductor Limited, 3674
+Wabco Holdings Inc., 3711
+China Advanced Construction Materials Group, 1700
+Resolute Forest Products Inc., 2621
+One Stop Systems, 3571
+Dare Bioscience, 2834
+HubSpot, 7372
+Franklin Financial Network, 6022
+Graphic Packaging Holding Company, 2650
+Restoration Robotics, 3841
+Orion Energy Systems, 3640
+Allison Transmission Holdings, 3714
+Ellington Financial Inc., 6500
+Care.com, 8093
+A.H. Belo Corporation, 2711
+Hillenbrand Inc, 3990
+Briggs & Stratton Corporation, 3510
+Colfax Corporation, 3561
+Verso Corporation, 2621
+Intrepid Potash, 1400
+Energy Recovery, 3559
+AquaVenture Holdings Limited, 4941
+Alder BioPharmaceuticals, 2834
+Fox Factory Holding Corp., 3751
+Echo Global Logistics, 4731
+John Bean Technologies Corporation, 3550
+ClearSign Combustion Corporation, 3823
+Mistras Group Inc, 8711
+Ascent Capital Group, 7380
+MRC Global Inc., 5084
+Rexnord Corporation, 3560
+Pioneer Power Solutions, 3612
+Steel Partners Holdings LP, 3390
+TPI Composites, 3510
+Independence Realty Trust, 6798
+Ingersoll-Rand plc (Ireland), 0
+General Motors Company, 3711
+Sensata Technologies Holding plc, 3823
+Ryerson Holding Corporation, 5051
+BIQI International Holdings Corporation, 200
+BWX Technologies, 3510
+Thermon Group Holdings, 3620
+LyondellBasell Industries NV, 2860
+Global Indemnity Limited, 6331
+Staffing 360 Solutions, 7363
+Adverum Biotechnologies, 2836
+Loop Industries, 2800
+Bankwell Financial Group, 6022
+Coherus BioSciences, 2836
+SunCoke Energy, 3312
+Advanced Emissions Solutions, 2890
+Pingtan Marine Enterprise Ltd., 900
+Trinseo S.A., 2821
+Fortune Brands Home & Security, 1520
+Alkermes plc, 2834
+Aptiv PLC, 3714
+Xylem Inc., 3561
+Corindus Vascular Robotics, 3841
+Tronox Holdings plc, 2810
+Global Brass and Copper Holdings, 3350
+Tecnoglass Inc., 3211
+Foresight Energy LP, 1220
+Trilogy Metals Inc., 1040
+Natural Grocers by Vitamin Cottage, 5411
+Eaton Corporation, 3590
+SunCoke Energy Partners, 3312
+Arcimoto, 3751
+G1 Therapeutics, 2834
+Liberty Media Corporation, 7812
+Ellington Residential Mortgage REIT, 6798
+The ExOne Company, 3555
+ADOMANI, 3714
+HD Supply Holdings, 5000
+New Home Company Inc. (The), 0
+BMC Stock Holdings, 5211
+Ciner Resources LP, 1400
+Premier, 6022
+Allegion plc, 7381
+Jason Industries, 3990
+Installed Building Products, 1520
+PBF Logistics LP, 4610
+Blue Bird Corporation, 3713
+BioHiTech Global, 8200
+Element Solutions Inc., 2890
+1347 Property Insurance Holdings, 6331
+Enviva Partners, 2400
+Continental Building Products, 3270
+The Michaels Companies, 5945
+Blueprint Medicines Corporation, 2834
+Rayonier Advanced Materials Inc., 2820
+TimkenSteel Corporation, 3312
+NOW Inc., 3533
+GMS Inc., 5030
+Cabot Corporation, 2890
+Advanced Drainage Systems, 3086
+Evoqua Water Technologies Corp., 3580
+Westlake Chemical Partners LP, 2860
+Liberty TripAdvisor Holdings, 7374
+Kimball Electronics, 3672
+Liberty Broadband Corporation, 4841
+SMART Global Holdings, 3674
+Axalta Coating Systems Ltd., 2851
+J. Alexander&#39;s Holdings, 5812
+Performance Food Group Company, 5141
+Hess Midstream Partners LP, 1311
+Aqua Metals, 3341
+Easterly Government Properties, 6798
+CSW Industrials, 2891
+Pulse Biosciences, 3841
+Chemours Company (The), 0
+Seritage Growth Properties, 6500
+Paramount Gold Nevada Corp., 1000
+Babcock, 3433
+WAVE Life Sciences Ltd., 2834
+Green Plains Partners LP, 2860
+TEGNA Inc., 2711
+CONSOL Coal Resources LP, 1220
+Horizon Global Corporation, 3714
+Milacron Holdings Corp., 3559
+Voyager Therapeutics, 2836
+TMSR Holding Company Limited, 6770
+SPX FLOW, 3540
+GCP Applied Technologies Inc., 2800
+WillScot Corporation, 7350
+Sequential Brands Group, 2300
+Clipper Realty Inc., 6798
+SiteOne Landscape Supply, 700
+PB Bancorp, 6035
+Intellia Therapeutics, 2835
+Ichor Holdings, 3674
+Ingevity Corporation, 2800
+Armstrong Flooring, 3089
+Fortive Corporation, 3823
+Atkore International Group Inc., 3690
+DowDuPont Inc., 2820
+Randolph Bancorp, 6022
+Liberty Expedia Holdings, 5960
+Adient plc, 3714
+Aptevo Therapeutics Inc., 2834
+The Trade Desk, 7370
+AdvanSix Inc., 2821
+JELD-WEN Holding, 2430
+Ashland Global Holdings Inc., 5160
+Alcoa Corporation, 3334
+Forterra, 3272
+SenesTech, 2870
+Ramaco Resources, 1220
+REV Group, 3711
+Foundation Building Materials, 5030
+ASV Holdings, 3531
+Warrior Met Coal, 1220
+Jerash Holdings (US), 0
+Gardner Denver Holdings, 3560
+Spero Therapeutics, 2834
+YogaWorks, 7200
+Venator Materials PLC, 2810
+Delphi Technologies PLC, 3714
+Linde plc, 2810
+PQ Group Holdings Inc., 2800
+CNX Resources Corporation, 1220
+Gates Industrial Corporation plc, 3560
+Amneal Pharmaceuticals, 2834
+Westrock Company, 2650
+AAR Corp., 3720
+Carpenter Technology Corporation, 3312
+Caterpillar, 3531
+Chicago Rivet & Machine Co., 3540
+Acme United Corporation., 3420
+Clorox Company (The), 0
+Coeur Mining, 1040
+Commercial Metals Company, 3312
+Cooper Tire & Rubber Company, 3011
+Advanced Micro Devices, 3674
+Crane Co., 3490
+Crawford & Company, 6411
+CTS Corporation, 3672
+Curtiss-Wright Corporation, 3590
+Dana Incorporated, 3714
+Federal Signal Corporation, 3711
+Pier 1 Imports, 5700
+Donaldson Company, 3564
+Dover Corporation, 3530
+Ducommun Incorporated, 3728
+Flowserve Corporation, 3561
+Standex International Corporation, 3580
+Eastern Company (The), 0
+HMG/Courtland Properties, 6798
+McEwen Mining Inc., 1040
+Ecolab Inc., 2840
+Deere & Company, 3523
+CECO Environmental Corp., 3564
+Emerson Electric Company, 3600
+DMC Global Inc., 3390
+Exxon Mobil Corporation, 2911
+Ocean Bio-Chem, 2842
+Iteris, 3669
+Ferro Corporation, 2851
+L.B. Foster Company, 5051
+Aegion Corp, 1623
+FLIR Systems, 3812
+Gentex Corporation, 3714
+Richardson Electronics, 5065
+Flexsteel Industries, 2510
+FMC Corporation, 2800
+Ford Motor Company, 3711
+Forward Industries, 3089
+Franklin Electric Co., 3621
+Friedman Industries Inc., 3310
+H. B. Fuller Company, 2891
+Aerojet Rocketdyne Holdings, 3760
+Glatfelter, 2621
+The Goodyear Tire & Rubber Company, 3011
+Gorman-Rupp Company (The), 0
+Arconic Inc., 7389
+Graco Inc., 3561
+Greif Bros. Corporation, 3412
+Harsco Corporation, 3440
+Allied Motion Technologies, 3825
+Heico Corporation, 3724
+HNI Corporation, 2522
+Hubbell Inc, 3670
+IEC Electronics Corp., 3672
+Illinois Tool Works Inc., 3560
+Park City Group, 7374
+Griffon Corporation, 3442
+Intel Corporation, 3674
+International Paper Company, 2621
+Anixter International Inc., 5063
+Kaman Corporation, 5080
+Kennametal Inc., 3541
+Kewaunee Scientific Corporation, 3821
+Kimball International, 2510
+Kimberly-Clark Corporation, 2670
+Leggett & Platt, 2510
+Lincoln Electric Holdings, 3540
+American Vanguard Corporation, 2870
+Louisiana-Pacific Corporation, 2400
+Lsb Industries Inc., 2810
+Lydall, 3714
+Ampco-Pittsburgh Corporation, 3561
+Manitowoc Company, 3531
+Masco Corporation, 2430
+Mattel, 3942
+Gencor Industries Inc., 3531
+Meredith Corporation, 2721
+Mesabi Trust, 6795
+Methode Electronics, 3678
+EVI Industries, 7200
+Herman Miller, 2520
+MSA Safety Incorporporated, 3842
+Apogee Enterprises, 3231
+Qwest Corporation, 0
+MTS Systems Corporation, 3829
+Applied Materials, 3674
+Actuant Corporation, 3590
+Fulton Financial Corporation, 6021
+Lawson Products, 5080
+Trecora Resources, 2911
+GP Strategies Corporation, 8200
+Nanometrics Incorporated, 3829
+National Research Corporation, 8731
+NCR Corporation, 3578
+PAR Technology Corporation, 3578
+Acco Brands Corporation, 2780
+American Software, 7372
+SORL Auto Parts, 3714
+First Financial Corporation Indiana, 6022
+Interface, 2273
+Graham Corporation, 3560
+Hexcel Corporation, 2821
+Hecla Mining Company, 1400
+Key Tronic Corporation, 3577
+Amtech Systems, 3559
+NL Industries, 2810
+China Recycling Energy Corporation, 7389
+Nortech Systems Incorporated, 3679
+Cintas Corporation, 2320
+Nordson Corporation, 3569
+Thor Industries, 3716
+Nucor Corporation, 3312
+Southwestern Energy Company, 1311
+Toro Company (The), 0
+Oil-Dri Corporation Of America, 3990
+Invacare Corporation, 3842
+Olin Corporation, 2800
+Armstrong World Industries Inc, 3089
+Spartan Motors, 3711
+Bar Harbor Bankshares, 6022
+Brady Corporation, 3990
+McGrath RentCorp, 7359
+P & F Industries, 3540
+Arrow Electronics, 5065
+U.S. Global Investors, 6282
+Pacific Gas & Electric Co., 4931
+Art&#39;s-Way Manufacturing Co., 3523
+Park-Ohio Holdings Corp., 3460
+LSI Industries Inc., 3640
+LCI Industries, 3714
+First United Corporation, 6021
+Cleveland-Cliffs Inc., 1000
+Altria Group, 2111
+Insteel Industries, 3310
+Patrick Industries, 2430
+SB Financial Group, 6022
+The Middleby Corporation, 3580
+Pentair plc., 3550
+Honeywell International Inc., 3714
+Oshkosh Corporation, 3711
+Pope Resources, 800
+Encompass Health Corporation, 8060
+Plexus Corp., 3672
+Johnson Outdoors Inc., 3949
+Hallador Energy Company, 1220
+NACCO Industries, 3630
+Cypress Semiconductor Corporation, 3674
+Research Frontiers Incorporated, 6794
+American Woodmark Corporation, 2430
+Watts Water Technologies, 3490
+ViaSat, 3663
+Lakeland Industries, 3842
+Odyssey Marine Exploration, 4400
+PPG Industries, 2851
+Marten Transport, 4213
+Preformed Line Products Company, 1623
+Powell Industries, 3613
+Astronics Corporation, 3728
+Navistar International Corporation, 3711
+Photronics, 3674
+Kaiser Aluminum Corporation, 3350
+ImmuCell Corporation, 2835
+Quaker Chemical Corporation, 2990
+AstroNova, 3577
+Fastenal Company, 5200
+CONMED Corporation, 3845
+Albany International Corporation, 2221
+AAON, 3585
+AllianceBernstein Holding L.P., 6282
+ARC Group Worldwide, 3490
+Regal Beloit Corporation, 3621
+PICO Holdings Inc., 6500
+Freeport-McMoran, 1000
+Spectrum Pharmaceuticals, 2834
+Johnson Controls International plc, 7380
+Lindsay Corporation, 3523
+Willamette Valley Vineyards, 2080
+Westwater Resources, 1000
+Lear Corporation, 3714
+TriMas Corporation, 3460
+Lakeland Bancorp, 6022
+Fuel Tech, 3564
+Rogers Corporation, 2821
+BP Prudhoe Bay Royalty Trust, 2911
+Horace Mann Educators Corporation, 6331
+Tredegar Corporation, 3350
+Encore Wire Corporation, 3350
+Mohawk Industries, 2273
+Royal Gold, 6795
+Kemper Corporation, 6331
+Reliance Steel & Aluminum Co., 5051
+Appliance Recycling Centers of America, 5700
+Benchmark Electronics, 3672
+Sypris Solutions, 3823
+Trimble Inc., 3829
+Matrix Service Company, 1700
+PS Business Parks, 6798
+ESCO Technologies Inc., 3669
+IDEXX Laboratories, 2835
+Northern Technologies International Corporation, 3470
+Natus Medical Incorporated, 3845
+Wabash National Corporation, 3715
+AGCO Corporation, 3523
+Avery Dennison Corporation, 2670
+SPX Corporation, 3540
+Roper Technologies, 3823
+NCI Building Systems, 0
+Viad Corp, 7389
+Jewett-Cameron Trading Company, 5211
+Gulf Resources, 2800
+Avnet, 5065
+Kadant Inc, 3550
+Geron Corporation, 2834
+Kemet Corporation, 3670
+Littelfuse, 3613
+Glen Burnie Bancorp, 6022
+Minerals Technologies Inc., 2810
+Patterson Companies, 5047
+Servotronics, 3420
+Chart Industries, 3443
+Masonite International Corporation, 2430
+Mueller Industries, 3350
+AZZ Inc., 3640
+Destination Maternity Corporation, 5621
+Alamo Group, 3523
+Sanmina Corporation, 3672
+O&#39;Reilly Automotive, 5531
+Jabil Inc., 3672
+Allstate Corporation (The), 0
+Healthcare Realty Trust Incorporated, 6798
+SIFCO Industries, 3724
+Libbey, 3220
+Barrett Business Services, 7363
+Shiloh Industries, 3460
+Shiloh Industries, 3460

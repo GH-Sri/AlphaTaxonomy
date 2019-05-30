@@ -1,0 +1,86 @@
+IRIDEX Corporation, 3845
+Endologix, 3841
+Tactile Systems Technology, 3841
+Intuitive Surgical, 3842
+IRIDEX Corporation, 3845
+Endologix, 3841
+Tactile Systems Technology, 3841
+Intuitive Surgical, 3842
+Strata Skin Sciences, 3841
+DexCom, 3841
+Align Technology, 3842
+Integer Holdings Corporation, 3690
+Accuray Incorporated, 3841
+NuVasive, 3841
+Insulet Corporation, 3841
+LeMaitre Vascular, 3841
+Glaukos Corporation, 3841
+Globus Medical, 3841
+Second Sight Medical Products, 3845
+SiNtx Technologies, 3841
+Intersect ENT, 3841
+AngioDynamics, 3841
+NeuroMetrix, 3841
+InVivo Therapeutics Holdings Corp., 3841
+Inogen, 3842
+ConforMIS, 3842
+Penumbra, 3841
+iRadimed Corporation, 3841
+NanoVibronix, 3842
+Alphatec Holdings, 3841
+Sonoma Pharmaceuticals, 2834
+Myomo Inc., 3842
+NovaBay Pharmaceuticals, 2834
+OrthoPediatrics Corp., 3841
+Obalon Therapeutics, 3841
+InspireMD Inc., 3841
+Tandem Diabetes Care, 3841
+Precision Therapeutics Inc., 3842
+Xtant Medical Holdings, 2836
+Electromed, 3845
+Wright Medical Group N.V., 3842
+Sensus Healthcare, 3841
+CHF Solutions, 3845
+Avinger, 3841
+Lantheus Holdings, 2835
+DarioHealth Corp., 3841
+Ekso Bionics Holdings, 3569
+Sientra, 3842
+Allergan plc., 2834
+ViewRay, 3845
+Nemaura Medical Inc., 3841
+Avanos Medical, 3842
+ReWalk Robotics Ltd., 3842
+Helius Medical Technologies, 3845
+Medtronic plc, 3845
+Senseonics Holdings, 3823
+Valeritas Holdings, 3841
+SeaSpine Holdings Corporation, 3841
+LivaNova PLC, 3845
+Guardion Health Sciences, 2834
+NovoCure Limited, 3841
+Varex Imaging Corporation, 3679
+ENDRA Life Sciences Inc., 3845
+Motus GI Holdings, 3841
+Stryker Corporation, 3841
+Atrion Corporation, 3841
+STAAR Surgical Company, 3851
+Apyx Medical Corporation, 3841
+IsoRay, 3841
+Biomerica, 3843
+CryoLife, 3841
+Pro-Dex, 3841
+Biolase, 3843
+ABIOMED, 3841
+DENTSPLY SIRONA Inc., 3843
+Milestone Scientific, 3842
+Merit Medical Systems, 3841
+Hologic, 3844
+Allied Healthcare Products, 3842
+TransEnterix, 3841
+MISONIX, 3821
+Aethlon Medical, 3826
+Microbot Medical Inc., 2836
+ICU Medical, 3841
+IntriCon Corporation, 3670
+Anika Therapeutics Inc., 3841

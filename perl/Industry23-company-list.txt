@@ -1,0 +1,19 @@
+IDT Corporation, 4813
+NII Holdings, 4812
+IDT Corporation, 4813
+NII Holdings, 4812
+Alaska Communications Systems Group, 4813
+Charter Communications, 4841
+Comcast Corporation, 4841
+T-Mobile US, 4812
+Otelco Inc., 4813
+Consolidated Communications Holdings, 4813
+WideOpenWest, 4841
+Altice USA, 4841
+CenturyLink, 4813
+Frontier Communications Corporation, 4813
+Shenandoah Telecommunications Co, 4813
+Cincinnati Bell Inc, 4813
+Verizon Communications Inc., 4813
+AT&T Inc., 4813
+GCI Liberty, 4813

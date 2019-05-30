@@ -1,0 +1,52 @@
+Air Industries Group, 3728
+Sun Hydraulics Corporation, 3490
+American Electric Technologies, 3620
+Air Industries Group, 3728
+Sun Hydraulics Corporation, 3490
+American Electric Technologies, 3620
+CompX International Inc., 3420
+Applied Industrial Technologies, 5080
+EnPro Industries, 3050
+Douglas Dynamics, 3531
+Manitex International, 3559
+Owens Corning Inc, 3290
+TE Connectivity Ltd., 5065
+Briggs & Stratton Corporation, 3510
+John Bean Technologies Corporation, 3550
+MRC Global Inc., 5084
+Pioneer Power Solutions, 3612
+Sensata Technologies Holding plc, 3823
+Thermon Group Holdings, 3620
+Xylem Inc., 3561
+Jason Industries, 3990
+TimkenSteel Corporation, 3312
+NOW Inc., 3533
+CSW Industrials, 2891
+SPX FLOW, 3540
+Ichor Holdings, 3674
+DMC Global Inc., 3390
+Iteris, 3669
+L.B. Foster Company, 5051
+FLIR Systems, 3812
+Richardson Electronics, 5065
+Franklin Electric Co., 3621
+Gorman-Rupp Company (The), 0
+Anixter International Inc., 5063
+Kennametal Inc., 3541
+Ampco-Pittsburgh Corporation, 3561
+Gencor Industries Inc., 3531
+MTS Systems Corporation, 3829
+SORL Auto Parts, 3714
+P & F Industries, 3540
+Pentair plc., 3550
+Johnson Outdoors Inc., 3949
+Powell Industries, 3613
+Photronics, 3674
+ARC Group Worldwide, 3490
+Regal Beloit Corporation, 3621
+Wabash National Corporation, 3715
+SPX Corporation, 3540
+Roper Technologies, 3823
+Jewett-Cameron Trading Company, 5211
+Kemet Corporation, 3670
+Littelfuse, 3613

@@ -1,0 +1,228 @@
+Assertio Therapeutics, 2834
+Acorda Therapeutics, 2836
+Avadel Pharmaceuticals plc, 2834
+Antares Pharma, 3841
+Seelos Therapeutics, 2834
+ArQule, 2834
+ANI Pharmaceuticals, 2834
+Eloxx Pharmaceuticals, 8731
+Rockwell Medical, 3845
+CymaBay Therapeutics Inc., 2834
+Assertio Therapeutics, 2834
+Acorda Therapeutics, 2836
+Avadel Pharmaceuticals plc, 2834
+Antares Pharma, 3841
+Seelos Therapeutics, 2834
+ArQule, 2834
+ANI Pharmaceuticals, 2834
+Eloxx Pharmaceuticals, 8731
+Rockwell Medical, 3845
+CymaBay Therapeutics Inc., 2834
+BioMarin Pharmaceutical Inc., 2834
+Diffusion Pharmaceuticals Inc., 2834
+Cytokinetics, 2834
+Lexicon Pharmaceuticals, 2834
+Acer Therapeutics Inc., 2834
+PTC Therapeutics, 2834
+Achillion Pharmaceuticals, 2834
+ACADIA Pharmaceuticals Inc., 2834
+Innoviva, 2834
+Arena Pharmaceuticals, 2834
+DURECT Corporation, 2834
+Cumberland Pharmaceuticals Inc., 2834
+Corcept Therapeutics Incorporated, 2834
+Array BioPharma Inc., 2834
+BioDelivery Sciences International, 2834
+Insmed, 2834
+Curis, 2836
+Infinity Pharmaceuticals, 2834
+The Medicines Company, 2834
+Chimerix, 2834
+Catalyst Biosciences, 2834
+MacroGenics, 2834
+Onconova Therapeutics, 2834
+Galectin Therapeutics Inc., 2834
+Aevi Genomic Medicine, 2836
+Savara, 2834
+Oragenics Inc., 2834
+Oramed Pharmaceuticals Inc., 2834
+Enanta Pharmaceuticals, 2834
+SCYNEXIS, 2834
+Amicus Therapeutics, 2834
+TrovaGene, 2836
+MediciNova, 2834
+Rexahn Pharmaceuticals, 2834
+Jazz Pharmaceuticals plc, 2834
+Momenta Pharmaceuticals, 2836
+GTx, 2834
+Agile Therapeutics, 2834
+Alimera Sciences, 2834
+Marinus Pharmaceuticals, 2834
+Portola Pharmaceuticals, 2834
+Intercept Pharmaceuticals, 2834
+Omeros Corporation, 2834
+Amphastar Pharmaceuticals, 2834
+Eiger BioPharmaceuticals, 2836
+Anavex Life Sciences Corp., 8731
+EyePoint Pharmaceuticals, 3826
+Albireo Pharma, 2834
+India Globalization Capital Inc., 5065
+Xencor, 2834
+Adamas Pharmaceuticals, 2834
+Aerie Pharmaceuticals, 2836
+ChemoCentryx, 2834
+Aldeyra Therapeutics, 2834
+Cara Therapeutics, 2834
+KalVista Pharmaceuticals, 2834
+GW Pharmaceuticals Plc, 2834
+Supernus Pharmaceuticals, 2834
+Neuralstem, 2836
+Reata Pharmaceuticals, 2834
+Harrow Health, 2834
+Concert Pharmaceuticals, 2834
+Catalyst Pharmaceuticals, 2834
+AnaptysBio, 2834
+Tetraphase Pharmaceuticals, 2834
+Zafgen, 2834
+Zogenix, 2834
+NanoViricides, 8731
+Conatus Pharmaceuticals Inc., 2834
+Ocular Therapeutix, 2834
+Pacira BioSciences, 2834
+MYOS RENS Technology Inc., 2834
+Evoke Pharma, 2834
+Novus Therapeutics, 2834
+Aquinox Pharmaceuticals, 2834
+CorMedix Inc., 2834
+IVERIC bio, 2834
+Ampio Pharmaceuticals, 2834
+Cocrystal Pharma, 2834
+Flexion Therapeutics, 2834
+Aerpio Pharmaceuticals, 2834
+Assembly Biosciences, 2834
+Bristol-Myers Squibb Company, 2834
+AcelRx Pharmaceuticals, 2834
+Radius Health, 2834
+Trevena, 2834
+Tonix Pharmaceuticals Holding Corp., 2834
+KemPharm, 2834
+Esperion Therapeutics, 2834
+Ardelyx, 2834
+Retrophin, 2834
+OncoSec Medical Incorporated, 2834
+Proteostasis Therapeutics, 2834
+Ironwood Pharmaceuticals, 2834
+Catabasis Pharmaceuticals, 2834
+Orgenesis Inc., 2834
+Ritter Pharmaceuticals, 2834
+Melinta Therapeutics, 2834
+Clovis Oncology, 2834
+Neos Therapeutics, 2834
+PDS Biotechnology Corporation, 2834
+ContraFect Corporation, 2834
+Pfenex Inc., 2834
+Revance Therapeutics, 2834
+Kala Pharmaceuticals, 2834
+Ra Pharmaceuticals, 2834
+Soleno Therapeutics, 3845
+Atossa Genetics Inc., 2834
+Horizon Therapeutics Public Limited Company, 2834
+Otonomy, 2834
+OptiNose, 2834
+Calithera Biosciences, 2834
+PLx Pharma Inc., 2834
+X4 Pharmaceuticals, 2836
+Citius Pharmaceuticals, 2834
+Neurotrope, 2834
+Insys Therapeutics, 2834
+CohBar, 2834
+Verastem, 2834
+Phio Pharmaceuticals Corp., 2834
+Cerecor Inc., 2834
+Xenetic Biosciences, 2834
+Lipocine Inc., 2834
+Clearside Biomedical, 2834
+AbbVie Inc., 2834
+Innovate Biopharmaceuticals, 2834
+Aclaris Therapeutics, 2834
+Dermira, 2834
+Prothena Corporation plc, 2834
+Spring Bank Pharmaceuticals, 2834
+Intra-Cellular Therapies Inc., 2834
+Evolus, 2834
+Pulmatrix, 2834
+Xenon Pharmaceuticals Inc., 2834
+Matinas Biopharma Holdings, 2834
+Theravance Biopharma, 2834
+Jaguar Health, 2834
+Zosano Pharma Corporation, 2834
+Recro Pharma, 2834
+Endo International plc, 2834
+Corbus Pharmaceuticals Holdings, 2834
+Catalent, 2834
+Sage Therapeutics, 2834
+Bellerophon Therapeutics, 2834
+scPharmaceuticals Inc., 2834
+Foamix Pharmaceuticals Ltd., 2833
+Seres Therapeutics, 2834
+Cidara Therapeutics, 2836
+Flex Pharma, 2834
+Evofem Biosciences, 2834
+Mylan N.V., 2834
+Allena Pharmaceuticals, 2836
+XBiotech Inc., 2834
+Global Blood Therapeutics, 2834
+Aimmune Therapeutics, 2834
+Strongbridge Biopharma plc, 2834
+Axovant Gene Therapies Ltd., 2834
+Aeglea BioTherapeutics, 2834
+Ovid Therapeutics Inc., 2834
+vTv Therapeutics Inc., 2834
+AIT Therapeutics, 3841
+Nabriva Therapeutics plc, 2834
+Avenue Therapeutics, 2834
+Outlook Therapeutics, 2836
+Sienna Biopharmaceuticals, 2834
+Moleculin Biotech, 2834
+Akcea Therapeutics, 2834
+Myovant Sciences Ltd., 2834
+Eyenovia, 2834
+Dova Pharmaceuticals, 2834
+Biohaven Pharmaceutical Holding Company Ltd., 2834
+Odonate Therapeutics, 2834
+resTORbio, 2834
+Johnson & Johnson, 2834
+Merck & Company, 2834
+Akorn, 2834
+Amgen Inc., 2836
+Abeona Therapeutics Inc., 2834
+Caladrius Biosciences, 8090
+Tenax Therapeutics, 8731
+Teligent, 2834
+Lannett Co Inc, 2834
+Eli Lilly and Company, 2834
+Cel-Sci Corporation, 2836
+Celldex Therapeutics, 2835
+Pfizer, 2834
+AMAG Pharmaceuticals, 2834
+Navidea Biopharmaceuticals, 2835
+Celgene Corporation, 2834
+Heron Therapeutics, 2834
+Teva Pharmaceutical Industries Limited, 2834
+Novelion Therapeutics Inc., 2834
+Eagle Pharmaceuticals, 2834
+Idera Pharmaceuticals, 2836
+Sarepta Therapeutics, 2834
+Ionis Pharmaceuticals, 2834
+Biogen Inc., 2836
+Vertex Pharmaceuticals Incorporated, 2834
+BioSpecifics Technologies Corp, 2834
+Gilead Sciences, 2836
+PDL BioPharma, 2836
+BioCryst Pharmaceuticals, 2836
+Ligand Pharmaceuticals Incorporated, 2834
+Adamis Pharmaceuticals Corporation, 2834
+Synthetic Biologics, 2834
+CASI Pharmaceuticals, 2836
+MannKind Corporation, 2834
+Alexion Pharmaceuticals, 2834
