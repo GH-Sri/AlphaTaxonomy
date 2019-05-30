@@ -16,28 +16,28 @@ rm(pw) # removes the password
 # check for the company table
 dbExistsTable(con, "company")
 
-MCData <- dbReadTable(conn = con, name = "company")
-MCData$MC <- gsub(pattern = "\\$|,", replacement = "", x = MCData$marketcap)
-MCData$MC <- as.numeric(MCData$MC)
+WeightTable <- dbReadTable(conn = con, name = "company")
+WeightTable$MC <- gsub(pattern = "\\$|,", replacement = "", x = WeightTable$marketcap)
+WeightTable$MC <- as.numeric(WeightTable$MC)
 
-MCSummary <- summarise(group_by(MCData, legacysector), MC = sum(MC))
-MCSummary$MC2 <- scales::dollar(MCSummary$MC)
+MCSummary <- summarise(group_by(WeightTable, legacysector), TotMktCap = sum(MC))
+#MCSummary$MC2 <- scales::dollar(MCSummary$TotMktCap)
 
-MCData$Exchange <- ifelse(MCData$ticker %in% AMEX$Symbol, "AMEX", ifelse(
-  MCData$ticker %in% NYSE$Symbol, "NYSE", ifelse(
-    MCData$ticker %in% NASDAQ$Symbol, "NASDAQ", "Unknown"
-  )
-))
-
-
-MCData <- left_join(MCData, MCSummary, by = "legacysector")
-MCData$weight <- MCData$MC.x / MCData$MC.y
-
-test <- summarise(group_by(MCData, legacysector), totweight = sum(weight))
+# WeightTable$Exchange <- ifelse(WeightTable$ticker %in% AMEX$Symbol, "AMEX", ifelse(
+#   WeightTable$ticker %in% NYSE$Symbol, "NYSE", ifelse(
+#     WeightTable$ticker %in% NASDAQ$Symbol, "NASDAQ", "Unknown"
+#   )
+# ))
 
 
+WeightTable <- left_join(WeightTable, MCSummary, by = "legacysector")
+WeightTable$weight <- WeightTable$MC / WeightTable$TotMktCap
+
+CheckSumsTable <- summarise(group_by(WeightTable, legacysector), totweight = sum(weight))
 
 
+
+stockPrices <- read.csv(file = "C:/Users/hwalbert001/Documents/Company Stock Analysis/StockHistoryPctChange.csv", colClasses = "character")
 
 stockplot <- function(SYMBOL = "GOOG", pctChange = T){
   StockData <- subset(stockPrices, Symbol == SYMBOL)
@@ -54,6 +54,7 @@ stockplot <- function(SYMBOL = "GOOG", pctChange = T){
   plot(x = StockData$date, y = StockData$pct_change, type = "l", main = paste("Percent Change Close for:", SYMBOL), xlab = "Date", ylab = "% Change Close")
   plot(x = StockData$date, y = StockData$close, type = "l", main = paste("Close for:", SYMBOL), xlab = "Date", ylab = "Close")
 }
+
 
 
 finalData <- data.frame()
@@ -77,5 +78,5 @@ finalData$YEAR <- substr(finalData$date, 1,4)
 
 
 
-ggplot(MCData[1:500,], aes(fill=legacysector, y=MC, x=Exchange)) +
+ggplot(WeightTable[1:500,], aes(fill=legacysector, y=MC, x=Exchange)) +
   geom_bar( stat="identity", position="fill")
