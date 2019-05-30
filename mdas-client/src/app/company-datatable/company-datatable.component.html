@@ -1,6 +1,6 @@
 <p-table #companyTable [value]="companies" [columns]="cols" sortField="name" [sortOrder]="1" selectionMode="single"
 	[(selection)]="selectedCompany" dataKey="name" (onRowSelect)="onRowSelect($event)" scrollable="true"
-	scrollHeight="800px">
+	scrollHeight="800px" [loading]="loading">
 	<ng-template pTemplate="header" let-columns>
 		<tr>
 			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
