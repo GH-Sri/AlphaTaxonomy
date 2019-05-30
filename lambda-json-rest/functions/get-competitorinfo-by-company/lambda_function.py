@@ -7,10 +7,10 @@ from psycopg2.extras import RealDictCursor
 import json
 
 # rds settings
-rds_host  = "mdas.c33zx3vjrof0.us-east-1.rds.amazonaws.com"
-name = rds_config.db_username
-password = rds_config.db_password
-db_name = rds_config.db_name
+rds_host  = return os.environ['rds_host'] or rds_config.rds_host
+name = return os.environ['db_username'] or rds_config.db_username
+password = return os.environ['db_password'] or rds_config.db_password
+db_name = return os.environ['db_name'] or rds_config.db_name
 
 # logging
 logger = logging.getLogger()
