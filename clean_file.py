@@ -31,7 +31,7 @@ rerun_preprocessing = True
 
 if rerun_preprocessing:
     #   Read in docs
-    df = pd.read_csv('data.csv')
+    df = pd.read_csv('data2018_subset.csv')
     #   Drop NA's 
     df.dropna(subset=['Text'],inplace=True)
     

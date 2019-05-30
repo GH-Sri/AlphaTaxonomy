@@ -61,7 +61,6 @@ df_competitor.to_csv('competitor_similarity.csv',index=False)
 for i in range(0,len(dist)):
     dist[i]=dist[i]**2
 linked = ward(dist)
-
 #plt.figure(figsize=(60, 100)) 
 #dendrogram(linked,  
 #            orientation='right',

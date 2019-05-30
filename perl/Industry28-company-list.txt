@@ -1,0 +1,64 @@
+Identiv, 3577
+Identiv, 3577
+Juniper Networks, 3576
+OneSpan Inc., 7373
+F5 Networks, 3576
+MicroStrategy Incorporated, 7372
+Marvell Technology Group Ltd., 3674
+Western Digital Corporation, 3572
+NetScout Systems, 7373
+Red Hat, 7370
+SPS Commerce, 7372
+support.com, 7374
+Qualys, 7372
+GlobalSCAPE, 7372
+Lantronix, 3576
+Impinj, 3679
+Synchronoss Technologies, 7371
+Seagate Technology PLC, 3572
+Infinera Corporation, 3661
+ForeScout Technologies, 3577
+Verint Systems Inc., 7373
+Commvault Systems, 7372
+CounterPath Corporation, 7372
+Palo Alto Networks, 3577
+Casa Systems, 3663
+Oracle Corporation, 7372
+Splunk Inc., 7372
+Mellanox Technologies, 3674
+Varonis Systems, 7372
+FireEye, 3577
+Aerohive Networks, 7373
+Box, 3861
+Coupa Software Incorporated, 7372
+Cornerstone OnDemand, 7372
+Q2 Holdings, 7372
+Appian Corporation, 7372
+MongoDB, 7372
+New Relic, 7372
+Zendesk, 7374
+SecureWorks Corp., 7372
+MobileIron, 7372
+Pure Storage, 3572
+Rapid7, 7372
+Dell Technologies Inc., 3571
+A10 Networks, 3576
+Sphere 3D Corp., 7374
+Arista Networks, 3576
+GoDaddy Inc., 7373
+Nutanix, 7372
+Rimini Street, 7389
+Mimecast Limited, 7372
+Okta, 7372
+BlackLine, 7372
+Alteryx, 7372
+Zscaler, 7371
+CSP Inc., 7373
+HP Inc., 3570
+Qualstar Corporation, 3695
+Microsoft Corporation, 7372
+Symantec Corporation, 7372
+PTC Inc., 7372
+Progress Software Corporation, 7372
+Zebra Technologies Corporation, 3560
+Citrix Systems, 7372

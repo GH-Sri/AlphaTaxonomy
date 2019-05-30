@@ -1,0 +1,269 @@
+Regional Health Properties, 8051
+Rush Enterprises, 5500
+Carriage Services, 7200
+Penske Automotive Group, 5500
+Famous Dave&#39;s of America, 5812
+Lithia Motors, 5500
+W.P. Carey Inc., 6798
+Kilroy Realty Corporation, 6798
+Group 1 Automotive, 5500
+Global Self Storage, 6798
+Franklin Street Properties Corp., 6798
+SBA Communications Corporation, 6798
+Alexandria Real Estate Equities, 6798
+AeroCentury Corp., 7359
+Griffin Industrial Realty, 6500
+Ryman Hospitality Properties, 6798
+SL Green Realty Corp, 6798
+Yum! Brands, 5812
+Capital Senior Living Corporation, 8050
+Regional Health Properties, 8051
+Rush Enterprises, 5500
+Carriage Services, 7200
+Penske Automotive Group, 5500
+Famous Dave&#39;s of America, 5812
+Lithia Motors, 5500
+W.P. Carey Inc., 6798
+Kilroy Realty Corporation, 6798
+Group 1 Automotive, 5500
+Global Self Storage, 6798
+Franklin Street Properties Corp., 6798
+SBA Communications Corporation, 6798
+Alexandria Real Estate Equities, 6798
+AeroCentury Corp., 7359
+Griffin Industrial Realty, 6500
+Ryman Hospitality Properties, 6798
+SL Green Realty Corp, 6798
+Yum! Brands, 5812
+Capital Senior Living Corporation, 8050
+Sonic Automotive, 5500
+EPR Properties, 6798
+Choice Hotels International, 7011
+Anworth Mortgage Asset  Corporation, 6798
+Marriott International, 7011
+Washington Real Estate Investment Trust, 6798
+Crown Castle International Corporation, 6798
+Red Lion Hotels Corporation, 7011
+American Tower Corporation (REIT), 0
+MarineMax, 5531
+Avalon Holdings Corporation, 4953
+Hersha Hospitality Trust, 6798
+Simon Property Group, 6798
+Cracker Barrel Old Country Store, 5812
+CoreCivic, 6798
+Senior Housing Properties Trust, 6798
+Booking Holdings Inc., 7389
+Winnebago Industries, 3716
+iStar Inc., 6798
+Lyon William Homes, 1531
+American Realty Investors, 6510
+Chanticleer Holdings, 5812
+Carnival Corporation, 4400
+Marine Products Corporation, 3672
+Asbury Automotive Group Inc, 5500
+Five Star Senior Living Inc., 8051
+CarMax Inc, 5500
+Red Robin Gourmet Burgers, 5812
+Drive Shack Inc., 6798
+Whitestone REIT, 6798
+TIER REIT, 6798
+Potbelly Corporation, 5812
+Flanigan&#39;s Enterprises, 5812
+Retail Properties of America, 6798
+Ashford Hospitality Trust Inc, 6798
+Gladstone Commercial Corporation, 6519
+Columbia Property Trust, 6798
+American Campus Communities Inc, 6798
+Kite Realty Group Trust, 6798
+StoneMor Partners L.P., 7200
+Domino&#39;s Pizza Inc, 5140
+Medical Properties Trust, 6798
+Extra Space Storage Inc, 6798
+Digital Realty Trust, 6798
+CubeSmart, 6798
+Diamondrock Hospitality Company, 6798
+Comstock Holding Companies, 1531
+Sotherly Hotels Inc., 6798
+Spirit Realty Capital, 6512
+Ruth&#39;s Hospitality Group, 5812
+Brookdale Senior Living Inc., 8050
+PotlatchDeltic Corporation, 6798
+CatchMark Timber Trust, 6798
+Limoneira Co, 100
+CorEnergy Infrastructure Trust, 6798
+Dunkin&#39; Brands Group, 5810
+Healthcare Trust of America, 6798
+Wyndham Destinations, 7011
+Aircastle Limited, 7359
+Green Brick Partners, 1531
+Public Storage, 6798
+Diversified Restaurant Holdings, 5812
+The ONE Group Hospitality, 5812
+Forestar Group Inc, 6500
+Retail Opportunity Investments Corp., 6798
+Titan Machinery Inc., 5990
+XpresSpa Group, 7200
+Apple Hospitality REIT, 6798
+Bluerock Residential Growth REIT, 6798
+Americold Realty Trust, 6798
+Office Properties Income Trust, 6500
+Hyatt Hotels Corporation, 7011
+Chesapeake Lodging Trust, 6798
+Pebblebrook Hotel Trust, 6798
+Chatham Lodging Trust (REIT), 0
+Terreno Realty Corporation, 6500
+Stag Industrial, 6798
+Preferred Apartment Communities, 6798
+Hudson Pacific Properties, 6500
+Reven Housing REIT, 6798
+Sabra Health Care REIT, 6798
+Brunswick Corporation, 3510
+Gladstone Land Corporation, 6798
+Brookfield Property REIT Inc., 6798
+Summit Hotel Properties, 6798
+Howard Hughes Corporation (The), 0
+American Assets Trust, 6798
+RLJ Lodging Trust, 6798
+Lindblad Expeditions Holdings Inc., 4700
+Norwegian Cruise Line Holdings Ltd., 4400
+Plymouth Industrial REIT, 6798
+Peak Resorts, 7011
+Chuy&#39;s Holdings, 5812
+Dave & Buster&#39;s Entertainment, 5812
+Global Net Lease, 6798
+Wheeler Real Estate Investment Trust, 6798
+Power REIT, 6798
+Global Medical REIT Inc., 6798
+Fiesta Restaurant Group, 5812
+Empire State Realty Trust, 6798
+Bloomin&#39; Brands, 5812
+CyrusOne Inc, 6798
+Front Yard Residential Corporation, 6500
+Altisource Asset Management Corp, 6500
+TRI Pointe Group, 1531
+American Homes 4 Rent, 6798
+Taylor Morrison Home Corporation, 1531
+SeaWorld Entertainment, 7990
+American Finance Trust, 6798
+Armada Hoffler Properties, 6500
+Rexford Industrial Realty, 6798
+Braemar Hotels & Resorts Inc., 6798
+Five Point Holdings, 6500
+Gaming and Leisure Properties, 6798
+QTS Realty Trust, 6798
+LGI Homes, 1531
+Extended Stay America, 7011
+Del Taco Restaurants, 5812
+Hilton Worldwide Holdings Inc., 7011
+CareTrust REIT, 6798
+Malibu Boats, 3730
+Farmland Partners Inc., 6798
+Papa Murphy&#39;s Holdings, 0
+City Office REIT, 6798
+Washington Prime Group Inc., 6798
+Ashford Inc., 8742
+El Pollo Loco Holdings, 5812
+Luby&#39;s, 5812
+New Senior Investment Group Inc., 6798
+Xenia Hotels & Resorts, 7011
+Park Hotels & Resorts Inc., 7011
+The Habit Restaurants, 5812
+National Storage Affiliates Trust, 6798
+Restaurant Brands International Inc., 5812
+NexPoint Residential Trust, 6798
+Shake Shack, 5810
+Jernigan Capital, 6798
+Community Healthcare Trust Incorporated, 6798
+Wingstop Inc., 5812
+Planet Fitness, 7997
+MasterCraft Boat Holdings, 3730
+The RMR Group Inc., 8742
+NorthStar Realty Europe Corp., 6798
+Four Corners Property Trust, 6798
+MGM Growth Properties LLC, 6798
+Hertz Global Holdings, 7510
+Yum China Holdings, 5812
+Innovative Industrial Properties, 6500
+Invitation Homes Inc., 6510
+Safehold Inc., 6519
+JBG SMITH Properties, 6798
+Playa Hotels & Resorts N.V., 7011
+FAT Brands Inc., 5812
+Tremont Mortgage Trust, 6798
+Industrial Logistics Properties Trust, 6798
+Cousins Properties Incorporated, 6798
+Cavco Industries, 2451
+Wendy&#39;s Company (The), 0
+Federal Realty Investment Trust, 6798
+Alexander&#39;s, 6798
+AutoNation, 5500
+Alico, 100
+Hovnanian Enterprises Inc, 1531
+EastGroup Properties, 6798
+Dine Brands Global, 5812
+Rayonier Inc., 6798
+J. W. Mays, 6512
+Lowe&#39;s Companies, 5211
+AMREP Corporation, 2721
+Maui Land & Pineapple Company, 6500
+McDonald&#39;s Corporation, 5812
+Monmouth Real Estate Investment Corporation, 6798
+The Intergroup Corporation, 6513
+Nathan&#39;s Famous, 5812
+Six Flags Entertainment Corporation New, 7990
+One Liberty Properties, 6798
+Regis Corporation, 7200
+Rave Restaurant Group, 5140
+Avis Budget Group, 7510
+Trinity Place Holdings Inc., 6512
+Realty Income Corporation, 6798
+Transcontinental Realty Investors, 6798
+Ventas, 6798
+St. Joe Company (The), 0
+National Retail Properties, 6798
+Cedar Realty Trust, 6798
+HCP, 6798
+Welltower Inc., 6798
+Pennsylvania Real Estate Investment Trust, 6798
+M.D.C. Holdings, 1531
+Ark Restaurants Corp., 5812
+Duke Realty Corporation, 6798
+Brandywine Realty Trust, 6798
+Harley-Davidson, 3751
+Toll Brothers, 1531
+KB Home, 1531
+Investors Real Estate Trust, 6798
+M/I Homes, 1531
+America&#39;s Car-Mart, 5500
+Equity Commonwealth, 6798
+Jack In The Box Inc., 5812
+Carrols Restaurant Group, 5812
+Cedar Fair, 7990
+Vail Resorts, 7990
+Carnival Corporation, 4400
+PulteGroup, 1531
+InnSuites Hospitality Trust, 6798
+Good Times Restaurants Inc., 5812
+Weingarten Realty Investors, 6798
+Meritage Corporation, 1531
+RPT Realty, 6798
+FRP Holdings, 6500
+Denny&#39;s Corporation, 5812
+Corporate Office Properties Trust, 6798
+Kimco Realty Corporation, 6798
+D.R. Horton, 1531
+Royal Caribbean Cruises Ltd., 4400
+Stratus Properties Inc., 6552
+The Cheesecake Factory Incorporated, 5812
+LTC Properties, 6798
+Omega Healthcare Investors, 6798
+Taubman Centers, 6798
+Service Corporation International, 7200
+Equity Lifestyle Properties, 6798
+Acadia Realty Trust, 6798
+Vornado Realty Trust, 6798
+Tanger Factory Outlet Centers, 6798
+Papa John&#39;s International, 5812
+Equity Residential, 6798
+NVR, 1531
+Camden Property Trust, 6798

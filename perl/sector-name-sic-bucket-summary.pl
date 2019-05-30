@@ -1,4 +1,3 @@
-use lib '~';
 use String::Similarity;
 
 

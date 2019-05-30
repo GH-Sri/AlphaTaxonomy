@@ -2,7 +2,7 @@ import boto3
 
 keyId = 'AKIAVO5KNXW5MLTJ2JOS'
 secretId = 'xUJmbLt+sRYTAcKJmsQE3D2r5Z2K1NbYBOit5lHX' 
-bucketName = 'gh-mdas-data-1'
+bucketName = 'at-mdas-data'
 
 
 s3 = boto3.resource('s3',\
