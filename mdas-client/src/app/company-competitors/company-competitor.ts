@@ -1,6 +1,6 @@
 export interface CompanyCompetitor {
     competitor;
-    ticker;
+    symbol;
     marketCap;
-    closeness;
+    similarity;
 }
