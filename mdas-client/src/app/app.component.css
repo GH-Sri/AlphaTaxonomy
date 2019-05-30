@@ -1,14 +1,21 @@
 #ResetSpinner {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  top: 10px; /* Place the button at the bottom of the page */
-  left: 210px; /* Place the button 30px from the right */
+  bottom: 150px; /* Place the button at the bottom of the page */
+  right: 67px; /* Place the button 30px from the right */
+}
+
+#LogoButton {
+    display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    top: 10px;
 }
 
 #ResetButton {
+  display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  top: 10px; /* Place the button at the bottom of the page */
-  left: 120px; /* Place the button 30px from the right */
+  bottom: 85px; /* Place the button at the bottom of the page */
+  right: 52px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */

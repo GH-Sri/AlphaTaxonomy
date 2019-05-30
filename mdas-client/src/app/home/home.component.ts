@@ -15,6 +15,16 @@ export class HomeComponent implements OnInit {
     sectorIndustryWeights: SectorIndustryWeight[];
     selections: any[] = [];
 
+    // Responsive Treemap
+    //@HostListener('window:resize', ['$event'])
+    // onResize(event, options) {
+    //     if (event) {
+    //           console.log("Width: " + window.innerWidth);
+    //           console.log("Height: " + window.innerHeight);
+    //         options.width = window.innerWidth * this.windowOffset;
+    //     }
+    // }
+
     // Treemap fields
     data = [];
     title = '';
@@ -84,14 +94,6 @@ export class HomeComponent implements OnInit {
         });
 
     }
-
-    // Responsive Treemap
-    // @HostListener('window:resize', ['$event'])
-    // onResize(event, options) {
-    //     if (event) {
-    //         options.width = window.innerWidth * this.windowOffset;
-    //     }
-    // }
 
     //Treemap methods
     //event[0].row = the node number. Get the company name from here

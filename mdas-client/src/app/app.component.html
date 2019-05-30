@@ -1,18 +1,9 @@
-<div id="navbarHeader" class="navbar navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="hidden-xs" style="float:left;">
-      <button p-button (click)="reset()" id="ResetButton" title="Home">Home</button>
-      <p-progressSpinner [style]="{width: '50px', height: '50px'}" strokeWidth="8" animationDuration="1s" id="ResetSpinner"></p-progressSpinner>
-    </div>
-  </div>
-</div>
-
 <div id="containerHead" class="p-grid">
   <div id="containHead" class="p-col-12">
     <div id="head" class="p-col-12">
-      <!-- <div id="logo">
-          <p id="text">A T</p>
-        </div> -->
+      <div id="logo">
+        <button p-button (click)="reset()" id="LogoButton" title="A T"><img src="./../assets/img/AT_logo-1.png" alt="A T"></button>
+      </div>
       <div id="content">
         <div>
           <h1>AlphaTaxonomy</h1>
@@ -37,6 +28,8 @@
 <div id="navbarFooter" class="navbar navbar-fixed-bottom">
   <div class="container-fluid">
     <div class="hidden-xs" style="float:right;">
+      <button p-button (click)="reset()" id="ResetButton" title="Reset">Reset</button>
+      <p-progressSpinner [style]="{width: '50px', height: '50px'}" strokeWidth="8" animationDuration="1s" id="ResetSpinner"></p-progressSpinner>
       <button p-button (click)="goToTop()" id="toTopButton" title="Back to Top">Back to Top</button>
     </div>
   </div>
