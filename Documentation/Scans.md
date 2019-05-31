@@ -6,3 +6,6 @@ Team Guidehouse ran security SonarQube scans with an OWASP Top 10 policy setting
 
 ![Scans](Scans.jpg "Scans")
 
+------
+
+1
