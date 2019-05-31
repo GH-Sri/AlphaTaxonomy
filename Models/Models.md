@@ -41,7 +41,7 @@ We use the Gensim implementation in Python of the document modelling algorithm D
 
 We can compare the vectors rendered by Doc2Vec through vector operations like cosine similarity, which is analogous to asking if two samples of text are similar to one another within the context of the corpus of training documents. 
 
-	![cos-similarity](Cosine_Similarity.png)
+	![cos-similarity](Cosine_Similarity.png "cos-similiarity")
 
 Due to this property of Doc2Vec's output vectors we are able to determine which documents (companies) are most similar to one another. Our input documents are collations of companies' 10-K filings, website text, and/or Wikipedia pages and were sourced specifically to provide a holistic view of companies. 
 
