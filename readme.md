@@ -28,7 +28,7 @@ Usage: This script takes a single argument with four options ex. ./deployment st
 
 *__Destroy__: completely tears down all infrastructure stood up with this script as well as does cleanup of buckets to help terraform destroy easier, occasionally terraform does get stuck so running destroy again should fix it*
 
-Help: where you are now, displays the arguments to the script and some information
+*__Help__: where you are now, displays the arguments to the script and some information
 
 ## Additional Links
 For convenience we have also provided the following pre-deployed links to evaluate our solution:
