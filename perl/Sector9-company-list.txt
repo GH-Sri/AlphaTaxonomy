@@ -1,0 +1,362 @@
+Core Laboratories N.V., 1389
+Ameren Corporation, 4931
+Barnwell Industries, 1311
+Suburban Propane Partners, 5900
+Argan, 1700
+Evolution Petroleum Corporation, 1311
+HC2 Holdings, 3440
+Genesee & Wyoming, 4011
+NRG Energy, 4911
+Marathon Oil Corporation, 1311
+OGE Energy Corp, 4911
+National Oilwell Varco, 3533
+Genesis Energy, 5171
+Earthstone Energy, 1311
+FirstEnergy Corp., 4911
+Gulf Island Fabrication, 3440
+California Water  Service Group Holding, 4941
+Comfort Systems USA, 1731
+Pioneer Natural Resources Company, 1311
+ONEOK, 4923
+Carrizo Oil & Gas, 1311
+Dril-Quip, 3533
+C.H. Robinson Worldwide, 4731
+Core Laboratories N.V., 1389
+Ameren Corporation, 4931
+Barnwell Industries, 1311
+Suburban Propane Partners, 5900
+Argan, 1700
+Evolution Petroleum Corporation, 1311
+HC2 Holdings, 3440
+Genesee & Wyoming, 4011
+NRG Energy, 4911
+Marathon Oil Corporation, 1311
+OGE Energy Corp, 4911
+National Oilwell Varco, 3533
+Genesis Energy, 5171
+Earthstone Energy, 1311
+FirstEnergy Corp., 4911
+Gulf Island Fabrication, 3440
+California Water  Service Group Holding, 4941
+Comfort Systems USA, 1731
+Pioneer Natural Resources Company, 1311
+ONEOK, 4923
+Carrizo Oil & Gas, 1311
+Dril-Quip, 3533
+C.H. Robinson Worldwide, 4731
+Consolidated Edison Inc, 4931
+IES Holdings, 1731
+Avista Corporation, 4931
+Getty Realty Corporation, 6500
+EMCOR Group, 1731
+American States Water Company, 4941
+New Concept Energy, 1311
+IDACORP, 4911
+Republic Services, 4953
+RGC Resources Inc., 4923
+CNX Resources Corporation, 1220
+Plains All American Pipeline, 4610
+Contango Oil & Gas Company, 1311
+Williams Companies, 4922
+TC PipeLines, 4922
+Natural Gas Services Group, 1389
+The York Water Company, 4941
+Devon Energy Corporation, 1311
+Transatlantic Petroleum Ltd, 1382
+PNM Resources, 4911
+QEP Resources, 1311
+Basic Energy Services, 1389
+Exelon Corporation, 4931
+NiSource, 4931
+Oil States International, 3533
+Fluor Corporation, 1600
+Spire Inc., 4924
+CenterPoint Energy, 4911
+Black Hills Corporation, 4911
+Hornbeck Offshore Services, 4400
+Zion Oil & Gas Inc, 1382
+Crestwood Equity Partners LP, 5960
+Houston American Energy Corporation, 1311
+Encana Corporation, 1311
+JetBlue Airways Corporation, 4512
+Energy Transfer Operating, 4610
+MGE Energy Inc., 4900
+RigNet, 4899
+ConocoPhillips, 2911
+Nabors Industries Ltd., 1381
+XPO Logistics, 4700
+Cimarex Energy Co, 1311
+Radiant Logistics, 4731
+Hawaiian Holdings, 4512
+Dorchester Minerals, 1311
+Gran Tierra Energy Inc., 1311
+Energy Transfer L.P., 4922
+Halcon Resources Corporation, 1311
+Holly Energy Partners, 4610
+Hill International, 8711
+Macquarie Infrastructure Corporation, 5172
+Camber Energy, 1311
+Green Plains, 2860
+Waste Connections, 4953
+Freightcar America, 3743
+Eagle Bulk Shipping Inc., 4412
+Global Partners LP, 5171
+CF Industries Holdings, 2870
+Duke Energy Corporation, 0
+Genco Shipping & Trading Limited, 4412
+DCP Midstream LP, 4922
+Calumet Specialty Products Partners, 2911
+Primoris Services Corporation, 1623
+Allegiant Travel Company, 4512
+Clean Energy Fuels Corp., 4932
+Willdan Group, 8711
+MV Oil Trust, 1311
+Great Lakes Dredge & Dock Corporation, 1600
+CVR Energy Inc., 2911
+Tennessee Valley Authority, 4911
+TravelCenters of America LLC, 5500
+Targa Resources Partners LP, 4922
+Cheniere Energy Partners, 4924
+Ring Energy, 1311
+Archrock, 4922
+Targa Resources, 4922
+Blueknight Energy Partners L.P., 4610
+Gevo, 2860
+Vulcan Materials Company, 1400
+Forum Energy Technologies, 3533
+Orion Group Holdings, 1600
+Heritage-Crystal Clean, 4950
+Nuverra Environmental Solutions, 1389
+Approach Resources Inc., 1311
+American Water Works, 4941
+SRC Energy Inc., 1311
+Atlantic Power Corporation, 4900
+Western Midstream Partners, 4922
+Torchlight Energy Resources, 1311
+Global Water Resources, 4941
+Roadrunner Transportation Systems, 4731
+Roadrunner Transportation Systems, 4731
+Quest Resource Holding Corporation, 7359
+CSI Compressco LP, 1389
+Transocean Ltd., 1381
+Noble Corporation, 1381
+Renewable Energy Group, 2860
+Otter Tail Corporation, 4911
+Air Lease Corporation, 7359
+ECA Marcellus Trust I, 1311
+Yangtze River Port and Logistics Limited, 6500
+Semgroup Corporation, 1389
+Knight Transportation, 4213
+Spirit Airlines, 4512
+NGL ENERGY PARTNERS LP, 5172
+VOC Energy Trust, 1311
+Kinder Morgan, 4922
+Andeavor Logistics LP, 4610
+SandRidge Mississippian Trust I, 1311
+Bonanza Creek Energy, 1311
+Kosmos Energy Ltd., 1311
+Marathon Petroleum Corporation, 2911
+American Midstream Partners, 4922
+SAExploration Holdings, 1382
+WPX Energy, 1311
+Matador Resources Company, 1311
+Permianville Royalty Trust, 1311
+SandRidge Permian Trust, 1311
+U.S. Silica Holdings, 1400
+Chesapeake Granite Wash Trust, 1311
+Era Group, 4522
+Sprague Resources LP, 5171
+Mid-Con Energy Partners, 1311
+Laredo Petroleum, 1311
+Genie Energy Ltd., 4931
+FTS International, 1389
+Smart Sand, 1400
+Nine Energy Service, 1389
+MIDSTATES PETROLEUM COMPANY, 1311
+Phillips 66, 2911
+Independence Contract Drilling, 1381
+SandRidge Mississippian Trust II, 1311
+Pacific Coast Oil Trust, 1311
+EQM Midstream Partners, 4922
+Hi-Crush Partners LP, 1400
+Summit Midstream Partners, 4922
+MPLX LP, 4610
+Sunoco LP, 5172
+Delek Logistics Partners, 4610
+Emerge Energy Services LP, 1400
+MasTec, 1623
+Pattern Energy Group Inc., 4911
+Clearway Energy, 4911
+Phillips 66 Partners LP, 2911
+Murphy USA Inc., 5500
+Frank&#39;s International N.V., 1389
+Plains Group Holdings, 4610
+EP Energy Corporation, 0
+Advanced Disposal Services, 4953
+Cypress Energy Partners, 1389
+ONE Gas, 4924
+Fortress Transportation and Infrastructure Investors LLC, 7350
+Enable Midstream Partners, 4922
+EnLink Midstream, 4922
+Parsley Energy, 1311
+Dorian LPG Ltd., 4412
+Antero Midstream Corporation, 4922
+TerraForm Power, 4911
+Superior Drilling Products, 3533
+Montage Resources Corporation, 1311
+Viper Energy Partners LP, 1311
+NextEra Energy Partners, 4911
+Limbach Holdings, 1700
+California Resources Corporation, 1311
+CNX Midstream Partners LP, 4922
+Shell Midstream Partners, 4610
+NextDecade Corporation, 4923
+Patriot Transportation Holding, 4210
+Black Stone Minerals, 1311
+Tallgrass Energy, 4922
+Avangrid, 4911
+Exterran Corporation, 7359
+Daseke, 4700
+Noble Midstream Partners LP, 4610
+Extraction Oil & Gas, 1311
+Kimbell Royalty Partners, 1311
+Centennial Resource Development, 1311
+Rosehill Resources Inc., 1311
+Triton International Limited, 7359
+Lonestar Resources US Inc., 1311
+International Seaways, 4400
+Mammoth Energy Services, 1389
+ProPetro Holding Corp., 1389
+TechnipFMC plc, 3533
+Jagged Peak Energy Inc., 1311
+Keane Group, 1389
+SEACOR Marine Holdings Inc., 4412
+Alta Mesa Resources, 1311
+Schneider National, 4213
+Southwest Gas Holdings, 4923
+Vistra Energy Corp., 4911
+Select Energy Services, 1389
+Liberty Oilfield Services Inc., 1389
+Delek US Holdings, 2911
+Solaris Oilfield Infrastructure, 3533
+Ranger Energy Services, 1389
+Cactus, 3533
+Baker Hughes, 3533
+Quintana Energy Services Inc., 1389
+BP Midstream Partners LP, 4610
+Construction Partners, 1600
+Adams Resources & Energy, 5172
+Covanta Holding Corporation, 4991
+Comstock Resources, 1311
+Connecticut Water Service, 4941
+Pure Cycle Corporation, 4941
+CSX Corporation, 4011
+Delta Air Lines, 4512
+Mesa Royalty Trust, 6792
+Ensco Rowan plc, 1381
+Panhandle Royalty Company, 1311
+Range Resources Corporation, 1311
+Team, 7600
+Key Energy Services, 1389
+Permian Basin Royalty Trust, 6792
+San Juan Basin Royalty Trust, 6792
+El Paso Electric Company, 4911
+Pioneer Energy Services Corp., 1381
+EQT Corporation, 1311
+Matson, 4400
+SilverBow Resorces, 1311
+Alliant Energy Corporation, 4931
+CKX Lands, 1311
+Air T, 4513
+Hawaiian Electric Industries, 4911
+NewJersey Resources Corporation, 4924
+Cheniere Energy, 4924
+Goldfield Corporation (The), 0
+Hess Corporation, 2911
+Halliburton Company, 1389
+Helmerich & Payne, 1381
+HollyFrontier Corporation, 2911
+American Electric Power Company, 4911
+Imperial Oil Limited, 2911
+Kansas City Southern, 4011
+PrimeEnergy Resources Corporation, 1311
+Loews Corporation, 6331
+American Airlines Group, 4512
+Marine Petroleum Trust, 6792
+Middlesex Water Company, 4941
+Mexco Energy Corporation, 1311
+Allete, 4931
+Apache Corporation, 1311
+MYR Group, 1623
+National Fuel Gas Company, 4924
+Sabine Royalty Trust, 6792
+Dominion Energy, 4911
+YRC Worldwide, 4213
+Newpark Resources, 3533
+Isramco, 1311
+Noble Energy Inc., 1311
+North European Oil Royality Trust, 6792
+Cadiz, 4941
+Eversource Energy, 4911
+J.B. Hunt Transport Services, 4213
+Xcel Energy Inc., 4931
+NorthWestern Corporation, 4931
+Atmos Energy Corporation, 4924
+Continental Resources, 1311
+Oceaneering International, 1389
+US Ecology, 4953
+RPC, 1389
+REX American Resources Corporation, 0
+Expeditors International of Washington, 4731
+Overseas Shipholding Group, 4412
+NextEra Energy, 4911
+Parker Drilling Company, 1381
+Pinnacle West Capital Corporation, 4911
+SJW Group, 4941
+Penn Virginia Corporation, 1311
+Anadarko Petroleum Corporation, 1311
+Pacific Ethanol, 2860
+PDC Energy, 1311
+Aqua America, 4941
+WEC Energy Group, 4931
+Portland General Electric Company, 3600
+Public Service Enterprise Group Incorporated, 4931
+Werner Enterprises, 4213
+SkyWest, 4512
+Occidental Petroleum Corporation, 1311
+P.A.M. Transportation Services, 4213
+Dawson Geophysical Company, 1382
+Heartland Express, 4213
+Buckeye Partners L.P., 4610
+Mesa Air Group, 4512
+CMS Energy Corporation, 4931
+Icahn Enterprises L.P., 3714
+The Andersons, 5150
+EOG Resources, 1311
+Par Pacific Holdings, 1311
+Clean Harbors, 4955
+CHS Inc, 5150
+Waste Management, 4953
+Tetra Technologies, 1311
+Rollins, 7340
+Landstar System, 4213
+Cabot Oil & Gas Corporation, 1311
+SEACOR Holdings, 4412
+Ryder System, 7510
+Granite Construction Incorporated, 1600
+Artesian Resources Corporation, 4941
+Helix Energy Solutions Group, 1389
+Abraxas Petroleum Corporation, 1311
+AECOM, 8711
+Schlumberger N.V., 1389
+Sterling Construction Company Inc, 1600
+Gulfport Energy Corporation, 1311
+Old Dominion Freight Line, 4213
+Cross Timbers Royalty Trust, 6792
+Patterson-UTI Energy, 1381
+Vertex Energy, 2911
+Perma-Fix Environmental Services, 4955
+SM Energy Company, 1311
+Air Transport Services Group, 4513
+Chesapeake Energy Corporation, 1311
+Enbridge Inc, 4610

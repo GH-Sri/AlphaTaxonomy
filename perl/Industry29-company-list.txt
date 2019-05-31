@@ -1,0 +1,75 @@
+NetApp, 3572
+CynergisTek, 7389
+VeriSign, 7371
+ePlus inc., 5045
+8x8 Inc, 7374
+WidePoint Corporation, 7373
+QAD Inc., 7372
+NetApp, 3572
+CynergisTek, 7389
+VeriSign, 7371
+ePlus inc., 5045
+8x8 Inc, 7374
+WidePoint Corporation, 7373
+QAD Inc., 7372
+RealNetworks, 7371
+Evolving Systems, 7371
+Internap Corporation, 7370
+j2 Global, 4822
+Akamai Technologies, 7389
+Equinix, 6798
+LivePerson, 7372
+Salesforce.com Inc, 7372
+Model N, 7370
+Vmware, 7372
+SITO Mobile, 7389
+comScore, 7389
+Cogent Communications Holdings, 4899
+ChannelAdvisor Corporation, 7372
+Boingo Wireless, 4899
+Proofpoint, 7374
+Endurance International Group Holdings, 7372
+Fortinet, 3577
+Five9, 7374
+Tableau Software, 7372
+Brightcove Inc., 7374
+GTT Communications, 4813
+Ooma, 7374
+Workday, 7374
+Carbonite, 7374
+Creative Realities, 7373
+Chegg, 8200
+Remark Holdings, 4899
+Telaria, 7311
+Ringcentral, 7374
+Marin Software Incorporated, 7374
+Limelight Networks, 7389
+Synacor, 7370
+LogMein, 7372
+Travelport Worldwide Limited, 4700
+Blink Charging Co., 3612
+AppFolio, 7372
+Zynga Inc., 7374
+Alarm.com Holdings, 7372
+Telenav, 3812
+Groupon, 7311
+IZEA Worldwide, 7310
+SharpSpring, 7372
+Global Eagle Entertainment Inc., 4899
+Bandwidth Inc., 7372
+Inpixon, 7371
+Cloudera, 7372
+Social Reality, 7311
+Professional Diversity Network, 7370
+Sabre Corporation, 7370
+Yext, 7374
+SailPoint Technologies Holdings, 7372
+Alphabet Inc., 7370
+TiVo Corporation, 6794
+Ribbon Communications Inc., 7373
+Digital Turbine, 6794
+Glowpoint, 4813
+Adobe Inc., 7372
+Inuvo, 7310
+Asure Software Inc, 7373
+Qumu Corporation, 7372

@@ -1,0 +1,289 @@
+Impac Mortgage Holdings, 6798
+Broadway Financial Corporation, 6035
+OceanFirst Financial Corp., 6035
+Dime Community Bancshares, 6035
+Tompkins Financial Corporation, 6022
+Bank of South Carolina Corp., 6022
+Provident Financial Holdings, 6035
+Norwood Financial Corp., 6022
+Wintrust Financial Corporation, 6022
+E*TRADE Financial Corporation, 6035
+Carver Bancorp, 6035
+Enterprise Bancorp Inc, 6022
+Stewardship Financial Corp, 6022
+Enterprise Financial Services Corporation, 6022
+Pacific Premier Bancorp Inc, 6022
+SB One Bancorp, 6022
+OFG Bancorp, 6022
+Navient Corporation, 6141
+SLM Corporation, 6141
+Flagstar Bancorp, 6035
+Shore Bancshares Inc, 6021
+FNCB Bancorp Inc., 6021
+SmartFinancial, 6021
+Riverview Bancorp Inc, 6035
+HopFed Bancorp, 6022
+Mercantile Bank Corporation, 6022
+Impac Mortgage Holdings, 6798
+Broadway Financial Corporation, 6035
+OceanFirst Financial Corp., 6035
+Dime Community Bancshares, 6035
+Tompkins Financial Corporation, 6022
+Bank of South Carolina Corp., 6022
+Provident Financial Holdings, 6035
+Norwood Financial Corp., 6022
+Wintrust Financial Corporation, 6022
+E*TRADE Financial Corporation, 6035
+Carver Bancorp, 6035
+Enterprise Bancorp Inc, 6022
+Stewardship Financial Corp, 6022
+Enterprise Financial Services Corporation, 6022
+Pacific Premier Bancorp Inc, 6022
+SB One Bancorp, 6022
+OFG Bancorp, 6022
+Navient Corporation, 6141
+SLM Corporation, 6141
+Flagstar Bancorp, 6035
+Shore Bancshares Inc, 6021
+FNCB Bancorp Inc., 6021
+SmartFinancial, 6021
+Riverview Bancorp Inc, 6035
+HopFed Bancorp, 6022
+Mercantile Bank Corporation, 6022
+Heritage Financial Corporation, 6036
+Timberland Bancorp, 6036
+Guaranty Federal Bancshares, 6022
+Graham Holdings Company, 8200
+Brookline Bancorp, 6035
+Eagle Bancorp, 6022
+Community West Bancshares, 6022
+Heritage Commerce Corp, 6022
+Macatawa Bank Corporation, 6022
+First BanCorp., 6022
+Guaranty Bancshares, 6035
+Salisbury Bancorp, 6035
+Prosperity Bancshares, 6022
+First Capital, 6035
+Citizens First Corporation, 6021
+LCNB Corporation, 6021
+Citizens Holding Company, 6022
+Southern First Bancshares, 6021
+Peoples Bancorp of North Carolina, 6022
+Zions Bancorporation N.A., 6021
+MutualFirst Financial Inc., 6022
+Patriot National Bancorp Inc., 6021
+Fidelity D & D Bancorp, 6021
+PacWest Bancorp, 6021
+CenterState Bank Corporation, 6021
+Berkshire Hills Bancorp, 6036
+American River Bankshares, 6022
+Hanmi Financial Corporation, 6021
+Pacific Mercantile Bancorp, 6021
+Pinnacle Financial Partners, 6021
+M B T Financial Corp, 6021
+Central Valley Community Bancorp, 6022
+Hope Bancorp, 6021
+Sierra Bancorp, 6022
+Ames National Corporation, 6021
+Landmark Bancorp Inc., 6021
+1st Constitution Bancorp (NJ), 0
+Western New England Bancorp, 6035
+Northrim BanCorp Inc, 6035
+West Bancorporation, 6022
+Plumas Bancorp, 6153
+Banc of California, 6021
+Provident Financial Services, 6035
+American Public Education, 8200
+Western Alliance Bancorporation, 6022
+Nelnet, 6141
+Select Bancorp, 6022
+Hilltop Holdings Inc., 6022
+Bank of the James Financial Group, 6022
+Regions Financial Corporation, 6021
+Lincoln Educational Services Corporation, 8200
+OptimumBank Holdings, 6021
+Kentucky First Federal Bancorp, 6035
+BankFinancial Corporation, 6035
+Zovio Inc., 8200
+Parke Bancorp, 6022
+Community Bankers Trust Corporation., 6022
+Southern National Bancorp of Virginia, 6022
+Home BancShares, 6022
+Citizens Community Bancorp, 6035
+People&#39;s United Financial, 6035
+TriState Capital Holdings, 6022
+TFS Financial Corporation, 6035
+Howard Bancorp, 6022
+Bancorp of New Jersey, 6022
+Bank Of New York Mellon Corporation (The), 0
+First Financial Northwest, 6022
+Bank of Marin Bancorp, 6022
+First Guaranty Bancshares, 6035
+MidWestOne Financial Group, 6022
+ServisFirst Bancshares, 6022
+Oak Valley Bancorp (CA), 0
+Grand Canyon Education, 8200
+First Savings Financial Group, 6035
+Home Bancorp, 6036
+Atlantic Capital Bancshares, 6022
+Live Oak Bancshares, 6022
+Atlanticus Holdings Corporation, 6141
+County Bancorp, 6022
+Northwest Bancshares, 6021
+CBTX, 6021
+Luther Burbank Corporation, 6022
+National Bank Holdings Corporation, 6021
+Metropolitan Bank Holding Corp., 6022
+Eagle Bancorp Montana, 6022
+Aspen Group Inc., 8200
+Customers Bancorp, 6022
+Standard AVB Financial Corp., 6022
+Northfield Bancorp, 6035
+RBB Bancorp, 6022
+Oconee Federal Financial Corp., 6035
+BankUnited, 6035
+IF Bancorp, 6035
+HomeStreet, 6022
+First Business Financial Services, 6022
+Entegra Financial Corp., 6036
+Wellesley Bancorp, 6036
+FS Bancorp, 6036
+Esquire Financial Holdings, 6029
+HomeTrust Bancshares, 6035
+Sound Financial Bancorp, 6035
+Malvern Bancorp, 6035
+First Internet Bancorp, 6022
+Riverview Financial Corporation, 6021
+Navient Corporation, 6141
+Melrose Bancorp, 6022
+Investar Holding Corporation, 6022
+CB Financial Services, 6022
+Reliant Bancorp, 6022
+Cadence Bancorporation, 6021
+Business First Bancshares, 6022
+Merchants Bancorp, 6035
+Provident Bancorp, 6035
+People&#39;s Utah Bancorp, 6022
+FB Financial Corporation, 6022
+FSB Bancorp, 6035
+WCF Bancorp, 6035
+HarborOne Bancorp, 6022
+Bancorp 34, 6035
+CapStar Financial Holdings, 6022
+Carolina Trust BancShares, 6022
+Sterling Bancorp, 6035
+PCSB Financial Corporation, 6036
+Eagle Financial Bancorp, 6035
+Byline Bancorp, 6022
+PDL Community Bancorp, 6035
+FFBW, 6035
+Synovus Financial Corp., 6021
+Chemical Financial Corporation, 6022
+WesBanco, 6021
+Commerce Bancshares, 6022
+Comerica Incorporated, 6021
+Westamerica Bancorporation, 6021
+First Busey Corporation, 6022
+International Bancshares Corporation, 6022
+Southwest Georgia Financial Corporation, 6022
+Peoples Bancorp Inc., 6022
+1st Source Corporation, 6022
+Community Trust Bancorp, 6022
+Ameris Bancorp, 6022
+CVB Financial Corporation, 6022
+Fifth Third Bancorp, 6022
+TriCo Bancshares, 6022
+Old Second Bancorp, 6022
+TrustCo Bank Corp NY, 6022
+First Financial Bankshares, 6022
+Trustmark Corporation, 6021
+M&T Bank Corporation, 6022
+First Hawaiian, 6022
+First Horizon National Corporation, 6021
+F.N.B. Corporation, 6021
+Independent Bank Corporation, 6022
+Ally Financial Inc., 6022
+Bank of Hawaii Corporation, 6022
+Huntington Bancshares Incorporated, 6021
+First Mid Bancshares, 6022
+CPB Inc., 6022
+First Midwest Bancorp, 6021
+Southside Bancshares, 6022
+Old National Bancorp, 6021
+AmeriServ Financial Inc., 6021
+Bank of America Corporation, 6021
+Cass Information Systems, 7389
+First Financial Bancorp., 6021
+Farmers National Banc Corp., 6022
+Colony Bankcorp, 6022
+Cambridge Bancorp, 6022
+First Merchants Corporation, 6021
+First Commonwealth Financial Corporation, 6021
+ConnectOne Bancorp, 6022
+DNB Financial Corp, 6021
+PNC Financial Services Group, 6021
+German American Bancorp, 6022
+Renasant Corporation, 6022
+ACNB Corporation, 6022
+Penns Woods Bancorp, 6022
+Arrow Financial Corporation, 6021
+First US Bancshares, 6022
+S&T Bancorp, 6022
+Lakeland Financial Corporation, 6022
+Community Bank System, 6021
+Franklin Financial Services Corporation, 6022
+Capital City Bank Group, 6022
+City Holding Company, 6021
+Wells Fargo & Company, 6021
+Adtalem Global Education Inc., 8200
+Seacoast Banking Corporation of Florida, 6022
+Northern Trust Corporation, 6022
+CNB Financial Corporation, 6022
+Washington Trust Bancorp, 6022
+Old Point Financial Corporation, 6021
+American National Bankshares, 6021
+MidSouth Bancorp, 6021
+SunTrust Banks, 6021
+Auburn National Bancorporation, 6022
+Camden National Corporation, 6021
+Citizens Financial Group, 6022
+BancFirst Corporation, 6021
+Chemung Financial Corp, 6022
+South State Corporation, 6022
+Independent Bank Corp., 6022
+NBT Bancorp Inc., 6021
+Farmers & Merchants Bancorp, 6035
+First Citizens BancShares, 6022
+Park National Corporation, 6021
+Codorus Valley Bancorp, 6035
+Citizens & Northern Corp, 6022
+First Bancorp, 6022
+Summit Financial Group, 6022
+Century Bancorp, 6022
+TCF Financial Corporation, 6021
+Boston Private Financial Holdings, 6022
+Fidelity Southern Corporation, 6022
+Sandy Spring Bancorp, 6021
+Orrstown Financial Services Inc, 6022
+WSFS Financial Corporation, 6021
+Stock Yards Bancorp, 6022
+Middlefield Banc Corp., 6022
+Evans Bancorp, 6021
+Federal Agricultural Mortgage Corporation, 6111
+Bridge Bancorp, 6021
+Great Southern Bancorp, 6022
+The Community Financial Corporation, 6022
+Emclaire Financial Corp, 6021
+Cathay General Bancorp, 6022
+Financial Institutions, 6021
+Severn Bancorp Inc, 6021
+Glacier Bancorp, 6022
+Carolina Financial Corporation, 6022
+Ocwen Financial Corporation, 6162
+BOK Financial Corporation, 6021
+Mid Penn Bancorp, 6022
+Columbia Banking System, 6022
+Premier Financial Bancorp, 6022
+Ohio Valley Banc Corp., 6022
+Simmons First National Corporation, 0
+QCR Holdings, 6022

@@ -1,0 +1,76 @@
+Optical Cable Corporation, 3357
+Blonder Tongue Laboratories, 3663
+Westell Technologies, 3661
+Pangaea Logistics Solutions Ltd., 3670
+Universal Display Corporation, 3670
+ANSYS, 7372
+SeaChange International, 3663
+Logitech International S.A., 3577
+Silicon Laboratories, 3674
+Pixelworks, 3674
+Optical Cable Corporation, 3357
+Blonder Tongue Laboratories, 3663
+Westell Technologies, 3661
+Pangaea Logistics Solutions Ltd., 3670
+Universal Display Corporation, 3670
+ANSYS, 7372
+SeaChange International, 3663
+Logitech International S.A., 3577
+Silicon Laboratories, 3674
+Pixelworks, 3674
+NVIDIA Corporation, 3674
+Immersion Corporation, 3577
+DASAN Zhone Solutions, 3661
+GSI Technology, 3674
+CEVA, 3674
+NeoPhotonics Corporation, 3674
+Luna Innovations Incorporated, 8731
+Airgain, 3663
+Ambarella, 3674
+Dolby Laboratories, 6794
+Sonos, 3651
+Aquantia Corp., 3674
+Quantenna Communications, 3674
+Adesto Technologies Corporation, 3674
+InterDigital, 6794
+Calix, 4899
+Atomera Incorporated, 3674
+Digimarc Corporation, 7373
+Everspin Technologies, 3674
+GoPro, 3861
+Energous Corporation, 3663
+Resonant Inc., 3674
+Keysight Technologies Inc., 3823
+Borqs Technologies, 7373
+Acacia Communications, 3674
+Xperi Corporation, 3674
+Altair Engineering Inc., 7372
+Broadcom Inc., 3674
+Communications Systems, 4813
+Data I/O Corporation, 3825
+Skyworks Solutions, 3674
+Microvision, 3679
+NAPCO Security Technologies, 3669
+Micron Technology, 3674
+NVE Corporation, 3674
+RF Industries, 3678
+RF Industries, 3678
+Xilinx, 3674
+Kopin Corporation, 3674
+Clearfield, 3661
+QUALCOMM Incorporated, 3663
+VOXX International Corporation, 5065
+EMCORE Corporation, 3674
+Cadence Design Systems, 7372
+Synaptics Incorporated, 3674
+ClearOne, 3661
+Cognex Corporation, 3823
+Harmonic Inc., 3663
+Digi International Inc., 3576
+Lattice Semiconductor Corporation, 3674
+Cisco Systems, 3576
+Flex Ltd., 3672
+Neonode Inc., 3679
+ADDvantage Technologies Group, 5000
+QuickLogic Corporation, 3674
+Synopsys, 7372

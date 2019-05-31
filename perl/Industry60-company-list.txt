@@ -1,0 +1,47 @@
+Columbus McKinnon Corporation, 3531
+DXP Enterprises, 5084
+Rockwell Automation, 3829
+Columbus McKinnon Corporation, 3531
+DXP Enterprises, 5084
+Rockwell Automation, 3829
+Steelcase Inc., 2522
+Whirlpool Corporation, 5090
+Novanta Inc., 3690
+Axcelis Technologies, 3559
+Wesco Aircraft Holdings, 5072
+Rexnord Corporation, 3560
+Steel Partners Holdings LP, 3390
+Ingersoll-Rand plc (Ireland), 0
+Allegion plc, 7381
+Kimball Electronics, 3672
+Fortive Corporation, 3823
+Crane Co., 3490
+Dana Incorporated, 3714
+Flowserve Corporation, 3561
+Standex International Corporation, 3580
+Emerson Electric Company, 3600
+Exxon Mobil Corporation, 2911
+Forward Industries, 3089
+Graco Inc., 3561
+Harsco Corporation, 3440
+Allied Motion Technologies, 3825
+Hubbell Inc, 3670
+IEC Electronics Corp., 3672
+Griffon Corporation, 3442
+Lincoln Electric Holdings, 3540
+Lydall, 3714
+Herman Miller, 2520
+GP Strategies Corporation, 8200
+Nortech Systems Incorporated, 3679
+Brady Corporation, 3990
+Arrow Electronics, 5065
+Honeywell International Inc., 3714
+Plexus Corp., 3672
+Cypress Semiconductor Corporation, 3674
+AstroNova, 3577
+Johnson Controls International plc, 7380
+Trimble Inc., 3829
+ESCO Technologies Inc., 3669
+Avnet, 5065
+Sanmina Corporation, 3672
+Jabil Inc., 3672

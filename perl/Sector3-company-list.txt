@@ -1,0 +1,424 @@
+Insperity, 7363
+NetApp, 3572
+Open Text Corporation, 7373
+IDT Corporation, 4813
+Loral Space and Communications, 3663
+PRGX Global, 8700
+Sykes Enterprises, 7373
+CynergisTek, 7389
+FactSet Research Systems Inc., 7370
+Wilhelmina International, 8742
+Pegasystems Inc., 7374
+VeriSign, 7371
+Aware, 7372
+Dover Motorsports, 7900
+Sprint Corporation, 4813
+BIO-key International, 3576
+Navigant Consulting, 8742
+Iron Mountain Incorporated, 6798
+On Track Innovations Ltd, 3674
+ePlus inc., 5045
+Inseego Corp., 3669
+8x8 Inc, 7374
+Euronet Worldwide, 6099
+StarTek, 7363
+WidePoint Corporation, 7373
+Identiv, 3577
+QAD Inc., 7372
+NII Holdings, 4812
+Jones Lang LaSalle Incorporated, 6531
+NetSol Technologies Inc., 7372
+Intellicheck, 7372
+Insperity, 7363
+NetApp, 3572
+Open Text Corporation, 7373
+IDT Corporation, 4813
+Loral Space and Communications, 3663
+PRGX Global, 8700
+Sykes Enterprises, 7373
+CynergisTek, 7389
+FactSet Research Systems Inc., 7370
+Wilhelmina International, 8742
+Pegasystems Inc., 7374
+VeriSign, 7371
+Aware, 7372
+Dover Motorsports, 7900
+Sprint Corporation, 4813
+BIO-key International, 3576
+Navigant Consulting, 8742
+Iron Mountain Incorporated, 6798
+On Track Innovations Ltd, 3674
+ePlus inc., 5045
+Inseego Corp., 3669
+8x8 Inc, 7374
+Euronet Worldwide, 6099
+StarTek, 7363
+WidePoint Corporation, 7373
+Identiv, 3577
+QAD Inc., 7372
+NII Holdings, 4812
+Jones Lang LaSalle Incorporated, 6531
+NetSol Technologies Inc., 7372
+Intellicheck, 7372
+Juniper Networks, 3576
+OneSpan Inc., 7373
+RealNetworks, 7371
+F5 Networks, 3576
+PC Connection, 5961
+MicroStrategy Incorporated, 7372
+Salem Media Group, 4832
+Evolving Systems, 7371
+Weight Watchers International Inc, 7200
+CRA International, 8111
+McClatchy Company (The), 0
+Internap Corporation, 7370
+The Hackett Group, 8742
+Marvell Technology Group Ltd., 3674
+Cognizant Technology Solutions Corporation, 7371
+Cumulus Media Inc., 4832
+SP Plus Corporation, 7510
+Western Digital Corporation, 3572
+Network-1 Technologies, 6794
+Netflix, 7841
+NIC Inc., 3663
+Heidrick & Struggles International, 7361
+Entercom Communications Corp., 4832
+Blucora, 6199
+Axon Enterprise, 3480
+Bottomline Technologies, 7372
+NetScout Systems, 7373
+The Meet Group, 7310
+TheStreet, 2711
+Stamps.com Inc., 7389
+j2 Global, 4822
+Resources Connection, 7389
+Perficient, 7371
+Akamai Technologies, 7389
+Red Hat, 7370
+Payment Data Systems, 6099
+Alaska Communications Systems Group, 4813
+Lamar Advertising Company, 6798
+Charter Communications, 4841
+SPS Commerce, 7372
+PFSweb, 7389
+Beasley Broadcast Group, 4832
+Alliance Data Systems Corporation, 7389
+Equinix, 6798
+LivePerson, 7372
+support.com, 7374
+Qualys, 7372
+Salesforce.com Inc, 7372
+GlobalSCAPE, 7372
+Lantronix, 3576
+Impinj, 3679
+Quotient Technology Inc., 7310
+QuinStreet, 7389
+Model N, 7370
+FTE Networks, 4813
+NETGEAR, 3661
+Global Payments Inc., 7389
+Vmware, 7372
+Synchronoss Technologies, 7371
+Fidelity National Information Services, 7389
+Seagate Technology PLC, 3572
+Infinera Corporation, 3661
+Cross Country Healthcare, 7363
+Mastercard Incorporated, 7389
+Nexstar Media Group, 4833
+AMN Healthcare Services Inc, 7363
+ForeScout Technologies, 3577
+K12 Inc, 8200
+SITO Mobile, 7389
+comScore, 7389
+Cogent Communications Holdings, 4899
+Verint Systems Inc., 7373
+Comcast Corporation, 4841
+Riot Blockchain, 2835
+Commvault Systems, 7372
+ChannelAdvisor Corporation, 7372
+Boingo Wireless, 4899
+Cinedigm Corp, 7841
+FleetCor Technologies, 7389
+Synnex Corporation, 5045
+Virtusa Corporation, 7371
+Hudson Global, 7363
+Proofpoint, 7374
+Spherix Incorporated, 6794
+CounterPath Corporation, 7372
+Endurance International Group Holdings, 7372
+Fortinet, 3577
+Moneygram International, 7389
+Blackbaud, 7372
+Town Sports International Holdings, 7997
+Dolphin Entertainment, 7200
+T-Mobile US, 4812
+RealPage, 7372
+Otelco Inc., 4813
+Five9, 7374
+Huron Consulting Group Inc., 8742
+TechTarget, 7389
+ExlService Holdings, 7389
+Las Vegas Sands Corp., 7011
+Tableau Software, 7372
+Consolidated Communications Holdings, 4813
+WEX Inc., 7389
+ServiceSource International, 7389
+Brightcove Inc., 7374
+GTT Communications, 4813
+Facebook, 7370
+Palo Alto Networks, 3577
+Ooma, 7374
+Workday, 7374
+Casa Systems, 3663
+Clear Channel Outdoor Holdings, 7310
+Live Nation Entertainment, 7900
+Carbonite, 7374
+Oracle Corporation, 7372
+Yelp Inc., 7200
+Rosetta Stone, 7372
+ShotSpotter, 7372
+EPAM Systems, 7371
+Splunk Inc., 7372
+Instructure, 7372
+Creative Realities, 7373
+Mellanox Technologies, 3674
+Varonis Systems, 7372
+ICF International, 8742
+Chegg, 8200
+Leaf Group Ltd., 7374
+Western Union Company (The), 0
+Finjan Holdings, 6794
+Globalstar, 4899
+Remark Holdings, 4899
+FireEye, 3577
+Information Services Group, 8742
+Aerohive Networks, 7373
+Box, 3861
+ServiceNow, 7372
+Telaria, 7311
+ChinaNet Online Holdings, 7370
+National CineMedia, 7310
+Aviat Networks, 3663
+Bridgeline Digital, 7372
+Ringcentral, 7374
+Cinemark Holdings Inc, 7830
+Coupa Software Incorporated, 7372
+Green Dot Corporation, 6199
+Marin Software Incorporated, 7374
+Limelight Networks, 7389
+PROS Holdings, 7371
+DHI Group, 7389
+Genpact Limited, 8742
+Cornerstone OnDemand, 7372
+CDW Corporation, 5961
+Synacor, 7370
+Q2 Holdings, 7372
+AMC Entertainment Holdings, 7830
+Avaya Holdings Corp., 3661
+Iridium Communications Inc, 3669
+LogMein, 7372
+Travelport Worldwide Limited, 4700
+HealthEquity, 7389
+Roku, 4841
+Blink Charging Co., 3612
+AppFolio, 7372
+Castlight Health, 7374
+Discovery, 4841
+Mastech Digital, 8742
+Bright Horizons Family Solutions Inc., 8351
+Zynga Inc., 7374
+Appian Corporation, 7372
+MongoDB, 7372
+Fitbit, 3571
+New Relic, 7372
+Alarm.com Holdings, 7372
+Zendesk, 7374
+Accenture plc, 7389
+SecureWorks Corp., 7372
+MSG Networks Inc., 4841
+MobileIron, 7372
+Pure Storage, 3572
+Telenav, 3812
+Groupon, 7311
+LiveXLive Media, 5812
+Takung Art Co., 5990
+IZEA Worldwide, 7310
+Paysign, 7389
+Townsquare Media, 4832
+SharpSpring, 7372
+Marathon Patent Group, 6794
+Global Eagle Entertainment Inc., 4899
+Square, 7389
+Bandwidth Inc., 7372
+AMC Networks Inc., 4841
+Moxian, 7370
+CommScope Holding Company, 3663
+Guidewire Software, 7372
+Inpixon, 7371
+BioSig Technologies, 3845
+Worldpay, 7389
+Cloudera, 7372
+Gogo Inc., 4899
+Social Reality, 7311
+Professional Diversity Network, 7370
+Shutterstock, 7374
+Evertec, 7374
+Rapid7, 7372
+Snap Inc., 7370
+News Corporation, 2711
+NXT-ID Inc., 7381
+Hemisphere Media Group, 4841
+Dell Technologies Inc., 3571
+Match Group, 7370
+Benefitfocus, 7372
+Criteo S.A., 7311
+New Media Investment Group Inc., 2711
+Houghton Mifflin Harcourt Company, 2731
+A10 Networks, 3576
+Aramark, 5812
+Eldorado Resorts, 7011
+Paycom Software, 7372
+Paylocity Holding Corporation, 7372
+Sphere 3D Corp., 7374
+Tribune Publishing Company, 2711
+PlayAGS, 3990
+Arista Networks, 3576
+Sabre Corporation, 7370
+Greenpro Capital Corp., 7374
+Synchrony Financial, 6199
+Zayo Group Holdings, 4813
+GoDaddy Inc., 7373
+Yext, 7374
+Inspired Entertainment, 7372
+Nutanix, 7372
+Exela Technologies, 7389
+Boxlight Corporation, 3861
+Majesco, 7372
+SailPoint Technologies Holdings, 7372
+Avalon GloboCare Corp., 8742
+Datasea Inc., 7372
+Presidio, 5045
+PayPal Holdings, 7389
+Barnes & Noble Education, 5940
+Rimini Street, 7389
+The Madison Square Garden Company, 7990
+Mimecast Limited, 7372
+Hewlett Packard Enterprise Company, 3570
+Alphabet Inc., 7370
+Red Rock Resorts, 7011
+Okta, 7372
+BlackLine, 7372
+Zedge, 7372
+Canterbury Park Holding Corporation, 7948
+SCWorx Corp., 7990
+ShiftPixy, 7361
+TiVo Corporation, 6794
+Conduent Incorporated, 7389
+DXC Technology Company, 7374
+Alteryx, 7372
+Rekor Systems, 3669
+Cision Ltd., 7372
+WideOpenWest, 4841
+Altice USA, 4841
+ADT Inc., 7381
+Cannae Holdings, 5810
+ANGI Homeservices Inc., 7310
+Ribbon Communications Inc., 7373
+Zscaler, 7371
+iPic Entertainment Inc., 5810
+BrightView Holdings, 700
+CenturyLink, 4813
+Harris Corporation, 3812
+Churchill Downs, 7948
+Frontier Communications Corporation, 4813
+BK Technologies Corporation, 3663
+Computer Task Group, 7371
+W.W. Grainger, 5000
+Deluxe Corporation, 2780
+Diebold Nixdorf Incorporated, 3578
+Omnicom Group Inc., 7311
+Robert Half International Inc., 7363
+Educational Development Corporation, 5190
+Digital Turbine, 6794
+Intelligent Systems Corporation, 7372
+Shenandoah Telecommunications Co, 4813
+CSP Inc., 7373
+TEGNA Inc., 2711
+GEE Group Inc., 7361
+Gray Television, 4833
+Harte-Hanks, 7331
+HP Inc., 3570
+I.D. Systems, 3669
+American Express Company, 6199
+International Business Machines Corporation, 3570
+International Speedway Corporation, 7948
+Interpublic Group of Companies, 7311
+Jacobs Engineering Group Inc., 1600
+Kelly Services, 7363
+Korn Ferry, 7361
+Lee Enterprises, 2711
+Motorola Solutions, 3663
+RCM Technologies, 7363
+Electronic Arts Inc., 7372
+Cincinnati Bell Inc, 4813
+New York Times Company (The), 0
+Activision Blizzard, 7372
+Total System Services, 7389
+Tribune Media Company, 4833
+Healthcare Services Group, 8050
+Verizon Communications Inc., 4813
+AT&T Inc., 4813
+LiveRamp Holdings, 7374
+Glowpoint, 4813
+Gartner, 8741
+Scientific Games Corp, 7373
+Qualstar Corporation, 3695
+TrueBlue, 7363
+ABM Industries Incorporated, 7340
+Document Security Systems, 2650
+Jack Henry & Associates, 7373
+Emmis Communications Corporation, 4832
+Daily Journal Corp. (S.C.), 0
+Agilysys, 7373
+Pitney Bowes Inc., 3579
+Brink&#39;s Company (The), 0
+Microsoft Corporation, 7372
+MGM Resorts International, 7011
+Tech Data Corporation, 5045
+Adobe Inc., 7372
+Fiserv, 7374
+GCI Liberty, 4813
+CBS Corporation, 4833
+Ebix, 7373
+Teradata Corporation, 7372
+Inuvo, 7310
+Tetra Tech, 8711
+E.W. Scripps Company (The), 0
+MAM Software Group, 7372
+Ideanomics, 4841
+Symantec Corporation, 7372
+Zix Corporation, 0
+PTC Inc., 7372
+Caesars Entertainment Corporation, 7011
+Safeguard Scientifics, 6799
+Automatic Data Processing, 7374
+EVINE Live Inc., 5961
+ManpowerGroup, 7363
+Progress Software Corporation, 7372
+MDC Partners Inc., 7311
+Zebra Technologies Corporation, 3560
+Citrix Systems, 7372
+First Data Corporation, 7389
+Asure Software Inc, 7373
+Saga Communications, 4832
+Franklin Covey Company, 8741
+FTI Consulting, 8742
+ASGN Incorporated, 7363
+Ameri Holdings, 3674
+IAC/InterActiveCorp, 5990
+Full House Resorts, 7011
+Qumu Corporation, 7372
+DPW Holdings, 3679
+Avid Technology, 7372
+Innodata Inc., 8200
+Boyd Gaming Corporation, 7011
