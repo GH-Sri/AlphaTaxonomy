@@ -1,3 +1,4 @@
+
 Guidehouse, LLP, Data Universal Numbering System (DUNS): 079529872, Solicitation Number #: 70SBUR19Q00000066, Shannon White, Partner, 1800 Tysons Boulevard, 7th Floor, McLean, VA 22102-4257, Telephone: (571) 296-2571, Email: swhite@guidehouse.com
 
 
@@ -70,7 +71,7 @@ As seen in the plot below, comparing these two metrics among the different runs,
 ![output-eval](Evaluating_Output.png)
 
 #### Interpretability
-From the vector space embedding we are also able to extract the “top words” associated with each cluster. The table below helps add interpretability to our model, and helps to suggest trends that may be linking the companies in each sector.
+From the vector space embedding we are also able to extract the “top words” associated with each cluster. The table below helps add interpretability to our model, and helps to suggest trends that may be linking the companies in each sector. (5 of 10 sectors are shown for brevity)
 
 |Sector 1 |Sector 2|  Sector 3|  Sector 4|  Sector 5|
 |-------- |-------- |-------- |-------- |-------- |
@@ -78,11 +79,8 @@ From the vector space embedding we are also able to extract the “top words” 
 | BIOLOGICAL PRODUCTS (NO DIAGNOSTIC SUBSTANCES)|  ELECTRIC SERVICES   |MOTOR VEHICLE PARTS & ACCESSORIES|   MOTOR VEHICLE PARTS & ACCESSORIES|   NATIONAL COMMERCIAL BANKS|
 | SURGICAL & MEDICAL INSTRUMENTS & APPARATUS   |OIL & GAS FIELD SERVICES| ELECTRONIC CON TORS|  PRINTED CIRCUIT BOARDS|  SAVINGS INSTITUTION FEDERALLY CHARTERED|
 
-|Sector 6 |Sector 7|  Sector 8|  Sector 9|  Sector 10|
-|-------- |-------- |-------- |-------- |-------- |
-|  REAL ESTATE INVESTMENT TRUSTS|   RETAIL-EATING PLACES|  SERVICES-PREPACKAGED SOFTWARE|   REAL ESTATE INVESTMENT TRUSTS|   REAL ESTATE INVESTMENT TRUSTS|
-|  HOTELS & MOTELS|   RETAIL-AUTO DEALERS & GASOLINE STATIONS|   SERVICES-COMPUTER PROCESSING & DATA PREPARATION   |SERVICES-HOME HEALTH CARE SERVICES|  SERVICES-BUSINESS SERVICES|
-| OPERATIVE BUILDERS|   RETAIL-FAMILY CLOTHING STORES|   SERVICES-BUSINESS SERVICES|  SERVICES-SPECIALTY OUTPATIENT FACILITIES|  INVESTMENT ADVICE|
+#### Weighting
+In addition, we used cos similarity to help calculate distances between companies in the clusters, both from one another, as well as from their respective sectors and industries. These distances were converted into a weighting scheme to better understand the relationships between words and data points. These weights are available to view in the infinite scroll data visualization after clicking on a company.
 
 ## Operations & Maintenance (O&M)
 
@@ -114,4 +112,3 @@ Maintainers of the AlphaTaxonomy models and architecture should be aware of the 
 |AI/ML: Hierarchical Clustering, Naming, Validation| Python ML on OpenShift Containers, S3, Lambda, Sagemaker|   - Visualization/UI Tool [Link to AlphyTaxonomy UI]<br>- Write/Export Results [Jupyter Notebook + AWS File Location]|
 |Data Storage/ETL |AWS S3 Storage, AWS Glue, Spark, Lambda|  - An AWS Lambda function triggers AWS Glue to ingest data when new files arrive<br>- An AWS API Gateway populated with more Lambda functions make the data available to the front end UI on demand<br>- Deliverables/SourceCode/Data-api/lambda-json-rest/functions/|
 |Audit Logs |AWS S3 Storage|   - Detailed logs can be found at: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs: |
-
