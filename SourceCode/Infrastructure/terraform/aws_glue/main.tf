@@ -1,25 +1,75 @@
+#Pass in outputs of other modules
+variable "glue_script_bucket" {
+  type = "string"
+}
+variable "glue_db_endpoint" {
+  type = "string"
+}
+variable "glue_db_name" {
+  type = "string"
+}
+variable "glue_db_username" {
+  type = "string"
+}
+variable "glue_db_password" {
+  type = "string"
+}
+variable "at_data_bucket" {
+  type = "string"
+}
+
 resource "aws_glue_catalog_database" "mdas" {
   name = "mdas"
 }
 
 #Crawler populates metadata table
-resource "aws_glue_crawler" "MDASCompany" {
+resource "aws_glue_crawler" "Output-For-ETL" {
+  schedule = "cron(0/5 * * * ? *)"
   database_name = "${aws_glue_catalog_database.mdas.name}"
-  name          = "MDASCompany"
+  name          = "Output-For-ETL"
   role          = "${aws_iam_role.glue.arn}"
 
-  jdbc_target {
-    connection_name = "${aws_glue_connection.mdas.name}"
-    path            = "CSV_"
+  s3_target {
+    path            = "s3://${var.at_data_bucket}/Output-For-ETL"
+  }
+}
+resource "aws_glue_crawler" "10K" {
+  schedule = "cron(0/5 * * * ? *)"
+  database_name = "${aws_glue_catalog_database.mdas.name}"
+  name          = "10K"
+  role          = "${aws_iam_role.glue.arn}"
+
+  s3_target {
+    path            = "s3://${var.at_data_bucket}/Output-For-ETL/10K only"
+  }
+}
+resource "aws_glue_crawler" "Web" {
+  schedule = "cron(0/5 * * * ? *)"
+  database_name = "${aws_glue_catalog_database.mdas.name}"
+  name          = "Web"
+  role          = "${aws_iam_role.glue.arn}"
+
+  s3_target {
+    path            = "s3://${var.at_data_bucket}/Output-For-ETL/WEB only"
+  }
+}
+resource "aws_glue_crawler" "Wiki" {
+  schedule = "cron(0/5 * * * ? *)"
+  database_name = "${aws_glue_catalog_database.mdas.name}"
+  name          = "Wiki"
+  role          = "${aws_iam_role.glue.arn}"
+
+  s3_target {
+    path            = "s3://${var.at_data_bucket}/Output-For-ETL/WikiOnly"
   }
 }
 
 #Setup connection string, references db in aws_rds/main.tf
 resource "aws_glue_connection" "mdas" {
   connection_properties = {
-    JDBC_CONNECTION_URL = "jdbc:postgresql://${aws_db_instance.glue_db.address}/${aws_db_instance.glue_db.name}"
-    PASSWORD            = "${aws_db_instance.glue_db.username}"
-    USERNAME            = "${aws_db_instance.glue_db.password}"
+    JDBC_CONNECTION_URL = "jdbc:postgresql://${var.glue_db_endpoint}/${var.glue_db_name}"
+    PASSWORD            = "${var.glue_db_password}"
+    USERNAME            = "${var.glue_db_username}"
   }
   name = "MDASPostgres"
 }
@@ -145,12 +195,12 @@ resource "aws_iam_role_policy" "admin_policy" {
 EOF
 }
 
-resource "aws_glue_job" "MDASCompanyList" {
-  name     = "MDASCompanyList"
+resource "aws_glue_job" "HistoricalStockPriceDataAllExchanges" {
+  name     = "HistoricalStockPriceDataAllExchanges.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASCompanyList.name}"
+    script_location = "s3://${var.glue_script_bucket}/HistoricalStockPriceDataAllExchanges_csv"
   }
 
   default_arguments = {
@@ -160,13 +210,12 @@ resource "aws_glue_job" "MDASCompanyList" {
   }
 }
 
-#Assumes that files are in buckets already
-resource "aws_glue_job" "MDASCompanySectorIndustry" {
-  name     = "MDASCompanySectorIndustry"
+resource "aws_glue_job" "company_sector_industry" {
+  name     = "company_sector_industry.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASCompanySectorIndustry.name}"
+    script_location = "s3://${var.glue_script_bucket}/company_sector_industry_csv"
   }
 
   default_arguments = {
@@ -176,12 +225,12 @@ resource "aws_glue_job" "MDASCompanySectorIndustry" {
   }
 }
 
-resource "aws_glue_job" "MDASCompanyList" {
-  name     = "MDASCompanyList"
+resource "aws_glue_job" "industry_name" {
+  name     = "industry_name.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASCompetitors.name}"
+    script_location = "s3://${var.glue_script_bucket}/industry_name_csv"
   }
 
   default_arguments = {
@@ -191,12 +240,12 @@ resource "aws_glue_job" "MDASCompanyList" {
   }
 }
 
-resource "aws_glue_job" "MDASCompanyList" {
-  name     = "MDASCompanyList"
+resource "aws_glue_job" "sector_words" {
+  name     = "sector_words.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASHistoricalStockPrice.name}"
+    script_location = "s3://${var.glue_script_bucket}/sector_words_csv"
   }
 
   default_arguments = {
@@ -206,12 +255,12 @@ resource "aws_glue_job" "MDASCompanyList" {
   }
 }
 
-resource "aws_glue_job" "MDASCompanyList" {
-  name     = "MDASCompanyList"
+resource "aws_glue_job" "companylist" {
+  name     = "companylist.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASIndustryWeights.name}"
+    script_location = "s3://${var.glue_script_bucket}/companylist_csv"
   }
 
   default_arguments = {
@@ -221,12 +270,12 @@ resource "aws_glue_job" "MDASCompanyList" {
   }
 }
 
-resource "aws_glue_job" "MDASCompanyList" {
-  name     = "MDASCompanyList"
+resource "aws_glue_job" "industry_weights" {
+  name     = "industry_weights.csv"
   role_arn = "${aws_iam_role.glue.arn}"
 
   command {
-    script_location = "s3://${aws_s3_bucket.glue_script.bucket}/${aws_glue_job.MDASSectorWeightsMDASSectorWeights.name}"
+    script_location = "s3://${var.glue_script_bucket}/industry_weights_csv"
   }
 
   default_arguments = {
@@ -236,16 +285,77 @@ resource "aws_glue_job" "MDASCompanyList" {
   }
 }
 
-#Triggers crawler resource
-resource "aws_glue_trigger" "mdas" {
-  name = "MDASCompanyList"
-  #TODO: Change cron to smart trigger
-  schedule = "cron(59 23 * * ? *)"
-  type = "SCHEDULED"
+resource "aws_glue_job" "sector_name" {
+  name     = "sector_name.csv"
+  role_arn = "${aws_iam_role.glue.arn}"
 
-  actions {
-    #TODO: setup to reference job resource for MDASCompanyList
-    job_name = "${aws_glue_job.example1.name}"
-    arguments = "--job-bookmark-option: job-bookmark-enable"
+  command {
+    script_location = "s3://${var.glue_script_bucket}/sector_name_csv"
+  }
+
+  default_arguments = {
+    "--job-language" = "python"
+    "--class" = "Spark"
+    "--job-bookmark-option" = "job-bookmark-enable"
+  }
+}
+
+resource "aws_glue_job" "cleaned_data_agg" {
+  name     = "cleaned_data_agg.csv"
+  role_arn = "${aws_iam_role.glue.arn}"
+
+  command {
+    script_location = "s3://${var.glue_script_bucket}/cleaned_data_agg_csv"
+  }
+
+  default_arguments = {
+    "--job-language" = "python"
+    "--class" = "Spark"
+    "--job-bookmark-option" = "job-bookmark-enable"
+  }
+}
+
+resource "aws_glue_job" "competitors" {
+  name     = "competitors.csv"
+  role_arn = "${aws_iam_role.glue.arn}"
+
+  command {
+    script_location = "s3://${var.glue_script_bucket}/competitors_csv"
+  }
+
+  default_arguments = {
+    "--job-language" = "python"
+    "--class" = "Spark"
+    "--job-bookmark-option" = "job-bookmark-enable"
+  }
+}
+
+resource "aws_glue_job" "industry_words" {
+  name     = "industry_words.csv"
+  role_arn = "${aws_iam_role.glue.arn}"
+
+  command {
+    script_location = "s3://${var.glue_script_bucket}/industry_words_csv"
+  }
+
+  default_arguments = {
+    "--job-language" = "python"
+    "--class" = "Spark"
+    "--job-bookmark-option" = "job-bookmark-enable"
+  }
+}
+
+resource "aws_glue_job" "sector_weights" {
+  name     = "sector_weights.csv"
+  role_arn = "${aws_iam_role.glue.arn}"
+
+  command {
+    script_location = "s3://${var.glue_script_bucket}/sector_weights_csv"
+  }
+
+  default_arguments = {
+    "--job-language" = "python"
+    "--class" = "Spark"
+    "--job-bookmark-option" = "job-bookmark-enable"
   }
 }
