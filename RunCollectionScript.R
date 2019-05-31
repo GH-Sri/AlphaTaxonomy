@@ -1,3 +1,4 @@
 source('CollectionOf10KScript.R')
 
-GetTenKs(CIK_Index = 751:1000)
+GetTenKs(CIK_Index = 3001:3250)
+
