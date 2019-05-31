@@ -61,6 +61,9 @@ One key feature of this model is that the hierarchical relationships between ele
 
 This hierarchical structure is advantageous for use in an ICS because it ensures that all of the members of a given industry will also be members of the same sector. For example, all companies clustered in industry "Agricultural Production Crops", will all end up in the same sector "Agriculture", and never in separate sector clusters (e.g., some in sector "Agriculture", some in sector "Manufacturing"). 
 
+#### Weighting
+In addition, we used cos similarity to help calculate distances between companies in the clusters, both from one another, as well as from their respective sectors and industries. These distances were converted into a weighting scheme to better understand the relationships between words and data points. These weights are available to view in the infinite scroll data visualization after clicking on a company.
+
 ## Model Validation
 
 #### Evaluation Metrics
@@ -79,8 +82,6 @@ From the vector space embedding we are also able to extract the “top words” 
 | BIOLOGICAL PRODUCTS (NO DIAGNOSTIC SUBSTANCES)|  ELECTRIC SERVICES   |MOTOR VEHICLE PARTS & ACCESSORIES|   MOTOR VEHICLE PARTS & ACCESSORIES|   NATIONAL COMMERCIAL BANKS|
 | SURGICAL & MEDICAL INSTRUMENTS & APPARATUS   |OIL & GAS FIELD SERVICES| ELECTRONIC CON TORS|  PRINTED CIRCUIT BOARDS|  SAVINGS INSTITUTION FEDERALLY CHARTERED|
 
-#### Weighting
-In addition, we used cos similarity to help calculate distances between companies in the clusters, both from one another, as well as from their respective sectors and industries. These distances were converted into a weighting scheme to better understand the relationships between words and data points. These weights are available to view in the infinite scroll data visualization after clicking on a company.
 
 ## Operations & Maintenance (O&M)
 
