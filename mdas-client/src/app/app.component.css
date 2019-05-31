@@ -1,0 +1,172 @@
+#ResetSpinner {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 150px; /* Place the button at the bottom of the page */
+  right: 67px; /* Place the button 30px from the right */
+}
+
+.centeredspinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+#LogoButton {
+    display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    top: 10px;
+}
+
+#ResetButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 85px; /* Place the button at the bottom of the page */
+  right: 52px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: lightgray; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#ResetButton:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+#toTopButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: lightgray; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#toTopButton:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+#containerHead {
+  background-color: #272b40;
+  color: #ffffff;
+  position:absolute;
+  top:0px;
+  width: 1100px;
+}
+
+#head #logo {
+  margin-top: 30px;
+  margin-bottom: 0;
+  width: 351px;
+  height: 31px;
+  font-family: "Gothic A1";
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+}
+
+#head #content {
+  padding: 5px;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),url("/assets/img/alphataxonomy.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: Assistant;
+}
+
+#head #content div {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+#head #content div h1 {
+  height: 92px;
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 85px;
+  letter-spacing: -0.5px;
+}
+
+#head #content div p {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+#head #content div .button {
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+  width: 294px;
+  height: 45px;
+  border-radius: 5px;
+}
+
+#head #content div .button .buttonSecText {
+  float: left;
+  width: 241px;
+  height: 26px;
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+#head #content div .buttonSecInd {
+  background: #32f5de;
+  color: #272b40;
+}
+
+#head #content div .buttonCompany {
+  background: transparent;
+  color: #32f5de;
+}
+#head #content div .buttonSecInd .triangle-right {
+  border-left: 10px solid #272b40;
+}
+
+#head #content div .buttonCompany .triangle-right {
+  border-left: 10px solid #32f5de;
+}
+
+#head #content div .button .triangle-right {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  float: left;
+}
+
+.p-grid {
+  display: block;
+}
+
+#containerHead {
+  padding: 0 0 50px 0;
+  width:100%;
+}

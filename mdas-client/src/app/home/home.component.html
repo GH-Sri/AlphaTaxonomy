@@ -1,0 +1,10 @@
+<div class="p-grid">
+	<div class="p-col-12">
+		<strong id="sectorIndustryMap">
+			SECTOR / INDUSTRY
+		</strong>
+		<google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
+			style="width: 100%;" (select)="onSelect($event)" role="grid" aria-labelledby="sectorIndustryMap"
+			class="data"> </google-chart>
+	</div>
+</div>

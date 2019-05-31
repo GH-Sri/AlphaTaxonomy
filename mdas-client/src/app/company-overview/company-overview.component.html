@@ -1,0 +1,45 @@
+<p-panel header="Company Overiew: {{companyName}} ({{companyData.symbol}})">
+	<div class="p-grid">
+		<div class="p-col-8">
+			<p-card header="Company Name">
+				<div>
+					<h2>
+						{{companyData.name == null? "" : companyData.name}}
+					</h2>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-4">
+			<p-card header="Symbol">
+				<div>
+					<h3>
+						{{companyData.symbol == null? "" : companyData.symbol}}
+					</h3>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-4">
+			<p-card header="AlphaTaxonomy's Classification">
+				<div>
+					<h4>Sector: {{companyData.atsector == null? "" : companyData.atsector}}</h4>
+					<h4>Industry: {{companyData.atindustry == null? "" : companyData.atindustry}}</h4>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-4">
+			<p-card header="Legacy Classification">
+				<div>
+					<h4>Sector: {{companyData.legacysector == null? "" : companyData.legacysector}}</h4>
+					<h4>Industry: {{companyData.legacyindustry == null? "" : companyData.legacyindustry}}</h4>
+				</div>
+			</p-card>
+		</div>
+		<div class="p-col-4">
+			<p-card header="Market Cap">
+				<div>
+					<h4>{{companyData.marketcap == null? "" : companyData.marketcap}}</h4>
+				</div>
+			</p-card>
+		</div>
+	</div>
+</p-panel>

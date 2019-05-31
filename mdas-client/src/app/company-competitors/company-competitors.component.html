@@ -1,0 +1,35 @@
+<p-dataView #competitorList [value]="competitors" [rows]="10" [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="p-grid">
+                <div class="p-col-5">
+                    Top Competitors
+                </div>
+                <div class="p-col-7">
+                    <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"
+                        (onChange)="onSortChange($event)" [style]="{'min-width':'240px'}">
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-competitor pTemplate="listItem">
+        <div class="p-grid" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+            <div class="p-col-5">
+                <div class="p-col-12">
+                    <h4>{{competitor.competitor}} ({{competitor.symbol}})</h4>
+                </div>
+
+            </div>
+            <div class="p-col-7 competitor-detail">
+                <div class="p-grid">
+                    <div class="p-col-2 p-sm-6">Competitor Similarity Weight: </div>
+                    <div class="p-col-10 p-sm-6"><b>{{competitor.similarity}}%</b></div>
+
+                    <div class="p-col-2 p-sm-6">Market Cap: </div>
+                    <div class="p-col-10 p-sm-6"><b>{{competitor.marketcap}}</b></div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>
