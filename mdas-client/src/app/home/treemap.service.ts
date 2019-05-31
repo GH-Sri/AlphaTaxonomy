@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams, HttpResponse, HttpHeaders} from '@angular/common/http';
-import {SectorIndustryWeight} from './sector-industry-weight';
-import {environment} from '../../environments/environment';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { SectorIndustryWeight } from './sector-industry-weight';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TreemapService {
@@ -16,10 +16,10 @@ export class TreemapService {
     let endpointUrl = 'https://' + host + '/DEV/sectorindustryweights/';
 
     return this.http.get(endpointUrl)
-                .toPromise()
-                .then(res => <SectorIndustryWeight[]> res)
-                .then(data => {return data;});
-    
+      .toPromise()
+      .then(res => <SectorIndustryWeight[]>res)
+      .then(data => { return data; });
+
   }
 
 }
