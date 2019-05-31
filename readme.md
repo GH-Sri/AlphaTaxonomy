@@ -42,7 +42,7 @@ For convenience we have also provided the following pre-deployed links to evalua
 
 [Raw Data Files and AI/ML Output](https://s3.console.aws.amazon.com/s3/buckets/at-mdas-data/?region=us-east-1&tab=overview)
 
-[Models](https://github.com/gh-mdas/Deliverables/Models/models.md)
+[Models](https://github.com/gh-mdas/Deliverables/blob/master/Models/Models.md)
 
 ## Solution Description
 Alpha Taxonomy’s solution consists of five main components:
