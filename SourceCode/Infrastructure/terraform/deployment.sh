@@ -14,16 +14,6 @@ start_deploy () {
   aws s3 sync s3://at-mdas-website-storage/ s3://${at_website_bucket}/
 }
 
-setup_db () {
-  db_link=$(terraform output -module=rds glue_db_address)
-  db_password=$(terraform output -module=rds glue_db_password)
-  db_username=$(terraform output -module=rds glue_db_username)
-  db_name=$(terraform output -module=rds glue_db_name)
-  aws s3 cp s3://at-mdas-sql/setup.sql .
-  export PGPASSWORD=$db_password
-  psql -U ${db_username} -h ${db_link} -d ${db_name} -f ./setup.sql
-}
-
 output_links () {
   #Get resources created by terraform run for inspection
   db_link=$(terraform output -module=rds glue_db_endpoint)
@@ -71,7 +61,6 @@ check_requirements () {
   printf
   zip
   unzip
-  psql
   )
   echo 'Checking script dependencies'
   for item in "${dependecy_array[@]}"
@@ -226,7 +215,6 @@ start_short () {
   terraform apply -auto-approve
   setup_glue
   setup_sagemaker
-  setup_db
   start_deploy
   #Outputs useful resource info
   sync_bucket
