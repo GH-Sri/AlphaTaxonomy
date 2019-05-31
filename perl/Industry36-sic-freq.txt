@@ -1,0 +1,8 @@
+#SIC #Occurrence #Percentage #Accumulated_Percentage
+ 3577 3 0.3 0.3
+ 2750 2 0.2 0.5
+ 3440 1 0.1 0.6
+ 3576 1 0.1 0.7
+ 7389 1 0.1 0.8
+ 3990 1 0.1 0.9
+ 7330 1 0.1 1

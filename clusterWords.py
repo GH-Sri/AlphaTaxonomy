@@ -3,13 +3,13 @@ import numpy as np
 import pandas as pd
 
 model = Doc2Vec.load('Doc2Vec_Model')
-df_sector_avg = pd.read_csv('sector.csv')
-df_industry_avg = pd.read_csv('industry.csv')
+df_sector_avg = pd.read_csv('sector_avg.csv')
+df_industry_avg = pd.read_csv('industry_avg.csv')
 
 sector_df = pd.DataFrame(columns=['Sector','Word','Similarity'])
 
 for i in range(df_sector_avg.shape[0]):
-    newVec = np.array(df_sector_avg.iloc[i]) # Creates a word embedding for query based on trained model
+    newVec = np.array(df_sector_avg.iloc[i][1:]) # Creates a word embedding for query based on trained model
     
     words = model.wv.most_similar(positive=[newVec],topn=10)
     for word in words:
@@ -20,7 +20,7 @@ for i in range(df_sector_avg.shape[0]):
 industry_df = pd.DataFrame(columns=['Industry','Word','Similarity'])
 
 for i in range(df_industry_avg.shape[0]):
-    newVec = np.array(df_industry_avg.iloc[i]) # Creates a word embedding for query based on trained model
+    newVec = np.array(df_industry_avg.iloc[i][1:]) # Creates a word embedding for query based on trained model
     
     words = model.wv.most_similar(positive=[newVec],topn=10)
     for word in words:
@@ -28,5 +28,8 @@ for i in range(df_industry_avg.shape[0]):
                    ignore_index=True)
 
 
-sector_df.to_csv('sector_words.csv')
-industry_df.to_csv('industry_words.csv')
+sector_df.to_csv('sector_words.csv',index=False)
+industry_df.to_csv('industry_words.csv',index=False)
+
+
+

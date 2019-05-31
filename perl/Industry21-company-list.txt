@@ -1,0 +1,34 @@
+Insperity, 7363
+Open Text Corporation, 7373
+Sykes Enterprises, 7373
+Pegasystems Inc., 7374
+StarTek, 7363
+NetSol Technologies Inc., 7372
+Insperity, 7363
+Open Text Corporation, 7373
+Sykes Enterprises, 7373
+Pegasystems Inc., 7374
+StarTek, 7363
+NetSol Technologies Inc., 7372
+Blucora, 6199
+Perficient, 7371
+RealPage, 7372
+ExlService Holdings, 7389
+ServiceNow, 7372
+Bridgeline Digital, 7372
+PROS Holdings, 7371
+Avaya Holdings Corp., 3661
+HealthEquity, 7389
+Castlight Health, 7374
+Guidewire Software, 7372
+Benefitfocus, 7372
+Paycom Software, 7372
+Paylocity Holding Corporation, 7372
+Majesco, 7372
+Hewlett Packard Enterprise Company, 3570
+DXC Technology Company, 7374
+Harte-Hanks, 7331
+International Business Machines Corporation, 3570
+Teradata Corporation, 7372
+Zix Corporation, 0
+Automatic Data Processing, 7374

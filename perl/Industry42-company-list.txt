@@ -1,0 +1,53 @@
+Intevac, 3559
+inTest Corporation, 3825
+Vishay Intertechnology, 3670
+FormFactor, 3674
+Aehr Test Systems, 3825
+Intevac, 3559
+inTest Corporation, 3825
+Vishay Intertechnology, 3670
+FormFactor, 3674
+Aehr Test Systems, 3825
+Amkor Technology, 3674
+AXT Inc, 3674
+Rudolph Technologies, 3823
+Finisar Corporation, 3674
+ON Semiconductor Corporation, 3674
+Entegris, 3089
+Cabot Microelectronics Corporation, 3674
+Materion Corporation, 3460
+IPG Photonics Corporation, 3674
+TTM Technologies, 3672
+Applied Optoelectronics, 3674
+Monolithic Power Systems, 3674
+MaxLinear, 3674
+MagnaChip Semiconductor Corporation, 3674
+SemiLEDS Corporation, 3674
+MACOM Technology Solutions Holdings, 3674
+Akoustis Technologies, 3661
+Knowles Corporation, 3651
+Qorvo, 3674
+Lumentum Holdings Inc., 3669
+Versum Materials, 2890
+Coherent, 3826
+Cohu, 3825
+Diodes Incorporated, 3674
+KLA-Tencor Corporation, 3827
+Kulicke and Soffa Industries, 3674
+LGL Group, 3679
+Analog Devices, 3674
+Lam Research Corporation, 3559
+Bel Fuse Inc., 3677
+Maxim Integrated Products, 3674
+Park Electrochemical Corporation, 3672
+CVD Equipment Corporation, 3559
+Cirrus Logic, 3674
+Amphenol Corporation, 3678
+II-VI Incorporated, 3827
+Microchip Technology Incorporated, 3674
+AVX Corporation, 3670
+Perceptron, 3827
+Semtech Corporation, 3674
+LightPath Technologies, 3674
+Cree, 3674
+Superconductor Technologies Inc., 3663
