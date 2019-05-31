@@ -37,8 +37,12 @@ For convenience we have also provided the following pre-deployed links to evalua
 **Infinity Scroll Sector/Industry/Company Visualization** – http://alphataxonomy.com
 
 *The following links require using the AWS credentials included in the challenge submission e-mail.*
-|[Live Data Science Jupyter Notebook](https://mdas-data-science.notebook.us-east-1.sagemaker.aws/notebooks/data-science-notebook/NLP%20Pipeline%20Notebook.ipynb)|
-|[Raw Data Files and AI/ML Output](https://s3.console.aws.amazon.com/s3/buckets/at-mdas-data/?region=us-east-1&tab=overview)|
+
+[Live Data Science Jupyter Notebook](https://mdas-data-science.notebook.us-east-1.sagemaker.aws/notebooks/data-science-notebook/NLP%20Pipeline%20Notebook.ipynb)
+
+[Raw Data Files and AI/ML Output](https://s3.console.aws.amazon.com/s3/buckets/at-mdas-data/?region=us-east-1&tab=overview)
+
+[Models](https://github.com/gh-mdas/Deliverables/tree/master/Models/models.md)
 
 ## Solution Description
 Alpha Taxonomy’s solution consists of five main components:
