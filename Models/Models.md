@@ -41,7 +41,7 @@ We use the Gensim implementation in Python of the document modelling algorithm D
 
 We can compare the vectors rendered by Doc2Vec through vector operations like cosine similarity, which is analogous to asking if two samples of text are similar to one another within the context of the corpus of training documents. 
 
-	![cos-similarity](Cosine_Similarity.png "cos-similiarity")
+![cos-similarity](Cosine_Similarity.png "cos-similiarity")
 
 Due to this property of Doc2Vec's output vectors we are able to determine which documents (companies) are most similar to one another. Our input documents are collations of companies' 10-K filings, website text, and/or Wikipedia pages and were sourced specifically to provide a holistic view of companies. 
 
@@ -54,7 +54,7 @@ Hierarchical clustering is an unsupervised machine learning technique that group
 
 One key feature of this model is that the hierarchical relationships between elements in the clusters are maintained even as the target number of clusters changes, for example from 10 to 100 as seen in the dendogram plot, below. 
 
-	![dendogram](Dendogram_10_100.png)
+![dendogram](Dendogram_10_100.png)
 
 This hierarchical structure is advantageous for use in an ICS because it ensures that all of the members of a given industry will also be members of the same sector. For example, all companies clustered in industry "Agricultural Production Crops", will all end up in the same sector "Agriculture", and never in separate sector clusters (e.g., some in sector "Agriculture", some in sector "Manufacturing"). 
 
@@ -65,7 +65,7 @@ In evaluating the model outputs, we compared two metrics: coverage and normalize
 
 As seen in the plot below, comparing these two metrics among the different runs, we determined the run with 2018 10K as the best input.
 
-	![output-eval](Evaluating_Output.png)
+![output-eval](Evaluating_Output.png)
 
 #### Interpretability
 From the vector space embedding we are also able to extract the “top words” associated with each cluster. The table below helps add interpretability to our model, and helps to suggest trends that may be linking the companies in each sector.
