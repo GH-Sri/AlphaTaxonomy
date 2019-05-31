@@ -20,7 +20,14 @@ All project files are located in the above GitHub directories. The below diagram
 |[Approach.md](https://github.com/gh-mdas/Deliverables/blob/master/Approach.md)|__Deliverable__ describes technical and Agile project approach (5000 characters)|
 
 ## How to Setup and Launch Alpha Taxonomy:
-This script provisions an AWS environment from a fresh AWS account. As such it makes some assumptions about the state of the account. Given the service limits on new accounts there are restrictions on the number and size of instances for services that we can spin up such as nothing larger than ml.t2.medium for SageMaker etc.
+This script provisions an AWS environment from a fresh AWS account. As such it makes some assumptions about the state of the account. Given the service limits on new accounts there are restrictions on the number and size of instances for services that we can spin up such as nothing larger than ml.t2.medium for SageMaker etc. You will also require a linux environment with GIT installed.
+
+Run the below commands within a bash shell or linux terminal. Enter GIT credentials that were emailed with submission when prompted as well as your AWS account credentials when prompted:
+
+```
+git clone https://github.com/gh-mdas/Deliverables.git ; cd Deliverables/SourceCode/Infrastructure/terraform
+./deployment.sh start
+```
 
 Usage: This script takes a single argument with four options ex. ./deployment start
 
