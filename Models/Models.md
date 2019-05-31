@@ -41,7 +41,7 @@ We use the Gensim implementation in Python of the document modelling algorithm D
 
 We can compare the vectors rendered by Doc2Vec through vector operations like cosine similarity, which is analogous to asking if two samples of text are similar to one another within the context of the corpus of training documents. 
 
-	![cos-similarity](https://github.com/gh-mdas/Deliverables/blob/master/Models/Cosine_Similarity.png)
+	![cos-similarity](Cosine_Similarity.png)
 
 Due to this property of Doc2Vec's output vectors we are able to determine which documents (companies) are most similar to one another. Our input documents are collations of companies' 10-K filings, website text, and/or Wikipedia pages and were sourced specifically to provide a holistic view of companies. 
 
@@ -54,7 +54,7 @@ Hierarchical clustering is an unsupervised machine learning technique that group
 
 One key feature of this model is that the hierarchical relationships between elements in the clusters are maintained even as the target number of clusters changes, for example from 10 to 100 as seen in the dendogram plot, below. 
 
-	![dendogram](https://github.com/gh-mdas/Deliverables/blob/master/Models/Dendogram_10_100.png)
+	![dendogram](Dendogram_10_100.png)
 
 This hierarchical structure is advantageous for use in an ICS because it ensures that all of the members of a given industry will also be members of the same sector. For example, all companies clustered in industry "Agricultural Production Crops", will all end up in the same sector "Agriculture", and never in separate sector clusters (e.g., some in sector "Agriculture", some in sector "Manufacturing"). 
 
@@ -65,7 +65,7 @@ In evaluating the model outputs, we compared two metrics: coverage and normalize
 
 As seen in the plot below, comparing these two metrics among the different runs, we determined the run with 2018 10K as the best input.
 
-	![dendogram](https://github.com/gh-mdas/Deliverables/blob/master/Models/Evaluating_Output.png)
+	![output-eval](Evaluating_Output.png)
 
 #### Interpretability
 From the vector space embedding we are also able to extract the “top words” associated with each cluster. The table below helps add interpretability to our model, and helps to suggest trends that may be linking the companies in each sector.
@@ -98,7 +98,7 @@ Here is a summary of the responsibilities for each role and the resources availa
 ## CI/CD Pipeline Integration
 
 #### Maintenance
-Our AI/ML models were developed and coded in the python programming language. This code is integrated and maintained within our CI/CD pipeline referenced in README.md. Model code is picked up by the pipeline when checked in and automatically run in a parallel containerized ML environment. The build tests the outputs of this code and flags any anomalies in the Sonarqube reports. See solutions diagram: https://github.com/gh-mdas/Deliverables/blob/master/References/at-single-level-architecture-diagram.png
+Our AI/ML models were developed and coded in the python programming language. This code is integrated and maintained within our CI/CD pipeline referenced in README.md. Model code is picked up by the pipeline when checked in and automatically run in a parallel containerized ML environment. The build tests the outputs of this code and flags any anomalies in the Sonarqube reports. See solutions diagram: Deliverables/References/at-single-level-architecture-diagram.png
 
 
 #### Solution Integration Points
