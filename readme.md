@@ -12,7 +12,7 @@ All project files are located in the above GitHub directories. The below diagram
 |[Documentation](https://github.com/gh-mdas/Deliverables/tree/master/Documentation)|Folder containing all additional documentation<br>Also contains static html version of Jupyter data science notebook|
 |[Models](https://github.com/gh-mdas/Deliverables/tree/master/Models)|__Deliverable__ folder containing Models.md and supporting documentation<br>Provides details and links regarding Data Collection, AI/ML, and Integration|
 |[References](https://github.com/gh-mdas/Deliverables/tree/master/References)|Folder containing an referenced files/images|
-|[SourceCode](https://github.com/gh-mdas/Deliverables/tree/master/SourceCode)|Contains all source code for UI, Data Libraries, APIs, and Ops|
+|[SourceCode](https://github.com/gh-mdas/Deliverables/tree/master/SourceCode)|Contains all source code for UI, Data Libraries, APIs, and Infrastructure deployment|
 |[Commits.pdf](https://github.com/gh-mdas/Deliverables/blob/master/Commits.pdf)|__Deliverable__ pdf file of all git commits from repos|
 |[Scans.md](https://github.com/gh-mdas/Deliverables/blob/master/Scans.md)|__Deliverable__ of scan results (1000 characters)|
 |[Solution.pdf](https://github.com/gh-mdas/Deliverables/blob/master/Solution.pdf)|__Deliverable__ pdf of solutions documentation (10 pages max)|
