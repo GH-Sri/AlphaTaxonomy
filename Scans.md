@@ -4,7 +4,7 @@
 
 Team Guidehouse ran security SonarQube scans with an OWASP Top 10 policy setting throughout the duration of the Technical Challenge. When a developer opened a pull request, our SonarQube ran a UI scan and/or a container scan. Below is an image of our scan results:
 
-![Scans](Scans.jpg "Scans")
+![Scans](Documentation/Scans.jpg "Scans")
 
 ------
 
