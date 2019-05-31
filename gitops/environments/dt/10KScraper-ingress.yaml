@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: 10kscraper
+    environment: dt
+  name: 10kscraper-ingress
+  namespace: dataproc-dt
+spec:
+  rules:
+  - host: 10kscraper.apps.openshift-nonprod.gh-mdas.com
+    http:
+     paths:
+     - path: /
+       backend:
+        serviceName: tenkscraper-svc
+        servicePort: 8787

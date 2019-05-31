@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zeppelin-deploy
+  namespace: zeppelin-dt
+  labels:
+    app: zeppelin
+    environment: dt
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.init: semver:~0.0
+    #flux.weave.works/tag.init: regexp:^3.*
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: zeppelin
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        app: zeppelin
+    spec:
+      containers:
+      - name: zeppelin
+        image: jupyter/r-notebook:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        env:
+        - name: ENVIRONMENT
+          value: dt
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4096Mi
+          requests:
+            cpu: 1000m
+            memory: 2048Mi

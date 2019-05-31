@@ -1,0 +1,1 @@
+{"clusterName":"openshift-nonprod","clusterID":"50b38ce4-671d-4b40-92d9-582474d4577d","infraID":"openshift-nonprod-w6gj9","aws":{"region":"us-east-1","identifier":[{"kubernetes.io/cluster/openshift-nonprod-w6gj9":"owned"},{"openshiftClusterID":"50b38ce4-671d-4b40-92d9-582474d4577d"}]}}
