@@ -1,0 +1,181 @@
+Optical Cable Corporation, 3357
+Blonder Tongue Laboratories, 3663
+Geospace Technologies Corporation, 3829
+Intevac, 3559
+Westell Technologies, 3661
+Pangaea Logistics Solutions Ltd., 3670
+Universal Display Corporation, 3670
+Capstone Turbine Corporation, 3510
+ANSYS, 7372
+SeaChange International, 3663
+VSE Corporation, 8711
+Logitech International S.A., 3577
+inTest Corporation, 3825
+Vishay Intertechnology, 3670
+Silicon Laboratories, 3674
+L3 Technologies, 3663
+FormFactor, 3674
+Pixelworks, 3674
+Aehr Test Systems, 3825
+Optical Cable Corporation, 3357
+Blonder Tongue Laboratories, 3663
+Geospace Technologies Corporation, 3829
+Intevac, 3559
+Westell Technologies, 3661
+Pangaea Logistics Solutions Ltd., 3670
+Universal Display Corporation, 3670
+Capstone Turbine Corporation, 3510
+ANSYS, 7372
+SeaChange International, 3663
+VSE Corporation, 8711
+Logitech International S.A., 3577
+inTest Corporation, 3825
+Vishay Intertechnology, 3670
+Silicon Laboratories, 3674
+L3 Technologies, 3663
+FormFactor, 3674
+Pixelworks, 3674
+Aehr Test Systems, 3825
+NVIDIA Corporation, 3674
+Raytheon Company, 3812
+Amkor Technology, 3674
+Mercury Systems Inc, 3670
+AXT Inc, 3674
+Immersion Corporation, 3577
+Kratos Defense & Security Solutions, 3760
+VirTra, 7900
+Teledyne Technologies Incorporated, 3812
+Rudolph Technologies, 3823
+Finisar Corporation, 3674
+ON Semiconductor Corporation, 3674
+Entegris, 3089
+DASAN Zhone Solutions, 3661
+Cabot Microelectronics Corporation, 3674
+Materion Corporation, 3460
+CUI Global, 5065
+IPG Photonics Corporation, 3674
+TTM Technologies, 3672
+Garmin Ltd., 3812
+GSI Technology, 3674
+Northrop Grumman Corporation, 3812
+Applied Optoelectronics, 3674
+Sunworks, 3661
+CEVA, 3674
+NeoPhotonics Corporation, 3674
+Luna Innovations Incorporated, 8731
+Airgain, 3663
+First Solar, 3674
+Ambarella, 3674
+Monolithic Power Systems, 3674
+MaxLinear, 3674
+Boeing Company (The), 0
+Dolby Laboratories, 6794
+Sonos, 3651
+Aquantia Corp., 3674
+MagnaChip Semiconductor Corporation, 3674
+SemiLEDS Corporation, 3674
+Coda Octopus Group, 3812
+Leidos Holdings, 7373
+Quantenna Communications, 3674
+Ocean Power Technologies, 4911
+Adesto Technologies Corporation, 3674
+Envision Solar International, 3674
+InterDigital, 6794
+Calix, 4899
+SolarEdge Technologies, 3674
+Atomera Incorporated, 3674
+Digimarc Corporation, 7373
+Everspin Technologies, 3674
+Enphase Energy, 3674
+Sunrun Inc., 3430
+The KEYW Holding Corporation, 7373
+Ameresco, 1700
+MACOM Technology Solutions Holdings, 3674
+GoPro, 3861
+Huntington Ingalls Industries, 3730
+Ideal Power Inc., 3620
+Tecogen Inc., 3585
+SCIENCE APPLICATIONS INTERNATIONAL CORPORATION, 7373
+Energous Corporation, 3663
+Resonant Inc., 3674
+Akoustis Technologies, 3661
+Knowles Corporation, 3651
+Keysight Technologies Inc., 3823
+Qorvo, 3674
+CACI International, 7373
+Polar Power, 3690
+Lumentum Holdings Inc., 3669
+Borqs Technologies, 7373
+Acacia Communications, 3674
+Versum Materials, 2890
+Xperi Corporation, 3674
+Altair Engineering Inc., 7372
+Switch, 7370
+Perspecta Inc., 7374
+Broadcom Inc., 3674
+Coherent, 3826
+Cohu, 3825
+Communications Systems, 4813
+Comtech Telecommunications Corp., 3663
+Cubic Corporation, 3829
+Diodes Incorporated, 3674
+Hurco Companies, 3823
+KLA-Tencor Corporation, 3827
+Data I/O Corporation, 3825
+Frequency Electronics, 3825
+General Dynamics Corporation, 3730
+Skyworks Solutions, 3674
+Kulicke and Soffa Industries, 3674
+LGL Group, 3679
+Analog Devices, 3674
+Microvision, 3679
+NAPCO Security Technologies, 3669
+Lam Research Corporation, 3559
+Micron Technology, 3674
+NVE Corporation, 3674
+Bel Fuse Inc., 3677
+RF Industries, 3678
+RF Industries, 3678
+Maxim Integrated Products, 3674
+Xilinx, 3674
+Park Electrochemical Corporation, 3672
+CVD Equipment Corporation, 3559
+Kopin Corporation, 3674
+Cirrus Logic, 3674
+Itron, 3825
+Clearfield, 3661
+QUALCOMM Incorporated, 3663
+VOXX International Corporation, 5065
+EMCORE Corporation, 3674
+Cadence Design Systems, 7372
+CPS Technologies Corp., 3260
+Synaptics Incorporated, 3674
+Amphenol Corporation, 3678
+II-VI Incorporated, 3827
+Microchip Technology Incorporated, 3674
+Power Integrations, 3674
+Innovative Solutions and Support, 7371
+ClearOne, 3661
+Cognex Corporation, 3823
+Harmonic Inc., 3663
+Digi International Inc., 3576
+MICT, 3670
+Lattice Semiconductor Corporation, 3674
+Cisco Systems, 3576
+AVX Corporation, 3670
+Flex Ltd., 3672
+Ion Geophysical Corporation, 1382
+SunPower Corporation, 3674
+Neonode Inc., 3679
+ADDvantage Technologies Group, 5000
+Wireless Telecom Group, 3825
+American Superconductor Corporation, 3621
+QuickLogic Corporation, 3674
+Synopsys, 7372
+Perceptron, 3827
+CPI Aerostructures, 3728
+Semtech Corporation, 3674
+LightPath Technologies, 3674
+ManTech International Corporation, 8741
+Cree, 3674
+Superconductor Technologies Inc., 3663

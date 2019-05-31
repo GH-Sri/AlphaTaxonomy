@@ -1,0 +1,3 @@
+#SIC #Occurrence #Percentage #Accumulated_Percentage
+ 8200 7 0.583333333333333 0.583333333333333
+ 6141 5 0.416666666666667 1

@@ -1,0 +1,63 @@
+Ameren Corporation, 4931
+NRG Energy, 4911
+OGE Energy Corp, 4911
+FirstEnergy Corp., 4911
+California Water  Service Group Holding, 4941
+Ameren Corporation, 4931
+NRG Energy, 4911
+OGE Energy Corp, 4911
+FirstEnergy Corp., 4911
+California Water  Service Group Holding, 4941
+Consolidated Edison Inc, 4931
+Avista Corporation, 4931
+IDACORP, 4911
+RGC Resources Inc., 4923
+The York Water Company, 4941
+PNM Resources, 4911
+Exelon Corporation, 4931
+NiSource, 4931
+Spire Inc., 4924
+Black Hills Corporation, 4911
+MGE Energy Inc., 4900
+Macquarie Infrastructure Corporation, 5172
+Duke Energy Corporation, 0
+Clean Energy Fuels Corp., 4932
+Tennessee Valley Authority, 4911
+American Water Works, 4941
+Atlantic Power Corporation, 4900
+Global Water Resources, 4941
+Otter Tail Corporation, 4911
+Genie Energy Ltd., 4931
+MasTec, 1623
+Pattern Energy Group Inc., 4911
+Clearway Energy, 4911
+ONE Gas, 4924
+TerraForm Power, 4911
+NextEra Energy Partners, 4911
+Avangrid, 4911
+Southwest Gas Holdings, 4923
+Vistra Energy Corp., 4911
+Covanta Holding Corporation, 4991
+Connecticut Water Service, 4941
+El Paso Electric Company, 4911
+Alliant Energy Corporation, 4931
+Hawaiian Electric Industries, 4911
+NewJersey Resources Corporation, 4924
+American Electric Power Company, 4911
+Middlesex Water Company, 4941
+Allete, 4931
+Dominion Energy, 4911
+Cadiz, 4941
+Eversource Energy, 4911
+Xcel Energy Inc., 4931
+NorthWestern Corporation, 4931
+Atmos Energy Corporation, 4924
+NextEra Energy, 4911
+Pinnacle West Capital Corporation, 4911
+SJW Group, 4941
+Aqua America, 4941
+WEC Energy Group, 4931
+Portland General Electric Company, 3600
+Public Service Enterprise Group Incorporated, 4931
+CMS Energy Corporation, 4931
+Artesian Resources Corporation, 4941

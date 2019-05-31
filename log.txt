@@ -1,0 +1,334 @@
+
+There are 5855 entries in the file companylist.csv
+*** Generating Sector1-company-list.txt ***
+*** Generating Sector2-company-list.txt ***
+*** Generating Sector3-company-list.txt ***
+*** Generating Sector4-company-list.txt ***
+*** Generating Sector5-company-list.txt ***
+*** Generating Sector6-company-list.txt ***
+*** Generating Sector7-company-list.txt ***
+*** Generating Sector8-company-list.txt ***
+*** Generating Sector9-company-list.txt ***
+*** Generating Sector10-company-list.txt ***
+
+There are 5855 entries in the file companylist.csv
+*** Generating Industry1-company-list.txt ***
+*** Generating Industry2-company-list.txt ***
+*** Generating Industry3-company-list.txt ***
+*** Generating Industry4-company-list.txt ***
+*** Generating Industry5-company-list.txt ***
+*** Generating Industry6-company-list.txt ***
+*** Generating Industry7-company-list.txt ***
+*** Generating Industry8-company-list.txt ***
+*** Generating Industry9-company-list.txt ***
+*** Generating Industry10-company-list.txt ***
+*** Generating Industry11-company-list.txt ***
+*** Generating Industry12-company-list.txt ***
+*** Generating Industry13-company-list.txt ***
+*** Generating Industry14-company-list.txt ***
+*** Generating Industry15-company-list.txt ***
+*** Generating Industry16-company-list.txt ***
+*** Generating Industry17-company-list.txt ***
+*** Generating Industry18-company-list.txt ***
+*** Generating Industry19-company-list.txt ***
+*** Generating Industry20-company-list.txt ***
+*** Generating Industry21-company-list.txt ***
+*** Generating Industry22-company-list.txt ***
+*** Generating Industry23-company-list.txt ***
+*** Generating Industry24-company-list.txt ***
+*** Generating Industry25-company-list.txt ***
+*** Generating Industry26-company-list.txt ***
+*** Generating Industry27-company-list.txt ***
+*** Generating Industry28-company-list.txt ***
+*** Generating Industry29-company-list.txt ***
+*** Generating Industry30-company-list.txt ***
+*** Generating Industry31-company-list.txt ***
+*** Generating Industry32-company-list.txt ***
+*** Generating Industry33-company-list.txt ***
+*** Generating Industry34-company-list.txt ***
+*** Generating Industry35-company-list.txt ***
+*** Generating Industry36-company-list.txt ***
+*** Generating Industry37-company-list.txt ***
+*** Generating Industry38-company-list.txt ***
+*** Generating Industry39-company-list.txt ***
+*** Generating Industry40-company-list.txt ***
+*** Generating Industry41-company-list.txt ***
+*** Generating Industry42-company-list.txt ***
+*** Generating Industry43-company-list.txt ***
+*** Generating Industry44-company-list.txt ***
+*** Generating Industry45-company-list.txt ***
+*** Generating Industry46-company-list.txt ***
+*** Generating Industry47-company-list.txt ***
+*** Generating Industry48-company-list.txt ***
+*** Generating Industry49-company-list.txt ***
+*** Generating Industry50-company-list.txt ***
+*** Generating Industry51-company-list.txt ***
+*** Generating Industry52-company-list.txt ***
+*** Generating Industry53-company-list.txt ***
+*** Generating Industry54-company-list.txt ***
+*** Generating Industry55-company-list.txt ***
+*** Generating Industry56-company-list.txt ***
+*** Generating Industry57-company-list.txt ***
+*** Generating Industry58-company-list.txt ***
+*** Generating Industry59-company-list.txt ***
+*** Generating Industry60-company-list.txt ***
+*** Generating Industry61-company-list.txt ***
+*** Generating Industry62-company-list.txt ***
+*** Generating Industry63-company-list.txt ***
+*** Generating Industry64-company-list.txt ***
+*** Generating Industry65-company-list.txt ***
+*** Generating Industry66-company-list.txt ***
+*** Generating Industry67-company-list.txt ***
+*** Generating Industry68-company-list.txt ***
+*** Generating Industry69-company-list.txt ***
+*** Generating Industry70-company-list.txt ***
+*** Generating Industry71-company-list.txt ***
+*** Generating Industry72-company-list.txt ***
+*** Generating Industry73-company-list.txt ***
+*** Generating Industry74-company-list.txt ***
+*** Generating Industry75-company-list.txt ***
+*** Generating Industry76-company-list.txt ***
+*** Generating Industry77-company-list.txt ***
+*** Generating Industry78-company-list.txt ***
+*** Generating Industry79-company-list.txt ***
+*** Generating Industry80-company-list.txt ***
+*** Generating Industry81-company-list.txt ***
+*** Generating Industry82-company-list.txt ***
+*** Generating Industry83-company-list.txt ***
+*** Generating Industry84-company-list.txt ***
+*** Generating Industry85-company-list.txt ***
+*** Generating Industry86-company-list.txt ***
+*** Generating Industry87-company-list.txt ***
+*** Generating Industry88-company-list.txt ***
+*** Generating Industry89-company-list.txt ***
+*** Generating Industry90-company-list.txt ***
+*** Generating Industry91-company-list.txt ***
+*** Generating Industry92-company-list.txt ***
+*** Generating Industry93-company-list.txt ***
+*** Generating Industry94-company-list.txt ***
+*** Generating Industry95-company-list.txt ***
+*** Generating Industry96-company-list.txt ***
+*** Generating Industry97-company-list.txt ***
+*** Generating Industry98-company-list.txt ***
+*** Generating Industry99-company-list.txt ***
+*** Generating Industry100-company-list.txt ***
+now processing Sector1-company-list.txt
+count: 350
+now processing Sector2-company-list.txt
+count: 230
+now processing Sector3-company-list.txt
+count: 417
+now processing Sector4-company-list.txt
+count: 259
+now processing Sector5-company-list.txt
+count: 180
+now processing Sector6-company-list.txt
+count: 577
+now processing Sector7-company-list.txt
+count: 285
+now processing Sector8-company-list.txt
+count: 269
+now processing Sector9-company-list.txt
+count: 358
+now processing Sector10-company-list.txt
+count: 263
+now processing Industry1-company-list.txt
+count: 6
+now processing Industry2-company-list.txt
+count: 12
+now processing Industry3-company-list.txt
+count: 104
+now processing Industry4-company-list.txt
+count: 228
+now processing Industry5-company-list.txt
+count: 4
+now processing Industry6-company-list.txt
+count: 14
+now processing Industry7-company-list.txt
+count: 26
+now processing Industry8-company-list.txt
+count: 19
+now processing Industry9-company-list.txt
+count: 7
+now processing Industry10-company-list.txt
+count: 11
+now processing Industry11-company-list.txt
+count: 17
+now processing Industry12-company-list.txt
+count: 86
+now processing Industry13-company-list.txt
+count: 34
+now processing Industry14-company-list.txt
+count: 12
+now processing Industry15-company-list.txt
+count: 16
+now processing Industry16-company-list.txt
+count: 7
+now processing Industry17-company-list.txt
+count: 19
+now processing Industry18-company-list.txt
+count: 15
+now processing Industry19-company-list.txt
+count: 34
+now processing Industry20-company-list.txt
+count: 17
+now processing Industry21-company-list.txt
+count: 33
+now processing Industry22-company-list.txt
+count: 37
+now processing Industry23-company-list.txt
+count: 19
+now processing Industry24-company-list.txt
+count: 14
+now processing Industry25-company-list.txt
+count: 23
+now processing Industry26-company-list.txt
+count: 19
+now processing Industry27-company-list.txt
+count: 7
+now processing Industry28-company-list.txt
+count: 64
+now processing Industry29-company-list.txt
+count: 75
+now processing Industry30-company-list.txt
+count: 7
+now processing Industry31-company-list.txt
+count: 11
+now processing Industry32-company-list.txt
+count: 10
+now processing Industry33-company-list.txt
+count: 23
+now processing Industry34-company-list.txt
+count: 39
+now processing Industry35-company-list.txt
+count: 14
+now processing Industry36-company-list.txt
+count: 10
+now processing Industry37-company-list.txt
+count: 34
+now processing Industry38-company-list.txt
+count: 64
+now processing Industry39-company-list.txt
+count: 11
+now processing Industry40-company-list.txt
+count: 14
+now processing Industry41-company-list.txt
+count: 40
+now processing Industry42-company-list.txt
+count: 53
+now processing Industry43-company-list.txt
+count: 76
+now processing Industry44-company-list.txt
+count: 19
+now processing Industry45-company-list.txt
+count: 24
+now processing Industry46-company-list.txt
+count: 8
+now processing Industry47-company-list.txt
+count: 27
+now processing Industry48-company-list.txt
+count: 164
+now processing Industry49-company-list.txt
+count: 5
+now processing Industry50-company-list.txt
+count: 7
+now processing Industry51-company-list.txt
+count: 7
+now processing Industry52-company-list.txt
+count: 5
+now processing Industry53-company-list.txt
+count: 32
+now processing Industry54-company-list.txt
+count: 10
+now processing Industry55-company-list.txt
+count: 19
+now processing Industry56-company-list.txt
+count: 39
+now processing Industry57-company-list.txt
+count: 51
+now processing Industry58-company-list.txt
+count: 10
+now processing Industry59-company-list.txt
+count: 24
+now processing Industry60-company-list.txt
+count: 46
+now processing Industry61-company-list.txt
+count: 19
+now processing Industry62-company-list.txt
+count: 26
+now processing Industry63-company-list.txt
+count: 28
+now processing Industry64-company-list.txt
+count: 58
+now processing Industry65-company-list.txt
+count: 12
+now processing Industry66-company-list.txt
+count: 11
+now processing Industry67-company-list.txt
+count: 262
+now processing Industry68-company-list.txt
+count: 28
+now processing Industry69-company-list.txt
+count: 23
+now processing Industry70-company-list.txt
+count: 35
+now processing Industry71-company-list.txt
+count: 6
+now processing Industry72-company-list.txt
+count: 47
+now processing Industry73-company-list.txt
+count: 14
+now processing Industry74-company-list.txt
+count: 63
+now processing Industry75-company-list.txt
+count: 7
+now processing Industry76-company-list.txt
+count: 9
+now processing Industry77-company-list.txt
+count: 17
+now processing Industry78-company-list.txt
+count: 20
+now processing Industry79-company-list.txt
+count: 30
+now processing Industry80-company-list.txt
+count: 20
+now processing Industry81-company-list.txt
+count: 22
+now processing Industry82-company-list.txt
+count: 37
+now processing Industry83-company-list.txt
+count: 58
+now processing Industry84-company-list.txt
+count: 18
+now processing Industry85-company-list.txt
+count: 38
+now processing Industry86-company-list.txt
+count: 62
+now processing Industry87-company-list.txt
+count: 45
+now processing Industry88-company-list.txt
+count: 21
+now processing Industry89-company-list.txt
+count: 7
+now processing Industry90-company-list.txt
+count: 18
+now processing Industry91-company-list.txt
+count: 39
+now processing Industry92-company-list.txt
+count: 6
+now processing Industry93-company-list.txt
+count: 62
+now processing Industry94-company-list.txt
+count: 40
+now processing Industry95-company-list.txt
+count: 30
+now processing Industry96-company-list.txt
+count: 13
+now processing Industry97-company-list.txt
+count: 23
+now processing Industry98-company-list.txt
+count: 7
+now processing Industry99-company-list.txt
+count: 5
+now processing Industry100-company-list.txt
+count: 20

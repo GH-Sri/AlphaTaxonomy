@@ -1,0 +1,26 @@
+National Holdings Corporation, 200
+National Holdings Corporation, 200
+Gamco Investors, 6211
+BGC Partners, 6200
+Nasdaq, 0
+CME Group Inc., 6200
+TD Ameritrade Holding Corporation, 6211
+Piper Jaffray Companies, 6211
+Janus Henderson Group plc, 6282
+MarketAxess Holdings, 6211
+Morningstar, 0
+BlackRock, 0
+Cboe Global Markets, 6200
+Broadridge Financial Solutions, 7389
+Pzena Investment Management Inc, 6282
+MSCI Inc, 7389
+GAIN Capital Holdings, 6221
+Intercontinental Exchange Inc., 6200
+IHS Markit Ltd., 7370
+PJT Partners Inc., 6282
+Associated Capital Group, 6211
+J P Morgan Chase & Co, 6021
+The Charles Schwab Corporation, 6211
+S&P Global Inc., 7320
+Siebert Financial Corp., 6211
+WisdomTree Investments, 6211
