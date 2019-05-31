@@ -87,7 +87,7 @@ From the vector space embedding we are also able to extract the “top words” 
 #### Maintenance Roles
 There are two core O&M roles for the AlphaTaxonomy Solution Architecture. The Data Scientist handles all tasks related to the ingestion, cleaning, and modeling of data. The Data Architect is responsible for maintaining the integrations with the CI/CD pipeline to ensure peak performance. 
 
-Here is a summary of the responsibilities for each role and the resources available to support each responsibility: 
+Here is a summary of the responsibilities for each role: 
 
 |Role| Responsibility|
 |----|--------------|
