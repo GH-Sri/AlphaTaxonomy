@@ -18,7 +18,7 @@ ${PYTHON} gen_industry_company_list.py company_sector_industry.csv companylist.c
 ${PYTHON} count_sic_freq.py Sector
 ${PYTHON} count_sic_freq.py Industry
 ${PYTHON} sector_name_sic_bucket_summary.py
-${PYTHON} Print_Sector_Industry_names.py sec-sic-code-name.txt Sector 3 > sectors_top3_sic_words.csv
-${PYTHON} Print_Sector_Industry_names.py sec-sic-code-name.txt Industry 3 > industries_top3_sic_words.csv
+${PYTHON} Print_Sector_Industry_Names.py sec-sic-code-name.txt Sector 3 > sectors_top3_sic_words.csv
+${PYTHON} Print_Sector_Industry_Names.py sec-sic-code-name.txt Industry 3 > industries_top3_sic_words.csv
 ${PYTHON} getSectorHighFreqSicNames.py sec-sic-code-name.txt 3 > sector_name.csv
 ${PYTHON} industry_top3_similarity.py industries_top3_sic_words.csv > industry_name.csv
