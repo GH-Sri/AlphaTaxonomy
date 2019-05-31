@@ -34,6 +34,7 @@ Usage: This script takes a single argument with four options ex. ./deployment st
 
 ## Additional Quick Links
 For convenience we have also provided the following pre-deployed links to evaluate our solution:
+
 **Infinity Scroll Sector/Industry/Company Visualization** – http://alphataxonomy.com
 
 *The following links require using the AWS credentials included in the challenge submission e-mail.*
