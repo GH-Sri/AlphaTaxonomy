@@ -29,11 +29,11 @@ This script provisions an AWS environment from a fresh AWS account. As such it m
 * zip
 * unzip
 
-Run the below commands within a bash shell or linux terminal. Enter GitHub credentials that were emailed with submission when prompted as well as your AWS account keys when prompted:
+Run the below commands within a bash shell or linux terminal. Enter GitHub credentials that were emailed with submission when prompted:
 
 ```
 git clone https://github.com/gh-mdas/Deliverables.git ; cd Deliverables/SourceCode/Infrastructure/terraform
-./deployment.sh start
+AWS_ACCESS_KEY_ID=somekey1 AWS_SECRET_ACCESS_KEY=somekey2 ./deployment.sh start
 ```
 
 Usage: This script takes a single argument with four options ex. ./deployment start
