@@ -1,4 +1,3 @@
-Guidehouse, LLP, Data Universal Numbering System (DUNS): 079529872, Solicitation Number #: 70SBUR19Q00000066, Shannon White, Partner, 1800 Tysons Boulevard, 7th Floor, McLean, VA 22102-4257, Telephone: (571) 296-2571, Email: swhite@guidehouse.com
 
 ## Overview
 Alpha Taxonomy (AT) is an end to end cloud based, open source Artificial Intelligence and Machine Learning (AI/ML) analysis solution that uses open source data sources to automatically categorize companies into 10 distinct sectors and 100 industries.
