@@ -1,6 +1,6 @@
 
 ## Overview
-Alpha Taxonomy (AT) is an end to end cloud based, open source Artificial Intelligence and Machine Learning (AI/ML) analysis solution that uses open source data sources to automatically categorize companies into 10 distinct sectors and 100 industries.
+Alpha Taxonomy (AT) is an end to end cloud based, open source Artificial Intelligence and Machine Learning (AI/ML) analysis solution that can interpret, categorize, and help drive insights from large volumes of unstructured open source data sources automatically.
 
 ## AT Project Files:
 All project files are located in the above GitHub directories. The below diagram shows the locations and contents of the files:
